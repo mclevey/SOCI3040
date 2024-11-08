@@ -1,0 +1,116 @@
+# Will track on a different branch to keep main history clean
+docs/*
+
+# macOS hidden files
+.DS_Store
+
+# Archived files
+archive/*
+
+# Quarto and Jupyter files
+.quarto
+*ipynb
+*_files/*
+
+# Datasets
+**/data/*.parquet
+**/data/*.csv
+**/data/*.dta
+**/data/*.rda
+**/data/*.rds
+**/data/*.sav
+**/data/*.xlsx
+**/data/*.xls
+
+# Readings
+**/readings/*.pdf
+**/readings/telling_stories/*
+
+# LaTeX files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.gz
+*.pdfsync
+*.synctex
+*.synctex.gz
+*.dvi
+*.ps
+*.nav
+*.snm
+*.vrb
+*.spl
+*.brf
+*.run.xml
+*.bcf
+*.xdv
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.glsdefs
+*~
+*.bak
+*.swp
+*.swo
+
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+.RDataTmp
+
+# User-specific files
+.Ruserdata
+
+# Example code in package build process
+*-Ex.R
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+# R Environment Variables
+.Renviron
+
+# translation temp files
+po/*~
+
+# RStudio Connect folder
+rsconnect/
+
+/.quarto/
+
+/.luarc.json

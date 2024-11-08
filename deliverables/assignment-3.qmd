@@ -1,0 +1,17 @@
+---
+title: "Report 3 (Co-authored)"
+subtitle: SOCI 3040 -- Quantitative Research Methods
+author: John McLevey
+date: January 9, 2025
+published-title: "Due Date"
+time: 11:59 pm
+weight: 25%
+---
+
+# Instructions
+
+Coming soon...
+
+# Grading Rubric
+
+Coming soon...

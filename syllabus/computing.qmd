@@ -1,0 +1,88 @@
+---
+title: "{{< bi laptop >}} Computing"
+subtitle: "SOCI 3040 -- Quantitative Research Methods"
+bibliography: ../references.bib
+---
+
+<br>
+
+![](../media/R.png){width=1in}<br>
+
+**R and Quarto 😁 -- No Experience Necessary**
+<br>
+You will learn to use **R** (a free/open source programming language and environment for statistical computing and graphics) and **Quarto** (a free/open source publishing system for creating dynamic and reproducible manuscripts, reports, websites, and presentations) in this course. Note that **I assume no prior experience** with R or Quarto. Everything you need to know about both will be introduced in the course. While some prior programming experience is an asset, it is by no means necessary.
+
+# LabNet
+
+## CP-2003
+
+## Remote Access
+
+# Your Own Machine
+
+## macOS
+
+## Windows
+
+## Linux
+
+# Some Other "Cloud"
+
+## GitHub CodeSpaces
+
+## Posit Cloud
+
+<!-- 
+## Required Software
+
+- R, RStudio
+- Quarto
+- Git
+
+## Required Accounts
+
+- GitHub
+- Posit Cloud?
+
+## Computers
+
+- The CP-2003 Computer Lab
+- Your own machine
+- Cloud computing 
+-->
+
+
+<!-- 
+- **TODO**: Update for GitHub Codespaces instead...
+
+## Fully-charged Laptop or Tablet
+
+You will need access to a fully-charged laptop (ideal) or tablet (a little less ideal) that you can take to class to work on lab assignments and complete your work. *If that is not possible, speak to me as soon as possible; we will work out a solution.*
+
+## Required Software
+
+::: {.callout-caution icon="false" appearance="simple"}
+You do not have to pay for any of the software in this course, now or ever.
+:::
+
+You will learn to use **R** (a free/open source programming language and environment for statistical computing and graphics) and **Quarto** (a free/open source publishing system for creating dynamic and reproducible manuscripts, reports, websites, and presentations) in this course. Note that **I assume no prior experience** with R or Quarto. Everything you need to know about both will be introduced in the course. While some prior programming experience is an asset, it is by no means necessary.
+
+Ideally, you'll be able to download and install 
+
+- [R and RStudio](https://posit.co/download/rstudio-desktop/),
+- [Quarto](https://quarto.org), and 
+- [Git](https://git-scm.com) 
+
+on a laptop that you bring to each class meeting. If that is not possible, you can do all of your course work in a browser, which would allow you to avoid having to install software, or make it possible to use a tablet instead of a laptop.
+
+By default RStudio will generate HTML documents for your lab assignments and other work. It you want to be able to generate PDFs as well, you'll need to download and install LaTeX.
+
+- [MacTeX](https://www.tug.org/mactex/mactex-download.html) (macOS)
+- [MiKTeX](https://miktex.org/howto/install-miktex) (Windows)
+- [TeX Live](https://www.tug.org/texlive/) (Linux)
+
+## {{< fa brands github >}}&nbsp;&nbsp;&nbsp; Accounts and API Keys
+
+You'll need to sign up for a free [GitHub](https://github.com) account. You'll also need to request free API Keys from a variety of websites and services throughout the course, all of which are listed in [Accounts & API Keys](computing.qmd). I will provide detailed instructions in class and in the lab assignment each time.
+
+-->

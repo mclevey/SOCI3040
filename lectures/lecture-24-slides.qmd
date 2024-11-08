@@ -1,0 +1,28 @@
+---
+title: "Project Work"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "April 3, 2025" 
+date-format: "MMMM D, YYYY"
+format: kakashi-revealjs
+bibliography: ../references.bib
+footer: "[{{< bi house-fill color=#2E3440 >}}](https://www.johnmclevey.com/quantitative-research-methods)"
+controls: true
+---
+
+
+{{< include lecture-24-content.qmd >}}
+
+## References
+
+::: {#refs}
+:::
+
+<!-- 
+# {.appendix}
+
+## Appendix A {.smaller}
+ -->
+

@@ -1,0 +1,26 @@
+---
+title: "Introduction"
+subtitle: "SOCI 3040 -- Quantitative Research Methods"
+author: 
+  - name: "John McLevey (he/him)"
+    affiliation: "Department of Sociology, Memorial University"
+date: "Tuesday January 7, 2025"
+date-format: "MMMM D, YYYY"
+format: kakashi-revealjs
+bibliography: ../references.bib
+footer: "[{{< bi house-fill color=#2E3440 >}}](https://www.johnmclevey.com/quantitative-research-methods)"
+controls: true
+---
+
+{{< include lecture-01-content.qmd >}}
+
+## References
+
+::: {#refs}
+:::
+
+<!-- 
+# {.appendix}
+
+## Appendix A {.smaller}
+ -->

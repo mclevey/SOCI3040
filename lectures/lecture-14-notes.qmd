@@ -1,0 +1,25 @@
+---
+title: "Preparing Data -- Cleaning, Testing, Validating, and Documenting"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "February 20, 2025" 
+date-format: "MMMM D, YYYY"
+bibliography: ../references.bib
+mermaid:
+  theme: default
+toc: false
+published-title: "Class Date"
+class-id: "14"
+due: "[Report 2 (Solo)](../deliverables/assignment-2.qmd)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/09-clean_and_prepare.html)"
+---
+
+# Lecture Slides
+
+{{< revealjs "lecture-14-slides.html" >}}
+
+# Class Notes
+
+{{< include lecture-14-content.qmd >}}

@@ -1,0 +1,23 @@
+# preliminaries
+
+[setup, etc.]{.large}
+
+## preliminaries
+
+<br>
+
+RStudio / CodeSpaces / Whatever...
+
+## preliminaries
+
+<br>
+
+```{r}
+#| eval: false
+#| echo: true
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+install.packages("opendatatoronto")
+install.packages("tidyverse")
+install.packages("janitor")
+```

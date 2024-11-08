@@ -1,0 +1,24 @@
+---
+title: "Exploratory Data Analysis (EDA)"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "March 6, 2025" 
+date-format: "MMMM D, YYYY"
+bibliography: ../references.bib
+mermaid:
+  theme: default
+toc: false
+published-title: "Class Date"
+class-id: "16"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/11-eda.html)"
+---
+
+# Lecture Slides
+
+{{< revealjs "lecture-16-slides.html" >}}
+
+# Class Notes
+
+{{< include lecture-16-content.qmd >}}

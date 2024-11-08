@@ -1,0 +1,19 @@
+---
+title: "{{< bi journal-code >}} Class & Lab Notes"
+subtitle: SOCI 3040 | Quantitative Research Methods
+listing:
+  contents: ./lecture-*-notes.qmd
+  type: grid
+  sort: "date"
+  date-format: full
+  categories: true
+  fields: [date, title, image, categories]
+  field-display-names:
+    date: "Class Date"
+    title: "Topic"
+    author: "Class No."
+    assigned_reading: "Assigned Reading"
+  sort-ui: false
+  filter-ui: false
+  page-size: 30
+---

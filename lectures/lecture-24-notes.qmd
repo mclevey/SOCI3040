@@ -1,0 +1,24 @@
+---
+title: "Text as Data"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "April 3, 2025" 
+date-format: "MMMM D, YYYY"
+bibliography: ../references.bib
+mermaid:
+  theme: default
+toc: false
+published-title: "Class Date"
+class-id: "24"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/16-text.html)"
+---
+
+# Lecture Slides
+
+{{< revealjs "lecture-24-slides.html" >}}
+
+# Class Notes
+
+{{< include lecture-24-content.qmd >}}

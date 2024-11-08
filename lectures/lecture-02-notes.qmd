@@ -1,0 +1,24 @@
+---
+title: "Telling Stories with Data"
+subtitle: "Quantitative Research Methods"
+author: 
+  - name: "John McLevey"
+    affiliation: "Sociology, Memorial University"
+date: "Tuesday January 9, 2025" 
+date-format: "MMMM D, YYYY"
+bibliography: ../references.bib
+mermaid:
+  theme: default
+toc: false
+published-title: "Class Date"
+class-id: "02"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/01-introduction.html)"
+---
+
+# Lecture Slides
+
+{{< revealjs "lecture-02-slides.html" >}}
+
+# Class Notes
+
+{{< include lecture-02-content.qmd >}}

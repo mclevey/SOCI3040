@@ -1,0 +1,130 @@
+---
+title: "{{< bi signpost-split-fill >}} Conventions"
+subtitle: "SOCI 3040 -- Quantitative Research Methods"
+bibliography: ../references.bib
+---
+
+{{< include ../partials/_construction.qmd >}}
+
+## Callout Boxes
+
+<!-- 
+### Learning Objectives
+
+::: {.callout-caution icon="false" appearance="simple"}
+## {{< fa circle-check size=1.5x >}}&nbsp;&nbsp;&nbsp;LEARNING OBJECTIVES
+<br>
+In this lab, you will:
+
+1. In progress...
+2. Coming soon...
+3. 🔥
+:::
+
+### Excerpts and Summaries from Other Books
+
+::: {.callout-important icon="false" appearance="simple"}
+## {{< bi book  size=1.25em color=#FF0039 >}}&nbsp;&nbsp;&nbsp;STATISTICAL RETHINKING [@citemcelreath]
+<br>
+blah blah blah
+:::
+
+::: {.callout-note icon="false" appearance="simple"}
+## {{< bi book  size=1.25em color=#2680E3 >}}&nbsp;&nbsp;&nbsp;REGRESSION AND OTHER STORIES [@gelman2021regression]
+<br>
+blah blah blah
+::: 
+-->
+
+## Flowcharts
+
+## Mathematical Symbols
+
+<!-- 
+## Diagrams
+
+```{mermaid}
+flowchart LR
+    id[routine]
+```
+
+```{mermaid}
+flowchart LR
+    id[[subroutine]]
+```
+
+etc. -->
+
+<!-- 
+## Icons
+
+### Bootstrap
+
+- [GitHub Repo](https://github.com/shafayetShafee/bsicons)
+- [Free icons](https://icons.getbootstrap.com/#icons)
+
+```zsh
+quarto install extension shafayetShafee/bsicons
+```
+
+{{< bi alarm >}}
+
+{{< bi alarm-fill >}}
+
+{{< bi balloon-heart  size=5em color=#2ecaf9 >}}
+
+{{< bi emoji-sunglasses  size=5em color=#2ecaf9 label="Proud Happy Face" >}}
+
+{{< bi 1-circle >}}, {{< bi 2-circle >}}, {{< bi 3-circle >}}
+
+{{< bi incognito size=37px >}}
+
+{{< bi person-plus-fill size=3.1rem >}}
+
+{{< bi postcard-heart size=2.7em >}}
+
+{{< bi reddit size=9.8vw >}}
+
+{{< bi slack size=7.6vh >}}
+
+{{< bi laptop size=7.6vh >}}
+
+### FontAwesome 
+
+- [GitHub Repo](https://github.com/quarto-ext/fontawesome)
+- [Free icons](https://fontawesome.com/search?o=r&m=free)
+
+```zsh
+quarto add quarto-ext/fontawesome
+```
+
+{{< fa clipboard size=3x >}}
+{{< fa circle-info size=3x >}}
+{{< fa calendar-check size=3x >}}
+{{< fa brands youtube size=3x >}}
+{{< fa comment size=3x >}} 
+{{< fa comments size=3x >}} 
+{{< fa file size=3x >}} 
+{{< fa gear size=3x >}} 
+{{< fa book size=3x >}} 
+{{< fa bookmark size=3x >}} 
+{{< fa key size=3x >}} 
+{{< fa link size=3x >}} 
+{{< fa battery-half size=3x >}}
+{{< fa file size=3x >}}
+{{< fa file-pdf size=3x >}}
+{{< fa square-check size=3x >}}
+{{< fa circle-check size=3x >}}
+{{< fa dice size=3x >}}
+{{< fa microphone size=3x >}}
+{{< fa bullseye size=3x >}}
+{{< fa user-group size=3x >}}
+{{< fa dice-5 size=3x >}} or whatever number
+{{< fa diagram-project size=3x >}}
+{{< fa arrows-spin size=3x >}}
+{{< fa arrows-to-dot size=3x >}}
+{{< fa creative-commons-sa size=3x >}} 
+
+-->
+
+## References

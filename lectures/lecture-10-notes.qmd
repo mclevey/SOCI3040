@@ -1,0 +1,24 @@
+---
+title: "Piping, Summarizing, and Transforming"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "February 6, 2025" 
+date-format: "MMMM D, YYYY"
+bibliography: ../references.bib
+mermaid:
+  theme: default
+toc: false
+published-title: "Class Date"
+class-id: "10"
+assigned_reading: "[{{< bi file-text >}}](https://socviz.co/workgeoms.html#workgeoms)"
+---
+
+# Lecture Slides
+
+{{< revealjs "lecture-10-slides.html" >}}
+
+# Class Notes
+
+{{< include lecture-10-content.qmd >}}

@@ -1,0 +1,229 @@
+# Toronto Shelters
+
+<br>
+
+Toronto has a large unhoused population [@torontohomeless]. Freezing winters mean it is important there are enough places in shelters. In this example we will make a table of shelter usage in 2021 to compare average use in each month. Our expectation is that there is greater usage in the colder months, for instance, December, compared with warmer months, for instance, July.
+
+# {{< bi 1-circle >}} Plan {background-color="#2E3440"}
+[Toronto Shelters]{.huge}
+
+## {{< bi 1-circle >}} plan
+<br>
+
+The dataset that we are interested in would need to have the **date**, the **shelter**, and the **number of beds that were occupied that night**. A quick sketch of a dataset that would work is @fig-torontohomelessness-data (next slide). 
+
+We are interested in creating a table that has the monthly average number of beds occupied each night. The table would probably look something like @fig-torontohomelessness-table (next slide).
+
+
+## {{< bi 1-circle >}} plan
+<br>
+
+::: {#fig-torontohomelessness layout-ncol="2"}
+![Quick sketch of a dataset](../media/tswd-figures/02-shelter_sketch.png){#fig-torontohomelessness-data width="100%"}
+
+![Quick sketch of a table](../media/tswd-figures/02-homeless_sketch.png){#fig-torontohomelessness-table width="100%"}
+
+Sketches of a dataset and table of the average number of beds occupied each month for shelters in Toronto.
+:::
+
+
+# {{< bi 2-circle >}} Simulate {background-color="#2E3440"}
+[Toronto Shelters]{.huge}
+
+## {{< bi 2-circle >}} simulate
+<br>
+
+> The next step is to simulate some data that could resemble our dataset.\index{simulation} Simulation provides us with an opportunity to think deeply about our data generating process. When we turn to analysis, it will provide us with a guide. Conducting analysis without first using simulation can be thought of as shooting arrows without a target---while you are certainly doing something, it is not clear whether you are doing it well.
+
+## {{< bi 2-circle >}} simulate
+<br>
+
+```{r}
+#| output-location: slide
+set.seed(853)
+
+simulated_occupancy_data <-
+    tibble(
+        date = rep(x = as.Date("2021-01-01") + c(0:364), times = 3),
+        # Based on Eddelbuettel: https://stackoverflow.com/a/21502386
+        shelter = c(
+            rep(x = "Shelter 1", times = 365),
+            rep(x = "Shelter 2", times = 365),
+            rep(x = "Shelter 3", times = 365)
+        ),
+        number_occupied =
+            rpois(
+                n = 365 * 3,
+                lambda = 30
+            ) # Draw 1,095 times from the Poisson distribution
+    )
+
+simulated_occupancy_data
+```
+
+::: {.notes}
+In this simulation we first create a list of all the dates in 2021. We repeat that list three times. We assume data for three shelters for every day of the year. To simulate the number of beds that are occupied each night, we draw from a **Poisson distribution**, assuming a mean number of 30 beds occupied per shelter, although this is just an arbitrary choice. By way of background, a Poisson distribution is often used when we have count data, and we return to it later in the course.
+:::
+
+
+# {{< bi 3-circle >}} Acquire {background-color="#2E3440"}
+[Toronto Shelters]{.huge}
+
+## {{< bi 3-circle >}} acquire
+<br>
+
+```{r}
+#| echo: true
+#| eval: false
+toronto_shelters <-
+    # Each package is associated with a unique id  found in the "For
+    # Developers" tab of the relevant page from Open Data Toronto
+    # https://open.toronto.ca/dataset/daily-shelter-overnight-service-occupancy-capacity/
+    list_package_resources("21c83b32-d5a8-4106-a54f-010dbe49f6f2") |>
+    # Within that package, we are interested in the 2021 dataset
+    filter(name ==
+        "daily-shelter-overnight-service-occupancy-capacity-2021.csv") |>
+    # Having reduced the dataset to one row we can get the resource
+    get_resource()
+
+write_csv(
+    x = toronto_shelters,
+    file = here("data", "toronto_shelters.csv")
+)
+```
+
+## {{< bi 3-circle >}} acquire
+<br>
+
+```{r}
+toronto_shelters <-
+    read_csv(
+        here("data", "toronto_shelters.csv"),
+        show_col_types = FALSE
+    )
+
+head(toronto_shelters)
+```
+
+## {{< bi 3-circle >}} acquire
+<br>
+
+We'll change the names to make them easier to type using `clean_names()`, and `select()` the relevant columns.
+
+```{r}
+toronto_shelters_clean <-
+    clean_names(toronto_shelters) |>
+    mutate(occupancy_date = ymd(occupancy_date)) |>
+    select(occupancy_date, occupied_beds)
+
+head(toronto_shelters_clean)
+```
+
+## {{< bi 3-circle >}} acquire
+<br>
+
+All that remains for this step is to save the cleaned dataset.
+
+```{r}
+write_csv(
+    x = toronto_shelters_clean,
+    file = here("data", "cleaned_toronto_shelters.csv")
+)
+```
+
+- **WHERE ARE THESE `NA`s COMING FROM?**
+
+# {{< bi 4-circle >}} Explore/Understand {background-color="#2E3440"}
+[Toronto Shelters]{.huge}
+
+## {{< bi 4-circle >}} explore / understand
+<br>
+
+```{r}
+toronto_shelters_clean <-
+    read_csv(
+        here("data", "cleaned_toronto_shelters.csv"),
+        show_col_types = FALSE
+    )
+
+toronto_shelters_clean
+```
+
+## {{< bi 4-circle >}} explore / understand
+<br>
+
+```{r}
+#| label: tbl-homelessoccupancyd
+#| tbl-cap: "Shelter usage in Toronto in 2021"
+#| output-location: slide
+
+toronto_shelters_clean |>
+    mutate(occupancy_month = month(
+        occupancy_date,
+        label = TRUE,
+        abbr = FALSE
+    )) |>
+    arrange(month(occupancy_date)) |>
+    drop_na(occupied_beds) |>
+    summarise(
+        number_occupied = mean(occupied_beds),
+        .by = occupancy_month
+    ) |>
+    kable()
+```
+
+::: {.notes}
+> The dataset contains daily records for each shelter. We are interested in understanding average usage for each month. To do this, we need to add a month column using `month()` from `lubridate`. By default, `month()` provides the number of the month, and so we include two arguments---"label" and "abbr"---to get the full name of the month. We remove rows that do not have any data for the number of beds using `drop_na()` from `tidyr`, which is part of the `tidyverse`. We will do this here unthinkingly because our focus is on getting started, but this is an important decision and we talk more about missing data in `sec-farm-data` and `sec-exploratory-data-analysis`. We then create a summary statistic on the basis of monthly groups, using `summarise()` from `dplyr`. We use `kable()` from `knitr` to create `tbl-homelessoccupancyd`.
+:::
+
+## {{< bi 4-circle >}} explore / understand
+<br>
+
+```{r}
+#| label: tbl-homelessoccupancy
+#| output-location: slide
+
+toronto_shelters_clean |>
+    mutate(occupancy_month = month(
+        occupancy_date,
+        label = TRUE,
+        abbr = FALSE
+    )) |>
+    arrange(month(occupancy_date)) |>
+    drop_na(occupied_beds) |>
+    summarise(
+        number_occupied = mean(occupied_beds),
+        .by = occupancy_month
+    ) |>
+    kable(
+        col.names = c("Month", "Average daily number of<br>occupied beds (per shelter)"),
+        digits = 1
+    )
+```
+
+::: {.notes}
+As with before, this looks fine, and achieves what we set out to do. But we can make some tweaks to the defaults to make it look even better (`tbl-homelessoccupancy`). In particular we make the column names easier to read, and only show an appropriate number of decimal places.
+:::
+
+
+# {{< bi 5-circle >}} Share {background-color="#2E3440"}
+[Toronto Shelters]{.huge}
+
+
+## {{< bi 5-circle >}} share
+
+Example taken directly from @alexander2023telling, [here]().
+
+::: {.callout-note appearance="minimal"}
+Toronto has a large unhoused population. Freezing winters mean it is critical there are enough places in shelters. We are interested to understand how usage of shelters changes in colder months, compared with warmer months.
+
+We use data provided by the City of Toronto about Toronto shelter bed occupancy. Specifically, at 4 a.m. each night a count is made of the occupied beds. We are interested in averaging this over the month. We cleaned, tidied, and analyzed the dataset using the statistical programming language R [@citeR] as well as the `tidyverse` [@Wickham2017], `janitor` [@janitor], `opendatatoronto` [@citeSharla], `lubridate` [@GrolemundWickham2011], and `knitr` [@citeknitr]. We then made a table of the average number of occupied beds each night for each month (`tbl-homelessoccupancy`).
+
+We found that the daily average number of occupied beds was higher in December 2021 than July 2021, with 34 occupied beds in December, compared with 30 in July (`tbl-homelessoccupancy`). More generally, there was a steady increase in the daily average number of occupied beds between July and December, with a slight overall increase each month.
+
+The dataset is on the basis of shelters, and so our results may be skewed by changes that are specific to especially large or small shelters. It may be that specific shelters are particularly attractive in colder months. Additionally, we were concerned with counts of the number of occupied beds, but if the supply of beds changes over the season, then an additional statistic of interest would be the proportion occupied.
+:::
+
+::: {.notes}
+> Although this example is only a few paragraphs, it could be reduced to form an abstract, or increased to form a full report, for instance, by expanding each paragraph into a section. The first paragraph is a general overview, the second focuses on the data, the third on the results, and the fourth is a discussion. Following the example of @hao2019, that fourth paragraph is a good place to consider areas in which bias may have crept in.
+:::

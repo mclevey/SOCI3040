@@ -1,0 +1,28 @@
+---
+title: "Sampling"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "February 13, 2025" 
+date-format: "MMMM D, YYYY"
+format: kakashi-revealjs
+bibliography: ../references.bib
+footer: "[{{< bi house-fill color=#2E3440 >}}](https://www.johnmclevey.com/quantitative-research-methods)"
+controls: true
+---
+
+
+{{< include lecture-12-content.qmd >}}
+
+## References
+
+::: {#refs}
+:::
+
+<!-- 
+# {.appendix}
+
+## Appendix A {.smaller}
+ -->
+

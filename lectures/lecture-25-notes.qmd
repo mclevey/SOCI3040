@@ -1,0 +1,25 @@
+---
+title: "Project Work"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "April 8, 2025" 
+date-format: "MMMM D, YYYY"
+bibliography: ../references.bib
+mermaid:
+  theme: default
+toc: false
+published-title: "Class Date"
+class-id: "25"
+due: "[Report 4 (Co-authored)](../deliverables/assignment-4.qmd)"
+assigned_reading: ""
+---
+
+# Lecture Slides
+
+{{< revealjs "lecture-25-slides.html" >}}
+
+# Class Notes
+
+{{< include lecture-25-content.qmd >}}

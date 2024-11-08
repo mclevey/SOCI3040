@@ -1,0 +1,25 @@
+---
+title: "Generalized Linear Models (Count Outcomes)"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "March 20, 2025" 
+date-format: "MMMM D, YYYY"
+bibliography: ../references.bib
+mermaid:
+  theme: default
+toc: false
+published-title: "Class Date"
+class-id: "20"
+due: "[Report 3 (Co-authored)](../deliverables/assignment-3.qmd)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/13-ijaglm.html)"
+---
+
+# Lecture Slides
+
+{{< revealjs "lecture-20-slides.html" >}}
+
+# Class Notes
+
+{{< include lecture-20-content.qmd >}}

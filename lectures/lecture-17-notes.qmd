@@ -1,0 +1,24 @@
+---
+title: "Linear Models"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "March 11, 2025" 
+date-format: "MMMM D, YYYY"
+bibliography: ../references.bib
+mermaid:
+  theme: default
+toc: false
+published-title: "Class Date"
+class-id: "17"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/12-ijalm.html)"
+---
+
+# Lecture Slides
+
+{{< revealjs "lecture-17-slides.html" >}}
+
+# Class Notes
+
+{{< include lecture-17-content.qmd >}}

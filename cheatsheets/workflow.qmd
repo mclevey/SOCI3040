@@ -1,0 +1,35 @@
+---
+title: Workflow
+subtitle: "SOCI 3040 -- Quantitative Research Methods"
+bibliography: ../references.bib
+---
+
+
+**Workflow** refers to a structured, step-by-step process for conducting research from start (e.g., planning) to finish (e.g., communicating). Formal workflows offer significant benefits, such as making it easier to conduct trustworthy and reproducible research. In [*Telling Stories with Data*](https://tellingstorieswithdata.com), Rohan @alexander2023telling introduces a straightforward workflow that begins with planning the analysis, simulating data, acquiring real data, and then exploring and analyzing it, and finally sharing the results. This workflow, shown in @fig-workflow, encourages us to think critically at each stage of the process, and to focus on reproducibility, research ethics, and effective communication.
+
+```{mermaid}
+%%| label: fig-workflow
+%%| fig-cap: "Rohan Alexander's (2023) workflow from *[Telling Stories with Data](https://tellingstorieswithdata.com)*."
+flowchart LR
+    p[[Plan]]
+    sim[[Simulate]]
+    a[[Acquire]]
+    e[[Explore / Analyze]]
+    s[[Share]]
+
+    p --> sim --> a --> e --> s
+```
+
+<br>
+
+## 1. Plan
+
+## 2. Simulate
+
+## 3. Acquire
+
+## 4. Explore / Analyze
+
+## 5. Share
+
+# References

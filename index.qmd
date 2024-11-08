@@ -1,0 +1,32 @@
+---
+title: "{{< bi fire >}} Quantitative Research Methods"
+subtitle: SOCI 3040 (with John McLevey)
+toc: false
+bibliography: references.bib
+---
+
+# TESTING GH-PAGES WORKFLOW
+
+{{< include partials/_course_information.qmd >}}
+
+# 👋 Hello!
+
+::: {.aside}
+<br><br><br><br>
+
+This course is built around Rohan Alexander's [-@alexander2023telling] [*Telling Stories with Data*](https://tellingstorieswithdata.com) and Kieran Healy's [-@healy2019data] [*Data Visualization: A Practical Introduction*](https://socviz.co/index.html#preface).
+
+<br>
+
+![](media/telling-stories.png){width=100%}
+
+<br>
+
+![](media/data-visualization.jpg){width=100%}
+:::
+
+{{< include syllabus/_description_mclevey.qmd >}}
+
+{{< include syllabus/_instructor.qmd >}}
+
+{{< include syllabus/_land_acknowledgement.qmd >}}

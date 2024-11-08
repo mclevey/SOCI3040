@@ -1,0 +1,24 @@
+---
+title: "Measurement"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "February 11, 2025" 
+date-format: "MMMM D, YYYY"
+bibliography: ../references.bib
+mermaid:
+  theme: default
+toc: false
+published-title: "Class Date"
+class-id: "11"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/06-farm.html)"
+---
+
+# Lecture Slides
+
+{{< revealjs "lecture-11-slides.html" >}}
+
+# Class Notes
+
+{{< include lecture-11-content.qmd >}}

@@ -1,0 +1,24 @@
+---
+title: "Showing the Right Numbers"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "February 4, 2025" 
+date-format: "MMMM D, YYYY"
+bibliography: ../references.bib
+mermaid:
+  theme: default
+toc: false
+published-title: "Class Date"
+class-id: "09"
+assigned_reading: "[{{< bi file-text >}}](https://socviz.co/groupfacettx.html#groupfacettx)"
+---
+
+# Lecture Slides
+
+{{< revealjs "lecture-09-slides.html" >}}
+
+# Class Notes
+
+{{< include lecture-09-content.qmd >}}

@@ -1,0 +1,7 @@
+/* Wrap tables in a scrollable container */
+.scrollable-table {
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+}

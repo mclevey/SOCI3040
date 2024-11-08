@@ -1,0 +1,44 @@
+# {{< fa book >}}&nbsp;&nbsp;&nbsp;Assigned Readings
+
+This courses uses Rohan Alexander's [-@alexander2023telling] [*Telling Stories with Data*](https://tellingstorieswithdata.com) and Kieran Healy's [-@healy2019data] [*Data Visualization: A Practical Introduction*](https://socviz.co/index.html), both of which are **freely available online**, in full. The [schedule](schedule.qmd) contains links to specific chapter assignments for each class. You can also quickly access specific chapters using the drop down menus in the top navbar on the course website.
+
+## {{< bi fire >}} @alexander2023telling *Telling Stories with Data*
+
+> "**This is not another statistics book. It is much better than that.** It is a book about **doing quantitative research**, about **scientific justification**, about **quality control**, about **communication** and **epistemic humility**. It’s a valuable supplement to any methods curriculum, and useful for self-learners as well." 
+> -- [Richard McElreath](https://www.eva.mpg.de/ecology/staff/richard-mcelreath/)
+
+::: {.aside}
+![](../media/telling-stories.png){width=100%}
+:::
+
+> "This clean and fun book covers a wide range of topics on **statistical communication**, programming, and modeling in a way that should be a useful supplement to any statistics course or self-learning program. **I absolutely love this book!**" 
+> -- [Andrew Gelman](http://www.stat.columbia.edu/~gelman/)
+
+> "Every data analyst has to tell stories with data, and yet traditional textbooks focus on statistical methods alone. *Telling Stories with Data* teaches **the entire data science workflow**, including data acquisition, communication, and reproducibility. I highly recommend this unique book!" 
+> -- [Kosuke Imai](https://www.gov.harvard.edu/directorykosuke-imai/)
+
+> "Telling (true) Stories with Data requires more than fancy statistical models and big data. With a series of fascinating case studies, Rohan Alexander teaches us how to **ask good questions**, acquire data, estimate models, and communicate our results. This **holistic approach** is explained with **crisp and engaging prose**. The pages are filled with **detailed R examples**, which emphasize the importance of **transparency** and **reproducibility**. **I absolutely love this book** and recommend it to all my students." 
+> -- [Vincent Arel-Bundock](https://arelbundock.com/)
+
+> "An excellent book. **Communication** and **reproducibility** are of increasing concern in statistics, and this book covers these topics and more in a **practical**, appealing, and truly unique way." 
+> -- [Daniela Witten](https://www.danielawitten.com/)
+
+
+## {{< bi activity >}} @healy2019data *Data Visualization*
+
+> "Finally! A data visualization guide that is **simultaneously practical and elegant**. ... Data Visualization is brimming with insights into how quantitative analysts can use **visualization as a tool for understanding and communication**. A must-read for anyone who works with data." 
+> -- [Elizabeth Bruch](https://mhbsd.net/)
+
+::: {.aside}
+![](../media/data-visualization.jpg){width=100%}
+:::
+
+
+> "Healy's fun and readable book is unusual in covering the 'why do' as well as the 'how to' of data visualization, demonstrating how **dataviz is a key step in all stages of social science** -- from theory construction to measurement to modeling and interpretation of analyses―and **giving readers the tools** to integrate visualization into their own work." 
+> -- [Andrew Gelman](http://www.stat.columbia.edu/~gelman/)
+
+> "Data Visualization is a brilliant book that not only teaches the reader how to visualize data but also carefully considers why **data visualization is essential for good social science**. The book is broadly relevant, beautifully rendered, and engagingly written. It is easily **accessible** for students at any level and will be an incredible teaching resource for courses on research methods, statistics, and data visualization. It is packed full of **clear-headed and sage insights**." 
+> -- [Becky Pettit](https://liberalarts.utexas.edu/sociology/faculty/emp2344)
+
+> "Kieran Healy has written a wonderful book that fills an important niche in an increasingly crowded landscape of materials about software in R. Data Visualization is clear, beautifully formatted, and **full of careful insights**." 
+> -- [Brandon Stewart](https://bstewart.scholar.princeton.edu/)

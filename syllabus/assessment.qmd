@@ -1,0 +1,28 @@
+---
+title: "{{< bi check2-square >}} Assessment"
+subtitle: "SOCI 3040 -- Quantitative Research Methods"
+bibliography: ../references.bib
+listing:
+  id: assignment-listing
+  contents: ../deliverables/*.qmd
+  type: table
+  sort: "date"
+  date-format: full
+  categories: true
+  fields: [date, time, title, weight]
+  field-display-names:
+    date: "Due (On or Before)"
+    title: "Assignment"
+    weight: "Grade Weight"
+    time: "By"
+  sort-ui: false
+  filter-ui: false
+  page-size: 30
+---
+
+{{< include ../partials/_construction.qmd >}}
+
+{{< lipsum 1 >}}
+
+::: {#assignment-listing}
+:::

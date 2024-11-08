@@ -1,0 +1,24 @@
+---
+title: "Generalized Linear Models (Binary Outcomes)"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "March 18, 2025" 
+date-format: "MMMM D, YYYY"
+bibliography: ../references.bib
+mermaid:
+  theme: default
+toc: false
+published-title: "Class Date"
+class-id: "19"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/13-ijaglm.html)"
+---
+
+# Lecture Slides
+
+{{< revealjs "lecture-19-slides.html" >}}
+
+# Class Notes
+
+{{< include lecture-19-content.qmd >}}

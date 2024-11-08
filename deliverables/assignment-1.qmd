@@ -1,0 +1,18 @@
+---
+title: "Report 1 (Solo)"
+subtitle: SOCI 3040 -- Quantitative Research Methods
+author: 10%
+author-title: Grade Weight
+date: January 7, 2025
+published-title: "Due Date"
+time: 11:59 pm
+weight: 10%
+---
+
+## Instructions
+
+Coming soon...
+
+## Grading Rubric
+
+Coming soon...

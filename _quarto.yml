@@ -1,0 +1,250 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+  pre-render: 
+    - bash scripts/get-commit-id.sh
+  post-render: 
+    - echo "🤘 Rendered course to docs/"
+  resources:
+    - "media/"
+    - "references.bib"
+
+website:
+  site-url: "https://www.johnmclevey.com/quantitative-research-methods/"  
+  repo-url: mclevey/quantitative-research-methods
+  search:
+    location: sidebar
+    type: textbox
+  comments: false
+  page-footer: 
+    border: true
+    center: "Built with [Quarto](https://quarto.org) and [GitHub](https://github.com) by [John McLevey](https://www.johnmclevey.com)" 
+  body-footer: |
+      <!-- Simple Analytics - 100% privacy-first analytics -->
+      <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+      <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+
+  title: "🔥 Quantitative Research Methods"
+  navbar:
+    background: "#212122"
+    left:
+      - text: "Syllabus"
+        href: syllabus/syllabus.qmd
+        icon: info-circle-fill
+      - text: "Class & Lab Notes"
+        href: lectures/list-lectures.qmd 
+        icon: journal-code
+      - text: "Slides"
+        icon: file-slides-fill
+        menu:
+          - text: 'Class 01 -- **Introduction**'
+            href: lectures/lecture-01-slides.qmd
+          - text: 'Class 02 -- **Telling Stories with Data**'
+            href: lectures/lecture-02-slides.qmd
+          - text: 'Class 03 -- **Workflow -- Plan, Simulate, Acquire, Explore, Share**'
+            href: lectures/lecture-03-slides.qmd
+          - text: 'Class 04 -- **Good and Bad Ways to Look at Data**'
+            href: lectures/lecture-04-slides.qmd
+          - text: 'Class 05 -- **Reproducibility + Getting Started with R and RStudio**'
+            href: lectures/lecture-05-slides.qmd
+          - text: 'Class 06 -- **Reproducibility + Getting Started with R and RStudio**'
+            href: lectures/lecture-06-slides.qmd
+          - text: 'Class 07 -- **Writing and Developing Research Questions**'
+            href: lectures/lecture-07-slides.qmd
+          - text: 'Class 08 -- **The Grammar of Graphics, Plotting in the Tidyverse**'
+            href: lectures/lecture-08-slides.qmd
+          - text: 'Class 09 -- **Showing the Right Numbers**'
+            href: lectures/lecture-09-slides.qmd
+          - text: 'Class 10 -- **Piping, Summarizing, and Transforming**'
+            href: lectures/lecture-10-slides.qmd
+          - text: 'Class 11 -- **Measurement**'
+            href: lectures/lecture-11-slides.qmd
+          - text: 'Class 12 -- **Sampling**'
+            href: lectures/lecture-12-slides.qmd
+          - text: 'Class 13 -- **Experiments**'
+            href: lectures/lecture-13-slides.qmd
+          - text: 'Class 14 -- **Surveys**'
+            href: lectures/lecture-14-slides.qmd
+          - text: 'Class 15 -- **Data Cleaning and Preparation**'
+            href: lectures/lecture-15-slides.qmd
+          - text: 'Class 16 -- **Exploratory Data Analysis (EDA)**'
+            href: lectures/lecture-16-slides.qmd
+          - text: 'Class 17 -- **Linear Models**'
+            href: lectures/lecture-17-slides.qmd
+          - text: 'Class 18 -- **Linear Models + Model-based Graphics**'
+            href: lectures/lecture-18-slides.qmd
+          - text: 'Class 19 -- **Generalized Linear Models (Binary Outcomes)**'
+            href: lectures/lecture-19-slides.qmd
+          - text: 'Class 20 -- **Generalized Linear Models (Count Outcomes)**'
+            href: lectures/lecture-20-slides.qmd
+          - text: 'Class 21 -- **Mutilevel Models**'
+            href: lectures/lecture-21-slides.qmd
+          - text: 'Class 22 -- **Mutilevel Models**'
+            href: lectures/lecture-22-slides.qmd
+          - text: 'Class 23 -- **Multilevel Regression with Poststratification (MRP)**'
+            href: lectures/lecture-23-slides.qmd
+          - text: 'Class 24 -- **Project Work**'
+            href: lectures/lecture-24-slides.qmd
+          - text: 'Class 25 -- **Project Work**'
+            href: lectures/lecture-25-slides.qmd
+      - text: Blog
+        href: https://www.johnmclevey.com
+        icon: rss-fill
+      - text: "Telling Stories with Data"
+        icon: fire
+        menu:
+          - text: "**Preface**"
+            href: https://tellingstorieswithdata.com
+          - text: "Chapter 01 -- **Telling stories with data**"
+            href: https://tellingstorieswithdata.com/01-introduction.html
+          - text: "Chapter 02 -- **Drinking from a fire hose**"
+            href: https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html
+          - text: "Chapter 03 -- **Reproducible workflows**"
+            href: https://tellingstorieswithdata.com/03-workflow.html
+          - text: "Chapter 04 -- **Writing research**"
+            href: https://tellingstorieswithdata.com/04-writing_research.html
+          - text: "Chapter 05 -- **Graphs, tables, and maps**"
+            href: https://tellingstorieswithdata.com/05-static_communication.html
+          - text: "Chapter 06 -- **Measurement, censuses, and sampling**"
+            href: https://tellingstorieswithdata.com/06-farm.html
+          - text: "Chapter 07 -- **APIs, scraping, and parsing**"
+            href: https://tellingstorieswithdata.com/07-gather.html
+          - text: "Chapter 08 -- **Experiments and surveys**"
+            href: https://tellingstorieswithdata.com/08-hunt.html
+          - text: "Chapter 09 -- **Clean and prepare**"
+            href: https://tellingstorieswithdata.com/09-clean_and_prepare.html
+          - text: "Chapter 10 -- **Store and share**"
+            href: https://tellingstorieswithdata.com/10-store_and_share.html
+          - text: "Chapter 11 -- **Exploratory data analysis**"
+            href: https://tellingstorieswithdata.com/11-eda.html
+          - text: "Chapter 12 -- **Linear models**"
+            href: https://tellingstorieswithdata.com/12-ijalm.html
+          - text: "Chapter 13 -- **Generalized Linear Models**"
+            href: https://tellingstorieswithdata.com/13-ijaglm.html
+          - text: "Chapter 14 -- **Prediction**"
+            href: https://tellingstorieswithdata.com/13-prediction.html
+          - text: "Chapter 15 -- **Causality from observational data**"
+            href: Causality from observational data
+          - text: "Chapter 16 -- **Multilevel regression with post-stratification**"
+            href: https://tellingstorieswithdata.com/15-mrp.html
+          - text: "Chapter 17 -- **Text as data**"
+            href: https://tellingstorieswithdata.com/16-text.html
+          - text: "Chapter 18 -- **Concluding remarks**"
+            href:  https://tellingstorieswithdata.com/17-concluding.html
+          - text: "Appendix -- **R essentials**"
+            href: https://tellingstorieswithdata.com/20-r_essentials.html
+          - text: "Appendix -- **Datasets**"
+            href: https://tellingstorieswithdata.com/21-datasets.html
+          - text: "Appendix -- **Datasheets**"
+            href: https://tellingstorieswithdata.com/25-datasheet.html
+          - text: "Appendix -- **Cocktails 🥃🍸**"
+            href: https://tellingstorieswithdata.com/98-cocktails.html
+      - text: "Data Visualization"
+        icon: activity
+        menu:
+          - text: "**Preface**"
+            href: https://socviz.co/index.html
+          - text: "Chapter 1 -- **Look at Data**"
+            href: https://socviz.co/lookatdata.html#lookatdata
+          - text: "Chapter 2 -- **Get Started**"
+            href: https://socviz.co/gettingstarted.html#gettingstarted
+          - text: "Chapter 3 -- **Make a Plot**"
+            href: https://socviz.co/makeplot.html#makeplot
+          - text: "Chapter 4 -- **Show the Right Numbers**"
+            href: https://socviz.co/groupfacettx.html#groupfacettx
+          - text: "Chapter 5 -- **Graph Tables, Add Labels, Make Notes**"
+            href: https://socviz.co/workgeoms.html#workgeoms
+          - text: "Chapter 6 -- **Work with Models**"
+            href: https://socviz.co/modeling.html#modeling
+          - text: "Chapter 7 -- **Draw Maps**"
+            href: https://socviz.co/maps.html#maps
+          - text: "Chapter 8 -- **Refine Your Plots**"
+            href: https://socviz.co/refineplots.html#refineplots
+          - text: "**Appendix**"
+            href: https://socviz.co/appendix.html#appendix
+    right:
+      - text: John McLevey
+        href: https://www.johnmclevey.com
+      - icon: github
+        href: https://github.com/
+  sidebar:
+    style: "floating"
+    background: "#F5F5F5"
+    search: true
+    contents:
+      - section: "<strong>SYLLABUS</strong>"
+        contents: 
+          - text: "&nbsp;&nbsp;SOCI 3040"
+            icon: info-circle-fill
+            href: syllabus/syllabus.qmd
+          - text: "&nbsp;&nbsp;Course Schedule"
+            icon: calendar-fill
+            href: syllabus/schedule.qmd
+          - text: "&nbsp;&nbsp;Learning Assessment"
+            icon: check2-square
+            href: syllabus/assessment.qmd
+          - text: "&nbsp;&nbsp;Computing"
+            icon: laptop
+            href: syllabus/computing.qmd
+          - text: "&nbsp;&nbsp;Conventions"
+            href: syllabus/conventions.qmd
+            icon: signpost-split-fill
+          - text: "&nbsp;&nbsp;Model Notation"
+            href: syllabus/notation.qmd
+            icon: pencil
+          - text: "&nbsp;&nbsp;Policies"
+            icon: box-fill
+            href: syllabus/policies.qmd
+      - text: "<br>"
+      - section: "<strong>DELIVERABLES</strong>"
+        contents: 
+          - text: "&nbsp;&nbsp;Report 1 (Solo)"
+            href: deliverables/assignment-1.qmd
+            icon: 1-circle
+          - text: "&nbsp;&nbsp;Report 2 (Solo)"
+            href: deliverables/assignment-2.qmd
+            icon: 2-circle
+          - text: "&nbsp;&nbsp;Report 3 (Co-authored)"
+            href: deliverables/assignment-3.qmd
+            icon: 3-circle
+          - text: "&nbsp;&nbsp;Report 4 (Co-authored)"
+            href: deliverables/assignment-4.qmd
+            icon: 4-circle
+          - text: "&nbsp;&nbsp;Blog Posts and Comments"
+            href: deliverables/assignment-5.qmd
+            icon: rss-fill
+      - text: "<br>"
+      - section: "<strong>QUICK LINKS</strong>"
+        contents: 
+          - text: "&nbsp;&nbsp;3040 on Brightspace"
+            href: https://online.mun.ca/d2l/home/605570
+            icon: link-45deg
+          - text: "&nbsp;&nbsp;Student Wellness"
+            href: https://www.mun.ca/studentwellness/
+            icon: link-45deg
+          - text: "&nbsp;&nbsp;Counselling Centre"
+            href: https://www.mun.ca/studentwellness/counselling-services/
+            icon: link-45deg
+          - text: "&nbsp;&nbsp;Academic Success Centre"
+            href: https://www.mun.ca/munup/academic-success-centre/
+            icon: link-45deg
+          - text: "&nbsp;&nbsp;Accessibility Services"
+            href: https://www.mun.ca/munup/academic-success-centre/learning-supports/accessibility-services/
+            icon: link-45deg
+
+
+format:
+  html:
+    theme: 
+      light: cosmo
+    css: styles.css
+    toc: true
+    toc-expand: false
+    toc-depth: 5
+    code-fold: false
+    backgroundcolor: "#F5F5F5"
+    tbl-cap-location: top
+    mermaid:
+      theme: default

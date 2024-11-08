@@ -1,0 +1,15 @@
+# {{< fa circle-check >}}&nbsp;&nbsp;&nbsp;Learning Objectives
+
+By the end of this course, students will be able to:
+
+1. Explain key principles, concepts, and methods in quantitative research.
+2. Formulate quantitative research questions, outline analysis plans, and sketch data analysis endpoints.
+3. Obtain datasets from common sources (e.g., data repositories, APIs).
+4. Process, store, and share data.
+5. Conduct purposeful exploratory data analyses.
+6. Fit, assess, and interpret linear models, generalized linear models, and multilevel models.
+7. Use R and Quarto (properly) to make your quantitative research fully reproducible.
+8. Understand the essential role and implications of ethics in quantitative research.
+9. 🔥 **Tell compelling and credible stories with data.**
+
+More specific learning objectives can be found in the lecture and lab materials for each class meeting.

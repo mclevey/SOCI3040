@@ -1,0 +1,24 @@
+---
+title: "Writing and Developing Research Questions"
+subtitle: "Quantitative Research Methods"
+author:
+  - name: "John McLevey (he/him)"
+    affiliation: "Sociology, Memorial University"
+date: "January 28, 2025" 
+date-format: "MMMM D, YYYY"
+bibliography: ../references.bib
+mermaid:
+  theme: default
+toc: false
+published-title: "Class Date"
+class-id: "07"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/04-writing_research.html)"
+---
+
+# Lecture Slides
+
+{{< revealjs "lecture-07-slides.html" >}}
+
+# Class Notes
+
+{{< include lecture-07-content.qmd >}}

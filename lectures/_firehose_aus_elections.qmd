@@ -1,0 +1,545 @@
+# {{< bi 1-circle >}} Plan {background-color="#2E3440"}
+[Australian Elections]{.huge}
+
+
+## {{< bi 1-circle >}} plan
+<br>
+
+### Australian Elections
+
+::: {.callout-note appearance="minimal"}
+How many seats did each political party win in the 2022 Australian Federal Election?
+:::
+
+<br>
+Australia is a parliamentary democracy<br>with 151 seats in the House of Representatives.
+<br><br>
+
+Major parties: **Liberal** and **Labour**<br>
+Minor parties: **Nationals** and **Greens**<br>
+Many smaller parties and independents
+
+
+
+## {{< bi 1-circle >}} plan
+
+::: {#fig-australiaexample layout-ncol="2" layout-valign="bottom"}
+![Sketch of a possible dataset to create a graph](../media/tswd-figures/02-divisiontable.png){#fig-australiaexample-data width="80%"}
+
+![Sketch of a possible graph to answer our question](../media/tswd-figures/02-divisiongraph.png){#fig-australiaexample-graph width="80%"}
+
+Sketches of a potential dataset and graph related to an Australian election. The basic requirement for the dataset is that it has **the name of the seat** (i.e., a "division" in Australia) and **the party of the person elected**.
+:::
+
+
+# {{< bi 2-circle >}} Simulate {background-color="#2E3440"}
+[Australian Elections]{.huge}
+
+
+
+## {{< bi 1-circle >}} simulate
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+#| message: false
+library(tidyverse)
+library(janitor)
+```
+
+## {{< bi 1-circle >}} simulate
+<br>
+
+We'll simulate a dataset with two variables,<br>**Division** and **Party**, and some values for each.
+
+<br> 
+
+`division`<br>the name of one of the 131 Australian divisions
+<br><br>
+`party`<br>the name of one of the political parties<br>[Liberal, Labor, National, Green, or Other]{.small}
+
+## {{< bi 1-circle >}} simulate
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+#| warning: false
+#| message: false
+
+simulated_data <-
+    tibble(
+        # Use 1 through to 151 to represent each division
+        "Division" = 1:151,
+        # Randomly pick an option, with replacement, 151 times
+        "Party" = sample(
+            x = c("Liberal", "Labor", "National", "Green", "Other"),
+            size = 151,
+            replace = TRUE
+        )
+    )
+```
+
+::: {.notes}
+The `<-` symbol is an assignment operator in R. It assigns the value on the right to the variable name on the left. Here, we’re creating a new data object called `simulated_data`, which will store a table of simulated information.
+
+`tibble()` is a function from the `tidyverse` package that creates a data frame, which is a type of table used to organize data. Unlike traditional data frames, `tibble` handles data more cleanly and is especially useful in data analysis.
+
+Inside the `tibble()` function, we specify columns and the values we want in each. On Line 4, we create a column named "Division". `1:151` generates a sequence of numbers from 1 to 151. This sequence will represent each unique division (or group) in our simulated dataset and helps to identify each row in the data.
+
+Then we create another column in our `tibble` called `Party`. `sample()` is a function that randomly selects values from a specified set. Here, it’s used to pick a political party for each division, simulating party representation across divisions. 
+
+`x` defines the set of values that `sample()` will pick from. The `c()` function combines these five options — "Liberal", "Labor", "National", "Green", and "Other" — into a list of possible parties. In other words, each division will be randomly assigned one of these five party names, representing the political party that wins the division in our simulation. `size = 151` specifies that `sample()` should generate 151 random selections, matching the number of divisions we created in the "Division" column.
+
+When sampling, `replace = TRUE` allows each party name to be selected multiple times, as though we’re picking "with replacement" (i.e., once we sample a party name, it goes back into the bag so it can be drawn again). Without this, each party could only be chosen once, which wouldn’t match our goal of assigning a random party to each division.
+
+We can print the `simulated_data` object to view the simulated dataset. When we run this line, R will display the table with two columns, `Division` and `Party`, where each division is assigned one of the five parties randomly.
+:::
+
+## {{< bi 1-circle >}} simulate
+
+[🤘]{.extra-large} We have our **fake** data!
+
+```{r}
+simulated_data
+```
+
+
+# {{< bi 3-circle >}} Acquire {background-color="#2E3440"}
+[Australian Elections]{.huge}
+
+## {{< bi 3-circle >}} acquire
+<br>
+
+The data we want is provided by the **Australian Electoral Commission (AEC)**, which is the non-partisan agency that organizes Australian federal elections. We can download the data using [this link](https://results.aec.gov.au/27966/website/Downloads/HouseMembersElectedDownload-27966.csv), but we want to do it **programatically**, storing the results to a dataframe object called `raw_elections_data`.
+
+<br>
+
+```{r}
+#| eval: true
+#| echo: true
+data_url <- "https://results.aec.gov.au/27966/website/Downloads/HouseMembersElectedDownload-27966.csv"
+
+raw_elections_data <-
+    read_csv(
+        file = data_url,
+        show_col_types = FALSE,
+        skip = 1
+    )
+```
+
+## {{< bi 3-circle >}} acquire
+<br>
+
+We'll save the data as a CSV file.
+
+```{r}
+library(here)
+
+write_csv(
+    x = raw_elections_data,
+    file = here("data", "australian_voting.csv")
+)
+```
+
+<br>
+
+::: {.callout-tip appearance="simple" icon="false"}
+✌️ R Tip
+
+The `here()` function, from the `here` library, simplifies file paths by always referencing the root directory for a project. This makes code more reproducible and eliminates issues with working directories, especially when you are using more than one machine, collaborating, or sharing code with someone else. [Jenny Bryan](https://jennybryan.org/) wrote a brief "Ode to the here package," "here here," which you can read... [here](https://github.com/jennybc/here_here).
+:::
+
+
+## {{< bi 3-circle >}} acquire
+
+[🤘]{.extra-large} We have our **real** data!
+
+<br>
+
+```{r}
+raw_elections_data
+```
+
+
+## {{< bi 3-circle >}} acquire
+
+`head()` shows the first six rows.
+
+<br>
+
+```{r}
+head(raw_elections_data)
+```
+
+
+## {{< bi 3-circle >}} acquire
+
+`tail()` shows the last six rows.
+
+<br>
+
+```{r}
+tail(raw_elections_data)
+```
+
+## {{< bi 3-circle >}} acquire
+
+> "We are trying to make it similar to the dataset that we thought we wanted in the planning stage. While it is fine to move away from the plan, this needs to be a deliberate, reasoned decision." [@alexander2023telling]
+
+<br>
+
+Let's clean.
+
+```{r}
+#| echo: true
+#| eval: true
+aus_voting_data <- here("data", "australian_voting.csv")
+
+raw_elections_data <-
+    read_csv(
+        file = aus_voting_data,
+        show_col_types = FALSE
+    )
+```
+
+## {{< bi 3-circle >}} acquire
+<br>
+
+`clean_names()` makes variables easier to type.
+
+```{r}
+#| echo: true
+#| eval: true
+
+cleaned_elections_data <- clean_names(raw_elections_data)
+```
+
+<br>
+Let's look at the first 6 rows.
+
+```{r}
+head(cleaned_elections_data)
+```
+
+## {{< bi 3-circle >}} acquire
+
+::: {.callout-tip appearance="simple" icon="false"}
+✌️ R Tip
+
+We can choose certain variables of interest with `select()` from `dplyr`, which we loaded as part of the `tidyverse`. The **pipe operator** `|>` pushes the output of one line to be the first input of the function on the next line.
+:::
+
+<br>
+
+We are primarily interested in two variables:
+
+`division_nm` (division name)<br>`party_nm` (party name)
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+cleaned_elections_data <-
+    cleaned_elections_data |>
+    select(
+        division_nm,
+        party_nm
+    )
+```
+
+
+## {{< bi 3-circle >}} acquire
+<br>
+
+```{r}
+head(cleaned_elections_data)
+```
+
+<br>
+
+This looks good, but some of the variable names are still not obvious because they are abbreviated. 
+
+## {{< bi 3-circle >}} acquire
+<br>
+
+::: {.callout-tip appearance="simple" icon="false"}
+✌️ R Tip
+
+We can look at the names of the columns (i.e., variables) in a dataset using `names()`. We can change them using `rename()` from `dplyr`.
+:::
+
+```{r}
+names(cleaned_elections_data)
+```
+
+<br>
+
+Let's rename.
+
+## {{< bi 3-circle >}} acquire
+<br>
+
+```{r}
+cleaned_elections_data <-
+    cleaned_elections_data |>
+    rename(
+        division = division_nm,
+        elected_party = party_nm
+    )
+
+head(cleaned_elections_data)
+```
+
+## {{< bi 3-circle >}} acquire
+
+<br>
+
+What are the unique values in `elected_party`?
+
+```{r}
+cleaned_elections_data$elected_party |>
+    unique()
+```
+
+<br>
+
+Cool, but let's simplify the party names in `elected_party` to match what we simulated. We can do this with `case_match()` from `dplyr`.
+
+## {{< bi 3-circle >}} acquire
+
+<br>
+
+```{r}
+cleaned_elections_data <-
+    cleaned_elections_data |>
+    mutate(
+        elected_party =
+            case_match(
+                elected_party,
+                "Australian Labor Party" ~ "Labor",
+                "Liberal National Party of Queensland" ~ "Liberal",
+                "Liberal" ~ "Liberal",
+                "The Nationals" ~ "Nationals",
+                "The Greens" ~ "Greens",
+                "Independent" ~ "Other",
+                "Katter's Australian Party (KAP)" ~ "Other",
+                "Centre Alliance" ~ "Other"
+            )
+    )
+```
+
+## {{< bi 3-circle >}} acquire
+<br>
+
+```{r}
+head(cleaned_elections_data)
+```
+
+<br>
+
+Our data now matches our plan! 😎 
+
+## {{< bi 3-circle >}} acquire {#aus_elections_clean_path}
+<br>
+
+Let's save the cleaned data so that we can start with it data in the next stage. We'll use a new filename to preserve the original and make it easy to identify the **clean** version.
+
+```{r}
+aus_elections_clean_path <- here("data", "cleaned_elections_data.csv")
+
+write_csv(
+    x = cleaned_elections_data,
+    file = aus_elections_clean_path
+)
+```
+
+
+
+# {{< bi 3-circle >}} Explore / Understand  {background-color="#2E3440"}
+[Australian Elections]{.huge}
+
+## {{< bi 4-circle >}} explore / understand 
+<br>
+
+:::: {.columns}
+::: {.column width="25%"}
+<br><br><br>
+How do we build the graph that we **planned**?
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%"}
+![](../media/tswd-figures/02-divisiongraph.png){width="80%"}
+:::
+::::
+
+## {{< bi 4-circle >}} explore / understand 
+<br>
+
+First, we read in the *cleaned* dataset that we just created. 
+
+```{r}
+cleaned_elections_data <-
+    read_csv(
+        file = aus_elections_clean_path,
+        show_col_types = FALSE
+    )
+```
+
+<br>
+
+::: {.callout-tip appearance="simple" icon="false"}
+## ✌️ R Tip
+
+I'm using the filepath object I [previously created](#aus_elections_clean_path): `aus_elections_clean_path`.
+
+```{r}
+aus_elections_clean_path
+```
+
+<br>
+This won't work in a *new* script unless we re-create the object. Can you explain why?
+:::
+
+## {{< bi 4-circle >}} explore / understand 
+<br>
+
+```{r}
+head(cleaned_elections_data)
+```
+
+😎
+
+## {{< bi 4-circle >}} explore / understand 
+
+::: {.callout-note appearance="minimal"}
+How many seats did each party win?
+:::
+
+<br>
+
+We can get a quick count with `count()` from `dplyr`.
+
+```{r}
+cleaned_elections_data |>
+    count(elected_party)
+```
+
+## {{< bi 4-circle >}} explore / understand 
+<br>
+
+::::: {.columns}
+::: {.column width="35%"}
+![Remember, we're trying to make something like this.](../media/tswd-figures/02-divisiongraph.png){width="100%"}
+:::
+
+::: {.column width="65%"}
+:::: {.callout-tip appearance="minimal"}
+## ✌️ R Tip
+
+The **grammar of graphics** is a conceptual framework for constructing data visualizations. It breaks down plots to their most basic elements, like *data*, *scales*, *geoms* (geometric objects), *coordinates*, and *statistical transformations*. The idea is to plan and build our vizualizations by *layering* these basic elements together rather than mindlessly relying on generic chart types.
+
+`ggplot2`, a data visualization library from the `tidyverse`, is designed around the grammar of graphics idea. We build data visualizations by **layering** the desired elements of our plots. For example, we use `aes()` to specify **aesthetic mappings** that link our data to visual elements like position, color, size, shape, and transparency. We can create and tweak just about any visualization we want by layering **data**, **aesthetics**, and **geoms** using the **add operator**, `+`. 
+::::
+:::
+:::::
+
+
+::: {.notes}
+, allowing the viewer to interpret the values and relationships in the dataset visually. By mapping data to these properties, we can layer information on the same plot and enhance the viewer’s understanding of patterns, trends, and differences.
+
+In ggplot2, aesthetics are specified within the aes() function, where each aesthetic is mapped to a data variable. For instance, x and y represent positions on the axes, while color, fill, size, and shape control other visual aspects. By carefully selecting aesthetics, we can add depth to the plot without clutter, guiding the viewer’s eye to the most important parts.
+:::
+
+
+## {{< bi 4-circle >}} explore / understand 
+
+<br>
+
+Let's visualize the counts as vertical bars using `geom_bar()` from `ggplot2`.
+
+```{r}
+#| echo: true
+#| eval: false
+ggplot(
+    cleaned_elections_data, # specify the data
+    aes(x = elected_party) # specify aesthetics
+) + # add a layer with the + operator
+    geom_bar() # specify a geometric shape (bar)
+```
+
+<br>
+
+But it's cleaner to use the **pipe operator** `|>`.
+
+```{r}
+#| output-location: slide
+#| fig-cap: "Meh. We can do better."
+#| label: fig-meh
+cleaned_elections_data |>
+    ggplot(aes(x = elected_party)) +
+    geom_bar()
+```
+
+## {{< bi 4-circle >}} explore / understand 
+<br>
+
+```{r}
+#| output-location: slide
+#| fig-cap: "Number of seats won, by political party, at the 2022 Australian Federal Election. 😎"
+#| label: fig-aus-seats
+cleaned_elections_data |>
+    ggplot(aes(x = elected_party)) +
+    geom_bar() +
+    theme_minimal() + # Improve the theme
+    labs(x = "Party", y = "Number of seats") # Improve the labels
+```
+
+
+## 
+
+```{r}
+#| fig-cap: "Both versions of the plot, and the code that produced them, side-by-side for comparison."
+#| fig-subcap: ["Default theme and labels", "Improved theme and labels"]
+#| layout-ncol: 2
+#| label: fig-comparison
+
+cleaned_elections_data |>
+    ggplot(aes(x = elected_party)) +
+    geom_bar()
+
+cleaned_elections_data |>
+    ggplot(aes(x = elected_party)) +
+    geom_bar() +
+    theme_minimal() +
+    labs(x = "Party", y = "Number of seats")
+```
+
+
+# {{< bi 5-circle >}} Share {background-color="#2E3440"}
+[Australian Elections]{.huge}
+
+## {{< bi 5-circle >}} share
+
+Example taken directly from @alexander2023telling, [here](https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html#share).
+
+::: {.callout-note appearance="minimal"}
+Australia is a parliamentary democracy with 151 seats in the House of Representatives, which is the house from which government is formed. There are two major parties---"Liberal" and "Labor"---two minor parties---"Nationals" and "Greens"---and many smaller parties. The 2022 Federal Election occurred on 21 May, and around 15 million votes were cast. We were interested in the number of seats that were won by each party.
+
+We downloaded the results, on a seat-specific basis, from the Australian Electoral Commission website. We cleaned and tidied the dataset using the statistical programming language R [@citeR] including the `tidyverse` [@tidyverse] and `janitor` [@janitor]. We then created a graph of the number of seats that each political party won (@fig-aus-seats).
+
+We found that the Labor Party won 77 seats, followed by the Liberal Party with 48 seats. The minor parties won the following number of seats: the Nationals won 10 seats and the Greens won 4 seats. Finally, there were 10 Independents elected as well as candidates from smaller parties.
+
+The distribution of seats is skewed toward the two major parties which could reflect relatively stable preferences on the part of Australian voters, or possibly inertia due to the benefits of already being a major party such a national network or funding. A better understanding of the reasons for this distribution are of interest in future work. While the dataset consists of everyone who voted, it worth noting that in Australia some are systematically excluded from voting, and it is much more difficult for some to vote than others.
+:::
+
+::: {.notes}
+One aspect to be especially concerned with is making sure that this communication is focused on the needs of the audience and telling a story. Data journalism provides some excellent examples of how analysis needs to be tailored to the audience, for instance, @biasbehindbars and @bronnerftw.
+:::

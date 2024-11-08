@@ -1,0 +1,36 @@
+---
+title: "{{< bi fire >}} Quantitative Research Methods"
+subtitle: Course Syllabus (SOCI 3040 with John McLevey)
+bibliography: ../references.bib
+---
+
+{{< include ../partials/_course_information.qmd >}}
+{{< include _description_mclevey.qmd >}}
+{{< include _learning_objectives.qmd >}}
+{{< include _readings.qmd >}}
+
+# {{< bi laptop >}}&nbsp;&nbsp;&nbsp;Computing 
+
+Detailed information about computing in this course is available [here](computing.qmd).
+
+You will learn to use **R** (a free/open source programming language and environment for statistical computing and graphics) and **Quarto** (a free/open source publishing system for creating dynamic and reproducible manuscripts, reports, websites, and presentations) in this course. Note that **I assume no prior experience** with R or Quarto. Everything you need to know about both will be introduced in the course. While some prior programming experience is an asset, it is by no means necessary.
+
+::: {.aside}
+![](../media/R.png){width=1in}
+:::
+
+# {{< bi calendar >}}&nbsp;&nbsp;&nbsp;Course Schedule
+
+The full course schedule is available [here](schedule.qmd).
+
+# {{< bi check2-square >}}&nbsp;&nbsp;&nbsp;Assessment
+
+Detailed information about assessment in this course is available [here](assessment.qmd).
+
+# {{< bi pencil >}}&nbsp;&nbsp;&nbsp;Conventions & Notation
+
+Information about conventions (e.g., callout box styles) and notation (e.g., for writing down our models) used in the course is available [here](conventions.qmd).
+
+# {{< bi box-fill >}}&nbsp;&nbsp;&nbsp;Policies
+
+Course, department, faculty, and university policies are available [here](policies.qmd).

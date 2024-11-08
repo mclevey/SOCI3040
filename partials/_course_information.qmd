@@ -1,0 +1,24 @@
+::: {.callout-note appearance="minimal"}
+:::: {.columns}
+::: {.column}
+**Course Instructor**<br>
+[John McLevey](https://www.johnmclevey.com) (he/him)<br>
+Professor, Department of Sociology<br>
+Memorial University<br>
+:::
+
+::: {.column}
+&nbsp;<br>
+<john.mclevey@uwaterloo.ca><br>
+*Note: I do not check or respond to email in the evenings or on weekends.*<br>
+:::
+::::
+
+**Where is class?** CP-2003 (Chemistry-Physics, Computer Lab)<br>
+**When is class?** Tuesdays & Thursdays, 1:30 - 2:50 pm<br>
+**Office Hours:** A4054, Tuesdays & Thursdays, 3:00 - 4:00 pm
+
+---
+
+SOCI 3040, Quantitative Research Methods, will familiarize students with the procedures for understanding and conducting quantitative social science research. It will introduce students to the quantitative research process, hypothesis development and testing, and the application of appropriate tools for analyzing quantitative data. All sections of this course count towards the HSS Quantitative Reasoning Requirement (see [mun.ca/hss/qr](www.mun.ca/hss/qr)). (PR: SOCI 1000 or the former SOCI 2000)
+:::

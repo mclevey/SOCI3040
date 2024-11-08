@@ -1,0 +1,21 @@
+## the firehose
+
+{{< include _tswd-workflow-diagram.qmd >}}
+
+<br>
+
+1. Australian elections
+2. Toronto shelters
+3. Neonatal mortality rates (NMR)
+
+## the firehose
+
+> Whenever you're learning a new tool, for a long time, you're going to suck$\dots$ But the good news is that is typical; that's something that happens to everyone, and it's only temporary.
+>
+> [Hadley Wickham as quoted by @citeBarrett]{.small}
+
+<br><br>
+
+> You will be guided thoroughly here. Hopefully by experiencing the excitement of telling stories with data, you will feel empowered to stick with it.
+>
+> [Rohan @alexander2023telling]{.small}

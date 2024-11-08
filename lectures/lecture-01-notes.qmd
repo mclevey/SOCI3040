@@ -9,16 +9,22 @@ date-format: "MMMM D, YYYY"
 bibliography: ../references.bib
 mermaid:
   theme: default
-toc: false
+toc: true
+toc-expand: true
+toc-depth: 2
 published-title: "Class Date"
 class-id: "01"
-assigned_reading: "The syllabus; Browse this site"
+assigned_reading: "Browse this site"
+number-sections: true
 ---
 
-# Lecture Slides
+::: {#embedded-slides}
+# Lecture Slides {.unnumbered}
 
 {{< revealjs "lecture-01-slides.html" >}}
 
-# Class Notes
+# Class Notes {.unnumbered}
+:::
+
 
 {{< include lecture-01-content.qmd >}}

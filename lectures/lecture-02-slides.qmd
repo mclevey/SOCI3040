@@ -1,6 +1,6 @@
 ---
 title: "Telling Stories with Data"
-subtitle: "Quantitative Research Methods"
+subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author: 
   - name: "John McLevey"
     affiliation: "Sociology, Memorial University"
@@ -12,9 +12,18 @@ footer: "[{{< bi house-fill color=#2E3440 >}}](https://www.johnmclevey.com/quant
 controls: true
 mermaid:
   theme: default
+toc: true
+toc-depth: 1
+toc-title: agenda.
+number-sections: true
+top-level-heading: 2
 ---
 
+# Test 1
+
 {{< include lecture-02-content.qmd >}}
+
+# Test 2
 
 ## References
 

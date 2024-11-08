@@ -1,6 +1,6 @@
 ---
 title: "Project Work"
-subtitle: "Quantitative Research Methods"
+subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author:
   - name: "John McLevey (he/him)"
     affiliation: "Sociology, Memorial University"
@@ -9,17 +9,23 @@ date-format: "MMMM D, YYYY"
 bibliography: ../references.bib
 mermaid:
   theme: default
-toc: false
+toc: true
+toc-expand: true
+toc-depth: 2
 published-title: "Class Date"
 class-id: "25"
-due: "[Report 4 (Co-authored)](../deliverables/assignment-4.qmd)"
+due: "[Report 4](../deliverables/assignment-4.qmd)"
 assigned_reading: ""
+number-sections: true
 ---
 
-# Lecture Slides
+::: {#embedded-slides}
+# Lecture Slides {.unnumbered}
 
 {{< revealjs "lecture-25-slides.html" >}}
 
-# Class Notes
+# Class Notes {.unnumbered}
+:::
+
 
 {{< include lecture-25-content.qmd >}}

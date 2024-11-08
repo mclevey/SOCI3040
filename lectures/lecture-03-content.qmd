@@ -1,3 +1,4 @@
+# Drinking From the Firehose
 
 ```{r setup, include=FALSE}
 options(
@@ -6,6 +7,9 @@ options(
 )
 ```
 
-## Coming soon...
-
-## References
+{{< include _firehose_introduction.qmd >}}
+{{< include _firehose_setup.qmd >}}
+{{< include _firehose_imports.qmd >}}
+{{< include _firehose_aus_elections.qmd >}}
+{{< include _firehose_toronto_shelters.qmd >}}
+{{< include _firehose_neonatal_mortality_rates.qmd >}}

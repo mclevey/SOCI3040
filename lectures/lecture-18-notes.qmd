@@ -1,6 +1,6 @@
 ---
 title: "Linear Models + Model-based Graphics"
-subtitle: "Quantitative Research Methods"
+subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author:
   - name: "John McLevey (he/him)"
     affiliation: "Sociology, Memorial University"
@@ -9,16 +9,22 @@ date-format: "MMMM D, YYYY"
 bibliography: ../references.bib
 mermaid:
   theme: default
-toc: false
+toc: true
+toc-expand: true
+toc-depth: 2
 published-title: "Class Date"
 class-id: "18"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/12-ijalm.html) and [{{< bi file-text >}}](https://socviz.co/modeling.html#modeling)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/12-ijalm.html) + [{{< bi file-text >}}](https://socviz.co/modeling.html#modeling)"
+number-sections: true
 ---
 
-# Lecture Slides
+::: {#embedded-slides}
+# Lecture Slides {.unnumbered}
 
 {{< revealjs "lecture-18-slides.html" >}}
 
-# Class Notes
+# Class Notes {.unnumbered}
+:::
+
 
 {{< include lecture-18-content.qmd >}}

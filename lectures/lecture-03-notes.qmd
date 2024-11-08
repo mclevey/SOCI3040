@@ -1,24 +1,27 @@
 ---
-title: "Workflow -- Plan, Simulate, Acquire, Explore, Share"
-subtitle: "Quantitative Research Methods"
-author:
-  - name: "John McLevey (he/him)"
-    affiliation: "Sociology, Memorial University"
+title: "Data Analysis Workflow" # Plan, Simulate, Acquire, Explore, Share
+subtitle: "SOCI 3040 -- Quantitative Research Methods"
+author: "03"
+author-title: "Class No."
 date: "January 14, 2025" 
 date-format: "MMMM D, YYYY"
 bibliography: ../references.bib
 mermaid:
   theme: default
-toc: false
+toc: true
+toc-expand: true
+toc-depth: 2
 published-title: "Class Date"
 class-id: "03"
 assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html)"
+number-sections: true
 ---
 
-# Lecture Slides
+
+[Lecture Slides]{.extra-large}
 
 {{< revealjs "lecture-03-slides.html" >}}
 
-# Class Notes
+[Class Notes]{.extra-large}
 
 {{< include lecture-03-content.qmd >}}

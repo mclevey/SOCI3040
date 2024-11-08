@@ -177,7 +177,7 @@
     "href": "lectures/lecture-02-notes.html#simulate-4",
     "title": "Telling Stories with Data",
     "section": " simulate",
-    "text": "simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 National\n 2        2 Liberal \n 3        3 Green   \n 4        4 Other   \n 5        5 Liberal \n 6        6 Labor   \n 7        7 Green   \n 8        8 Liberal \n 9        9 Other   \n10       10 Green   \n# ℹ 141 more rows"
+    "text": "simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Other   \n 2        2 Green   \n 3        3 National\n 4        4 Labor   \n 5        5 Liberal \n 6        6 Labor   \n 7        7 Green   \n 8        8 Green   \n 9        9 Other   \n10       10 Labor   \n# ℹ 141 more rows"
   },
   {
     "objectID": "lectures/lecture-02-notes.html#acquire-1",
@@ -2557,7 +2557,7 @@
     "href": "syllabus/assessment.html",
     "title": " Assessment",
     "section": "",
-    "text": "🚧 Under Construction\n\n\n\n I am currently developing these course materials. Please check back in January 2025.  - John\n\n\nEtiam maximus accumsan gravida. Maecenas at nunc dignissim, euismod enim ac, bibendum ipsum. Maecenas vehicula velit in nisl aliquet ultricies. Nam eget massa interdum, maximus arcu vel, pretium erat. Maecenas sit amet tempor purus, vitae aliquet nunc. Vivamus cursus urna velit, eleifend dictum magna laoreet ut. Duis eu erat mollis, blandit magna id, tincidunt ipsum. Integer massa nibh, commodo eu ex vel, venenatis efficitur ligula. Integer convallis lacus elit, maximus eleifend lacus ornare ac. Vestibulum scelerisque viverra urna id lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean eget enim at diam bibendum tincidunt eu non purus. Nullam id magna ultrices, sodales metus viverra, tempus turpis.\n\n\n\n\n\nDue (On or Before)\n\n\nBy\n\n\nAssignment\n\n\nGrade Weight\n\n\n\n\n\n\nTuesday, January 7, 2025\n\n\n11:59 pm\n\n\nReport 1 (Solo)\n\n\n10%\n\n\n\n\nWednesday, January 8, 2025\n\n\n11:59 pm\n\n\nReport 2 (Solo)\n\n\n15%\n\n\n\n\nThursday, January 9, 2025\n\n\n11:59 pm\n\n\nReport 3 (Co-authored)\n\n\n25%\n\n\n\n\nFriday, January 10, 2025\n\n\n11:59 pm\n\n\nReport 4 (Co-authored)\n\n\n25%\n\n\n\n\nSunday, January 12, 2025\n\n\n11:59 pm\n\n\nContributions to the Course Blog\n\n\n15%\n\n\n\n\n\nNo matching items",
+    "text": "🚧 Under Construction\n\n\n\n I am currently developing these course materials. Please check back in January 2025.  - John\n\n\nEtiam non efficitur urna, quis elementum nisi. Mauris posuere a augue vel gravida. Praesent luctus erat et ex iaculis interdum. Nulla vestibulum quam ac nunc consequat vulputate. Nullam iaculis lobortis sem sit amet fringilla. Aliquam semper, metus ut blandit semper, nulla velit fermentum sapien, fermentum ultrices dolor sapien sed leo. Vestibulum molestie faucibus magna, at feugiat nulla ullamcorper a. Aliquam erat volutpat. Praesent scelerisque magna a justo maximus, sit amet suscipit mauris tempor. Nulla nec dolor eget ipsum pellentesque lobortis a in ipsum. Morbi turpis turpis, fringilla a eleifend maximus, viverra nec neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.\n\n\n\n\n\nDue (On or Before)\n\n\nBy\n\n\nAssignment\n\n\nGrade Weight\n\n\n\n\n\n\nTuesday, January 7, 2025\n\n\n11:59 pm\n\n\nReport 1 (Solo)\n\n\n10%\n\n\n\n\nWednesday, January 8, 2025\n\n\n11:59 pm\n\n\nReport 2 (Solo)\n\n\n15%\n\n\n\n\nThursday, January 9, 2025\n\n\n11:59 pm\n\n\nReport 3 (Co-authored)\n\n\n25%\n\n\n\n\nFriday, January 10, 2025\n\n\n11:59 pm\n\n\nReport 4 (Co-authored)\n\n\n25%\n\n\n\n\nSunday, January 12, 2025\n\n\n11:59 pm\n\n\nContributions to the Course Blog\n\n\n15%\n\n\n\n\n\nNo matching items",
     "crumbs": [
       "Syllabus",
       "<strong>SYLLABUS</strong>",
@@ -2639,7 +2639,7 @@
     "href": "lectures/lecture-02-slides.html#simulate-4",
     "title": "Telling Stories with Data",
     "section": " simulate",
-    "text": "simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Labor   \n 2        2 Labor   \n 3        3 Other   \n 4        4 National\n 5        5 Green   \n 6        6 Other   \n 7        7 National\n 8        8 Green   \n 9        9 Labor   \n10       10 Labor   \n# ℹ 141 more rows"
+    "text": "simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Liberal \n 2        2 Liberal \n 3        3 Green   \n 4        4 Liberal \n 5        5 Liberal \n 6        6 Green   \n 7        7 Green   \n 8        8 National\n 9        9 National\n10       10 Liberal \n# ℹ 141 more rows"
   },
   {
     "objectID": "lectures/lecture-02-slides.html#acquire-1",
@@ -3213,7 +3213,7 @@
     "href": "lectures/lecture-02-content.html#simulate-4",
     "title": "preliminaries",
     "section": " simulate",
-    "text": "simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Liberal \n 2        2 Labor   \n 3        3 Other   \n 4        4 Labor   \n 5        5 Green   \n 6        6 Liberal \n 7        7 Labor   \n 8        8 National\n 9        9 Labor   \n10       10 Liberal \n# ℹ 141 more rows"
+    "text": "simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Green   \n 2        2 National\n 3        3 Labor   \n 4        4 Labor   \n 5        5 Liberal \n 6        6 Other   \n 7        7 Other   \n 8        8 Labor   \n 9        9 National\n10       10 Labor   \n# ℹ 141 more rows"
   },
   {
     "objectID": "lectures/lecture-02-content.html#acquire-1",

@@ -1,0 +1,72 @@
+[
+  {
+    "listing": "/syllabus/schedule.html",
+    "items": [
+      "/lectures/lecture-01-notes.html",
+      "/lectures/lecture-02-notes.html",
+      "/lectures/lecture-03-notes.html",
+      "/lectures/lecture-04-notes.html",
+      "/lectures/lecture-05-notes.html",
+      "/lectures/lecture-06-notes.html",
+      "/lectures/lecture-07-notes.html",
+      "/lectures/lecture-08-notes.html",
+      "/lectures/lecture-09-notes.html",
+      "/lectures/lecture-10-notes.html",
+      "/lectures/lecture-11-notes.html",
+      "/lectures/lecture-12-notes.html",
+      "/lectures/lecture-13-notes.html",
+      "/lectures/lecture-14-notes.html",
+      "/lectures/lecture-15-notes.html",
+      "/lectures/lecture-16-notes.html",
+      "/lectures/lecture-17-notes.html",
+      "/lectures/lecture-18-notes.html",
+      "/lectures/lecture-19-notes.html",
+      "/lectures/lecture-20-notes.html",
+      "/lectures/lecture-21-notes.html",
+      "/lectures/lecture-22-notes.html",
+      "/lectures/lecture-23-notes.html",
+      "/lectures/lecture-24-notes.html",
+      "/lectures/lecture-25-notes.html"
+    ]
+  },
+  {
+    "listing": "/lectures/list-lectures.html",
+    "items": [
+      "/lectures/lecture-01-notes.html",
+      "/lectures/lecture-02-notes.html",
+      "/lectures/lecture-03-notes.html",
+      "/lectures/lecture-04-notes.html",
+      "/lectures/lecture-05-notes.html",
+      "/lectures/lecture-06-notes.html",
+      "/lectures/lecture-07-notes.html",
+      "/lectures/lecture-08-notes.html",
+      "/lectures/lecture-09-notes.html",
+      "/lectures/lecture-10-notes.html",
+      "/lectures/lecture-11-notes.html",
+      "/lectures/lecture-12-notes.html",
+      "/lectures/lecture-13-notes.html",
+      "/lectures/lecture-14-notes.html",
+      "/lectures/lecture-15-notes.html",
+      "/lectures/lecture-16-notes.html",
+      "/lectures/lecture-17-notes.html",
+      "/lectures/lecture-18-notes.html",
+      "/lectures/lecture-19-notes.html",
+      "/lectures/lecture-20-notes.html",
+      "/lectures/lecture-21-notes.html",
+      "/lectures/lecture-22-notes.html",
+      "/lectures/lecture-23-notes.html",
+      "/lectures/lecture-24-notes.html",
+      "/lectures/lecture-25-notes.html"
+    ]
+  },
+  {
+    "listing": "/syllabus/assessment.html",
+    "items": [
+      "/deliverables/assignment-1.html",
+      "/deliverables/assignment-2.html",
+      "/deliverables/assignment-3.html",
+      "/deliverables/assignment-4.html",
+      "/deliverables/assignment-5.html"
+    ]
+  }
+]

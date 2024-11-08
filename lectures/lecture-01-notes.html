@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="John McLevey (he/him)">
+<meta name="dcterms.date" content="2025-01-07">
+
+<title>Introduction – 🔥 Quantitative Research Methods</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/bootstrap-icons-1.11.1/all.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="mermaid-theme" content="default">
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+ 
+  <style>
+  .slide-deck {
+      border: 3px solid #dee2e6;
+      width: 100%;
+  }
+  </style>
+  
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">🔥 Quantitative Research Methods</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../syllabus/syllabus.html" aria-current="page"> <i class="bi bi-info-circle-fill" role="img">
+</i> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lectures/list-lectures.html"> <i class="bi bi-journal-code" role="img">
+</i> 
+<span class="menu-text">Class &amp; Lab Notes</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-slides" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-file-slides-fill" role="img">
+</i> 
+ <span class="menu-text">Slides</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-slides">    
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-01-slides.html">
+ <span class="dropdown-text">Class 01 – <strong>Introduction</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-02-slides.html">
+ <span class="dropdown-text">Class 02 – <strong>Telling Stories with Data</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-03-slides.html">
+ <span class="dropdown-text">Class 03 – <strong>Workflow – Plan, Simulate, Acquire, Explore, Share</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-04-slides.html">
+ <span class="dropdown-text">Class 04 – <strong>Good and Bad Ways to Look at Data</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-05-slides.html">
+ <span class="dropdown-text">Class 05 – <strong>Reproducibility + Getting Started with R and RStudio</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-06-slides.html">
+ <span class="dropdown-text">Class 06 – <strong>Reproducibility + Getting Started with R and RStudio</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-07-slides.html">
+ <span class="dropdown-text">Class 07 – <strong>Writing and Developing Research Questions</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-08-slides.html">
+ <span class="dropdown-text">Class 08 – <strong>The Grammar of Graphics, Plotting in the Tidyverse</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-09-slides.html">
+ <span class="dropdown-text">Class 09 – <strong>Showing the Right Numbers</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-10-slides.html">
+ <span class="dropdown-text">Class 10 – <strong>Piping, Summarizing, and Transforming</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-11-slides.html">
+ <span class="dropdown-text">Class 11 – <strong>Measurement</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-12-slides.html">
+ <span class="dropdown-text">Class 12 – <strong>Sampling</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-13-slides.html">
+ <span class="dropdown-text">Class 13 – <strong>Experiments</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-14-slides.html">
+ <span class="dropdown-text">Class 14 – <strong>Surveys</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-15-slides.html">
+ <span class="dropdown-text">Class 15 – <strong>Data Cleaning and Preparation</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-16-slides.html">
+ <span class="dropdown-text">Class 16 – <strong>Exploratory Data Analysis (EDA)</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-17-slides.html">
+ <span class="dropdown-text">Class 17 – <strong>Linear Models</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-18-slides.html">
+ <span class="dropdown-text">Class 18 – <strong>Linear Models + Model-based Graphics</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-19-slides.html">
+ <span class="dropdown-text">Class 19 – <strong>Generalized Linear Models (Binary Outcomes)</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-20-slides.html">
+ <span class="dropdown-text">Class 20 – <strong>Generalized Linear Models (Count Outcomes)</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-21-slides.html">
+ <span class="dropdown-text">Class 21 – <strong>Mutilevel Models</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-22-slides.html">
+ <span class="dropdown-text">Class 22 – <strong>Mutilevel Models</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-23-slides.html">
+ <span class="dropdown-text">Class 23 – <strong>Multilevel Regression with Poststratification (MRP)</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-24-slides.html">
+ <span class="dropdown-text">Class 24 – <strong>Project Work</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lectures/lecture-25-slides.html">
+ <span class="dropdown-text">Class 25 – <strong>Project Work</strong></span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.johnmclevey.com"> <i class="bi bi-rss-fill" role="img">
+</i> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-telling-stories-with-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-fire" role="img">
+</i> 
+ <span class="menu-text">Telling Stories with Data</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-telling-stories-with-data">    
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com">
+ <span class="dropdown-text"><strong>Preface</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/01-introduction.html">
+ <span class="dropdown-text">Chapter 01 – <strong>Telling stories with data</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html">
+ <span class="dropdown-text">Chapter 02 – <strong>Drinking from a fire hose</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/03-workflow.html">
+ <span class="dropdown-text">Chapter 03 – <strong>Reproducible workflows</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/04-writing_research.html">
+ <span class="dropdown-text">Chapter 04 – <strong>Writing research</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/05-static_communication.html">
+ <span class="dropdown-text">Chapter 05 – <strong>Graphs, tables, and maps</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/06-farm.html">
+ <span class="dropdown-text">Chapter 06 – <strong>Measurement, censuses, and sampling</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/07-gather.html">
+ <span class="dropdown-text">Chapter 07 – <strong>APIs, scraping, and parsing</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/08-hunt.html">
+ <span class="dropdown-text">Chapter 08 – <strong>Experiments and surveys</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/09-clean_and_prepare.html">
+ <span class="dropdown-text">Chapter 09 – <strong>Clean and prepare</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/10-store_and_share.html">
+ <span class="dropdown-text">Chapter 10 – <strong>Store and share</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/11-eda.html">
+ <span class="dropdown-text">Chapter 11 – <strong>Exploratory data analysis</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/12-ijalm.html">
+ <span class="dropdown-text">Chapter 12 – <strong>Linear models</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/13-ijaglm.html">
+ <span class="dropdown-text">Chapter 13 – <strong>Generalized Linear Models</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/13-prediction.html">
+ <span class="dropdown-text">Chapter 14 – <strong>Prediction</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../Causality from observational data">
+ <span class="dropdown-text">Chapter 15 – <strong>Causality from observational data</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/15-mrp.html">
+ <span class="dropdown-text">Chapter 16 – <strong>Multilevel regression with post-stratification</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/16-text.html">
+ <span class="dropdown-text">Chapter 17 – <strong>Text as data</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/17-concluding.html">
+ <span class="dropdown-text">Chapter 18 – <strong>Concluding remarks</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/20-r_essentials.html">
+ <span class="dropdown-text">Appendix – <strong>R essentials</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/21-datasets.html">
+ <span class="dropdown-text">Appendix – <strong>Datasets</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/25-datasheet.html">
+ <span class="dropdown-text">Appendix – <strong>Datasheets</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/98-cocktails.html">
+ <span class="dropdown-text">Appendix – <strong>Cocktails 🥃🍸</strong></span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-visualization" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-activity" role="img">
+</i> 
+ <span class="menu-text">Data Visualization</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-data-visualization">    
+        <li>
+    <a class="dropdown-item" href="https://socviz.co/index.html">
+ <span class="dropdown-text"><strong>Preface</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://socviz.co/lookatdata.html#lookatdata">
+ <span class="dropdown-text">Chapter 1 – <strong>Look at Data</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://socviz.co/gettingstarted.html#gettingstarted">
+ <span class="dropdown-text">Chapter 2 – <strong>Get Started</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://socviz.co/makeplot.html#makeplot">
+ <span class="dropdown-text">Chapter 3 – <strong>Make a Plot</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://socviz.co/groupfacettx.html#groupfacettx">
+ <span class="dropdown-text">Chapter 4 – <strong>Show the Right Numbers</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://socviz.co/workgeoms.html#workgeoms">
+ <span class="dropdown-text">Chapter 5 – <strong>Graph Tables, Add Labels, Make Notes</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://socviz.co/modeling.html#modeling">
+ <span class="dropdown-text">Chapter 6 – <strong>Work with Models</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://socviz.co/maps.html#maps">
+ <span class="dropdown-text">Chapter 7 – <strong>Draw Maps</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://socviz.co/refineplots.html#refineplots">
+ <span class="dropdown-text">Chapter 8 – <strong>Refine Your Plots</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://socviz.co/appendix.html#appendix">
+ <span class="dropdown-text"><strong>Appendix</strong></span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.johnmclevey.com"> 
+<span class="menu-text">John McLevey</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introduction</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>SYLLABUS</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus/syllabus.html" class="sidebar-item-text sidebar-link"><i class="bi bi-info-circle-fill" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;SOCI 3040</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus/schedule.html" class="sidebar-item-text sidebar-link"><i class="bi bi-calendar-fill" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Course Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus/assessment.html" class="sidebar-item-text sidebar-link"><i class="bi bi-check2-square" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Learning Assessment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus/computing.html" class="sidebar-item-text sidebar-link"><i class="bi bi-laptop" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Computing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus/conventions.html" class="sidebar-item-text sidebar-link"><i class="bi bi-signpost-split-fill" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Conventions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus/notation.html" class="sidebar-item-text sidebar-link"><i class="bi bi-pencil" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Model Notation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../syllabus/policies.html" class="sidebar-item-text sidebar-link"><i class="bi bi-box-fill" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Policies</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+ <span class="menu-text"><br></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>DELIVERABLES</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../deliverables/assignment-1.html" class="sidebar-item-text sidebar-link"><i class="bi bi-1-circle" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Report 1 (Solo)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../deliverables/assignment-2.html" class="sidebar-item-text sidebar-link"><i class="bi bi-2-circle" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Report 2 (Solo)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../deliverables/assignment-3.html" class="sidebar-item-text sidebar-link"><i class="bi bi-3-circle" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Report 3 (Co-authored)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../deliverables/assignment-4.html" class="sidebar-item-text sidebar-link"><i class="bi bi-4-circle" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Report 4 (Co-authored)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../deliverables/assignment-5.html" class="sidebar-item-text sidebar-link"><i class="bi bi-rss-fill" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Blog Posts and Comments</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+ <span class="menu-text"><br></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text"><strong>QUICK LINKS</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://online.mun.ca/d2l/loginh/" class="sidebar-item-text sidebar-link"><i class="bi bi-link-45deg" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;MUN Brightspace</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://www.mun.ca/studentwellness/" class="sidebar-item-text sidebar-link"><i class="bi bi-link-45deg" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Student Wellness</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://www.mun.ca/studentwellness/counselling-services/" class="sidebar-item-text sidebar-link"><i class="bi bi-link-45deg" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Counselling Centre</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://www.mun.ca/munup/academic-success-centre/" class="sidebar-item-text sidebar-link"><i class="bi bi-link-45deg" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Academic Success Centre</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://www.mun.ca/munup/academic-success-centre/learning-supports/accessibility-services/" class="sidebar-item-text sidebar-link"><i class="bi bi-link-45deg" role="img">
+</i> 
+ <span class="menu-text">&nbsp;&nbsp;Accessibility Services</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introduction</h1>
+<p class="subtitle lead">SOCI 3040 – Quantitative Research Methods</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">John McLevey (he/him) </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Sociology, Memorial University
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Class Date</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 7, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="lecture-slides" class="level1">
+<h1>Lecture Slides</h1>
+    <p><a href="lecture-01-slides.html" target="_blank">View slides in full screen</a></p>
+       <div>
+      <iframe class="slide-deck" src="lecture-01-slides.html" height="475px"></iframe>
+    </div>
+  
+</section>
+<section id="class-notes" class="level1">
+<h1>Class Notes</h1>
+<section id="welcome-to-soci-3040" class="level2">
+<h2 class="anchored" data-anchor-id="welcome-to-soci-3040">👋 Welcome to SOCI 3040!</h2>
+<p><br><br><br></p>
+<p>This is an introduction the knowledge and skills you need to tell credible stories with quantitative data…</p>
+</section>
+<section id="why-data-storytelling-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-data-storytelling-matters">Why Data Storytelling Matters</h2>
+<blockquote class="blockquote">
+<p>“A lack of clear communication sometimes reflects a failure by the researcher to understand what is going on, or even what they are doing.” <span class="citation" data-cites="alexander2023telling">(<a href="#ref-alexander2023telling" role="doc-biblioref">Alexander 2023</a>)</span></p>
+</blockquote>
+<ul>
+<li>Core foundation of quantitative research methods</li>
+<li>Bridge between analysis and understanding</li>
+<li>Essential skill for modern researchers</li>
+</ul>
+</section>
+<section id="common-concerns" class="level2">
+<h2 class="anchored" data-anchor-id="common-concerns">Common Concerns</h2>
+<p>Five Key Questions for Data Stories</p>
+<ul>
+<li>What is the dataset? Who generated it and why?</li>
+<li>What is the underlying process? What’s missing?</li>
+<li>What is the dataset trying to say? What else could it say?</li>
+<li>What do we want others to see? How do we convince them?</li>
+<li>Who is affected? Are they represented in the data?</li>
+</ul>
+<div class="notes">
+<ol type="1">
+<li>What is the dataset? Who generated the dataset and why?</li>
+<li>What is the process that underpins the dataset? Given that process, what is missing from the dataset or has been poorly measured? Could other datasets have been generated, and if so, how different could they have been to the one that we have?</li>
+<li>What is the dataset trying to say, and how can we let it say this? What else could it say? How do we decide between these?</li>
+<li>What are we hoping others will see from this dataset, and how can we convince them of this? How much work must we do to convince them?</li>
+<li>Who is affected by the processes and outcomes, related to this dataset? To what extent are they represented in the dataset, and have they been involved in the analysis?</li>
+</ol>
+</div>
+</section>
+<section id="core-workflow-components" class="level2">
+<h2 class="anchored" data-anchor-id="core-workflow-components">Core Workflow Components</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-workflow">flowchart LR
+    p[[Plan]]
+    sim[[Simulate]]
+    a[[Acquire]]
+    e[[Explore / Analyze]]
+    s[[Share]]
+
+    p --&gt; sim --&gt; a --&gt; e --&gt; s
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Rohan Alexander’s <span class="citation" data-cites="alexander2023telling">(<a href="#ref-alexander2023telling" role="doc-biblioref">2023</a>)</span> workflow for telling stories with data.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Plan</strong> and sketch endpoint</li>
+<li><strong>Simulate</strong> and consider data</li>
+<li><strong>Acquire</strong> and prepare data</li>
+<li><strong>Explore</strong> and understand data</li>
+<li><strong>Share</strong> findings</li>
+</ul>
+</section>
+<section id="plan-and-sketch" class="level2">
+<h2 class="anchored" data-anchor-id="plan-and-sketch"><i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> Plan and Sketch</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>deliberate, reasoned decisions</li>
+<li>purposeful adjustments</li>
+<li>even 10 minutes of planning is valuable</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/cheshire-cat.png" class="img-fluid figure-img"></p>
+<figcaption>Think of Alice’s conversation with the Cheshire Cat 😸. Without a clear goal, any path will do. We need clear direction to prevent aimless wandering.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="notes">
+<p><strong>Planning and sketching an endpoint</strong> is the first crucial step in the workflow because it ensures we have a clear objective and direction for our analysis. By thoughtfully considering where we want to go, we stay focused and efficient, preventing aimless wandering and scope creep. Like Alice’s conversation with the Cheshire Cat in Alice’s Adventures in Wonderland, without a defined goal, any path will suffice, but we typically cannot afford to wander aimlessly. While our endpoint may change, having an initial objective allows for deliberate and reasoned adjustments. This planning doesn’t require extensive time—often just ten minutes with paper and pen can provide significant value.</p>
+</div>
+</section>
+<section id="simulate-data" class="level2">
+<h2 class="anchored" data-anchor-id="simulate-data"><i class="bi-2-circle " style="" role="img" aria-hidden="true"></i> Simulate Data</h2>
+<ul>
+<li>Forces detailed thinking</li>
+<li>Clarifies expected data structure and distributions.</li>
+<li>Helps with cleaning and preparation</li>
+<li>Identifies potential issues beforehand.</li>
+<li>Provides clear testing framework</li>
+<li>Ensures data meets expectations.</li>
+<li>“Almost free” with modern computing</li>
+<li>Provides “an intimate feeling for the situation” <span class="citation" data-cites="hamming1996">(<a href="#ref-hamming1996" role="doc-biblioref">Hamming [1997] 2020</a>)</span></li>
+</ul>
+<div class="notes">
+<p><strong>Simulating data</strong> is the second step, forcing us into the details of our analysis by focusing on expected data structures and distributions. By creating simulated data, we define clear features that our real dataset should satisfy, aiding in data cleaning and preparation. For example, simulating an age-group variable with specific categories allows us to test the real data for consistency. Simulation is also vital for validating statistical models; by applying models to data with known properties, we can ensure they perform as intended before using them on real data. Since simulation is inexpensive and quick with modern computing resources, it provides “an intimate feeling for the situation” and helps build confidence in our analytical tools.</p>
+</div>
+</section>
+<section id="acquire-and-prepare" class="level2">
+<h2 class="anchored" data-anchor-id="acquire-and-prepare"><i class="bi-3-circle " style="" role="img" aria-hidden="true"></i> Acquire and Prepare</h2>
+<ul>
+<li>Often overlooked but crucial stage</li>
+<li>Many difficult decisions required: data sources, formats, permissions.</li>
+<li>Can significantly affect statistical results <span class="citation" data-cites="huntington2021influence">(<a href="#ref-huntington2021influence" role="doc-biblioref">Huntington-Klein et al. 2021</a>)</span></li>
+<li>Common challenges: <strong>quantity</strong> (too little or too much data) and <strong>quality</strong></li>
+</ul>
+<div class="notes">
+<p><strong>Acquiring and preparing</strong> the actual data is often an overlooked yet challenging stage of the workflow that requires many critical decisions. This phase can significantly affect statistical results, as the choices made determine the quality and usability of the data. Researchers may feel overwhelmed—either by having too little data, raising concerns about the feasibility of analysis, or by having too much data, making it difficult to manage and process. Careful consideration, thorough cleaning, and preparation at this stage are crucial for the success of subsequent analysis, ensuring that the data are suitable for the questions being asked.</p>
+</div>
+</section>
+<section id="explore-and-understand" class="level2">
+<h2 class="anchored" data-anchor-id="explore-and-understand"><i class="bi-4-circle " style="" role="img" aria-hidden="true"></i> Explore and Understand</h2>
+<ul>
+<li>Begin with descriptive statistics</li>
+<li>Move to statistical models</li>
+<li>Remember: Models are tools, not truth</li>
+<li>Models reflect:
+<ul>
+<li>Earlier decisions</li>
+<li>Data acquisition choices</li>
+<li>Cleaning procedures</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>In the fourth step, we <strong>explore and understand</strong> the actual data by examining relationships within the dataset. This process typically starts with descriptive statistics and progresses to statistical modeling. It’s important to remember that statistical models are tools—not absolute truths—and they operate based on the instructions we provide. They help us understand the data more clearly but do not offer definitive results. At this stage, the models we develop are heavily influenced by prior decisions made during data acquisition and preparation. Sophisticated modelers understand that models are like the visible tip of an iceberg, reliant on the substantial groundwork laid in earlier stages. They recognize that modeling results are shaped by choices about data inclusion, measurement, and recording, reflecting broader aspects of the world even before data reach the workflow.</p>
+</div>
+</section>
+<section id="share-findings" class="level2">
+<h2 class="anchored" data-anchor-id="share-findings"><i class="bi-5-circle " style="" role="img" aria-hidden="true"></i> Share Findings</h2>
+<ul>
+<li>High-fidelity communication essential</li>
+<li>Document all decisions</li>
+<li>Build credibility through transparency</li>
+</ul>
+<p>Include:</p>
+<ul>
+<li>What was done</li>
+<li>Why it was done</li>
+<li>What was found</li>
+<li>Weaknesses of the approach</li>
+</ul>
+<div class="notes">
+<p>The final step is to share what was done and what was found, communicating with as much clarity and fidelity as possible. Effective communication involves detailing the decisions made throughout the workflow, the reasons behind them, the findings, and the limitations of the approach. We aim to uncover something important, so it’s essential to document everything initially, even if other forms of communication supplement the written record later. Openness about the entire process—from data acquisition to analysis—builds credibility and ensures others can fully engage with and understand the work. Without clear communication, even excellent work can be overlooked or misunderstood. While the world may not always reward merit alone, thorough and transparent communication enhances the impact of our work, and achieving mastery in this area requires significant experience and practice.</p>
+</div>
+</section>
+<section id="the-foundation" class="level2">
+<h2 class="anchored" data-anchor-id="the-foundation">The Foundation</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><br> Communication<br> Reproducibility<br> Ethics<br> Questions<br> Measurement<br> Data Collection<br> Data Cleaning<br> Exploratory Data Analysis<br> Modeling<br> Scaling<br></p>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:55%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/tswd-figures/iceberg.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Essential foundation for the data storytelling workflow.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="communication-most-important" class="level2">
+<h2 class="anchored" data-anchor-id="communication-most-important"><i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> Communication (Most Important)</h2>
+<blockquote class="blockquote">
+<p>“Simple analysis, communicated well, is more valuable than complicated analysis communicated poorly.” <span class="citation" data-cites="alexander2023telling">(<a href="#ref-alexander2023telling" role="doc-biblioref">Alexander 2023</a>)</span></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“One challenge is that as you immerse yourself in the data, it can be difficult to remember what it was like when you first came to it.” <span class="citation" data-cites="alexander2023telling">(<a href="#ref-alexander2023telling" role="doc-biblioref">Alexander 2023</a>)</span></p>
+</blockquote>
+<ul>
+<li>Write in plain language</li>
+<li>Use tables, graphs, and models effectively</li>
+<li>Focus on the audience’s perspective</li>
+</ul>
+</section>
+<section id="reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility"><i class="bi-2-circle " style="" role="img" aria-hidden="true"></i> Reproducibility</h2>
+<p><em>Everything must be independently repeatable.</em></p>
+<p>Requirements:</p>
+<ul>
+<li>Open access to code</li>
+<li>Data availability or simulation</li>
+<li>Automated testing</li>
+<li>Clear documentation</li>
+<li>Aim for autonomous end-to-end reproducibility</li>
+</ul>
+</section>
+<section id="ethics" class="level2">
+<h2 class="anchored" data-anchor-id="ethics"><i class="bi-3-circle " style="" role="img" aria-hidden="true"></i> Ethics</h2>
+<blockquote class="blockquote">
+<p>“This means considering things like: who is in the dataset, who is missing, and why? To what extent will our story perpetuate the past? And is this something that ought to happen?” <span class="citation" data-cites="alexander2023telling">(<a href="#ref-alexander2023telling" role="doc-biblioref">Alexander 2023</a>)</span></p>
+</blockquote>
+<ul>
+<li>Consider the full context of the dataset <span class="citation" data-cites="datafeminism2020">(<a href="#ref-datafeminism2020" role="doc-biblioref">D’Ignazio and Klein 2020</a>)</span></li>
+<li>Acknowledge the social, cultural, and political forces <span class="citation" data-cites="crawford">(<a href="#ref-crawford" role="doc-biblioref">Crawford 2021</a>)</span></li>
+<li>Use data ethically with concern for impact and equity</li>
+</ul>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions"><i class="bi-4-circle " style="" role="img" aria-hidden="true"></i> Questions</h2>
+<ul>
+<li>Questions evolve through understanding</li>
+<li>Challenge of operationalizing variables</li>
+<li>Curiosity is essential, drives deeper exploration</li>
+<li>Value of “hybrid” knowledge that combines multiple disciplines</li>
+<li>Comfort with asking “dumb” questions</li>
+</ul>
+<div class="notes">
+<p>Curiosity is a key source of internal motivation that drives us to thoroughly explore a dataset and its associated processes. As we delve deeper, each question we pose tends to generate additional questions, leading to continual improvement and refinement of our understanding. This <strong>iterative questioning</strong> contrasts with the traditional <strong>Popperian approach</strong> of fixed hypothesis testing often taught quantitative methods courses in the sciences; instead, questions evolve continuously throughout the exploration. Finding an initial research question can be challenging, especially when attempting to operationalize it into measurable and available variables.</p>
+<p>Strategies to overcome this include selecting an area of genuine interest, sketching broad claims that can be honed into specific questions, and combining insights from different fields. Developing comfort with the inherent messiness of real-world data allows us to ask new questions as the data evolve. Knowing a dataset in detail often reveals unexpected patterns or anomalies, which we can explore further with subject-matter experts. Becoming a “hybrid”—cultivating knowledge across various disciplines—and being comfortable with asking seemingly simple or “dumb” questions are particularly valuable in enhancing our understanding and fostering meaningful insights.</p>
+</div>
+</section>
+<section id="measurement" class="level2">
+<h2 class="anchored" data-anchor-id="measurement"><i class="bi-5-circle " style="" role="img" aria-hidden="true"></i> Measurement</h2>
+<blockquote class="blockquote">
+<p>“The world is so vibrant that it is difficult to reduce it to something that is possible to consistently measure and collect.” <span class="citation" data-cites="alexander2023telling">(<a href="#ref-alexander2023telling" role="doc-biblioref">Alexander 2023</a>)</span></p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Measuring even simple things is challenging</p>
+<p>Example: Measuring height</p>
+<ul>
+<li>Shoes on or off?</li>
+<li>Time of day affects height.</li>
+<li>Different tools yield different results.</li>
+</ul>
+<p>More complex measurements are even harder. How do we measure happiness or pain?</p>
+<ul>
+<li>Measurement requires decisions and is not value-free</li>
+<li>Context and purpose guide all measurement choices</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/tswd-figures/lump.png" class="img-fluid figure-img"></p>
+<figcaption>Picasso’s dog and the challenges of <strong>reduction</strong>.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="notes">
+<p>Measurement and data collection involve the complex task of deciding how to translate the vibrant, multifaceted world into quantifiable data. This process is challenging because even seemingly simple measurements, like a person’s height, can vary based on factors like the time of day or the tools used (e.g., tape measure versus laser), making consistent comparison difficult and often unfeasible. The difficulty intensifies with more abstract concepts such as sadness or pain, where defining and measuring them consistently is even more problematic. This reduction of the world into data is not value-free; it requires critical decisions about what to measure, how to measure it, and what to ignore, all influenced by context and purpose. Like Picasso’s minimalist drawings that capture the essence of a dog but lack details necessary for specific assessments (e.g., determining if the dog is sick), we must deeply understand and respect what we’re measuring, carefully deciding which features are essential and which can be stripped away to serve our research objectives.</p>
+</div>
+</section>
+<section id="data-collection-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="data-collection-cleaning"><i class="bi-6-circle " style="" role="img" aria-hidden="true"></i> &amp; <i class="bi-7-circle " style="" role="img" aria-hidden="true"></i> Data Collection &amp; Cleaning</h2>
+<blockquote class="blockquote">
+<p>“Data never speak for themselves; they are the puppets of the ventriloquists that cleaned and prepared them.” <span class="citation" data-cites="alexander2023telling">(<a href="#ref-alexander2023telling" role="doc-biblioref">Alexander 2023</a>)</span></p>
+</blockquote>
+<ul>
+<li><strong>Collection determines possibilities</strong>
+<ul>
+<li>What and how we measure matters.</li>
+</ul></li>
+<li><strong>Cleaning requires many decisions</strong>
+<ul>
+<li>Example: Survey responses on gender</li>
+<li>Options: “man”, “woman”, “prefer not to say”, “other”</li>
+<li>Handling “prefer not to say” and open-text responses.</li>
+</ul></li>
+<li><strong>Document every step</strong>
+<ul>
+<li>Ensures transparency and reproducibility.</li>
+</ul></li>
+<li><strong>Consider implications of choices</strong>
+<ul>
+<li>Ethical considerations and representation.</li>
+</ul></li>
+</ul>
+<div class="notes">
+<p>Data cleaning and preparation is a critical and complex part of data analysis that requires careful attention and numerous decisions. Using the example of a survey collecting gender information with options like “man,” “woman,” “prefer not to say,” and “other” (which includes open-text responses), the text illustrates the challenges researchers face in handling sensitive and diverse data entries. Decisions such as whether to exclude “prefer not to say” responses (which would ignore certain participants) or how to categorize open-text entries (where merging them with other categories might disrespect respondents’ specific choices) have significant implications. There is no universally correct approach; choices depend on the context and purpose of the analysis. Therefore, it’s vital to meticulously record every step of the data cleaning process to ensure transparency and allow others to understand the decisions made. Ultimately, data do not speak for themselves; they reflect the interpretations and choices of those who prepare and analyze them.</p>
+</div>
+</section>
+<section id="eda-modeling-scaling" class="level2">
+<h2 class="anchored" data-anchor-id="eda-modeling-scaling"><i class="bi-8-circle " style="" role="img" aria-hidden="true"></i>+ EDA, Modeling, &amp; Scaling</h2>
+<section id="exploratory-data-analysis-eda" class="level3">
+<h3 class="anchored" data-anchor-id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</h3>
+<ul>
+<li>Iterative process</li>
+<li>Never truly complete</li>
+<li>Shapes understanding</li>
+</ul>
+</section>
+<section id="modeling" class="level3">
+<h3 class="anchored" data-anchor-id="modeling">Modeling</h3>
+<ul>
+<li>Tool for understanding</li>
+<li>Not a recipe to follow</li>
+<li>Just one representation of reality</li>
+<li>Statistical significance <span class="math inline">\(\neq\)</span> scientific significance</li>
+<li>Statistical models help us explore the shape of the data; are like <strong>echolocation</strong></li>
+</ul>
+</section>
+<section id="scaling" class="level3">
+<h3 class="anchored" data-anchor-id="scaling">Scaling</h3>
+<ul>
+<li><strong>Using programming languages like R and Python</strong>
+<ul>
+<li>Handle large datasets efficiently</li>
+<li>Automate repetitive tasks</li>
+<li>Share work widely and quickly</li>
+</ul></li>
+<li><strong>Outputs can reach many people easily</strong></li>
+<li><strong>APIs can make analyses accessible in real-time</strong></li>
+</ul>
+<div class="notes">
+<p><strong>Exploratory Data Analysis (EDA)</strong> is an open-ended, iterative process that involves immersing ourselves in the data to understand its shape and structure before formal modeling begins. It includes producing summary statistics, creating graphs and tables, and sometimes even preliminary modeling. EDA requires a variety of skills and never truly finishes, as there’s always more to explore. Although it’s challenging to delineate where EDA ends and formal statistical modeling begins—since our beliefs and understanding evolve continuously—EDA is foundational in shaping the story we tell about our data. While not typically included explicitly in the final narrative, it’s crucial that all steps taken during EDA are recorded and shared.</p>
+<p><strong>Statistical modeling</strong> builds upon the insights gained from EDA and has a rich history spanning hundreds of years. Statistics is not merely a collection of dry theorems and proofs; it’s a way of exploring and understanding the world. A statistical model is not a rigid recipe to follow mechanically but a tool for making sense of data. Modeling is usually required to infer statistical patterns, formally known as statistical inference—the process of using data to infer the distribution that generated them. Importantly, statistical significance does not equate to scientific significance, and relying on arbitrary pass/fail tests is rarely appropriate. Instead, we should use statistical modeling as a form of echolocation, listening to what the models tell us about the shape of the world while recognizing that they offer just one representation of reality.</p>
+<p><strong>Scaling our work</strong> becomes feasible with the use of programming languages like R and Python, which allow us to handle vast amounts of data efficiently. Scaling refers to both inputs and outputs; it’s essentially as easy to analyze ten observations as it is to analyze a million. This capability enables us to quickly determine the extent to which our findings apply. Additionally, our outputs can be disseminated to a wide audience effortlessly—whether it’s one person or a hundred. By utilizing Application Programming Interfaces (APIs), our analyses and stories can be accessed thousands of times per second, greatly enhancing their impact and accessibility.</p>
+</div>
+</section>
+</section>
+<section id="how-do-our-worlds-become-data" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-our-worlds-become-data">How Do Our Worlds Become Data?</h2>
+<blockquote class="blockquote">
+<p>“There is the famous story by Eddington about some people who went fishing in the sea with a net. Upon examining the size of the fish they had caught, they decided there was a minimum size to the fish in the sea! Their conclusion arose from the tool used and not from reality.” <span class="citation" data-cites="hamming1996">(<a href="#ref-hamming1996" role="doc-biblioref">Hamming [1997] 2020, 177</a>)</span></p>
+</blockquote>
+</section>
+<section id="how-do-our-worlds-become-data-1" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-our-worlds-become-data-1">How Do Our Worlds Become Data?</h2>
+<blockquote class="blockquote">
+<p>To a certain extent we are wasting our time. We have a perfect model of the world—it is the world! But it is too complicated. If we knew perfectly how everything was affected by the uncountable factors that influence it, then we could forecast perfectly a coin toss, a dice roll, and every other seemingly random process each time. But we cannot. Instead, <strong>we must simplify things to that which is plausibly measurable, and it is that which we define as data</strong>. Our data are a simplification of the messy, complex world from which they were derived. <br><br> There are different approximations of “plausibly measurable”. Hence, <strong>datasets are always the result of choices</strong>. We must decide whether they are nonetheless reasonable for the task at hand. We use statistical models to help us think deeply about, explore, and hopefully come to better understand, our data. <span class="citation" data-cites="alexander2023telling">(<a href="#ref-alexander2023telling" role="doc-biblioref">Alexander 2023</a>)</span></p>
+</blockquote>
+</section>
+<section id="how-do-our-worlds-become-data-2" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-our-worlds-become-data-2">How Do Our Worlds Become Data?</h2>
+<p><br><br> <strong>Through skillful<br><span class="huge">reduction 👨‍🍳</span></strong></p>
+<div class="notes">
+<p>Just as a chef reduces a rich sauce to concentrate its essential flavors, we simplify reality into data—plausibly measurable approximations that capture the essence of the complex world. This reduction process involves deliberate choices about what aspects of reality to include, much like deciding which ingredients to emphasize in a culinary reduction. Our datasets, therefore, are distilled versions of reality, highlighting specific components while inevitably leaving out others.</p>
+<p>As we employ statistical models to explore and understand these datasets, it’s crucial to recognize both what the data include and what they omit. Similar to how a reduction in cooking intensifies certain flavors while others may be lost or muted, the process of data simplification can inadvertently exclude important nuances or perspectives. Particularly in data science, where human-generated data are prevalent, we must consider who or what is systematically missing from our datasets. Some individuals or phenomena may not fit neatly into our chosen methods and might be oversimplified or excluded entirely. The abstraction and simplification inherent in turning the world into data require careful judgment—much like a chef monitoring a reduction to achieve the desired consistency without overcooking—to determine when simplification is appropriate and when it risks losing critical information.</p>
+<p>Measurement itself presents significant challenges, and those deeply involved in the data collection process often have less trust in the data than those removed from it. Just as the process of reducing a sauce demands constant attention to prevent burning or altering the intended flavor, converting the world into data involves numerous decisions and potential errors—from selecting what to measure to deciding on the methods and accuracy required. Advances in instruments—from telescopes in astronomy to real-time internet data collection—have expanded our ability to gather data, much like new culinary techniques enhance a chef’s ability to create complex dishes. However, the world still imperfectly becomes data, and to truly learn from it, we must actively seek to understand the imperfections in our datasets and consider how our “reduction” process may have altered or omitted important aspects of reality.</p>
+</div>
+</section>
+<section id="what-is-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-data-science">What is Data Science?</h2>
+<blockquote class="blockquote">
+<p>“Data science can be defined as something like: humans measuring things, typically related to other humans, and using sophisticated averaging to explain and predict.” <span class="citation" data-cites="alexander2023telling">(<a href="#ref-alexander2023telling" role="doc-biblioref">Alexander 2023</a>)</span></p>
+</blockquote>
+<p>Key Principles</p>
+<ul>
+<li>Data are generated, and must be gathered, cleaned, and prepared</li>
+<li>These decisions matter</li>
+<li>The process will be difficult</li>
+<li>Develop resilience and intrinsic motivation</li>
+</ul>
+</section>
+<section id="the-power-of-multiple-perspectives" class="level2">
+<h2 class="anchored" data-anchor-id="the-power-of-multiple-perspectives">The Power of Multiple Perspectives</h2>
+<blockquote class="blockquote">
+<p>“The strength of data science is that it brings together people with a variety of backgrounds and training to the task of learning about some dataset. It is not constrained by what was done in the past.” <span class="citation" data-cites="alexander2023telling">(<a href="#ref-alexander2023telling" role="doc-biblioref">Alexander 2023</a>)</span></p>
+</blockquote>
+<ul>
+<li>Data science is multi-disciplinary</li>
+<li>Combines statistics, software engineering, subject-matter expertise, and more.</li>
+<li>Diversity enhances understanding</li>
+<li>Different perspectives lead to better questions and solutions.</li>
+<li>Collaboration is key</li>
+<li>Respect and integrate insights from various fields.</li>
+</ul>
+</section>
+<section id="embracing-the-challenge" class="level2">
+<h2 class="anchored" data-anchor-id="embracing-the-challenge">Embracing the Challenge</h2>
+<p>Our world is messy, and so are our data. Telling stories with data is difficult but rewarding.</p>
+<ul>
+<li>Develop resilience and intrinsic motivation</li>
+<li>Accept that failure is part of the process.</li>
+<li>Consider possibilities and probabilities</li>
+<li>Learn to make trade-offs.</li>
+<li>No perfect analysis exists</li>
+<li>Aim for transparency and continuous improvement.</li>
+</ul>
+<blockquote class="blockquote">
+<p>“Ultimately, we are all just telling stories with data, but these stories are increasingly among the most important in the world.” <span class="citation" data-cites="alexander2023telling">(<a href="#ref-alexander2023telling" role="doc-biblioref">Alexander 2023</a>)</span></p>
+</blockquote>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>Data storytelling bridges analysis and understanding</li>
+<li>Effective communication is paramount</li>
+<li>Ethics and reproducibility are foundational</li>
+<li>Ask meaningful questions and measure thoughtfully and transparently</li>
+<li>Data collection and cleaning shape your analysis</li>
+<li>Embrace the iterative nature of exploration and modeling</li>
+<li>Leverage technology to scale and share your work</li>
+<li>Be mindful of the limitations of your data</li>
+</ul>
+
+
+
+</section>
+</section>
+
+<script async="" defer="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-alexander2023telling" class="csl-entry" role="listitem">
+Alexander, Rohan. 2023. <em>Telling Stories with Data: With Applications in <span>R</span></em>. Chapman; Hall/CRC.
+</div>
+<div id="ref-crawford" class="csl-entry" role="listitem">
+Crawford, Kate. 2021. <em><span class="nocase">Atlas of AI</span></em>. 1st ed. New Haven: Yale University Press.
+</div>
+<div id="ref-datafeminism2020" class="csl-entry" role="listitem">
+D’Ignazio, Catherine, and Lauren Klein. 2020. <em>Data Feminism</em>. Massachusetts: The MIT Press. <a href="https://data-feminism.mitpress.mit.edu">https://data-feminism.mitpress.mit.edu</a>.
+</div>
+<div id="ref-hamming1996" class="csl-entry" role="listitem">
+Hamming, Richard. (1997) 2020. <em><span class="nocase">The Art of Doing Science and Engineering</span></em>. 2nd ed. Stripe Press.
+</div>
+<div id="ref-huntington2021influence" class="csl-entry" role="listitem">
+Huntington-Klein, Nick, Andreu Arenas, Emily Beam, Marco Bertoni, Jeffrey Bloem, Pralhad Burli, Naibin Chen, et al. 2021. <span>“The Influence of Hidden Researcher Decisions in Applied Microeconomics.”</span> <em>Economic Inquiry</em> 59: 944–60. <a href="https://doi.org/10.1111/ecin.12992">https://doi.org/10.1111/ecin.12992</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.johnmclevey\.com\/quantitative-research-methods\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Built with <a href="https://quarto.org">Quarto</a> and <a href="https://github.com">GitHub</a> by <a href="https://www.johnmclevey.com">John McLevey</a></p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,4 +1,3 @@
-
 ```{r setup, include=FALSE}
 options(
     tibble.max_extra_cols = 6,

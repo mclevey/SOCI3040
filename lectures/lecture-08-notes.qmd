@@ -14,7 +14,8 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "08"
-assigned_reading: "[{{< bi file-text >}}](https://socviz.co/makeplot.html#makeplot)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/05-graphs_tables_maps.html)"
+recommended_reading: "[{{< bi file-text >}}](https://socviz.co/makeplot.html#makeplot)"
 number-sections: true
 ---
 
@@ -25,6 +26,5 @@ number-sections: true
 
 # Class Notes {.unnumbered}
 :::
-
 
 {{< include lecture-08-content.qmd >}}

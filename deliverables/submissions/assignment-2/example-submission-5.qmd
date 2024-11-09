@@ -1,0 +1,9 @@
+---
+title: This is an Example Submission
+author: Student Name
+date: last-modified
+---
+
+# Example Submission
+
+{{< lipsum 2 >}}

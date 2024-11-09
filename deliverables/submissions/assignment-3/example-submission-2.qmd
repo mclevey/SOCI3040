@@ -1,0 +1,12 @@
+---
+title: This is an Example Submission
+author: Student Name
+date: last-modified
+image: ../../../media/cheshire-cat.png
+---
+
+# Example Submission
+
+[](../../../media/cheshire-cat.png)
+
+{{< lipsum 2 >}}

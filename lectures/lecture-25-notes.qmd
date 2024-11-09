@@ -14,17 +14,23 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "25"
-due: "[Report 4](../deliverables/assignment-4.qmd)"
+due: "[Data Stories 4](../deliverables/assignment-4.qmd)"
 assigned_reading: ""
 number-sections: true
 ---
 
 ::: {#embedded-slides}
-# Lecture Slides {.unnumbered}
+## {{< bi book >}}&nbsp;&nbsp;Reading Assignment {.unnumbered}
+
+- Required: {{< meta assigned_reading >}}
+- Recommended: {{< meta recommended_reading >}}
+
+## {{< bi file-slides-fill >}}&nbsp;&nbsp;Lecture Slides {.unnumbered}
+
 
 {{< revealjs "lecture-25-slides.html" >}}
 
-# Class Notes {.unnumbered}
+## {{< bi file-code >}}&nbsp;&nbsp;Class / Lab Notes {.unnumbered}
 :::
 
 

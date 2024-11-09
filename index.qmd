@@ -10,17 +10,9 @@ bibliography: references.bib
 # 👋 Hello!
 
 ::: {.aside}
-<br><br><br><br>
+<br><br><br><br><br>
 
-This course is built around Rohan Alexander's [-@alexander2023telling] [*Telling Stories with Data*](https://tellingstorieswithdata.com) and Kieran Healy's [-@healy2019data] [*Data Visualization: A Practical Introduction*](https://socviz.co/index.html#preface).
-
-<br>
-
-![](media/telling-stories.png){width=100%}
-
-<br>
-
-![](media/data-visualization.jpg){width=100%}
+![This course is built around Rohan Alexander's [-@alexander2023telling] [*Telling Stories with Data*](https://tellingstorieswithdata.com).](media/telling-stories.png){width=100%}
 :::
 
 {{< include syllabus/_description_mclevey.qmd >}}

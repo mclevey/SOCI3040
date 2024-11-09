@@ -6,27 +6,31 @@ listing:
   contents: ../lectures/lecture-*-notes.qmd
   type: table
   sort: "date"
-  date-format: full
-  categories: true
-  fields: [class-id, date, title, assigned_reading, due]
+  date-format: short #full
+  categories: false
+  fields: [class-id, date, title, assigned_reading, recommended_reading, due]
   field-display-names:
     date: "Class Date"
     title: "Class & Lab Notes + Slides"
-    assigned_reading: "Reading"
+    assigned_reading: "{{< bi fire >}} Required"
     due: "Due by 5:00 pm"
     class-id: "No."
+    recommended_reading: "{{< bi activity >}} Recommended"
   sort-ui: false
   filter-ui: false
   page-size: 30
 ---
 
+<!-- 
 ::: {.callout-important appearance="minimal"}
 I am still developing these course materials.<br>
 This schedule of topics may change **at any time** prior to the first day of class (Jan. 7, 2025).
 :::
+ -->
 
 
 :::: {.column-page-right}
+<!-- :::: {.column-page} -->
 
 ::: {#schedule-listing}
 :::

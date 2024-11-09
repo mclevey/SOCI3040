@@ -1,5 +1,5 @@
 ---
-title: "Surveys"
+title: "APIs, Scraping, and Parsing" # Cleaning, Testing, Validating, and Documenting"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author:
   - name: "John McLevey (he/him)"

@@ -25,6 +25,13 @@ website:
       <!-- Simple Analytics - 100% privacy-first analytics -->
       <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
       <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+  announcement:
+    icon: cone-striped
+    dismissable: true
+    content: "**WORK IN PROGRESS** -- I am actively developing these course materials. They are not yet complete and may change at any point before the first day of class in January 2025. ✌️ John"
+    type: info
+    position: below-navbar
+
 
   title: "🔥 Quantitative Research Methods"
   navbar:
@@ -89,9 +96,9 @@ website:
             href: lectures/lecture-24-slides.qmd
           - text: 'Class 25 -- **Project Work**'
             href: lectures/lecture-25-slides.qmd
-      - text: Blog
-        href: https://www.johnmclevey.com
-        icon: rss-fill
+      # - text: Blog
+        # href: https://www.johnmclevey.com
+        # icon: rss-fill
       - text: "Telling Stories with Data"
         icon: fire
         menu:
@@ -182,7 +189,7 @@ website:
           - text: "&nbsp;&nbsp;Course Schedule"
             icon: calendar-fill
             href: syllabus/schedule.qmd
-          - text: "&nbsp;&nbsp;Learning Assessment"
+          - text: "&nbsp;&nbsp;Assessment"
             icon: check2-square
             href: syllabus/assessment.qmd
           - text: "&nbsp;&nbsp;Computing"
@@ -198,23 +205,20 @@ website:
             icon: box-fill
             href: syllabus/policies.qmd
       - text: "<br>"
-      - section: "<strong>DELIVERABLES</strong>"
+      - section: "<strong>ASSIGNMENTS</strong>"
         contents: 
-          - text: "&nbsp;&nbsp;Report 1 (Solo)"
+          - text: "&nbsp;&nbsp;Data Stories 1"
             href: deliverables/assignment-1.qmd
-            icon: 1-circle
-          - text: "&nbsp;&nbsp;Report 2 (Solo)"
+            icon: file-post
+          - text: "&nbsp;&nbsp;Data Stories 2"
             href: deliverables/assignment-2.qmd
-            icon: 2-circle
-          - text: "&nbsp;&nbsp;Report 3 (Co-authored)"
+            icon: file-post
+          - text: "&nbsp;&nbsp;Data Stories 3"
             href: deliverables/assignment-3.qmd
-            icon: 3-circle
-          - text: "&nbsp;&nbsp;Report 4 (Co-authored)"
+            icon: file-post
+          - text: "&nbsp;&nbsp;Data Stories  4"
             href: deliverables/assignment-4.qmd
-            icon: 4-circle
-          - text: "&nbsp;&nbsp;Blog Posts and Comments"
-            href: deliverables/assignment-5.qmd
-            icon: rss-fill
+            icon: file-post
       - text: "<br>"
       - section: "<strong>QUICK LINKS</strong>"
         contents: 

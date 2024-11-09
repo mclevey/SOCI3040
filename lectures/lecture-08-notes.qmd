@@ -1,5 +1,5 @@
 ---
-title: "The Grammar of Graphics, Plotting in the Tidyverse"
+title: "Writing and Developing Research Questions"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author:
   - name: "John McLevey (he/him)"
@@ -14,17 +14,22 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "08"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/05-graphs_tables_maps.html)"
-recommended_reading: "[{{< bi file-text >}}](https://socviz.co/makeplot.html#makeplot)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/04-writing_research.html)"
 number-sections: true
 ---
 
 ::: {#embedded-slides}
-# Lecture Slides {.unnumbered}
+## {{< bi book >}}&nbsp;&nbsp;Reading Assignment {.unnumbered}
+
+- Required: {{< meta assigned_reading >}}
+- Recommended: {{< meta recommended_reading >}}
+
+## {{< bi file-slides-fill >}}&nbsp;&nbsp;Lecture Slides {.unnumbered}
+
 
 {{< revealjs "lecture-08-slides.html" >}}
 
-# Class Notes {.unnumbered}
+## {{< bi file-code >}}&nbsp;&nbsp;Class / Lab Notes {.unnumbered}
 :::
 
 {{< include lecture-08-content.qmd >}}

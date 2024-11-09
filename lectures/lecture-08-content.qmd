@@ -1278,6 +1278,7 @@ It is free, but we need to register in order to get a map. To do this go to http
 #| fig-cap: "Map of Canberra, Australia"
 #| warning: false
 #| message: false
+#| eval: false
 
 canberra_stamen_map <- get_stadiamap(bbox, zoom = 11, maptype = "stamen_toner_lite")
 
@@ -1334,7 +1335,7 @@ write_csv(booths, "inputs/data/booths.csv")
 
 ```{r}
 #| echo: false
-#| eval: true
+#| eval: false
 #| warning: false
 #| message: false
 
@@ -1352,13 +1353,14 @@ This dataset is for the whole of Australia, but as we are only plotting the area
 ```{r}
 #| warning: false
 #| message: false
+#| eval: false
 
 booths_reduced <-
-  booths |>
-  filter(State == "ACT") |>
-  select(PollingPlaceID, DivisionNm, Latitude, Longitude) |>
-  filter(!is.na(Longitude)) |> # Remove rows without geography
-  filter(Longitude < 165) # Remove Norfolk Island
+    booths |>
+    filter(State == "ACT") |>
+    select(PollingPlaceID, DivisionNm, Latitude, Longitude) |>
+    filter(!is.na(Longitude)) |> # Remove rows without geography
+    filter(Longitude < 165) # Remove Norfolk Island
 ```
 
 Now we can use `ggmap` in the same way as before to plot our underlying tiles, and then build on that using `geom_point()` to add our points of interest.\index{maps!plotting locations}
@@ -1368,23 +1370,28 @@ Now we can use `ggmap` in the same way as before to plot our underlying tiles, a
 #| fig-cap: "Map of Canberra, Australia, with polling places"
 #| warning: false
 #| message: false
+#| eval: false
 
 ggmap(canberra_stamen_map, extent = "normal", maprange = FALSE) +
-  geom_point(data = booths_reduced,
-             aes(x = Longitude, y = Latitude, colour = DivisionNm),
-             alpha = 0.7) +
-  scale_color_brewer(name = "2019 Division", palette = "Set1") +
-  coord_map(
-    projection = "mercator",
-    xlim = c(attr(map, "bb")$ll.lon, attr(map, "bb")$ur.lon),
-    ylim = c(attr(map, "bb")$ll.lat, attr(map, "bb")$ur.lat)
-  ) +
-  labs(x = "Longitude",
-       y = "Latitude") +
-  theme_minimal() +
-  theme(panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank())
-```
+    geom_point(
+        data = booths_reduced,
+        aes(x = Longitude, y = Latitude, colour = DivisionNm),
+        alpha = 0.7
+    ) +
+    scale_color_brewer(name = "2019 Division", palette = "Set1") +
+    coord_map(
+        projection = "mercator",
+        xlim = c(attr(map, "bb")$ll.lon, attr(map, "bb")$ur.lon),
+        ylim = c(attr(map, "bb")$ll.lat, attr(map, "bb")$ur.lat)
+    ) +
+    labs(
+        x = "Longitude",
+        y = "Latitude"
+    ) +
+    theme_minimal() +
+    theme(
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank()```
 
 ##
 
@@ -1403,6 +1410,7 @@ Finally, the reason that we used Stamen Maps and OpenStreetMap is because they a
 To see another example of a static map we will plot some United States military bases after installing and loading `troopdata`.\index{maps!US military bases} We can access data about United States overseas military bases back to the start of the Cold War using `get_basedata()`.
 
 ```{r}
+#| eval: false
 bases <- get_basedata()
 
 head(bases)
@@ -1415,6 +1423,7 @@ We will look at the locations of United States military bases in Germany,\index{
 ```{r}
 #| message: false
 #| warning: false
+#| eval: false
 
 # Use: https://data.humdata.org/dataset/bounding-boxes-for-countries
 bbox_germany <- c(left = 5.867, bottom = 45.967, right = 15.033, top = 55.133)
@@ -1431,6 +1440,7 @@ Then we need to get the tiles using `get_stadiamap()` from `ggmap`.\index{maps!t
 ```{r}
 #| message: false
 #| warning: false
+#| eval: false
 
 german_stamen_map <- get_stadiamap(bbox_germany, zoom = 6, maptype = "stamen_toner_lite")
 
@@ -1450,24 +1460,31 @@ And finally, we can bring it all together with maps showing United States milita
 #| warning: false
 #| fig-subcap: ["Germany", "Japan", "Australia"]
 #| layout-ncol: 2
+#| eval: false
 
 ggmap(german_stamen_map) +
-  geom_point(data = bases, aes(x = lon, y = lat)) +
-  labs(x = "Longitude",
-       y = "Latitude") +
-  theme_minimal()
+    geom_point(data = bases, aes(x = lon, y = lat)) +
+    labs(
+        x = "Longitude",
+        y = "Latitude"
+    ) +
+    theme_minimal()
 
 ggmap(japan_stamen_map) +
-  geom_point(data = bases, aes(x = lon, y = lat)) +
-  labs(x = "Longitude",
-       y = "Latitude") +
-  theme_minimal()
+    geom_point(data = bases, aes(x = lon, y = lat)) +
+    labs(
+        x = "Longitude",
+        y = "Latitude"
+    ) +
+    theme_minimal()
 
 ggmap(aus_stamen_map) +
-  geom_point(data = bases, aes(x = lon, y = lat)) +
-  labs(x = "Longitude",
-       y = "Latitude") +
-  theme_minimal()
+    geom_point(data = bases, aes(x = lon, y = lat)) +
+    labs(
+        x = "Longitude",
+        y = "Latitude"
+    ) +
+    theme_minimal()
 ```
 
 ## Geocoding
@@ -1493,11 +1510,12 @@ Which definition is used can have a substantial effect on the analysis, or even 
 There are a range of options to geocode data in R, but `tidygeocoder` is especially useful. We first need a dataframe of locations. 
 
 ```{r}
+#| eval: false
 place_names <-
-  tibble(
-    city = c("Sydney", "Toronto", "Accra", "Guayaquil"),
-    country = c("Australia", "Canada", "Ghana", "Ecuador")
-  )
+    tibble(
+        city = c("Sydney", "Toronto", "Accra", "Guayaquil"),
+        country = c("Australia", "Canada", "Ghana", "Ecuador")
+    )
 
 place_names
 ```
@@ -1505,13 +1523,14 @@ place_names
 ```{r}
 #| message: false
 #| warning: false
+#| eval: false
 
 place_names <-
-  geo(
-    city = place_names$city,
-    country = place_names$country,
-    method = "osm"
-  )
+    geo(
+        city = place_names$city,
+        country = place_names$country,
+        method = "osm"
+    )
 
 place_names
 ```
@@ -1525,25 +1544,30 @@ And we can now plot and label these cities (@fig-mynicemap).
 #| label: fig-mynicemap
 #| message: false
 #| warning: false
+#| eval: false
 
 world <- map_data(map = "world")
 
 ggplot() +
-  geom_polygon(
-    data = world,
-    aes(x = long, y = lat, group = group),
-    fill = "white",
-    colour = "grey"
-  ) +
-  geom_point(
-    aes(x = place_names$long, y = place_names$lat),
-    color = "black") +
-  geom_text(
-    aes(x = place_names$long, y = place_names$lat, label = place_names$city),
-    nudge_y = -5) +
-  theme_minimal() +
-  labs(x = "Longitude",
-       y = "Latitude")
+    geom_polygon(
+        data = world,
+        aes(x = long, y = lat, group = group),
+        fill = "white",
+        colour = "grey"
+    ) +
+    geom_point(
+        aes(x = place_names$long, y = place_names$lat),
+        color = "black"
+    ) +
+    geom_text(
+        aes(x = place_names$long, y = place_names$lat, label = place_names$city),
+        nudge_y = -5
+    ) +
+    theme_minimal() +
+    labs(
+        x = "Longitude",
+        y = "Latitude"
+    )
 ```
 
 

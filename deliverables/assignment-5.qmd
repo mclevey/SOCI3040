@@ -1,17 +1,13 @@
 ---
-title: "Contributions to the Course Blog"
+title: "{{< bi file-post >}} Final Exam"
 subtitle: SOCI 3040 -- Quantitative Research Methods
-author: John McLevey
-date: January 12, 2025
+author: 25%
+author-title: Grade Weight
+date: January 10, 2025
 published-title: "Due Date"
 time: 11:59 pm
-weight: 15%
+weight: 25%
+bibliography: ../references.bib
 ---
-
-# Instructions
-
-Coming soon...
-
-# Grading Rubric
 
 Coming soon...

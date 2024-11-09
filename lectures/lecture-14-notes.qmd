@@ -1,5 +1,5 @@
 ---
-title: "Preparing Data -- Cleaning, Testing, Validating, and Documenting"
+title: "APIs, Scraping, and Parsing" # Cleaning, Testing, Validating, and Documenting"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author:
   - name: "John McLevey (he/him)"
@@ -14,17 +14,23 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "14"
-due: "[Report 2](../deliverables/assignment-2.qmd)"
+due: "[Data Stories 2](../deliverables/assignment-2.qmd)"
 assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/09-clean_and_prepare.html)"
 number-sections: true
 ---
 
 ::: {#embedded-slides}
-# Lecture Slides {.unnumbered}
+## {{< bi book >}}&nbsp;&nbsp;Reading Assignment {.unnumbered}
+
+- Required: {{< meta assigned_reading >}}
+- Recommended: {{< meta recommended_reading >}}
+
+## {{< bi file-slides-fill >}}&nbsp;&nbsp;Lecture Slides {.unnumbered}
+
 
 {{< revealjs "lecture-14-slides.html" >}}
 
-# Class Notes {.unnumbered}
+## {{< bi file-code >}}&nbsp;&nbsp;Class / Lab Notes {.unnumbered}
 :::
 
 

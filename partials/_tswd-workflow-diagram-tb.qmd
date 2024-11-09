@@ -1,0 +1,12 @@
+```{mermaid}
+%%| fig-label: fig-workflow
+
+flowchart TB
+  p[[Plan]]
+  sim[[Simulate]]
+  a[[Acquire]]
+  e[[Explore/Understand]]
+  s[[Share]]
+
+  p --> sim --> a --> e --> s
+```

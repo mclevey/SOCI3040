@@ -14,6 +14,7 @@ toc-depth: 2
 published-title: "Class Date"
 class-id: "03"
 assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html)"
+recommended_reading: "[{{< bi file-text >}}](https://socviz.co/lookatdata.html#lookatdata)"
 number-sections: true
 ---
 

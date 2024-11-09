@@ -1,17 +1,86 @@
 ---
-title: "Report 4 (Co-authored)"
+title: "{{< bi file-post >}} Data Stories 4"
 subtitle: SOCI 3040 -- Quantitative Research Methods
-author: John McLevey
+author: 25%
+author-title: Grade Weight
 date: January 10, 2025
 published-title: "Due Date"
 time: 11:59 pm
 weight: 25%
+lightbox: true
+listing:
+  id: data-stories-4-list
+  contents: submissions/assignment-4/*.qmd
+  type: grid
+  sort: "date"
+  date-format: medium
+  categories: false
+  fields: [image, title, date, author, description]
+  field-display-names:
+    date: "Class Date"
+    title: "Topic"
+    author: "Class No."
+    assigned_reading: "Assigned Reading"
+  sort-ui: false
+  filter-ui: false
+  page-size: 40
+bibliography: ../references.bib
 ---
 
-# Instructions
+## Instructions
 
-Coming soon...
+See @fig-workflow for the workflow diagram.
 
-# Grading Rubric
+:::: {.aside}
+::: {#fig-workflow}
+{{< include ../partials/_tswd-workflow-diagram-tb.qmd >}}
 
-Coming soon...
+Rohan Alexander's [-@alexander2023telling] **Telling Stories with Data** workflow
+:::
+::::
+
+**Coming soon...** {{< lipsum 1 >}}
+
+- Plan (XX%)
+- Simulate (XX%)
+- Acquire (XX%)
+- Explore (XX%)
+- Share (XX%)
+
+## Grading Rubric
+
+- Plan (XX%)
+- Simulate (XX%)
+- Acquire (XX%)
+- Explore (XX%)
+- Share (XX%)
+
+**Coming soon...** {{< lipsum 1 >}}
+
+## Student Work
+
+**Coming soon...** {{< lipsum 1 >}}
+
+::: {#fig-week-01-gallery layout-ncol=3 layout-valign="bottom"}
+![This is a featured student assignment.](../media/this-is-fine.jpg){group="3040-gallery"}
+
+![This is also a featured student assignment.](../media/telling-stories.png){group="3040-gallery"}
+
+![This is also a featured student assignment.](../media/data-visualization.jpg){group="3040-gallery"}
+
+A selection of visualizations from the first data stories assignment. Click an image to open a lightbox gallery.
+:::
+
+**Coming soon...** {{< lipsum 1 >}}
+
+::: {#data-stories-4-list}
+:::
+
+
+
+<!-- 
+This will be listings. Will come back to finish when I can. 
+
+Card page, each a link to a student submission in `submissions/`.
+
+Add an example to each of the four. Maybe make them their own menus, woth an instructions page, and then the submissions / share page that starts with 1-2 examples from the lectures that they can use as templates / starting points for their own assignments. Eahc one more challebing than the ones that came before. Maybe solo maybe not.  -->

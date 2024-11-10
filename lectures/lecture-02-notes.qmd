@@ -1,5 +1,5 @@
 ---
-title: "Telling Stories with Data"
+title: "Telling Stories with Data + R and the Tidyverse"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author: 
   - name: "John McLevey"
@@ -14,7 +14,8 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "02"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/01-introduction.html)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/01-introduction.html) RA Ch 1"
+recommended_reading: ""
 number-sections: true
 ---
 

@@ -4,7 +4,7 @@ subtitle: "SOCI 3040 -- Quantitative Research Methods"
 bibliography: ../references.bib
 ---
 
-<!-- {{< include ../partials/_construction.qmd >}} -->
+
 
 ## Callout Boxes
 

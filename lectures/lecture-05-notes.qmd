@@ -14,8 +14,8 @@ toc-expand: false
 toc-depth: 2
 published-title: "Class Date"
 class-id: "05"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/03-workflow.html)"
-recommended_reading: "[{{< bi file-text >}}](https://socviz.co/gettingstarted.html#gettingstarted)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/03-workflow.html) RA CH 3"
+recommended_reading: "[{{< bi file-text >}}](https://socviz.co/gettingstarted.html#gettingstarted) KH Ch 2"
 number-sections: true
 ---
 

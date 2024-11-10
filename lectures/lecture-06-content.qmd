@@ -1,4 +1,8 @@
+# Content Plan
 
+1/2 of the content from Lecture 05. Split the content and add the lab as you are working on that content. 
+
+<!-- 
 ```{r setup, include=FALSE}
 options(
     tibble.max_extra_cols = 6,
@@ -8,4 +12,4 @@ options(
 
 ## Coming soon...
 
-## References
+## References -->

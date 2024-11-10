@@ -4,8 +4,6 @@ subtitle: "SOCI 3040 -- Quantitative Research Methods"
 bibliography: ../references.bib
 ---
 
-<!-- {{< include ../partials/_construction.qmd >}} -->
-
 ## Course Policies
 
 ## Department and Faculty Policies

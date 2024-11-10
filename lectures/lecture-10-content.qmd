@@ -1,4 +1,8 @@
-```{r setup, include=FALSE}
+# Content Plan 
+
+1/2 of the content in Lecture 09. Maybe some stuff from KH. 
+
+<!-- ```{r setup, include=FALSE}
 options(
     tibble.max_extra_cols = 6,
     tibble.width = 60
@@ -7,4 +11,4 @@ options(
 
 ## Coming soon...
 
-## References
+## References -->

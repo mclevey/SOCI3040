@@ -1,7 +1,0 @@
----
-title: Diagrams
-subtitle: "SOCI 3040 -- Quantitative Research Methods"
-bibliography: ../references.bib
----
-
-Coming soon...

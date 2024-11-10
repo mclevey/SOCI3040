@@ -1,11 +1,20 @@
+# Third Example
 
-```{r setup, include=FALSE}
-options(
-    tibble.max_extra_cols = 6,
-    tibble.width = 60
-)
-```
+{{< include _firehose_imports.qmd >}}
+{{< include _firehose_neonatal_mortality_rates.qmd >}} 
 
-## Coming soon...
+# Your Turn
 
-## References
+Lab Exercise
+
+<!-- # Content
+
+## 
+
+Take 1/2 of the content from the previous lecture (3), find a good place to split them. Maybe do the first example the day before, or the first two, and then do the last or the last two on the second day, and on the second day they should do their own example. 
+
+- lecture 3: 2 examples with little follow along
+- lecture 4: 1 example as reminder and then they do their own from scratch
+- 🔥
+
+## References -->

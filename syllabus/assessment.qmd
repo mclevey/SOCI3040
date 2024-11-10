@@ -20,7 +20,7 @@ listing:
   page-size: 30
 ---
 
-<!-- {{< include ../partials/_construction.qmd >}} -->
+
 
 {{< lipsum 1 >}}
 

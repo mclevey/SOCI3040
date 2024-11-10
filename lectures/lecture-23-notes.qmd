@@ -1,5 +1,5 @@
 ---
-title: "Text as Data"
+title: "Generalized Linear Models (GLMs)"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author:
   - name: "John McLevey (he/him)"
@@ -14,7 +14,7 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "23"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/16-text.html)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/13-ijaglm.html)"
 number-sections: true
 ---
 

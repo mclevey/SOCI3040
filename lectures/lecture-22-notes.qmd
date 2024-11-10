@@ -1,5 +1,5 @@
 ---
-title: "Mutilevel Models"
+title: "Linear Models"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author:
   - name: "John McLevey (he/him)"
@@ -14,7 +14,7 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "22"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/13-ijaglm.html) (Something else)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/12-ijalm.html) RA Ch 12"
 number-sections: true
 ---
 

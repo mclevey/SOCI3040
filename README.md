@@ -10,8 +10,10 @@ This course will be offered at Memorial University in the 2025 winter semester. 
 
 John
 
-## TODO
+## Notes
 
-Other than class content itself,
+To publish updates to the site with the new workflow:
 
-- [ ] Setup `.devcontainer/devcontainer.json` and `Dockerfile`
+```zsh
+quarto publish gh-pages
+```

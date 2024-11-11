@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="John McLevey (he/him)">
 <meta name="dcterms.date" content="2025-01-16">
 
-<title>Good and Bad Ways to Look at Data – 🔥 Quantitative Research Methods</title>
+<title>Drinking from the Firehose – Data Analysis Workflow – 🔥 Quantitative Research Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -81,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -216,11 +270,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="https://www.johnmclevey.com"> <i class="bi bi-rss-fill" role="img">
-</i> 
-<span class="menu-text">Blog</span></a>
-  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-telling-stories-with-data" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-fire" role="img">
@@ -393,7 +442,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Good and Bad Ways to Look at Data</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Drinking from the Firehose – Data Analysis Workflow</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -401,6 +450,9 @@ ul.task-list li input[type="checkbox"] {
       </button>
     </div>
   </nav>
+  <div id="quarto-announcement" data-announcement-id="4e844bf18abc78b881990e274941979b" class="alert alert-info hidden"><i class="bi bi-cone-striped quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>WORK IN PROGRESS</strong> – I am actively developing these course materials. They are not yet complete and may change at any point before the first day of class in January 2025. ✌️ John</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -440,7 +492,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../syllabus/assessment.html" class="sidebar-item-text sidebar-link"><i class="bi bi-check2-square" role="img">
 </i> 
- <span class="menu-text">&nbsp;&nbsp;Learning Assessment</span></a>
+ <span class="menu-text">&nbsp;&nbsp;Assessment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -479,7 +531,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>DELIVERABLES</strong></span></a>
+ <span class="menu-text"><strong>ASSIGNMENTS</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -487,37 +539,30 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../deliverables/assignment-1.html" class="sidebar-item-text sidebar-link"><i class="bi bi-1-circle" role="img">
+  <a href="../deliverables/assignment-1.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-post" role="img">
 </i> 
- <span class="menu-text">&nbsp;&nbsp;Report 1 (Solo)</span></a>
+ <span class="menu-text">&nbsp;&nbsp;Data Stories 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../deliverables/assignment-2.html" class="sidebar-item-text sidebar-link"><i class="bi bi-2-circle" role="img">
+  <a href="../deliverables/assignment-2.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-post" role="img">
 </i> 
- <span class="menu-text">&nbsp;&nbsp;Report 2 (Solo)</span></a>
+ <span class="menu-text">&nbsp;&nbsp;Data Stories 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../deliverables/assignment-3.html" class="sidebar-item-text sidebar-link"><i class="bi bi-3-circle" role="img">
+  <a href="../deliverables/assignment-3.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-post" role="img">
 </i> 
- <span class="menu-text">&nbsp;&nbsp;Report 3 (Co-authored)</span></a>
+ <span class="menu-text">&nbsp;&nbsp;Data Stories 3</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../deliverables/assignment-4.html" class="sidebar-item-text sidebar-link"><i class="bi bi-4-circle" role="img">
+  <a href="../deliverables/assignment-4.html" class="sidebar-item-text sidebar-link"><i class="bi bi-file-post" role="img">
 </i> 
- <span class="menu-text">&nbsp;&nbsp;Report 4 (Co-authored)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../deliverables/assignment-5.html" class="sidebar-item-text sidebar-link"><i class="bi bi-rss-fill" role="img">
-</i> 
- <span class="menu-text">&nbsp;&nbsp;Blog Posts and Comments</span></a>
+ <span class="menu-text">&nbsp;&nbsp;Data Stories 4</span></a>
   </div>
 </li>
       </ul>
@@ -576,14 +621,66 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#third-example" id="toc-third-example" class="nav-link active" data-scroll-target="#third-example"><span class="header-section-number">1</span> Third Example</a>
+  <ul class="collapse">
+  <li><a href="#import-libraries" id="toc-import-libraries" class="nav-link" data-scroll-target="#import-libraries"><span class="header-section-number">1.1</span> import libraries</a></li>
+  </ul></li>
+  <li><a href="#neonatal-mortality-rates" id="toc-neonatal-mortality-rates" class="nav-link" data-scroll-target="#neonatal-mortality-rates"><span class="header-section-number">2</span> Neonatal Mortality Rates</a></li>
+  <li><a href="#plan" id="toc-plan" class="nav-link" data-scroll-target="#plan"><span class="header-section-number">3</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> Plan</a>
+  <ul class="collapse">
+  <li><a href="#plan-1" id="toc-plan-1" class="nav-link" data-scroll-target="#plan-1"><span class="header-section-number">3.1</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> plan</a></li>
+  <li><a href="#plan-2" id="toc-plan-2" class="nav-link" data-scroll-target="#plan-2"><span class="header-section-number">3.2</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> plan</a></li>
+  </ul></li>
+  <li><a href="#simulate" id="toc-simulate" class="nav-link" data-scroll-target="#simulate"><span class="header-section-number">4</span> <i class="bi-2-circle " style="" role="img" aria-hidden="true"></i> Simulate</a>
+  <ul class="collapse">
+  <li><a href="#simulate-1" id="toc-simulate-1" class="nav-link" data-scroll-target="#simulate-1"><span class="header-section-number">4.1</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</a></li>
+  <li><a href="#simulate-2" id="toc-simulate-2" class="nav-link" data-scroll-target="#simulate-2"><span class="header-section-number">4.2</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</a></li>
+  <li><a href="#simulate-3" id="toc-simulate-3" class="nav-link" data-scroll-target="#simulate-3"><span class="header-section-number">4.3</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</a></li>
+  <li><a href="#simulate-4" id="toc-simulate-4" class="nav-link" data-scroll-target="#simulate-4"><span class="header-section-number">4.4</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</a></li>
+  <li><a href="#simulate-5" id="toc-simulate-5" class="nav-link" data-scroll-target="#simulate-5"><span class="header-section-number">4.5</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</a></li>
+  <li><a href="#simulate-6" id="toc-simulate-6" class="nav-link" data-scroll-target="#simulate-6"><span class="header-section-number">4.6</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</a></li>
+  <li><a href="#simulate-7" id="toc-simulate-7" class="nav-link" data-scroll-target="#simulate-7"><span class="header-section-number">4.7</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</a></li>
+  </ul></li>
+  <li><a href="#acquire" id="toc-acquire" class="nav-link" data-scroll-target="#acquire"><span class="header-section-number">5</span> <i class="bi-3-circle " style="" role="img" aria-hidden="true"></i> Acquire</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">5.1</span> </a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><span class="header-section-number">5.2</span> </a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"><span class="header-section-number">5.3</span> </a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"><span class="header-section-number">5.4</span> </a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"><span class="header-section-number">5.5</span> </a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5"><span class="header-section-number">5.6</span> </a></li>
+  <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6"><span class="header-section-number">5.7</span> </a></li>
+  <li><a href="#section-7" id="toc-section-7" class="nav-link" data-scroll-target="#section-7"><span class="header-section-number">5.8</span> </a></li>
+  <li><a href="#section-8" id="toc-section-8" class="nav-link" data-scroll-target="#section-8"><span class="header-section-number">5.9</span> </a></li>
+  <li><a href="#section-9" id="toc-section-9" class="nav-link" data-scroll-target="#section-9"><span class="header-section-number">5.10</span> </a></li>
+  <li><a href="#section-10" id="toc-section-10" class="nav-link" data-scroll-target="#section-10"><span class="header-section-number">5.11</span> </a></li>
+  </ul></li>
+  <li><a href="#exploreunderstand" id="toc-exploreunderstand" class="nav-link" data-scroll-target="#exploreunderstand"><span class="header-section-number">6</span> <i class="bi-4-circle " style="" role="img" aria-hidden="true"></i> Explore/Understand</a>
+  <ul class="collapse">
+  <li><a href="#section-11" id="toc-section-11" class="nav-link" data-scroll-target="#section-11"><span class="header-section-number">6.1</span> </a></li>
+  <li><a href="#section-12" id="toc-section-12" class="nav-link" data-scroll-target="#section-12"><span class="header-section-number">6.2</span> </a></li>
+  </ul></li>
+  <li><a href="#share" id="toc-share" class="nav-link" data-scroll-target="#share"><span class="header-section-number">7</span> <i class="bi-5-circle " style="" role="img" aria-hidden="true"></i> Share</a>
+  <ul class="collapse">
+  <li><a href="#share-1" id="toc-share-1" class="nav-link" data-scroll-target="#share-1"><span class="header-section-number">7.1</span> <i class="bi-5-circle " style="" role="img" aria-hidden="true"></i> share</a></li>
+  </ul></li>
+  <li><a href="#wrap-up" id="toc-wrap-up" class="nav-link" data-scroll-target="#wrap-up"><span class="header-section-number">8</span> Wrap Up</a></li>
+  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn"><span class="header-section-number">9</span> Your Turn</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Good and Bad Ways to Look at Data</h1>
-<p class="subtitle lead">Quantitative Research Methods</p>
+<h1 class="title">Drinking from the Firehose – Data Analysis Workflow</h1>
+<p class="subtitle lead">SOCI 3040 – Quantitative Research Methods</p>
 </div>
 
 
@@ -619,27 +716,529 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="lecture-slides" class="level1">
-<h1>Lecture Slides</h1>
+<div id="embedded-slides">
+<section id="reading-assignment" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="reading-assignment"><i class="bi-book " style="" role="img" aria-hidden="true"></i>&nbsp;&nbsp;Reading Assignment</h2>
+<ul>
+<li>Required: <a href="https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> RA Ch 2</li>
+<li>Recommended: <a href="https://socviz.co/lookatdata.html#lookatdata"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> KH Ch 1</li>
+</ul>
+</section>
+<section id="lecture-slides" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="lecture-slides"><i class="bi-file-slides-fill " style="" role="img" aria-hidden="true"></i>&nbsp;&nbsp;Lecture Slides</h2>
     <p><a href="lecture-04-slides.html" target="_blank">View slides in full screen</a></p>
        <div>
       <iframe class="slide-deck" src="lecture-04-slides.html" height="475px"></iframe>
     </div>
   
 </section>
-<section id="class-notes" class="level1">
-<h1>Class Notes</h1>
-<section id="coming-soon" class="level2">
-<h2 class="anchored" data-anchor-id="coming-soon">Coming soon…</h2>
+<section id="class-lab-notes" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="class-lab-notes"><i class="bi-file-code " style="" role="img" aria-hidden="true"></i>&nbsp;&nbsp;Class / Lab Notes</h2>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+</div>
+<section id="third-example" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Third Example</h1>
+<section id="import-libraries" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="import-libraries"><span class="header-section-number">1.1</span> import libraries</h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"janitor"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"knitr"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"lubridate"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"opendatatoronto"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"here"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="neonatal-mortality-rates" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Neonatal Mortality Rates</h1>
+<p>Neonatal mortality refers to a death that occurs within the first month of life. The neonatal mortality rate (NMR) is the number of neonatal deaths per 1,000 live births <span class="citation" data-cites="unigme">(<a href="#ref-unigme" role="doc-biblioref">UN IGME 2021</a>)</span>. The Third Sustainable Development Goal (SDG) calls for a reduction in NMR to 12. In this example we will create a graph of the estimated NMR for the past 50 years for: Argentina, Australia, Canada, and Kenya.</p>
+</section>
+<section id="plan" class="level1" data-background-color="#2E3440" data-number="3">
+<h1 data-background-color="#2E3440" data-number="3"><span class="header-section-number">3</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> Plan</h1>
+<p><span class="huge">Neonatal Mortality Rates (NMR)</span></p>
+<section id="plan-1" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="plan-1"><span class="header-section-number">3.1</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> plan</h2>
+<p><br></p>
+<p>The dataset needs to have variables that specify the country and the year. It also needs to have a variable with the NMR estimate for that year for that country. Roughly, it should look like <a href="#fig-nmrexample-data" class="quarto-xref">Figure&nbsp;1 (a)</a> (next slide). We are interested to make a graph with year on the x-axis and estimated NMR on the y-axis. Each country should have its own series. A quick sketch of what we are looking for is <a href="#fig-nmrexample-graph" class="quarto-xref">Figure&nbsp;1 (b)</a> (next slide).</p>
+</section>
+<section id="plan-2" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="plan-2"><span class="header-section-number">3.2</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> plan</h2>
+<div id="fig-nmrexample" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nmrexample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-nmrexample" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-nmrexample-data" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-nmrexample-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../media/tswd-figures/02-nmr_dataset_sketch.png" class="img-fluid figure-img" style="width:85.0%" data-ref-parent="fig-nmrexample">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-nmrexample-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Quick sketch of a potentially useful NMR dataset
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-nmrexample" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-nmrexample-graph" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-nmrexample-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../media/tswd-figures/02-NMRgraph.png" class="img-fluid figure-img" style="width:85.0%" data-ref-parent="fig-nmrexample">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-nmrexample-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Quick sketch of a graph of NMR by country over time
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nmrexample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Sketches of a dataset and graph about the neonatal mortality rate (NMR)
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="simulate" class="level1" data-background-color="#2E3440" data-number="4">
+<h1 data-background-color="#2E3440" data-number="4"><span class="header-section-number">4</span> <i class="bi-2-circle " style="" role="img" aria-hidden="true"></i> Simulate</h1>
+<p><span class="huge">Neonatal Mortality Rates (NMR)</span></p>
+<section id="simulate-1" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="simulate-1"><span class="header-section-number">4.1</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</h2>
+<p><br></p>
+<blockquote class="blockquote">
+<p>To simulate some data that aligns with our plan, we will need three columns: <code>country</code>, <code>year</code>, and <code>NMR</code>. We can do this by repeating the name of each country 50 times with <code>rep()</code>, and enabling the passing of 50 years. Then we draw from the uniform distribution with <code>runif()</code> to simulate an estimated NMR value for that year for that country.</p>
+</blockquote>
+</section>
+<section id="simulate-2" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="simulate-2"><span class="header-section-number">4.2</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</h2>
+<p><br></p>
+<div class="cell" data-output-location="slide">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">853</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>simulated_nmr_data <span class="ot">&lt;-</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">country =</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">c</span>(</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                <span class="fu">rep</span>(<span class="st">"Argentina"</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="st">"Australia"</span>, <span class="dv">50</span>),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                <span class="fu">rep</span>(<span class="st">"Canada"</span>, <span class="dv">50</span>), <span class="fu">rep</span>(<span class="st">"Kenya"</span>, <span class="dv">50</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">year =</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1971</span><span class="sc">:</span><span class="dv">2020</span>), <span class="dv">4</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">nmr =</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(simulated_nmr_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  country    year   nmr
+  &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;
+1 Argentina  1971 35.9 
+2 Argentina  1972 12.0 
+3 Argentina  1973 48.4 
+4 Argentina  1974 31.6 
+5 Argentina  1975  3.74
+6 Argentina  1976 40.4 </code></pre>
+</div>
+</div>
+</section>
+<section id="simulate-3" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="simulate-3"><span class="header-section-number">4.3</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</h2>
+<p><br></p>
+<blockquote class="blockquote">
+<p>While this simulation works, it would be time consuming and error prone if we decided that instead of 50 years, we were interested in simulating, say, 60 years. One way to improve this code is to replace all instances of 50 with a variable.</p>
+</blockquote>
+</section>
+<section id="simulate-4" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="simulate-4"><span class="header-section-number">4.4</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</h2>
+<p><br></p>
+<div class="cell" data-output-location="slide">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">853</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>number_of_years <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>simulated_nmr_data <span class="ot">&lt;-</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">country =</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">c</span>(</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                <span class="fu">rep</span>(<span class="st">"Argentina"</span>, number_of_years), <span class="fu">rep</span>(<span class="st">"Australia"</span>, number_of_years),</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                <span class="fu">rep</span>(<span class="st">"Canada"</span>, number_of_years), <span class="fu">rep</span>(<span class="st">"Kenya"</span>, number_of_years)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">year =</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>            <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span>number_of_years <span class="sc">+</span> <span class="dv">1970</span>), <span class="dv">4</span>),</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">nmr =</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="fu">runif</span>(<span class="at">n =</span> number_of_years <span class="sc">*</span> <span class="dv">4</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(simulated_nmr_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  country    year   nmr
+  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;
+1 Argentina  1971 35.9 
+2 Argentina  1972 12.0 
+3 Argentina  1973 48.4 
+4 Argentina  1974 31.6 
+5 Argentina  1975  3.74
+6 Argentina  1976 40.4 </code></pre>
+</div>
+</div>
+<p>The result will be the same, but now if we want to change from 50 to 60 years, we only have to make the change in one place.</p>
+</section>
+<section id="simulate-5" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="simulate-5"><span class="header-section-number">4.5</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</h2>
+<blockquote class="blockquote">
+<p>We can have confidence in this simulated dataset because it is relatively straight forward, and we wrote the code for it. But when we turn to the real dataset, it is more difficult to be sure that it is what it claims to be. Even if we trust the data, we need to be able to share that confidence with others. One way forward is to establish some tests of whether our data are as they should be. For instance, we expect:</p>
+<ul>
+<li>That “country” is exclusively one of these four: “Argentina”, “Australia”, “Canada”, or “Kenya”.</li>
+<li>Conversely, “country” contains all those four countries.</li>
+<li>That “year” is no smaller than 1971 and no larger than 2020, and is an integer, not a letter or a number with decimal places.</li>
+<li>That “nmr” is a value somewhere between 0 and 1,000, and is a number.</li>
+</ul>
+<p>We can write a series of tests based on these features, that we expect the dataset to pass.</p>
+</blockquote>
+</section>
+<section id="simulate-6" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="simulate-6"><span class="header-section-number">4.6</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>simulated_nmr_data<span class="sc">$</span>country <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>() <span class="sc">==</span> <span class="fu">c</span>(<span class="st">"Argentina"</span>, <span class="st">"Australia"</span>, <span class="st">"Canada"</span>, <span class="st">"Kenya"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE TRUE TRUE TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>simulated_nmr_data<span class="sc">$</span>country <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">length</span>() <span class="sc">==</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>simulated_nmr_data<span class="sc">$</span>year <span class="sc">|&gt;</span> <span class="fu">min</span>() <span class="sc">==</span> <span class="dv">1971</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>simulated_nmr_data<span class="sc">$</span>year <span class="sc">|&gt;</span> <span class="fu">max</span>() <span class="sc">==</span> <span class="dv">2020</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>simulated_nmr_data<span class="sc">$</span>nmr <span class="sc">|&gt;</span> <span class="fu">min</span>() <span class="sc">&gt;=</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>simulated_nmr_data<span class="sc">$</span>nmr <span class="sc">|&gt;</span> <span class="fu">max</span>() <span class="sc">&lt;=</span> <span class="dv">1000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>simulated_nmr_data<span class="sc">$</span>nmr <span class="sc">|&gt;</span> <span class="fu">class</span>() <span class="sc">==</span> <span class="st">"numeric"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="simulate-7" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="simulate-7"><span class="header-section-number">4.7</span> <i class="bi-1-circle " style="" role="img" aria-hidden="true"></i> simulate</h2>
+<p><br></p>
+<blockquote class="blockquote">
+<p>Having passed these tests, we can have confidence in the simulated dataset. More importantly, we can apply these tests to the real dataset. This enables us to have greater confidence in that dataset and to share that confidence with others.</p>
+</blockquote>
+</section>
+</section>
+<section id="acquire" class="level1" data-background-color="#2E3440" data-number="5">
+<h1 data-background-color="#2E3440" data-number="5"><span class="header-section-number">5</span> <i class="bi-3-circle " style="" role="img" aria-hidden="true"></i> Acquire</h1>
+<p><span class="huge">Neonatal Mortality Rates (NMR)</span></p>
+<section id="section" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="section"><span class="header-section-number">5.1</span> </h2>
+<p>The UN Inter-agency Group for Child Mortality Estimation (IGME) <a href="https://childmortality.org/">provides</a> NMR estimates that we can download and save.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>igme_data_path <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"igme.csv"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>igme_data_path</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/Users/johnmclevey/Projects/SOCI3040/data/igme.csv"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>raw_igme_data <span class="ot">&lt;-</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">read_csv</span>(</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">file =</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">"https://childmortality.org/wp-content/uploads/2021/09/UNIGME-2021.csv"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">show_col_types =</span> <span class="cn">FALSE</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="at">x =</span> raw_igme_data, <span class="at">file =</span> igme_data_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-1" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="section-1"><span class="header-section-number">5.2</span> </h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>raw_igme_data <span class="ot">&lt;-</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">read_csv</span>(</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">file =</span> igme_data_path,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">show_col_types =</span> <span class="cn">FALSE</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-2" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="section-2"><span class="header-section-number">5.3</span> </h2>
+<p>With established data, such as this, it can be useful to read supporting material about the data. In this case, a codebook is available <a href="https://childmortality.org/wp-content/uploads/2021/03/CME-Info_codebook_for_downloads.xlsx">here</a>. After this we can take a quick look at the dataset to get a better sense of it. We might be interested in what the dataset looks like with <code>head()</code> and <code>tail()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(raw_igme_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 29
+  `Geographic area` Indicator              Sex   `Wealth Quintile` `Series Name`
+  &lt;chr&gt;             &lt;chr&gt;                  &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;        
+1 Afghanistan       Neonatal mortality ra… Total Total             Multiple Ind…
+2 Afghanistan       Neonatal mortality ra… Total Total             Multiple Ind…
+3 Afghanistan       Neonatal mortality ra… Total Total             Multiple Ind…
+4 Afghanistan       Neonatal mortality ra… Total Total             Multiple Ind…
+5 Afghanistan       Neonatal mortality ra… Total Total             Multiple Ind…
+6 Afghanistan       Neonatal mortality ra… Total Total             Afghanistan …
+# ℹ 24 more variables: `Series Year` &lt;chr&gt;, `Regional group` &lt;chr&gt;,
+#   TIME_PERIOD &lt;chr&gt;, OBS_VALUE &lt;dbl&gt;, COUNTRY_NOTES &lt;chr&gt;, CONNECTION &lt;lgl&gt;,
+#   DEATH_CATEGORY &lt;lgl&gt;, CATEGORY &lt;chr&gt;, `Observation Status` &lt;chr&gt;,
+#   `Unit of measure` &lt;chr&gt;, `Series Category` &lt;chr&gt;, `Series Type` &lt;chr&gt;,
+#   STD_ERR &lt;dbl&gt;, REF_DATE &lt;dbl&gt;, `Age Group of Women` &lt;chr&gt;,
+#   `Time Since First Birth` &lt;chr&gt;, DEFINITION &lt;chr&gt;, INTERVAL &lt;dbl&gt;,
+#   `Series Method` &lt;chr&gt;, LOWER_BOUND &lt;dbl&gt;, UPPER_BOUND &lt;dbl&gt;, …</code></pre>
+</div>
+</div>
+</section>
+<section id="section-3" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="section-3"><span class="header-section-number">5.4</span> </h2>
+<p>and what the names of the columns are with <code>names()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(raw_igme_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Geographic area"        "Indicator"              "Sex"                   
+ [4] "Wealth Quintile"        "Series Name"            "Series Year"           
+ [7] "Regional group"         "TIME_PERIOD"            "OBS_VALUE"             
+[10] "COUNTRY_NOTES"          "CONNECTION"             "DEATH_CATEGORY"        
+[13] "CATEGORY"               "Observation Status"     "Unit of measure"       
+[16] "Series Category"        "Series Type"            "STD_ERR"               
+[19] "REF_DATE"               "Age Group of Women"     "Time Since First Birth"
+[22] "DEFINITION"             "INTERVAL"               "Series Method"         
+[25] "LOWER_BOUND"            "UPPER_BOUND"            "STATUS"                
+[28] "YEAR_TO_ACHIEVE"        "Model Used"            </code></pre>
+</div>
+</div>
+</section>
+<section id="section-4" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="section-4"><span class="header-section-number">5.5</span> </h2>
+<blockquote class="blockquote">
+<p>We would like to clean up the names and only keep the rows and columns that we are interested in. Based on our plan, we are interested in rows where “Sex” is “Total”, “Series Name” is “UN IGME estimate”, “Geographic area” is one of “Argentina”, “Australia”, “Canada”, and “Kenya”, and the “Indicator” is “Neonatal mortality rate”. After this we are interested in just a few columns: “geographic_area”, “time_period”, and “obs_value”.</p>
+</blockquote>
+</section>
+<section id="section-5" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="section-5"><span class="header-section-number">5.6</span> </h2>
+<div class="cell" data-output-location="slide">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>cleaned_igme_data <span class="ot">&lt;-</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>(raw_igme_data) <span class="sc">|&gt;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>        sex <span class="sc">==</span> <span class="st">"Total"</span>,</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        series_name <span class="sc">==</span> <span class="st">"UN IGME estimate"</span>,</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>        geographic_area <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Argentina"</span>, <span class="st">"Australia"</span>, <span class="st">"Canada"</span>, <span class="st">"Kenya"</span>),</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        indicator <span class="sc">==</span> <span class="st">"Neonatal mortality rate"</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(geographic_area, time_period, obs_value)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cleaned_igme_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  geographic_area time_period obs_value
+  &lt;chr&gt;           &lt;chr&gt;           &lt;dbl&gt;
+1 Argentina       1970-06          24.9
+2 Argentina       1971-06          24.7
+3 Argentina       1972-06          24.6
+4 Argentina       1973-06          24.6
+5 Argentina       1974-06          24.5
+6 Argentina       1975-06          24.1</code></pre>
+</div>
+</div>
+</section>
+<section id="section-6" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="section-6"><span class="header-section-number">5.7</span> </h2>
+<blockquote class="blockquote">
+<p>We need to fix two other aspects: the class of “time_period” is character when we need it to be a year, and the name of “obs_value” should be “nmr” to be more informative.</p>
+</blockquote>
+</section>
+<section id="section-7" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="section-7"><span class="header-section-number">5.8</span> </h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>cleaned_igme_data <span class="ot">&lt;-</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    cleaned_igme_data <span class="sc">|&gt;</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">time_period =</span> <span class="fu">str_remove</span>(time_period, <span class="st">"-06"</span>),</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">time_period =</span> <span class="fu">as.integer</span>(time_period)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(time_period <span class="sc">&gt;=</span> <span class="dv">1971</span>) <span class="sc">|&gt;</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">nmr =</span> obs_value, <span class="at">year =</span> time_period, <span class="at">country =</span> geographic_area)</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cleaned_igme_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  country    year   nmr
+  &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;
+1 Argentina  1971  24.7
+2 Argentina  1972  24.6
+3 Argentina  1973  24.6
+4 Argentina  1974  24.5
+5 Argentina  1975  24.1
+6 Argentina  1976  23.3</code></pre>
+</div>
+</div>
+</section>
+<section id="section-8" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="section-8"><span class="header-section-number">5.9</span> </h2>
+<blockquote class="blockquote">
+<p>Finally, we can check that our dataset passes the tests that we developed based on the simulated dataset.</p>
+</blockquote>
+</section>
+<section id="section-9" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="section-9"><span class="header-section-number">5.10</span> </h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>cleaned_igme_data<span class="sc">$</span>country <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>() <span class="sc">==</span> <span class="fu">c</span>(<span class="st">"Argentina"</span>, <span class="st">"Australia"</span>, <span class="st">"Canada"</span>, <span class="st">"Kenya"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE TRUE TRUE TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>cleaned_igme_data<span class="sc">$</span>country <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unique</span>() <span class="sc">|&gt;</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">length</span>() <span class="sc">==</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>cleaned_igme_data<span class="sc">$</span>year <span class="sc">|&gt;</span> <span class="fu">min</span>() <span class="sc">==</span> <span class="dv">1971</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>cleaned_igme_data<span class="sc">$</span>year <span class="sc">|&gt;</span> <span class="fu">max</span>() <span class="sc">==</span> <span class="dv">2020</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>cleaned_igme_data<span class="sc">$</span>nmr <span class="sc">|&gt;</span> <span class="fu">min</span>() <span class="sc">&gt;=</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>cleaned_igme_data<span class="sc">$</span>nmr <span class="sc">|&gt;</span> <span class="fu">max</span>() <span class="sc">&lt;=</span> <span class="dv">1000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>cleaned_igme_data<span class="sc">$</span>nmr <span class="sc">|&gt;</span> <span class="fu">class</span>() <span class="sc">==</span> <span class="st">"numeric"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="section-10" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="section-10"><span class="header-section-number">5.11</span> </h2>
+<p>All that remains is to save the nicely cleaned dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>cleaned_igme_data_path <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"cleaned_igme_data.csv"</span>)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(<span class="at">x =</span> cleaned_igme_data, <span class="at">file =</span> cleaned_igme_data_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="exploreunderstand" class="level1" data-background-color="#2E3440" data-number="6">
+<h1 data-background-color="#2E3440" data-number="6"><span class="header-section-number">6</span> <i class="bi-4-circle " style="" role="img" aria-hidden="true"></i> Explore/Understand</h1>
+<p><span class="huge">Neonatal Mortality Rates (NMR)</span></p>
+<section id="section-11" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="section-11"><span class="header-section-number">6.1</span> </h2>
+<p>We would like to make a graph of estimated NMR using the cleaned dataset. First, we read in the dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>cleaned_igme_data <span class="ot">&lt;-</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">read_csv</span>(</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"cleaned_igme_data.csv"</span>),</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">show_col_types =</span> <span class="cn">FALSE</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-12" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="section-12"><span class="header-section-number">6.2</span> </h2>
+<blockquote class="blockquote">
+<p>We can now make a graph of how NMR has changed over time and the differences between countries (<a href="#fig-nmrgraph" class="quarto-xref">Figure&nbsp;2</a>).</p>
+</blockquote>
+<div class="cell" data-output-location="slide">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>cleaned_igme_data <span class="sc">|&gt;</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> nmr, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Neonatal Mortality Rate (NMR)"</span>, <span class="at">color =</span> <span class="st">"Country"</span>) <span class="sc">+</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-nmrgraph" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nmrgraph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="lecture-04-notes_files/figure-html/fig-nmrgraph-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nmrgraph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Neonatal Mortality Rate (NMR), for Argentina, Australia, Canada, and Kenya (1971-2020)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="share" class="level1" data-background-color="#2E3440" data-number="7">
+<h1 data-background-color="#2E3440" data-number="7"><span class="header-section-number">7</span> <i class="bi-5-circle " style="" role="img" aria-hidden="true"></i> Share</h1>
+<p><span class="huge">Neonatal Mortality Rates (NMR)</span></p>
+<section id="share-1" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="share-1"><span class="header-section-number">7.1</span> <i class="bi-5-circle " style="" role="img" aria-hidden="true"></i> share</h2>
+<p>Example taken directly from <span class="citation" data-cites="alexander2023telling">Alexander (<a href="#ref-alexander2023telling" role="doc-biblioref">2023</a>)</span>, <a href="">here</a>.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Neonatal mortality refers to a death that occurs within the first month of life. In particular, the neonatal mortality rate (NMR) is the number of neonatal deaths per 1,000 live births. We obtain estimates for NMR for four countries—Argentina, Australia, Canada, and Kenya—over the past 50 years.</p>
+<p>The UN Inter-agency Group for Child Mortality Estimation (IGME) provides estimates of the NMR at the website: https://childmortality.org/. We downloaded their estimates then cleaned and tidied the dataset using the statistical programming language R <span class="citation" data-cites="citeR">(<a href="#ref-citeR" role="doc-biblioref">R Core Team 2023</a>)</span>.</p>
+<p>We found considerable change in the estimated NMR over time and between the four countries of interest (<a href="#fig-nmrgraph" class="quarto-xref">Figure&nbsp;2</a>). We found that the 1970s tended to be associated with reductions in the estimated NMR. Australia and Canada were estimated to have a low NMR at that point and remained there through 2020, with further slight reductions. The estimates for Argentina and Kenya continued to have substantial reductions through 2020.</p>
+<p>Our results suggest considerable improvements in estimated NMR over time. NMR estimates are based on a statistical model and underlying data. The double burden of data is that often high-quality data are less easily available for groups, in this case countries, with worse outcomes. Our conclusions are subject to the model that underpins the estimates and the quality of the underlying data, and we did not independently verify either of these.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="wrap-up" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Wrap Up</h1>
+<blockquote class="blockquote">
+<p>We have covered much ground in this chapter, and it is normal to have not followed it all. The best way to proceed is to go through each of the three case studies in your own time. Type all the code out yourself, rather than copy-pasting, and run it bit by bit, even if you do not entirely understand what it is doing. Then try to add your own comments to it.</p>
+<p>It is also the case that it is not necessary to fully understand everything in this chapter at this point. Some students find it best to continue going through the next few chapters of this book, and return to this one later.</p>
+</blockquote>
+</section>
+<section id="your-turn" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Your Turn</h1>
+<p>Lab Exercise</p>
+<!-- # Content
+
+## 
+
+Take 1/2 of the content from the previous lecture (3), find a good place to split them. Maybe do the first example the day before, or the first two, and then do the last or the last two on the second day, and on the second day they should do their own example. 
+
+- lecture 3: 2 examples with little follow along
+- lecture 4: 1 example as reminder and then they do their own from scratch
+- 🔥
+
+## References -->
 
 
-</section>
+
 </section>
 
-<script async="" defer="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script></main> <!-- /main -->
+<script async="" defer="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-alexander2023telling" class="csl-entry" role="listitem">
+Alexander, Rohan. 2023. <em>Telling Stories with Data: With Applications in <span>R</span></em>. Chapman; Hall/CRC.
+</div>
+<div id="ref-citeR" class="csl-entry" role="listitem">
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-unigme" class="csl-entry" role="listitem">
+UN IGME. 2021. <span>“Levels and Trends in Child Mortality, 2021.”</span> <a href="https://childmortality.org/wp-content/uploads/2021/12/UNICEF-2021-Child-Mortality-Report.pdf">https://childmortality.org/wp-content/uploads/2021/12/UNICEF-2021-Child-Mortality-Report.pdf</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

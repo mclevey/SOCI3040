@@ -9,11 +9,11 @@
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/bootstrap-icons-1.11.1/all.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.56">
+  <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="John McLevey (he/him)">
   <meta name="dcterms.date" content="2025-02-06">
-  <title>🔥 Quantitative Research Methods – Piping, Summarizing, and Transforming</title>
+  <title>🔥 Quantitative Research Methods – Creating Graphs, Tables, &amp; Maps</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -347,8 +347,8 @@
     <div class="slides">
 
 <section id="title-slide" data-background-color="#2E3440" data-color="#EDEEF" class="quarto-title-block center">
-  <h1 class="title">Piping, Summarizing, and Transforming</h1>
-  <p class="subtitle">Quantitative Research Methods</p>
+  <h1 class="title">Creating Graphs, Tables, &amp; Maps</h1>
+  <p class="subtitle">SOCI 3040 – Quantitative Research Methods</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -362,15 +362,31 @@ John McLevey (he/him)
 </div>
 
   <p class="date">February 6, 2025</p>
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">agenda.</h2>
+<ul>
+<li class="fragment"><a href="#/content-plan" id="/toc-content-plan"><span class="header-section-number">1</span> Content Plan</a></li>
+</ul>
+</nav>
 </section>
-<section id="coming-soon" class="slide level2">
-<h2>Coming soon…</h2>
+<section>
+<section id="content-plan" class="title-slide slide level1 center" data-number="1">
+<h1><span class="header-section-number">1</span> Content Plan</h1>
+<p>1/2 of the content in Lecture 09. Maybe some stuff from KH.</p>
+<!-- ```{r setup, include=FALSE}
+options(
+    tibble.max_extra_cols = 6,
+    tibble.width = 60
+)
+```
+
+## Coming soon...
+
+## References -->
 </section>
-<section id="references" class="slide level2">
-<h2>References</h2>
-</section>
-<section id="references-1" class="slide level2 smaller scrollable">
-<h2>References</h2>
+<section id="references" class="slide level2 smaller scrollable" data-number="1.1">
+<h2><span class="header-section-number">1.1</span> References</h2>
 <div id="refs" role="list">
 
 </div>
@@ -385,7 +401,7 @@ John McLevey (he/him)
 <p><a href="https://www.johnmclevey.com/quantitative-research-methods"><i class="bi-house-fill " style="color: #2E3440;" role="img" aria-hidden="true"></i></a></p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -596,44 +612,6 @@ John McLevey (he/him)
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

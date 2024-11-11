@@ -19,20 +19,20 @@ listing:
   sort-ui: false
   filter-ui: false
   page-size: 30
+bibliography: ../references.bib
 ---
 
-<!-- 
-::: {.callout-important appearance="minimal"}
-I am still developing these course materials.<br>
-This schedule of topics may change **at any time** prior to the first day of class (Jan. 7, 2025).
-:::
- -->
+::: {.callout-note appearance="minimal"}
+In the table below, 
 
+- {{< bi fire >}} refers to Alexander's [-@alexander2023telling] *Telling Stories with Data* **(required)**
+- {{< bi activity >}} refers to Healy's [-@healy2019data] *Data Visualization: A Practical Introduction* **(supplementary / optional)**
+- {{< bi flower1 >}} refers to McElreath's [-@mcelreath2023statistical] *Statistical Rethinking* 2023 Lectures **(supplementary / optional)**
+
+Each file icon links directly to the assigned or supplementary materials.
+:::
 
 :::: {.column-page-right}
-<!-- :::: {.column-page} -->
-
 ::: {#schedule-listing}
 :::
-
 ::::

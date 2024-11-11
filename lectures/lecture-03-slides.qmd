@@ -1,5 +1,5 @@
 ---
-title: "Drinking from the Firehose -- Data Analysis Workflow" # Plan, Simulate, Acquire, Explore, Share
+title: "Data Analysis Workflow -- The Firehose" # Plan, Simulate, Acquire, Explore, Share
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author:
   - name: "John McLevey (he/him)"

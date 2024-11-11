@@ -1,6 +1,1 @@
-# R Fundamentals
-
-## Plan
-
-- TODO: Introduction to R
-- Either KH and RA would be ideal, Tidyverse first
+Coming soon...

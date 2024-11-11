@@ -14,7 +14,8 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "23"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/13-ijaglm.html)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/13-ijaglm.html) {{< bi fire >}} Ch 13"
+recommended_reading: "[{{< bi file-text >}}](https://socviz.co/modeling.html#modeling) {{< bi activity >}} Ch 6"
 number-sections: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Reproducible Research with R and RStudio"
+title: "Reproducible Workflows with R and RStudio"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author:
   - name: "John McLevey (he/him)"
@@ -14,8 +14,8 @@ toc-expand: false
 toc-depth: 2
 published-title: "Class Date"
 class-id: "05"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/03-workflow.html) RA CH 3"
-recommended_reading: "[{{< bi file-text >}}](https://socviz.co/gettingstarted.html#gettingstarted) KH Ch 2"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/03-workflow.html) {{< bi fire >}} Ch 3"
+recommended_reading: "[{{< bi file-text >}}](https://socviz.co/gettingstarted.html#gettingstarted) {{< bi activity >}} Ch 2"
 number-sections: true
 ---
 

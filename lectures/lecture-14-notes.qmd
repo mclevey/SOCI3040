@@ -15,7 +15,8 @@ toc-depth: 2
 published-title: "Class Date"
 class-id: "14"
 due: "[Data Stories 2](../deliverables/assignment-2.qmd)"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/07-gather.html)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/07-gather.html) {{< bi fire >}} Ch 7"
+recommended_reading: "[{{< bi file-text >}}](https://socviz.co/maps.html#maps) {{< bi activity >}} Ch 7"
 number-sections: true
 ---
 

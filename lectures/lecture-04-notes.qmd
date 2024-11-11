@@ -1,5 +1,5 @@
 ---
-title: "Drinking from the Firehose -- Data Analysis Workflow"  # "Good and Bad Ways to Look at Data"
+title: "Data Analysis Workflow -- The Firehose"  # "Good and Bad Ways to Look at Data"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author:
   - name: "John McLevey (he/him)"
@@ -14,8 +14,8 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "04"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html) RA Ch 2"
-recommended_reading: "[{{< bi file-text >}}](https://socviz.co/lookatdata.html#lookatdata) KH Ch 1"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html) {{< bi fire >}} Ch 2"
+recommended_reading: "[{{< bi file-text >}}](https://socviz.co/lookatdata.html#lookatdata) {{< bi activity >}} Ch 1"
 number-sections: true
 ---
 

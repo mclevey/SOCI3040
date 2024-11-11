@@ -14,7 +14,8 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "11"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/06-farm.html)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/06-farm.html) {{< bi fire >}} Ch 6"
+recommended_reading: "[{{< bi file-text >}}](https://socviz.co/workgeoms.html#workgeoms) {{< bi activity >}} Ch 5"
 number-sections: true
 ---
 

@@ -14,8 +14,10 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "07"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/04-writing_research.html)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/04-writing_research.html) {{< bi fire >}} Ch 4"
+recommended_reading: "[{{< bi file-text >}}](https://socviz.co/makeplot.html#makeplot) {{< bi activity >}} Ch 3"
 number-sections: true
+due: "[Data Stories 1](../deliverables/assignment-1.qmd)"
 ---
 
 ::: {#embedded-slides}

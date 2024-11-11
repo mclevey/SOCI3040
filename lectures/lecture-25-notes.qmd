@@ -15,7 +15,6 @@ toc-depth: 2
 published-title: "Class Date"
 class-id: "25"
 due: "[Data Stories 4](../deliverables/assignment-4.qmd)"
-assigned_reading: ""
 number-sections: true
 ---
 

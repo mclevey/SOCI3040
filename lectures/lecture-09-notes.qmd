@@ -14,8 +14,8 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "09"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/05-graphs_tables_maps.html)"
-recommended_reading: "[{{< bi file-text >}}](https://socviz.co/makeplot.html#makeplot) + [{{< bi file-text >}}](https://socviz.co/groupfacettx.html#groupfacettx)"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/05-graphs_tables_maps.html) {{< bi fire >}} Ch 5"
+recommended_reading: "[{{< bi file-text >}}](https://socviz.co/groupfacettx.html#groupfacettx) {{< bi activity >}} Ch 4"
 number-sections: true
 ---
 

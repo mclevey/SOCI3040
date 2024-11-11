@@ -14,7 +14,8 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "22"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/12-ijalm.html) RA Ch 12"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/12-ijalm.html) {{< bi fire >}} Ch 12"
+recommended_reading: "[{{< bi youtube >}}](https://youtu.be/tNOu-SEacNU?si=WTTvwm3m_xyGHR9e) {{< bi flower1 >}} Geocentric Models"
 number-sections: true
 ---
 

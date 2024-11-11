@@ -14,7 +14,8 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "19"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/11-eda.html) RA Ch 11"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/11-eda.html) {{< bi fire >}} Ch 11"
+recommended_reading: "[{{< bi youtube >}}](https://youtu.be/R1vcdhPBlXA?si=A9BflTwGGEyfnak0) {{< bi flower1 >}} The Garden of Forking Data"
 number-sections: true
 ---
 

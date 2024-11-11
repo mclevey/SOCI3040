@@ -14,7 +14,8 @@ toc-expand: true
 toc-depth: 2
 published-title: "Class Date"
 class-id: "17"
-assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/09-clean_and_prepare.html) RA Ch 9"
+assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/09-clean_and_prepare.html) {{< bi fire >}} Ch 9"
+recommended_reading: "[{{< bi youtube >}}](https://youtu.be/FdnMWdICdRs?si=tM72fAv7GDMZqzL_) {{< bi flower1 >}} Statistical Golems"
 number-sections: true
 ---
 

@@ -96,9 +96,6 @@ website:
             href: lectures/lecture-24-slides.qmd
           - text: 'Class 25 -- **Project Work**'
             href: lectures/lecture-25-slides.qmd
-      # - text: Blog
-        # href: https://www.johnmclevey.com
-        # icon: rss-fill
       - text: "Telling Stories with Data"
         icon: fire
         menu:
@@ -133,7 +130,7 @@ website:
           - text: "Chapter 14 -- **Prediction**"
             href: https://tellingstorieswithdata.com/13-prediction.html
           - text: "Chapter 15 -- **Causality from observational data**"
-            href: Causality from observational data
+            href: https://tellingstorieswithdata.com/14-causality_from_obs.html
           - text: "Chapter 16 -- **Multilevel regression with post-stratification**"
             href: https://tellingstorieswithdata.com/15-mrp.html
           - text: "Chapter 17 -- **Text as data**"
@@ -148,6 +145,7 @@ website:
             href: https://tellingstorieswithdata.com/25-datasheet.html
           - text: "Appendix -- **Cocktails 🥃🍸**"
             href: https://tellingstorieswithdata.com/98-cocktails.html
+    right:
       - text: "Data Visualization"
         icon: activity
         menu:
@@ -171,9 +169,72 @@ website:
             href: https://socviz.co/refineplots.html#refineplots
           - text: "**Appendix**"
             href: https://socviz.co/appendix.html#appendix
-    right:
+      - text: "Statistical Rethinking (2023)"
+        icon: flower1
+        menu:
+          - text: "Lecture 01 -- **The Golem of Prague**"
+            href: https://youtu.be/FdnMWdICdRs?si=2jrjHmBZPwpNKIjd
+            icon: youtube
+          - text: "Lecture 02 -- **The Garden of Forking Data**"
+            href: https://youtu.be/R1vcdhPBlXA?si=E0Z1TTnoqK314JC8
+            icon: youtube
+          - text: "Lecture 03 -- **Geocentric Models**"
+            href: https://youtu.be/tNOu-SEacNU?si=cQ6KCXPL3NJWhq-9
+            icon: youtube
+          - text: "Lecture 04 -- **Categories & Curves**"
+            href: https://youtu.be/F0N4b7K_iYQ?si=x2OfAN1zDQk2JR5P
+            icon: youtube
+          - text: "Lecture 05 -- **Elemental Confounds**"
+            href: https://youtu.be/mBEA7PKDmiY?si=Hj8ZC7e8cYPKWktd
+            icon: youtube
+          - text: "Lecture 06 -- **Good and Bad Controls**"
+            href: https://youtu.be/uanZZLlzKHw?si=-NjSgQ9htg1sKyvQ
+            icon: youtube
+          - text: "Lecture 07 -- **Fitting Over and Under**"
+            href: https://youtu.be/1VgYIsANQck?si=isqGSfDQtCViFhXl
+            icon: youtube
+          - text: "Lecture 08 -- **Markov Chain Monte Carlo**"
+            href: https://youtu.be/rZk2FqX2XnY?si=u0MtulsVegwO1G5M
+            icon: youtube
+          - text: "Lecture 09 -- **Modeling Events**"
+            href: https://youtu.be/Zi6N3GLUJmw?si=Vr4Xjhujh5AD-dKR
+            icon: youtube
+          - text: "Lecture 10 -- **Counts & Hidden Confounds**"
+            href: https://youtu.be/jokxu18egu0?si=q44lfkL8_Au77yWC
+            icon: youtube
+          - text: "Lecture 11 -- **Ordered Categories**"
+            href: https://youtu.be/VVQaIkom5D0?si=t_0PXlOEFybrlVFo
+            icon: youtube
+          - text: "Lecture 12 -- **Multilevel Models**"
+            href: https://youtu.be/iwVqiiXYeC4?si=ryU8pArGgqGD1fJn
+            icon: youtube
+          - text: "Lecture 13 -- **Multilevel Adventures**"
+            href: https://youtu.be/sgqMkZeslxA?si=y4rDEW29cJ3463eu
+            icon: youtube
+          - text: "Lecture 14 -- **Correlated Features**"
+            href: https://youtu.be/Es44-Bp1aKo?si=DyarBHvBH6o0H7NH
+            icon: youtube
+          - text: "Lecture 15 -- **Social Networks**"
+            href: https://youtu.be/hnYhJzYAQ60?si=IY5yZ5_85tx8m7zp
+            icon: youtube
+          - text: "Lecture 16 -- **Gaussian Processes**"
+            href: https://youtu.be/Y2ZLt4iOrXU?si=k7UYhsr1QSt58Dxy
+            icon: youtube
+          - text: "Lecture 17 -- **Measurement & Misclassification**"
+            href: https://youtu.be/mt9WKbQJrI4?si=0UWQMM8Bs0x9VweU
+            icon: youtube
+          - text: "Lecture 18 -- **Missing Data**"
+            href: https://youtu.be/Oeq6GChHOzc?si=72k6UxKVDZFIbiHL
+            icon: youtube
+          - text: "Lecture 19 -- **Generalized Linear Madness**"
+            href: https://youtu.be/zffwg0xDOgE?si=xn5PbeyUMJHh46Js
+            icon: youtube
+          - text: "Lecture 20 -- **Horoscopes**"
+            href: https://youtu.be/qwF-st2NGTU?si=yufeuPJQ_pn6_ZJg
+            icon: youtube
       - text: John McLevey
         href: https://www.johnmclevey.com
+        icon: person-vcard-fill
       - icon: github
         href: https://github.com/
   sidebar:

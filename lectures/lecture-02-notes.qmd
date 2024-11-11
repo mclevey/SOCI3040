@@ -1,17 +1,15 @@
 ---
-title: "Telling Stories with Data + R and the Tidyverse"
+title: "Telling Stories with Data + R & the Tidyverse"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author: 
-  - name: "John McLevey"
-    affiliation: "Sociology, Memorial University"
+  - name: "02"
+    affiliation: "[Last Class {{< bi arrow-left-square-fill >}}](lecture-01-notes.qmd) or [{{< bi arrow-right-square-fill >}} Next Class](lecture-03-notes.qmd)"
+author-title: "Class No."
+affiliation-title: ""
 date: "Tuesday January 9, 2025" 
 date-format: "MMMM D, YYYY"
 bibliography: ../references.bib
-mermaid:
-  theme: default
-toc: true
-toc-expand: true
-toc-depth: 2
+toc: false
 published-title: "Class Date"
 class-id: "02"
 assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/01-introduction.html)  {{< bi fire >}} Ch 1"

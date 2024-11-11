@@ -2,16 +2,14 @@
 title: "Introduction + Telling Stories with Data"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author: 
-  - name: "John McLevey (he/him)"
-    affiliation: "Department of Sociology, Memorial University"
+  - name: "01"
+    affiliation: "[{{< bi arrow-right-square-fill >}} Next Class](lecture-02-notes.qmd)"
+author-title: "Class No."
+affiliation-title: ""
 date: "Tuesday January 7, 2025"
 date-format: "MMMM D, YYYY"
 bibliography: ../references.bib
-mermaid:
-  theme: default
-toc: true
-toc-expand: true
-toc-depth: 2
+toc: false
 published-title: "Class Date"
 class-id: "01"
 assigned_reading: "Browse this site"

@@ -1,17 +1,15 @@
 ---
 title: "Measurement, Censuses, and Sampling"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
-author:
-  - name: "John McLevey (he/him)"
-    affiliation: "Sociology, Memorial University"
+author: 
+  - name: "11"
+    affiliation: "[Last Class {{< bi arrow-left-square-fill >}}](lecture-10-notes.qmd) or [{{< bi arrow-right-square-fill >}} Next Class](lecture-12-notes.qmd)"
+author-title: "Class No."
+affiliation-title: ""
 date: "February 11, 2025" 
 date-format: "MMMM D, YYYY"
 bibliography: ../references.bib
-mermaid:
-  theme: default
-toc: true
-toc-expand: true
-toc-depth: 2
+toc: false
 published-title: "Class Date"
 class-id: "11"
 assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/06-farm.html) {{< bi fire >}} Ch 6"

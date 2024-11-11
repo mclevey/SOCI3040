@@ -1,6 +1,7 @@
 ---
 title: "{{< bi check2-square >}} Assessment"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
+toc: true
 bibliography: ../references.bib
 listing:
   id: assignment-listing
@@ -20,9 +21,44 @@ listing:
   page-size: 30
 ---
 
-
-
-{{< lipsum 1 >}}
+The table below, {{< lipsum 1 >}}
 
 ::: {#assignment-listing}
 :::
+
+# {{< bi file-post >}} Data Stories 1
+
+## Instructions
+
+## Grading Rubric
+
+## Student Work
+
+
+# {{< bi file-post >}} Data Stories 2
+
+## Instructions
+
+## Grading Rubric
+
+## Student Work
+
+
+# {{< bi file-post >}} Data Stories 3
+
+## Instructions
+
+## Grading Rubric
+
+## Student Work
+
+
+# {{< bi file-post >}} Data Stories 4
+
+## Instructions
+
+## Grading Rubric
+
+## Student Work
+
+# Final Exam

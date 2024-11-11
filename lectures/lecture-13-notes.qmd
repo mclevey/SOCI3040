@@ -1,17 +1,15 @@
 ---
 title: "APIs, Scraping, and Parsing"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
-author:
-  - name: "John McLevey (he/him)"
-    affiliation: "Sociology, Memorial University"
+author: 
+  - name: "13"
+    affiliation: "[Last Class {{< bi arrow-left-square-fill >}}](lecture-12-notes.qmd) or [{{< bi arrow-right-square-fill >}} Next Class](lecture-14-notes.qmd)"
+author-title: "Class No."
+affiliation-title: ""
 date: "February 18, 2025" 
 date-format: "MMMM D, YYYY"
 bibliography: ../references.bib
-mermaid:
-  theme: default
-toc: true
-toc-expand: true
-toc-depth: 2
+toc: false
 published-title: "Class Date"
 class-id: "13"
 assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/07-gather.html) {{< bi fire >}} Ch 7"

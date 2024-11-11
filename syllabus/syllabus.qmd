@@ -1,6 +1,6 @@
 ---
 title: "{{< bi fire >}} Quantitative Research Methods"
-subtitle: Course Syllabus (SOCI 3040 with John McLevey)
+subtitle: Syllabus (SOCI 3040 with John McLevey)
 bibliography: ../references.bib
 ---
 

@@ -1,17 +1,15 @@
 ---
 title: "APIs, Scraping, and Parsing" # Cleaning, Testing, Validating, and Documenting"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
-author:
-  - name: "John McLevey (he/him)"
-    affiliation: "Sociology, Memorial University"
+author: 
+  - name: "14"
+    affiliation: "[Last Class {{< bi arrow-left-square-fill >}}](lecture-13-notes.qmd) or [{{< bi arrow-right-square-fill >}} Next Class](lecture-15-notes.qmd)"
+author-title: "Class No."
+affiliation-title: ""
 date: "February 20, 2025" 
 date-format: "MMMM D, YYYY"
 bibliography: ../references.bib
-mermaid:
-  theme: default
-toc: true
-toc-expand: true
-toc-depth: 2
+toc: false
 published-title: "Class Date"
 class-id: "14"
 due: "[Data Stories 2](../deliverables/assignment-2.qmd)"

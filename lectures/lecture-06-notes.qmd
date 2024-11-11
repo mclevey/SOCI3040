@@ -1,17 +1,15 @@
 ---
-title: "Reproducible Workflows with R and RStudio"
+title: "Reproducible Workflows with R & RStudio"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
-author:
-  - name: "John McLevey (he/him)"
-    affiliation: "Sociology, Memorial University"
+author: 
+  - name: "06"
+    affiliation: "[Last Class {{< bi arrow-left-square-fill >}}](lecture-05-notes.qmd) or [{{< bi arrow-right-square-fill >}} Next Class](lecture-07-notes.qmd)"
+author-title: "Class No."
+affiliation-title: ""
 date: "January 23, 2025" 
 date-format: "MMMM D, YYYY"
 bibliography: ../references.bib
-mermaid:
-  theme: default
-toc: true
-toc-expand: true
-toc-depth: 2
+toc: false
 published-title: "Class Date"
 class-id: "06"
 assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/03-workflow.html) {{< bi fire >}} Ch 3"

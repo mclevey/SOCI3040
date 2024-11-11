@@ -1,17 +1,15 @@
 ---
 title: "Data Analysis Workflow -- The Firehose"  # "Good and Bad Ways to Look at Data"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
-author:
-  - name: "John McLevey (he/him)"
-    affiliation: "Sociology, Memorial University"
+author: 
+  - name: "04"
+    affiliation: "[Last Class {{< bi arrow-left-square-fill >}}](lecture-03-notes.qmd) or [{{< bi arrow-right-square-fill >}} Next Class](lecture-05-notes.qmd)"
+author-title: "Class No."
+affiliation-title: ""
 date: "January 16, 2025" 
 date-format: "MMMM D, YYYY"
 bibliography: ../references.bib
-mermaid:
-  theme: default
-toc: true
-toc-expand: true
-toc-depth: 2
+toc: false
 published-title: "Class Date"
 class-id: "04"
 assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html) {{< bi fire >}} Ch 2"

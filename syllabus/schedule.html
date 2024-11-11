@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -334,7 +354,7 @@ window.Quarto = {
  <span class="dropdown-text">Chapter 14 – <strong>Prediction</strong></span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../Causality from observational data">
+    <a class="dropdown-item" href="https://tellingstorieswithdata.com/14-causality_from_obs.html">
  <span class="dropdown-text">Chapter 15 – <strong>Causality from observational data</strong></span></a>
   </li>  
         <li>
@@ -367,13 +387,15 @@ window.Quarto = {
   </li>  
     </ul>
   </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-visualization" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-activity" role="img">
 </i> 
  <span class="menu-text">Data Visualization</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-data-visualization">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-data-visualization">    
         <li>
     <a class="dropdown-item" href="https://socviz.co/index.html">
  <span class="dropdown-text"><strong>Preface</strong></span></a>
@@ -416,10 +438,118 @@ window.Quarto = {
   </li>  
     </ul>
   </li>
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-statistical-rethinking" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-flower1" role="img">
+</i> 
+ <span class="menu-text">Statistical Rethinking</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-statistical-rethinking">    
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/FdnMWdICdRs?si=2jrjHmBZPwpNKIjd"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 01 – <strong>The Golem of Prague</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/R1vcdhPBlXA?si=E0Z1TTnoqK314JC8"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 02 – <strong>The Garden of Forking Data</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/tNOu-SEacNU?si=cQ6KCXPL3NJWhq-9"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 03 – <strong>Geocentric Models</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/F0N4b7K_iYQ?si=x2OfAN1zDQk2JR5P"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 04 – <strong>Categories &amp; Curves</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/mBEA7PKDmiY?si=Hj8ZC7e8cYPKWktd"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 05 – <strong>Elemental Confounds</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/uanZZLlzKHw?si=-NjSgQ9htg1sKyvQ"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 06 – <strong>Good and Bad Controls</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/1VgYIsANQck?si=isqGSfDQtCViFhXl"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 07 – <strong>Fitting Over and Under</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/rZk2FqX2XnY?si=u0MtulsVegwO1G5M"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 08 – <strong>Markov Chain Monte Carlo</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/Zi6N3GLUJmw?si=Vr4Xjhujh5AD-dKR"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 09 – <strong>Modeling Events</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/jokxu18egu0?si=q44lfkL8_Au77yWC"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 10 – <strong>Counts &amp; Hidden Confounds</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/VVQaIkom5D0?si=t_0PXlOEFybrlVFo"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 11 – <strong>Ordered Categories</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/iwVqiiXYeC4?si=ryU8pArGgqGD1fJn"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 12 – <strong>Multilevel Models</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/sgqMkZeslxA?si=y4rDEW29cJ3463eu"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 13 – <strong>Multilevel Adventures</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/Es44-Bp1aKo?si=DyarBHvBH6o0H7NH"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 14 – <strong>Correlated Features</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/hnYhJzYAQ60?si=IY5yZ5_85tx8m7zp"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 15 – <strong>Social Networks</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/Y2ZLt4iOrXU?si=k7UYhsr1QSt58Dxy"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 16 – <strong>Gaussian Processes</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/mt9WKbQJrI4?si=0UWQMM8Bs0x9VweU"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 17 – <strong>Measurement &amp; Misclassification</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/Oeq6GChHOzc?si=72k6UxKVDZFIbiHL"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 18 – <strong>Missing Data</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/zffwg0xDOgE?si=xn5PbeyUMJHh46Js"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 19 – <strong>Generalized Linear Madness</strong></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://youtu.be/qwF-st2NGTU?si=yufeuPJQ_pn6_ZJg"><i class="bi bi-youtube" role="img">
+</i> 
+ <span class="dropdown-text">Lecture 20 – <strong>Horoscopes</strong></span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="https://www.johnmclevey.com"> 
+    <a class="nav-link" href="https://www.johnmclevey.com"> <i class="bi bi-person-vcard-fill" role="img">
+</i> 
 <span class="menu-text">John McLevey</span></a>
   </li>  
   <li class="nav-item compact">
@@ -643,14 +773,23 @@ window.Quarto = {
 </header>
 
 
-<!-- 
-::: {.callout-important appearance="minimal"}
-I am still developing these course materials.<br>
-This schedule of topics may change **at any time** prior to the first day of class (Jan. 7, 2025).
-:::
- -->
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>In the table below,</p>
+<ul>
+<li><i class="bi-fire " style="" role="img" aria-hidden="true"></i> refers to Alexander’s <span class="citation" data-cites="alexander2023telling">(<a href="#ref-alexander2023telling" role="doc-biblioref">2023</a>)</span> <em>Telling Stories with Data</em> <strong>(required)</strong></li>
+<li><i class="bi-activity " style="" role="img" aria-hidden="true"></i> refers to Healy’s <span class="citation" data-cites="healy2019data">(<a href="#ref-healy2019data" role="doc-biblioref">2019</a>)</span> <em>Data Visualization: A Practical Introduction</em> <strong>(supplementary / optional)</strong></li>
+<li><i class="bi-flower1 " style="" role="img" aria-hidden="true"></i> refers to McElreath’s <span class="citation" data-cites="mcelreath2023statistical">(<a href="#ref-mcelreath2023statistical" role="doc-biblioref">2023</a>)</span> <em>Statistical Rethinking</em> 2023 Lectures <strong>(supplementary / optional)</strong></li>
+</ul>
+<p>Each file icon links directly to the assigned or supplementary materials.</p>
+</div>
+</div>
+</div>
 <div class="column-page-right">
-<!-- :::: {.column-page} -->
 <div id="listing-schedule-listing" class="quarto-listing quarto-listing-container-table">
 <table class="quarto-listing-table table">
 <thead>
@@ -676,7 +815,7 @@ Due by 5:00 pm
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1736220600000" data-listing-file-modified-sort="1731258715320" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Introduction + Telling Stories with Data" data-listing-filename-sort="lecture-01-notes.qmd">
+<tr data-index="0" data-listing-date-sort="1736220600000" data-listing-file-modified-sort="1731349541772" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Introduction + Telling Stories with Data" data-listing-filename-sort="lecture-01-notes.qmd">
 <td>
 <span class="listing-class-id">01</span>
 </td>
@@ -696,7 +835,7 @@ Due by 5:00 pm
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1736393400000" data-listing-file-modified-sort="1731258714762" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Telling Stories with Data + R and the Tidyverse" data-listing-filename-sort="lecture-02-notes.qmd">
+<tr data-index="1" data-listing-date-sort="1736393400000" data-listing-file-modified-sort="1731348306723" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Telling Stories with Data + R &amp; the Tidyverse" data-listing-filename-sort="lecture-02-notes.qmd">
 <td>
 <span class="listing-class-id">02</span>
 </td>
@@ -704,19 +843,19 @@ Due by 5:00 pm
 <span class="listing-date">1/9/25</span>
 </td>
 <td>
-<a href="../lectures/lecture-02-notes.html" class="title listing-title">Telling Stories with Data + R and the Tidyverse</a>
+<a href="../lectures/lecture-02-notes.html" class="title listing-title">Telling Stories with Data + R &amp; the Tidyverse</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/01-introduction.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> RA Ch 1</span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/01-introduction.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 1</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://tellingstorieswithdata.com/20-r_essentials.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Appendix A</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1736825400000" data-listing-file-modified-sort="1731258712750" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="Drinking from the Firehose -- Data Analysis Workflow" data-listing-filename-sort="lecture-03-notes.qmd">
+<tr data-index="2" data-listing-date-sort="1736825400000" data-listing-file-modified-sort="1731348482534" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="Data Analysis Workflow -- The Firehose" data-listing-filename-sort="lecture-03-notes.qmd">
 <td>
 <span class="listing-class-id">03</span>
 </td>
@@ -724,19 +863,19 @@ Due by 5:00 pm
 <span class="listing-date">1/14/25</span>
 </td>
 <td>
-<a href="../lectures/lecture-03-notes.html" class="title listing-title">Drinking from the Firehose – Data Analysis Workflow</a>
+<a href="../lectures/lecture-03-notes.html" class="title listing-title">Data Analysis Workflow – The Firehose</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> RA Ch 2</span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 2</span>
 </td>
 <td>
-<span class="listing-recommended_reading"><a href="https://socviz.co/lookatdata.html#lookatdata"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> KH Ch 1</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/lookatdata.html#lookatdata"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 1</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="3" data-listing-date-sort="1736998200000" data-listing-file-modified-sort="1731270698320" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Drinking from the Firehose -- Data Analysis Workflow" data-listing-filename-sort="lecture-04-notes.qmd">
+<tr data-index="3" data-listing-date-sort="1736998200000" data-listing-file-modified-sort="1731348511513" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Data Analysis Workflow -- The Firehose" data-listing-filename-sort="lecture-04-notes.qmd">
 <td>
 <span class="listing-class-id">04</span>
 </td>
@@ -744,19 +883,19 @@ Due by 5:00 pm
 <span class="listing-date">1/16/25</span>
 </td>
 <td>
-<a href="../lectures/lecture-04-notes.html" class="title listing-title">Drinking from the Firehose – Data Analysis Workflow</a>
+<a href="../lectures/lecture-04-notes.html" class="title listing-title">Data Analysis Workflow – The Firehose</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> RA Ch 2</span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 2</span>
 </td>
 <td>
-<span class="listing-recommended_reading"><a href="https://socviz.co/lookatdata.html#lookatdata"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> KH Ch 1</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/lookatdata.html#lookatdata"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 1</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="4" data-listing-date-sort="1737430200000" data-listing-file-modified-sort="1731257592370" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Reproducible Research with R and RStudio" data-listing-filename-sort="lecture-05-notes.qmd">
+<tr data-index="4" data-listing-date-sort="1737430200000" data-listing-file-modified-sort="1731349422744" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Reproducible Workflows with R &amp; RStudio" data-listing-filename-sort="lecture-05-notes.qmd">
 <td>
 <span class="listing-class-id">05</span>
 </td>
@@ -764,19 +903,19 @@ Due by 5:00 pm
 <span class="listing-date">1/21/25</span>
 </td>
 <td>
-<a href="../lectures/lecture-05-notes.html" class="title listing-title">Reproducible Research with R and RStudio</a>
+<a href="../lectures/lecture-05-notes.html" class="title listing-title">Reproducible Workflows with R &amp; RStudio</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/03-workflow.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> RA CH 3</span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/03-workflow.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 3</span>
 </td>
 <td>
-<span class="listing-recommended_reading"><a href="https://socviz.co/gettingstarted.html#gettingstarted"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> KH Ch 2</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/gettingstarted.html#gettingstarted"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 2</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="5" data-listing-date-sort="1737603000000" data-listing-file-modified-sort="1731270924813" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Reproducible Research with R and RStudio" data-listing-filename-sort="lecture-06-notes.qmd">
+<tr data-index="5" data-listing-date-sort="1737603000000" data-listing-file-modified-sort="1731348565658" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Reproducible Workflows with R &amp; RStudio" data-listing-filename-sort="lecture-06-notes.qmd">
 <td>
 <span class="listing-class-id">06</span>
 </td>
@@ -784,19 +923,19 @@ Due by 5:00 pm
 <span class="listing-date">1/23/25</span>
 </td>
 <td>
-<a href="../lectures/lecture-06-notes.html" class="title listing-title">Reproducible Research with R and RStudio</a>
+<a href="../lectures/lecture-06-notes.html" class="title listing-title">Reproducible Workflows with R &amp; RStudio</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/03-workflow.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> RA CH 3</span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/03-workflow.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 3</span>
 </td>
 <td>
-<span class="listing-recommended_reading"><a href="https://socviz.co/gettingstarted.html#gettingstarted"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> KH Ch 2</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/gettingstarted.html#gettingstarted"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 2</span>
 </td>
 <td>
-<span class="listing-due"><a href="../deliverables/assignment-1.html">Data Stories 1</a></span>
+<span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="6" data-listing-date-sort="1738035000000" data-listing-file-modified-sort="1731257591358" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Writing and Developing Research Questions" data-listing-filename-sort="lecture-07-notes.qmd">
+<tr data-index="6" data-listing-date-sort="1738035000000" data-listing-file-modified-sort="1731348678003" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Writing and Developing Research Questions" data-listing-filename-sort="lecture-07-notes.qmd">
 <td>
 <span class="listing-class-id">07</span>
 </td>
@@ -807,16 +946,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-07-notes.html" class="title listing-title">Writing and Developing Research Questions</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/04-writing_research.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/04-writing_research.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 4</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/makeplot.html#makeplot"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 3</span>
 </td>
 <td>
-<span class="listing-due">&nbsp;</span>
+<span class="listing-due"><a href="../deliverables/assignment-1.html">Data Stories 1</a></span>
 </td>
 </tr>
-<tr data-index="7" data-listing-date-sort="1738207800000" data-listing-file-modified-sort="1731270921861" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Writing and Developing Research Questions" data-listing-filename-sort="lecture-08-notes.qmd">
+<tr data-index="7" data-listing-date-sort="1738207800000" data-listing-file-modified-sort="1731349416258" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Writing and Developing Research Questions" data-listing-filename-sort="lecture-08-notes.qmd">
 <td>
 <span class="listing-class-id">08</span>
 </td>
@@ -827,16 +966,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-08-notes.html" class="title listing-title">Writing and Developing Research Questions</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/04-writing_research.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/04-writing_research.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 4</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/makeplot.html#makeplot"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 3</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="8" data-listing-date-sort="1738639800000" data-listing-file-modified-sort="1731189805676" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Creating Graphs, Tables, &amp; Maps" data-listing-filename-sort="lecture-09-notes.qmd">
+<tr data-index="8" data-listing-date-sort="1738639800000" data-listing-file-modified-sort="1731348723839" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Creating Graphs, Tables, &amp; Maps" data-listing-filename-sort="lecture-09-notes.qmd">
 <td>
 <span class="listing-class-id">09</span>
 </td>
@@ -847,16 +986,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-09-notes.html" class="title listing-title">Creating Graphs, Tables, &amp; Maps</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/05-graphs_tables_maps.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/05-graphs_tables_maps.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 5</span>
 </td>
 <td>
-<span class="listing-recommended_reading"><a href="https://socviz.co/makeplot.html#makeplot"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> + <a href="https://socviz.co/groupfacettx.html#groupfacettx"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/groupfacettx.html#groupfacettx"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 4</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="9" data-listing-date-sort="1738812600000" data-listing-file-modified-sort="1731271236683" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Creating Graphs, Tables, &amp; Maps" data-listing-filename-sort="lecture-10-notes.qmd">
+<tr data-index="9" data-listing-date-sort="1738812600000" data-listing-file-modified-sort="1731348744506" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Creating Graphs, Tables, &amp; Maps" data-listing-filename-sort="lecture-10-notes.qmd">
 <td>
 <span class="listing-class-id">10</span>
 </td>
@@ -867,16 +1006,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-10-notes.html" class="title listing-title">Creating Graphs, Tables, &amp; Maps</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/05-graphs_tables_maps.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/05-graphs_tables_maps.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 5</span>
 </td>
 <td>
-<span class="listing-recommended_reading"><a href="https://socviz.co/workgeoms.html#workgeoms"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a>) + <a href="https://socviz.co/makeplot.html#makeplot"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/groupfacettx.html#groupfacettx"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 4</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="10" data-listing-date-sort="1739244600000" data-listing-file-modified-sort="1731270915741" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Measurement, Censuses, and Sampling" data-listing-filename-sort="lecture-11-notes.qmd">
+<tr data-index="10" data-listing-date-sort="1739244600000" data-listing-file-modified-sort="1731348757646" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Measurement, Censuses, and Sampling" data-listing-filename-sort="lecture-11-notes.qmd">
 <td>
 <span class="listing-class-id">11</span>
 </td>
@@ -887,16 +1026,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-11-notes.html" class="title listing-title">Measurement, Censuses, and Sampling</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/06-farm.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/06-farm.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 6</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/workgeoms.html#workgeoms"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 5</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="11" data-listing-date-sort="1739417400000" data-listing-file-modified-sort="1731189959237" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Measurement, Censuses, and Sampling" data-listing-filename-sort="lecture-12-notes.qmd">
+<tr data-index="11" data-listing-date-sort="1739417400000" data-listing-file-modified-sort="1731348778708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Measurement, Censuses, and Sampling" data-listing-filename-sort="lecture-12-notes.qmd">
 <td>
 <span class="listing-class-id">12</span>
 </td>
@@ -907,16 +1046,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-12-notes.html" class="title listing-title">Measurement, Censuses, and Sampling</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/06-farm.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/06-farm.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 6</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/workgeoms.html#workgeoms"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 5</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="12" data-listing-date-sort="1739849400000" data-listing-file-modified-sort="1731271241626" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="APIs, Scraping, and Parsing" data-listing-filename-sort="lecture-13-notes.qmd">
+<tr data-index="12" data-listing-date-sort="1739849400000" data-listing-file-modified-sort="1731348802420" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="APIs, Scraping, and Parsing" data-listing-filename-sort="lecture-13-notes.qmd">
 <td>
 <span class="listing-class-id">13</span>
 </td>
@@ -927,16 +1066,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-13-notes.html" class="title listing-title">APIs, Scraping, and Parsing</a>
 </td>
 <td>
-<span class="listing-assigned_reading">[<i class="bi-file-text " style="" role="img" aria-hidden="true"></i>](https://tellingstorieswithdata.com/07-gather.html</span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/07-gather.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 7</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/maps.html#maps"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 7</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="13" data-listing-date-sort="1740022200000" data-listing-file-modified-sort="1731271242381" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="APIs, Scraping, and Parsing" data-listing-filename-sort="lecture-14-notes.qmd">
+<tr data-index="13" data-listing-date-sort="1740022200000" data-listing-file-modified-sort="1731348822206" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="APIs, Scraping, and Parsing" data-listing-filename-sort="lecture-14-notes.qmd">
 <td>
 <span class="listing-class-id">14</span>
 </td>
@@ -947,16 +1086,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-14-notes.html" class="title listing-title">APIs, Scraping, and Parsing</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/07-gather.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/07-gather.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 7</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/maps.html#maps"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 7</span>
 </td>
 <td>
 <span class="listing-due"><a href="../deliverables/assignment-2.html">Data Stories 2</a></span>
 </td>
 </tr>
-<tr data-index="14" data-listing-date-sort="1741059000000" data-listing-file-modified-sort="1731236772054" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Experiments and Surveys" data-listing-filename-sort="lecture-15-notes.qmd">
+<tr data-index="14" data-listing-date-sort="1741059000000" data-listing-file-modified-sort="1731348840145" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Experiments and Surveys" data-listing-filename-sort="lecture-15-notes.qmd">
 <td>
 <span class="listing-class-id">15</span>
 </td>
@@ -967,16 +1106,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-15-notes.html" class="title listing-title">Experiments and Surveys</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/11-eda.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/08-hunt.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 8</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/refineplots.html#refineplots"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 8</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="15" data-listing-date-sort="1741231800000" data-listing-file-modified-sort="1731272597636" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Experiments and Surveys" data-listing-filename-sort="lecture-16-notes.qmd">
+<tr data-index="15" data-listing-date-sort="1741231800000" data-listing-file-modified-sort="1731348855927" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Experiments and Surveys" data-listing-filename-sort="lecture-16-notes.qmd">
 <td>
 <span class="listing-class-id">16</span>
 </td>
@@ -987,16 +1126,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-16-notes.html" class="title listing-title">Experiments and Surveys</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/11-eda.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/08-hunt.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 8</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/refineplots.html#refineplots"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 8</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="16" data-listing-date-sort="1741660200000" data-listing-file-modified-sort="1731272796030" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Cleaning, Preparing, and Testing" data-listing-filename-sort="lecture-17-notes.qmd">
+<tr data-index="16" data-listing-date-sort="1741660200000" data-listing-file-modified-sort="1731348876296" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Cleaning, Preparing, and Testing" data-listing-filename-sort="lecture-17-notes.qmd">
 <td>
 <span class="listing-class-id">17</span>
 </td>
@@ -1007,16 +1146,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-17-notes.html" class="title listing-title">Cleaning, Preparing, and Testing</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/09-clean_and_prepare.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> RA Ch 9</span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/09-clean_and_prepare.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 9</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://youtu.be/FdnMWdICdRs?si=tM72fAv7GDMZqzL_"><i class="bi-youtube " style="" role="img" aria-hidden="true"></i></a> <i class="bi-flower1 " style="" role="img" aria-hidden="true"></i> Statistical Golems</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="17" data-listing-date-sort="1741833000000" data-listing-file-modified-sort="1731272879820" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Cleaning, Preparing, and Testing" data-listing-filename-sort="lecture-18-notes.qmd">
+<tr data-index="17" data-listing-date-sort="1741833000000" data-listing-file-modified-sort="1731348892301" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Cleaning, Preparing, and Testing" data-listing-filename-sort="lecture-18-notes.qmd">
 <td>
 <span class="listing-class-id">18</span>
 </td>
@@ -1027,16 +1166,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-18-notes.html" class="title listing-title">Cleaning, Preparing, and Testing</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/09-clean_and_prepare.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> RA Ch 9</span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/09-clean_and_prepare.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 9</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://youtu.be/FdnMWdICdRs?si=tM72fAv7GDMZqzL_"><i class="bi-youtube " style="" role="img" aria-hidden="true"></i></a> <i class="bi-flower1 " style="" role="img" aria-hidden="true"></i> Statistical Golems</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="18" data-listing-date-sort="1742265000000" data-listing-file-modified-sort="1731273293560" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Exploratory Data Analysis (EDA)" data-listing-filename-sort="lecture-19-notes.qmd">
+<tr data-index="18" data-listing-date-sort="1742265000000" data-listing-file-modified-sort="1731348928076" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Exploratory Data Analysis (EDA)" data-listing-filename-sort="lecture-19-notes.qmd">
 <td>
 <span class="listing-class-id">19</span>
 </td>
@@ -1047,16 +1186,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-19-notes.html" class="title listing-title">Exploratory Data Analysis (EDA)</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/11-eda.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> RA Ch 11</span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/11-eda.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 11</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://youtu.be/R1vcdhPBlXA?si=A9BflTwGGEyfnak0"><i class="bi-youtube " style="" role="img" aria-hidden="true"></i></a> <i class="bi-flower1 " style="" role="img" aria-hidden="true"></i> The Garden of Forking Data</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="19" data-listing-date-sort="1742437800000" data-listing-file-modified-sort="1731273295036" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Exploratory Data Analysis (EDA)" data-listing-filename-sort="lecture-20-notes.qmd">
+<tr data-index="19" data-listing-date-sort="1742437800000" data-listing-file-modified-sort="1731348948529" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Exploratory Data Analysis (EDA)" data-listing-filename-sort="lecture-20-notes.qmd">
 <td>
 <span class="listing-class-id">20</span>
 </td>
@@ -1067,16 +1206,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-20-notes.html" class="title listing-title">Exploratory Data Analysis (EDA)</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/11-eda.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> RA Ch 11</span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/11-eda.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 11</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://youtu.be/R1vcdhPBlXA?si=A9BflTwGGEyfnak0"><i class="bi-youtube " style="" role="img" aria-hidden="true"></i></a> <i class="bi-flower1 " style="" role="img" aria-hidden="true"></i> The Garden of Forking Data</span>
 </td>
 <td>
 <span class="listing-due"><a href="../deliverables/assignment-3.html">Data Stories 3</a></span>
 </td>
 </tr>
-<tr data-index="20" data-listing-date-sort="1742869800000" data-listing-file-modified-sort="1731273478867" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Linear Models" data-listing-filename-sort="lecture-21-notes.qmd">
+<tr data-index="20" data-listing-date-sort="1742869800000" data-listing-file-modified-sort="1731348974997" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Linear Models" data-listing-filename-sort="lecture-21-notes.qmd">
 <td>
 <span class="listing-class-id">21</span>
 </td>
@@ -1087,16 +1226,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-21-notes.html" class="title listing-title">Linear Models</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/12-ijalm.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> RA Ch 12</span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/12-ijalm.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 12</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://youtu.be/tNOu-SEacNU?si=WTTvwm3m_xyGHR9e"><i class="bi-youtube " style="" role="img" aria-hidden="true"></i></a> <i class="bi-flower1 " style="" role="img" aria-hidden="true"></i> Geocentric Models</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="21" data-listing-date-sort="1743042600000" data-listing-file-modified-sort="1731273476028" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Linear Models" data-listing-filename-sort="lecture-22-notes.qmd">
+<tr data-index="21" data-listing-date-sort="1743042600000" data-listing-file-modified-sort="1731348989971" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Linear Models" data-listing-filename-sort="lecture-22-notes.qmd">
 <td>
 <span class="listing-class-id">22</span>
 </td>
@@ -1107,16 +1246,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-22-notes.html" class="title listing-title">Linear Models</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/12-ijalm.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> RA Ch 12</span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/12-ijalm.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 12</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://youtu.be/tNOu-SEacNU?si=WTTvwm3m_xyGHR9e"><i class="bi-youtube " style="" role="img" aria-hidden="true"></i></a> <i class="bi-flower1 " style="" role="img" aria-hidden="true"></i> Geocentric Models</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="22" data-listing-date-sort="1743474600000" data-listing-file-modified-sort="1731273686720" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Generalized Linear Models (GLMs)" data-listing-filename-sort="lecture-23-notes.qmd">
+<tr data-index="22" data-listing-date-sort="1743474600000" data-listing-file-modified-sort="1731349008114" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Generalized Linear Models (GLMs)" data-listing-filename-sort="lecture-23-notes.qmd">
 <td>
 <span class="listing-class-id">23</span>
 </td>
@@ -1127,16 +1266,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-23-notes.html" class="title listing-title">Generalized Linear Models (GLMs)</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/13-ijaglm.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/13-ijaglm.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 13</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/modeling.html#modeling"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 6</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="23" data-listing-date-sort="1743647400000" data-listing-file-modified-sort="1731273687093" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Generalized Linear Models (GLMs)" data-listing-filename-sort="lecture-24-notes.qmd">
+<tr data-index="23" data-listing-date-sort="1743647400000" data-listing-file-modified-sort="1731349023025" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Generalized Linear Models (GLMs)" data-listing-filename-sort="lecture-24-notes.qmd">
 <td>
 <span class="listing-class-id">24</span>
 </td>
@@ -1147,16 +1286,16 @@ Due by 5:00 pm
 <a href="../lectures/lecture-24-notes.html" class="title listing-title">Generalized Linear Models (GLMs)</a>
 </td>
 <td>
-<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/13-ijaglm.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a></span>
+<span class="listing-assigned_reading"><a href="https://tellingstorieswithdata.com/13-ijaglm.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 13</span>
 </td>
 <td>
-<span class="listing-recommended_reading">&nbsp;</span>
+<span class="listing-recommended_reading"><a href="https://socviz.co/modeling.html#modeling"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 6</span>
 </td>
 <td>
 <span class="listing-due">&nbsp;</span>
 </td>
 </tr>
-<tr data-index="24" data-listing-date-sort="1744079400000" data-listing-file-modified-sort="1731181337403" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Project Work" data-listing-filename-sort="lecture-25-notes.qmd">
+<tr data-index="24" data-listing-date-sort="1744079400000" data-listing-file-modified-sort="1731349045250" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32" data-listing-title-sort="Project Work" data-listing-filename-sort="lecture-25-notes.qmd">
 <td>
 <span class="listing-class-id">25</span>
 </td>
@@ -1187,7 +1326,18 @@ No matching items
 
 
 
-<script async="" defer="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script></main> <!-- /main -->
+
+<script async="" defer="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-alexander2023telling" class="csl-entry" role="listitem">
+Alexander, Rohan. 2023. <em>Telling Stories with Data: With Applications in <span>R</span></em>. Chapman; Hall/CRC.
+</div>
+<div id="ref-healy2019data" class="csl-entry" role="listitem">
+Healy, Kieran. 2019. <em>Data Visualization: A Practical Introduction</em>. Princeton University Press.
+</div>
+<div id="ref-mcelreath2023statistical" class="csl-entry" role="listitem">
+McElreath, Richard. 2023. <span>“Statistical Rethinking Lectures.”</span> YouTube. <a href="https://www.youtube.com/playlist?list=PLDcUM9US4XdPz-KxHM4XHt7uUVGWWVSus">https://www.youtube.com/playlist?list=PLDcUM9US4XdPz-KxHM4XHt7uUVGWWVSus</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -1,25 +1,5 @@
 [
   {
-    "listing": "/deliverables/assignment-3.html",
-    "items": [
-      "/deliverables/submissions/assignment-3/example-submission-1.html",
-      "/deliverables/submissions/assignment-3/example-submission-2.html",
-      "/deliverables/submissions/assignment-3/example-submission-3.html",
-      "/deliverables/submissions/assignment-3/example-submission-5.html",
-      "/deliverables/submissions/assignment-3/example-submission-4.html"
-    ]
-  },
-  {
-    "listing": "/deliverables/assignment-1.html",
-    "items": [
-      "/deliverables/submissions/assignment-1/example-submission-1.html",
-      "/deliverables/submissions/assignment-1/example-submission-2.html",
-      "/deliverables/submissions/assignment-1/example-submission-4.html",
-      "/deliverables/submissions/assignment-1/example-submission-5.html",
-      "/deliverables/submissions/assignment-1/example-submission-3.html"
-    ]
-  },
-  {
     "listing": "/syllabus/schedule.html",
     "items": [
       "/lectures/lecture-01-notes.html",
@@ -50,16 +30,6 @@
     ]
   },
   {
-    "listing": "/syllabus/assessment.html",
-    "items": [
-      "/deliverables/assignment-1.html",
-      "/deliverables/assignment-2.html",
-      "/deliverables/assignment-3.html",
-      "/deliverables/assignment-4.html",
-      "/deliverables/assignment-5.html"
-    ]
-  },
-  {
     "listing": "/lectures/list-lectures.html",
     "items": [
       "/lectures/lecture-01-notes.html",
@@ -87,26 +57,6 @@
       "/lectures/lecture-23-notes.html",
       "/lectures/lecture-24-notes.html",
       "/lectures/lecture-25-notes.html"
-    ]
-  },
-  {
-    "listing": "/deliverables/assignment-2.html",
-    "items": [
-      "/deliverables/submissions/assignment-2/example-submission-1.html",
-      "/deliverables/submissions/assignment-2/example-submission-3.html",
-      "/deliverables/submissions/assignment-2/example-submission-4.html",
-      "/deliverables/submissions/assignment-2/example-submission-5.html",
-      "/deliverables/submissions/assignment-2/example-submission-2.html"
-    ]
-  },
-  {
-    "listing": "/deliverables/assignment-4.html",
-    "items": [
-      "/deliverables/submissions/assignment-4/example-submission-5.html",
-      "/deliverables/submissions/assignment-4/example-submission-1.html",
-      "/deliverables/submissions/assignment-4/example-submission-2.html",
-      "/deliverables/submissions/assignment-4/example-submission-3.html",
-      "/deliverables/submissions/assignment-4/example-submission-4.html"
     ]
   }
 ]

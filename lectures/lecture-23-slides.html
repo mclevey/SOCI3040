@@ -363,14 +363,13 @@ John McLevey (he/him)
 
   <p class="date">April 1, 2025</p>
 </section>
-<section id="coming-soon" class="slide level2" data-number="1">
-<h2><span class="header-section-number">1</span> Coming soon…</h2>
+<section class="slide level2">
+
+<p>Coming soon…</p>
+<!-- {{< include lecture-23-content.qmd >}} -->
 </section>
-<section id="references" class="slide level2" data-number="2">
-<h2><span class="header-section-number">2</span> References</h2>
-</section>
-<section id="references-1" class="slide level2 smaller scrollable" data-number="3">
-<h2><span class="header-section-number">3</span> References</h2>
+<section id="references" class="slide level2 smaller scrollable" data-number="1">
+<h2><span class="header-section-number">1</span> References</h2>
 <div id="refs" role="list">
 
 </div>
@@ -596,44 +595,6 @@ John McLevey (he/him)
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

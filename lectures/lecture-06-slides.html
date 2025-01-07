@@ -362,29 +362,14 @@ John McLevey (he/him)
 </div>
 
   <p class="date">January 23, 2025</p>
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">agenda.</h2>
-<ul>
-<li class="fragment"><a href="#/content-plan" id="/toc-content-plan"><span class="header-section-number">1</span> Content Plan</a></li>
-</ul>
-</nav>
 </section>
-<section>
-<section id="content-plan" class="title-slide slide level1 center" data-number="1">
-<h1><span class="header-section-number">1</span> Content Plan</h1>
-<p>1/2 of the content from Lecture 05. Split the content and add the lab as you are working on that content.</p>
-<!-- 
+<section class="slide level2">
 
-
-
-
-## Coming soon...
-
-## References -->
+<p>Coming soon…</p>
+<!-- {{< include lecture-06-content.qmd >}} -->
 </section>
-<section id="references" class="slide level2 smaller scrollable" data-number="1.1">
-<h2><span class="header-section-number">1.1</span> References</h2>
+<section id="references" class="slide level2 smaller scrollable" data-number="1">
+<h2><span class="header-section-number">1</span> References</h2>
 <div id="refs" role="list">
 
 </div>
@@ -399,7 +384,7 @@ John McLevey (he/him)
 <p><a href="https://www.johnmclevey.com/quantitative-research-methods"><i class="bi-house-fill " style="color: #2E3440;" role="img" aria-hidden="true"></i></a></p>
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -610,44 +595,6 @@ John McLevey (he/him)
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

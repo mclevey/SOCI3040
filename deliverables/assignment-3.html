@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="25%">
-<meta name="dcterms.date" content="2025-01-09">
+<meta name="dcterms.date" content="2025-03-20">
 
 <title> Data Stories 3 – 🔥 Quantitative Research Methods</title>
 <style>
@@ -52,8 +52,6 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -64,9 +62,6 @@ div.csl-indent {
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/bootstrap-icons-1.11.1/all.css" rel="stylesheet">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -93,69 +88,11 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-data-stories-3-list .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-title','listing-date','listing-author','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-data-stories-3-list'] = new List('listing-data-stories-3-list', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <meta name="mermaid-theme" content="default">
 <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -585,9 +522,6 @@ window.Quarto = {
       </button>
     </div>
   </nav>
-  <div id="quarto-announcement" data-announcement-id="4e844bf18abc78b881990e274941979b" class="alert alert-info hidden"><i class="bi bi-cone-striped quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p><strong>WORK IN PROGRESS</strong> – I am actively developing these course materials. They are not yet complete and may change at any point before the first day of class in January 2025. ✌️ John</p>
-</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -635,20 +569,6 @@ window.Quarto = {
   <a href="../syllabus/computing.html" class="sidebar-item-text sidebar-link"><i class="bi bi-laptop" role="img">
 </i> 
  <span class="menu-text">&nbsp;&nbsp;Computing</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../syllabus/conventions.html" class="sidebar-item-text sidebar-link"><i class="bi bi-signpost-split-fill" role="img">
-</i> 
- <span class="menu-text">&nbsp;&nbsp;Conventions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../syllabus/notation.html" class="sidebar-item-text sidebar-link"><i class="bi bi-pencil" role="img">
-</i> 
- <span class="menu-text">&nbsp;&nbsp;Model Notation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -761,9 +681,10 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#assignment-instructions" id="toc-assignment-instructions" class="nav-link active" data-scroll-target="#assignment-instructions">Assignment Instructions</a></li>
   <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   <li><a href="#student-work" id="toc-student-work" class="nav-link" data-scroll-target="#student-work">Student Work</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -790,7 +711,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Due Date</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 9, 2025</p>
+      <p class="date">March 20, 2025</p>
     </div>
   </div>
   
@@ -802,9 +723,9 @@ window.Quarto = {
 </header>
 
 
-<section id="instructions" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>See <a href="#fig-workflow" class="quarto-xref">Figure&nbsp;1</a> for the workflow diagram.</p>
+<section id="assignment-instructions" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="assignment-instructions">Assignment Instructions</h2>
+<p>Assignment information will be posted after the second class. Work will be done in and outside of class.</p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <div id="fig-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -835,199 +756,16 @@ Figure&nbsp;1: Rohan Alexander’s <span class="citation" data-cites="alexander2
 </figcaption>
 </figure>
 </div>
-</div></div><p><strong>Coming soon…</strong> Aenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.</p>
-<ul>
-<li>Plan (XX%)</li>
-<li>Simulate (XX%)</li>
-<li>Acquire (XX%)</li>
-<li>Explore (XX%)</li>
-<li>Share (XX%)</li>
-</ul>
-</section>
+</div></div></section>
 <section id="grading-rubric" class="level2">
 <h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
-<ul>
-<li>Plan (XX%)</li>
-<li>Simulate (XX%)</li>
-<li>Acquire (XX%)</li>
-<li>Explore (XX%)</li>
-<li>Share (XX%)</li>
-</ul>
-<p><strong>Coming soon…</strong> Duis ornare ex ac iaculis pretium. Maecenas sagittis odio id erat pharetra, sit amet consectetur quam sollicitudin. Vivamus pharetra quam purus, nec sagittis risus pretium at. Nullam feugiat, turpis ac accumsan interdum, sem tellus blandit neque, id vulputate diam quam semper nisl. Donec sit amet enim at neque porttitor aliquet. Phasellus facilisis nulla eget placerat eleifend. Vestibulum non egestas eros, eget lobortis ipsum. Nulla rutrum massa eget enim aliquam, id porttitor erat luctus. Nunc sagittis quis eros eu sagittis. Pellentesque dictum, erat at pellentesque sollicitudin, justo augue pulvinar metus, quis rutrum est mi nec felis. Vestibulum efficitur mi lorem, at elementum purus tincidunt a. Aliquam finibus enim magna, vitae pellentesque erat faucibus at. Nulla mauris tellus, imperdiet id lobortis et, dignissim condimentum ipsum. Morbi nulla orci, varius at aliquet sed, facilisis id tortor. Donec ut urna nisi.</p>
+<p>Will be posted after the second class.</p>
 </section>
 <section id="student-work" class="level2">
 <h2 class="anchored" data-anchor-id="student-work">Student Work</h2>
-<p><strong>Coming soon…</strong> Nunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti.</p>
-<div id="fig-week-01-gallery" class="quarto-layout-panel">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-week-01-gallery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row quarto-layout-valign-bottom">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../media/this-is-fine.jpg" class="lightbox" data-gallery="3040-gallery" title="This is a featured student assignment."><img src="../media/this-is-fine.jpg" class="img-fluid figure-img"></a></p>
-<figcaption>This is a featured student assignment.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../media/telling-stories.png" class="lightbox" data-gallery="3040-gallery" title="This is also a featured student assignment."><img src="../media/telling-stories.png" class="img-fluid figure-img"></a></p>
-<figcaption>This is also a featured student assignment.</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="../media/data-visualization.jpg" class="lightbox" data-gallery="3040-gallery" title="This is also a featured student assignment."><img src="../media/data-visualization.jpg" class="img-fluid figure-img"></a></p>
-<figcaption>This is also a featured student assignment.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-week-01-gallery-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: A selection of visualizations from the first data stories assignment. Click an image to open a lightbox gallery.
-</figcaption>
-</figure>
-</div>
-<p><strong>Coming soon…</strong> Ut ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti.</p>
-<div id="listing-data-stories-3-list" class="quarto-listing quarto-listing-container-grid">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1731174752000" data-listing-file-modified-sort="1731174752282" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
-<a href="../deliverables/submissions/assignment-3/example-submission-1.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../media/this-is-fine.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-This is an Example Submission
-</h5>
-<div class="card-text listing-description">
-Etiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc.…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Student Name
-</div>
-<div class="listing-date">
-Nov 9, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1731174752000" data-listing-file-modified-sort="1731174752279" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
-<a href="../deliverables/submissions/assignment-3/example-submission-2.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../media/cheshire-cat.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-This is an Example Submission
-</h5>
-<div class="card-text listing-description">
-Etiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc.…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Student Name
-</div>
-<div class="listing-date">
-Nov 9, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1731174752000" data-listing-file-modified-sort="1731174752269" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
-<a href="../deliverables/submissions/assignment-3/example-submission-3.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../media/cheshire-cat.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-This is an Example Submission
-</h5>
-<div class="card-text listing-description">
-Etiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc.…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Student Name
-</div>
-<div class="listing-date">
-Nov 9, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-date-sort="1731174786000" data-listing-file-modified-sort="1731174786579" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
-<a href="../deliverables/submissions/assignment-3/example-submission-5.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-This is an Example Submission
-</h5>
-<div class="card-text listing-description">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Student Name
-</div>
-<div class="listing-date">
-Nov 9, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1731174787000" data-listing-file-modified-sort="1731174787233" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
-<a href="../deliverables/submissions/assignment-3/example-submission-4.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-This is an Example Submission
-</h5>
-<div class="card-text listing-description">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Student Name
-</div>
-<div class="listing-date">
-Nov 9, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-<!-- 
-This will be listings. Will come back to finish when I can. 
-
-Card page, each a link to a student submission in `submissions/`.
-
-Add an example to each of the four. Maybe make them their own menus, woth an instructions page, and then the submissions / share page that starts with 1-2 examples from the lectures that they can use as templates / starting points for their own assignments. Eahc one more challebing than the ones that came before. Maybe solo maybe not.  -->
+<p>Will be posted after the assignment has been completed.</p>
+</section>
+<section id="references" class="level2">
 
 
 
@@ -1473,38 +1211,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

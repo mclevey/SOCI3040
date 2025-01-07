@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,65 +66,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-assignment-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-time','listing-title','listing-weight',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-assignment-listing'] = new List('listing-assignment-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -556,9 +496,6 @@ window.Quarto = {
       </button>
     </div>
   </nav>
-  <div id="quarto-announcement" data-announcement-id="4e844bf18abc78b881990e274941979b" class="alert alert-info hidden"><i class="bi bi-cone-striped quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p><strong>WORK IN PROGRESS</strong> – I am actively developing these course materials. They are not yet complete and may change at any point before the first day of class in January 2025. ✌️ John</p>
-</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -606,20 +543,6 @@ window.Quarto = {
   <a href="../syllabus/computing.html" class="sidebar-item-text sidebar-link"><i class="bi bi-laptop" role="img">
 </i> 
  <span class="menu-text">&nbsp;&nbsp;Computing</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../syllabus/conventions.html" class="sidebar-item-text sidebar-link"><i class="bi bi-signpost-split-fill" role="img">
-</i> 
- <span class="menu-text">&nbsp;&nbsp;Conventions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../syllabus/notation.html" class="sidebar-item-text sidebar-link"><i class="bi bi-pencil" role="img">
-</i> 
- <span class="menu-text">&nbsp;&nbsp;Model Notation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -732,34 +655,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-stories-1" id="toc-data-stories-1" class="nav-link active" data-scroll-target="#data-stories-1"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 1</a>
-  <ul>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
-  <li><a href="#student-work" id="toc-student-work" class="nav-link" data-scroll-target="#student-work">Student Work</a></li>
-  </ul></li>
-  <li><a href="#data-stories-2" id="toc-data-stories-2" class="nav-link" data-scroll-target="#data-stories-2"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 2</a>
-  <ul>
-  <li><a href="#instructions-1" id="toc-instructions-1" class="nav-link" data-scroll-target="#instructions-1">Instructions</a></li>
-  <li><a href="#grading-rubric-1" id="toc-grading-rubric-1" class="nav-link" data-scroll-target="#grading-rubric-1">Grading Rubric</a></li>
-  <li><a href="#student-work-1" id="toc-student-work-1" class="nav-link" data-scroll-target="#student-work-1">Student Work</a></li>
-  </ul></li>
-  <li><a href="#data-stories-3" id="toc-data-stories-3" class="nav-link" data-scroll-target="#data-stories-3"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 3</a>
-  <ul>
-  <li><a href="#instructions-2" id="toc-instructions-2" class="nav-link" data-scroll-target="#instructions-2">Instructions</a></li>
-  <li><a href="#grading-rubric-2" id="toc-grading-rubric-2" class="nav-link" data-scroll-target="#grading-rubric-2">Grading Rubric</a></li>
-  <li><a href="#student-work-2" id="toc-student-work-2" class="nav-link" data-scroll-target="#student-work-2">Student Work</a></li>
-  </ul></li>
-  <li><a href="#data-stories-4" id="toc-data-stories-4" class="nav-link" data-scroll-target="#data-stories-4"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 4</a>
-  <ul>
-  <li><a href="#instructions-3" id="toc-instructions-3" class="nav-link" data-scroll-target="#instructions-3">Instructions</a></li>
-  <li><a href="#grading-rubric-3" id="toc-grading-rubric-3" class="nav-link" data-scroll-target="#grading-rubric-3">Grading Rubric</a></li>
-  <li><a href="#student-work-3" id="toc-student-work-3" class="nav-link" data-scroll-target="#student-work-3">Student Work</a></li>
-  </ul></li>
+  <li><a href="#data-stories-1" id="toc-data-stories-1" class="nav-link active" data-scroll-target="#data-stories-1"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 1</a></li>
+  <li><a href="#data-stories-2" id="toc-data-stories-2" class="nav-link" data-scroll-target="#data-stories-2"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 2</a></li>
+  <li><a href="#data-stories-3" id="toc-data-stories-3" class="nav-link" data-scroll-target="#data-stories-3"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 3</a></li>
+  <li><a href="#data-stories-4" id="toc-data-stories-4" class="nav-link" data-scroll-target="#data-stories-4"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 4</a></li>
   <li><a href="#final-exam" id="toc-final-exam" class="nav-link" data-scroll-target="#final-exam">Final Exam</a></li>
   </ul>
 </nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div></div></div>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -783,153 +686,99 @@ window.Quarto = {
 </header>
 
 
-<p>The table below, Nullam dapibus cursus dolor sit amet consequat. Nulla facilisi. Curabitur vel nulla non magna lacinia tincidunt. Duis porttitor quam leo, et blandit velit efficitur ut. Etiam auctor tincidunt porttitor. Phasellus sed accumsan mi. Fusce ut erat dui. Suspendisse eu augue eget turpis condimentum finibus eu non lorem. Donec finibus eros eu ante condimentum, sed pharetra sapien sagittis. Phasellus non dolor ac ante mollis auctor nec et sapien. Pellentesque vulputate at nisi eu tincidunt. Vestibulum at dolor aliquam, hendrerit purus eu, eleifend massa. Morbi consectetur eros id tincidunt gravida. Fusce ut enim quis orci hendrerit lacinia sed vitae enim.</p>
-<div id="listing-assignment-listing" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
+<p>There are four lab assignments (i.e., “Data Stories”) and a final exam in this course.</p>
+<table class="caption-top table">
 <thead>
-<tr>
-<th>
-Due (On or Before)
-</th>
-<th>
-By
-</th>
-<th>
-Assignment
-</th>
-<th>
-Grade Weight
-</th>
+<tr class="header">
+<th style="text-align: left;">Due (on or before)</th>
+<th style="text-align: left;">By</th>
+<th style="text-align: left;">Assignment</th>
+<th style="text-align: left;">Weight</th>
 </tr>
 </thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1736220600000" data-listing-file-modified-sort="1731349658395" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="185" data-listing-title-sort="{{< bi file-post >}} Data Stories 1" data-listing-filename-sort="assignment-1.qmd">
-<td>
-<span class="listing-date">Tuesday, January 7, 2025</span>
-</td>
-<td>
-<span class="listing-time">11:59 pm</span>
-</td>
-<td>
-<a href="../deliverables/assignment-1.html" class="title listing-title"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 1</a>
-</td>
-<td>
-<span class="listing-weight">10%</span>
-</td>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">January 28, 2025</td>
+<td style="text-align: left;">11:59 pm</td>
+<td style="text-align: left;">Data Stories 1</td>
+<td style="text-align: left;">10%</td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1736307000000" data-listing-file-modified-sort="1731349659735" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="184" data-listing-title-sort="{{< bi file-post >}} Data Stories 2" data-listing-filename-sort="assignment-2.qmd">
-<td>
-<span class="listing-date">Wednesday, January 8, 2025</span>
-</td>
-<td>
-<span class="listing-time">11:59 pm</span>
-</td>
-<td>
-<a href="../deliverables/assignment-2.html" class="title listing-title"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 2</a>
-</td>
-<td>
-<span class="listing-weight">15%</span>
-</td>
+<tr class="even">
+<td style="text-align: left;">February 20, 2025</td>
+<td style="text-align: left;">11:59 pm</td>
+<td style="text-align: left;">Data Stories 2</td>
+<td style="text-align: left;">15%</td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1736393400000" data-listing-file-modified-sort="1731349661354" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="184" data-listing-title-sort="{{< bi file-post >}} Data Stories 3" data-listing-filename-sort="assignment-3.qmd">
-<td>
-<span class="listing-date">Thursday, January 9, 2025</span>
-</td>
-<td>
-<span class="listing-time">11:59 pm</span>
-</td>
-<td>
-<a href="../deliverables/assignment-3.html" class="title listing-title"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 3</a>
-</td>
-<td>
-<span class="listing-weight">25%</span>
-</td>
+<tr class="odd">
+<td style="text-align: left;">March 20, 2025</td>
+<td style="text-align: left;">11:59 pm</td>
+<td style="text-align: left;">Data Stories 3</td>
+<td style="text-align: left;">25%</td>
 </tr>
-<tr data-index="3" data-listing-date-sort="1736479800000" data-listing-file-modified-sort="1731349663411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="184" data-listing-title-sort="{{< bi file-post >}} Data Stories 4" data-listing-filename-sort="assignment-4.qmd">
-<td>
-<span class="listing-date">Friday, January 10, 2025</span>
-</td>
-<td>
-<span class="listing-time">11:59 pm</span>
-</td>
-<td>
-<a href="../deliverables/assignment-4.html" class="title listing-title"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 4</a>
-</td>
-<td>
-<span class="listing-weight">25%</span>
-</td>
+<tr class="even">
+<td style="text-align: left;">April 8, 2025</td>
+<td style="text-align: left;">11:59 pm</td>
+<td style="text-align: left;">Data Stories 4</td>
+<td style="text-align: left;">25%</td>
 </tr>
-<tr data-index="4" data-listing-date-sort="1736479800000" data-listing-file-modified-sort="1731349668528" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2" data-listing-title-sort="{{< bi file-post >}} Final Exam" data-listing-filename-sort="assignment-5.qmd">
-<td>
-<span class="listing-date">Friday, January 10, 2025</span>
-</td>
-<td>
-<span class="listing-time">11:59 pm</span>
-</td>
-<td>
-<a href="../deliverables/assignment-5.html" class="title listing-title"><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Final Exam</a>
-</td>
-<td>
-<span class="listing-weight">25%</span>
-</td>
+<tr class="odd">
+<td style="text-align: left;">TBA</td>
+<td style="text-align: left;">TBA</td>
+<td style="text-align: left;"><strong>Final Exam</strong></td>
+<td style="text-align: left;">25%</td>
 </tr>
 </tbody>
 </table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
+<!-- 
+::: {#assignment-listing}
+:::
+ -->
 <section id="data-stories-1" class="level1">
 <h1><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 1</h1>
-<section id="instructions" class="level2">
-<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-</section>
-<section id="grading-rubric" class="level2">
-<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
-</section>
-<section id="student-work" class="level2">
-<h2 class="anchored" data-anchor-id="student-work">Student Work</h2>
-</section>
+<p>Assignment information will be posted after the second class. Work will be done in and outside of class. <!-- ## Instructions
+
+## Grading Rubric
+
+## Student Work --></p>
 </section>
 <section id="data-stories-2" class="level1">
 <h1><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 2</h1>
-<section id="instructions-1" class="level2">
-<h2 class="anchored" data-anchor-id="instructions-1">Instructions</h2>
-</section>
-<section id="grading-rubric-1" class="level2">
-<h2 class="anchored" data-anchor-id="grading-rubric-1">Grading Rubric</h2>
-</section>
-<section id="student-work-1" class="level2">
-<h2 class="anchored" data-anchor-id="student-work-1">Student Work</h2>
-</section>
+<p>Assignment information will be posted after the second class. Work will be done in and outside of class.</p>
+<!-- ## Instructions
+
+## Grading Rubric
+
+## Student Work -->
 </section>
 <section id="data-stories-3" class="level1">
 <h1><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 3</h1>
-<section id="instructions-2" class="level2">
-<h2 class="anchored" data-anchor-id="instructions-2">Instructions</h2>
-</section>
-<section id="grading-rubric-2" class="level2">
-<h2 class="anchored" data-anchor-id="grading-rubric-2">Grading Rubric</h2>
-</section>
-<section id="student-work-2" class="level2">
-<h2 class="anchored" data-anchor-id="student-work-2">Student Work</h2>
-</section>
+<p>Assignment information will be posted after the second class. Work will be done in and outside of class.</p>
+<!-- ## Instructions
+
+## Grading Rubric
+
+## Student Work -->
 </section>
 <section id="data-stories-4" class="level1">
 <h1><i class="bi-file-post " style="" role="img" aria-hidden="true"></i> Data Stories 4</h1>
-<section id="instructions-3" class="level2">
-<h2 class="anchored" data-anchor-id="instructions-3">Instructions</h2>
-</section>
-<section id="grading-rubric-3" class="level2">
-<h2 class="anchored" data-anchor-id="grading-rubric-3">Grading Rubric</h2>
-</section>
-<section id="student-work-3" class="level2">
-<h2 class="anchored" data-anchor-id="student-work-3">Student Work</h2>
-</section>
+<p>Assignment information will be posted after the second class. Work will be done in and outside of class.</p>
+<!-- ## Instructions
+
+## Grading Rubric
+
+## Student Work -->
 </section>
 <section id="final-exam" class="level1">
 <h1>Final Exam</h1>
-
+<p>Not yet scheduled. Will be in the final exam block scheduled by the Registrars Office (RO).</p>
+<ul>
+<li>Multiple choice</li>
+<li>True / false</li>
+<li>Short answer questions</li>
+<li>Sketch models and graphs</li>
+<li>Interpret models and graphs</li>
+<li>Explain code snippets at a high-level</li>
+</ul>
 
 
 </section>

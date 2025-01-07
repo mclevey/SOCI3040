@@ -17,8 +17,20 @@ New to Memorial after 11 years at University of Waterloo
 
 ## agenda.
 
-1. What is this course about?
-2. What will we do? Where is everything?
+1. Who are you? Background? Expectations? 
+2. What is this course about?
+3. What will we do? Where is everything?
+
+# Who are you? 
+
+##
+
+<br><br>
+
+Who are you?<br>
+Do you have any previous quant courses / experience?<br>
+What are your expectations for this course?
+
 
 # What is this course about?
 
@@ -58,18 +70,6 @@ flowchart LR
 > "A lack of clear communication sometimes reflects a failure by the researcher to understand what is going on, or even what they are doing." [@alexander2023telling]
 
 <br>
-
-```{mermaid}
-%%| fig-cap: "Rohan Alexander's [-@alexander2023telling] workflow for telling stories with data."
-flowchart LR
-    p[[Plan]]
-    sim[[Simulate]]
-    a[[Acquire]]
-    e[[Explore / Analyze]]
-    s[[Share]]
-
-    p --> sim --> a --> e --> s
-```
 
 Core foundation of quantitative research methods<br>
 Bridge between analysis and understanding<br>
@@ -410,20 +410,15 @@ Aim for transparency and continuous improvement.
 
 ##
 
-The Brightspace page links to the course website [johnmclevey.com/SOCI3040/](https://www.johnmclevey.com/SOCI3040/), which contains:
+<br><br>
 
-the course syllabus<br>
-schedule of topics, readings, assignments, and exams<br>
-links to open access readings (and supplementary materials)<br>
-slides and class notes
+Brightspace<br>
+Course materials website: [johnmclevey.com/SOCI3040/](https://www.johnmclevey.com/SOCI3040/)<br>
 
 ## Next class
+
+<br><br>
 
 **Before class**: Complete the assigned reading<br>
 **In class**: Introduction to R and RStudio
 
-## 
-
-*Thanks!*
-
-<mclevey@mun.ca>

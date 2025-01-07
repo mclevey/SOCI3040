@@ -8,41 +8,58 @@ options(
 
 ## 👋 Welcome to SOCI 3040!
 
-This is an introduction the knowledge and skills you need to tell credible stories with quantitative data...
+<br><br>
 
-- TODO: Add intro slides and overview
-- They read the chapter for Thursday, but Thursday will be intro to R in lab session
+My name is [**John**, **Professor McLevey**, **Dr. McLevey**] (he/him).
 
-## Why Data Storytelling Matters
+Professor & Head of Sociology<br>
+New to Memorial after 11 years at University of Waterloo
+
+## agenda.
+
+1. What is this course about?
+2. What will we do? Where is everything?
+
+# What is this course about?
+
+## 3040 Calendar Description
+
+<br>
+
+> SOCI 3040, Quantitative Research Methods, will familiarize students with the procedures for understanding and conducting quantitative social science research. It will introduce students to **the quantitative research process**, hypothesis development and testing, and **the application of appropriate tools** for analyzing quantitative data. All sections of this course count towards the HSS Quantitative Reasoning Requirement (see [mun.ca/hss/qr](www.mun.ca/hss/qr)). (PR: SOCI 1000 or the former SOCI 2000)
+
+## This Section (001)
+
+<br>
+
+This section of SOCI 3440 is an introduction to **quantitative research methods**, from planning an analysis to sharing the final results. Following the workflow from Rohan Alexander's [-@alexander2023telling] *[Telling Stories with Data](https://tellingstorieswithdata.com)*, you will learn how to:
+
+<br>
+
+**plan** an analysis and sketch your data and endpoint<br>
+**simulate** some data to "force you into the details"<br>
+**acquire**, assess, and prepare empirical data for analysis<br>
+**explore** and analyze data by creating visualizations and fitting models<br>
+**share** the results of your work with the world!
+
+```{mermaid}
+flowchart LR
+    p[[Plan]]
+    sim[[Simulate]]
+    a[[Acquire]]
+    e[[Explore / Analyze]]
+    s[[Share]]
+
+    p --> sim --> a --> e --> s
+```
+
+## This Section (001)
 
 > "A lack of clear communication sometimes reflects a failure by the researcher to understand what is going on, or even what they are doing." [@alexander2023telling]
 
-- Core foundation of quantitative research methods
-- Bridge between analysis and understanding
-- Essential skill for modern researchers
-
-## Common Concerns
-
-Five Key Questions for Data Stories
-
-- What is the dataset? Who generated it and why?
-- What is the underlying process? What's missing?
-- What is the dataset trying to say? What else could it say?
-- What do we want others to see? How do we convince them?
-- Who is affected? Are they represented in the data?
-
-::: {.notes}
-1. What is the dataset? Who generated the dataset and why?
-2. What is the process that underpins the dataset? Given that process, what is missing from the dataset or has been poorly measured? Could other datasets have been generated, and if so, how different could they have been to the one that we have?
-3. What is the dataset trying to say, and how can we let it say this? What else could it say? How do we decide between these?
-4. What are we hoping others will see from this dataset, and how can we convince them of this? How much work must we do to convince them?
-5. Who is affected by the processes and outcomes, related to this dataset? To what extent are they represented in the dataset, and have they been involved in the analysis?
-:::
-
-## Core Workflow Components
+<br>
 
 ```{mermaid}
-%%| label: fig-workflow
 %%| fig-cap: "Rohan Alexander's [-@alexander2023telling] workflow for telling stories with data."
 flowchart LR
     p[[Plan]]
@@ -54,93 +71,138 @@ flowchart LR
     p --> sim --> a --> e --> s
 ```
 
-- **Plan** and sketch endpoint
-- **Simulate** and consider data
-- **Acquire** and prepare data
-- **Explore** and understand data
-- **Share** findings
+Core foundation of quantitative research methods<br>
+Bridge between analysis and understanding<br>
+Essential skill for modern researchers
 
-## {{< bi 1-circle >}} Plan and Sketch
+## This Section (001)
+
+<br>
 
 :::: {.columns}
-::: {.column width="60%"}
-- deliberate, reasoned decisions
-- purposeful adjustments
-- even 10 minutes of planning is valuable
+::: {.column width="45%"}
+![](../media/telling-stories.png){width=70%}
 :::
 
-::: {.column width="40%"}
-![Think of Alice's conversation with the Cheshire Cat 😸. Without a clear goal, any path will do. We need clear direction to prevent aimless wandering.](../media/cheshire-cat.png)
+::: {.column width="5%"}
+:::
+
+::: {.column width="50%"}
+<br>
+You will use this workflow in the context of learning foundational quantitative research skills, including conducting **exploratory data analyses** and fitting, assessing, and interpreting **linear** and **generalized linear models**. Reproducibility and research ethics are considered throughout the workflow, and the entire course.
 :::
 ::::
 
+## Common Concerns & Key Questions
+
+- What is the dataset? Who generated it and why?
+- What is the underlying process? What's missing or has been poorly measured? Could other datasets have been generated, and if so, how different could they have been to the one that we have?
+- What is the dataset trying to say? What else could it say?
+- What do we want others to see? How do we convince them?
+- Who is affected? Are they represented in the data? Have they been involved in the analysis?
+
+# Components of the Data Storytelling Workflow
+
+## Core Workflow Components
+
+*Plan, Simulate, Acquire, Explore / Analyze, Share*
+
+<br>
+
+### {{< bi 1-circle >}} Plan and Sketch
+
+deliberate, reasoned decisions<br>
+purposeful adjustments<br>
+even 10 minutes of planning is valuable
 
 ::: {.notes}
-**Planning and sketching an endpoint** is the first crucial step in the workflow because it ensures we have a clear objective and direction for our analysis. By thoughtfully considering where we want to go, we stay focused and efficient, preventing aimless wandering and scope creep. Like Alice's conversation with the Cheshire Cat in Alice's Adventures in Wonderland, without a defined goal, any path will suffice, but we typically cannot afford to wander aimlessly. While our endpoint may change, having an initial objective allows for deliberate and reasoned adjustments. This planning doesn't require extensive time—often just ten minutes with paper and pen can provide significant value.
+**Planning and sketching an endpoint** is the first crucial step in the workflow because it ensures we have a clear objective and direction for our analysis. By thoughtfully considering where we want to go, we stay focused and efficient, preventing aimless wandering and scope creep. Without a defined goal, any path will suffice, but we typically cannot afford to wander aimlessly. While our endpoint may change, having an initial objective allows for deliberate and reasoned adjustments. This planning doesn't require extensive time—often just ten minutes with paper and pen can provide significant value.
 :::
 
-## {{< bi 2-circle >}} Simulate Data
+## Core Workflow Components
 
-- Forces detailed thinking
-- Clarifies expected data structure and distributions.
-- Helps with cleaning and preparation
-- Identifies potential issues beforehand.
-- Provides clear testing framework
-- Ensures data meets expectations.
-- “Almost free” with modern computing
-- Provides “an intimate feeling for the situation” [@hamming1996]
+*Plan, Simulate, Acquire, Explore / Analyze, Share*
+
+<br>
+
+### {{< bi 2-circle >}} Simulate Data
+
+Forces detailed thinking<br>
+Clarifies expected data structure and distributions.<br>
+Helps with cleaning and preparation<br>
+Identifies potential issues beforehand.<br>
+Provides clear testing framework<br>
+Ensures data meets expectations.<br>
+“Almost free” with modern computing<br>
+Provides “an intimate feeling for the situation” [@hamming1996]
 
 ::: {.notes}
 **Simulating data** is the second step, forcing us into the details of our analysis by focusing on expected data structures and distributions. By creating simulated data, we define clear features that our real dataset should satisfy, aiding in data cleaning and preparation. For example, simulating an age-group variable with specific categories allows us to test the real data for consistency. Simulation is also vital for validating statistical models; by applying models to data with known properties, we can ensure they perform as intended before using them on real data. Since simulation is inexpensive and quick with modern computing resources, it provides “an intimate feeling for the situation” and helps build confidence in our analytical tools.
 :::
 
+## Core Workflow Components
 
-## {{< bi 3-circle >}} Acquire and Prepare
+*Plan, Simulate, Acquire, Explore / Analyze, Share*
 
-- Often overlooked but crucial stage
-- Many difficult decisions required: data sources, formats, permissions.
-- Can significantly affect statistical results [@huntington2021influence]
-- Common challenges: **quantity** (too little or too much data) and **quality**
+<br>
+
+### {{< bi 3-circle >}} Acquire and Prepare
+
+Often overlooked but crucial stage<br>
+Many difficult decisions required: data sources, formats, permissions.<br>
+Can significantly affect statistical results [@huntington2021influence]<br>
+Common challenges: **quantity** (too little or too much data) and **quality**
 
 ::: {.notes}
 **Acquiring and preparing** the actual data is often an overlooked yet challenging stage of the workflow that requires many critical decisions. This phase can significantly affect statistical results, as the choices made determine the quality and usability of the data. Researchers may feel overwhelmed—either by having too little data, raising concerns about the feasibility of analysis, or by having too much data, making it difficult to manage and process. Careful consideration, thorough cleaning, and preparation at this stage are crucial for the success of subsequent analysis, ensuring that the data are suitable for the questions being asked.
 :::
 
+## Core Workflow Components
 
-## {{< bi 4-circle >}} Explore and Understand
+*Plan, Simulate, Acquire, Explore / Analyze, Share*
 
-- Begin with descriptive statistics
-- Move to statistical models
-- Remember: Models are tools, not truth
-- Models reflect:
-  - Earlier decisions
-  - Data acquisition choices
-  - Cleaning procedures
+<br>
+
+### {{< bi 4-circle >}} Explore and Understand
+
+Begin with descriptive statistics<br>
+Move to statistical models<br>
+
+**Remember:** Models are tools, not truth, and they reflect our previous decisions, data acquisition choices, and cleaning procedures.
 
 ::: {.notes}
 In the fourth step, we **explore and understand** the actual data by examining relationships within the dataset. This process typically starts with descriptive statistics and progresses to statistical modeling. It's important to remember that statistical models are tools—not absolute truths—and they operate based on the instructions we provide. They help us understand the data more clearly but do not offer definitive results. At this stage, the models we develop are heavily influenced by prior decisions made during data acquisition and preparation. Sophisticated modelers understand that models are like the visible tip of an iceberg, reliant on the substantial groundwork laid in earlier stages. They recognize that modeling results are shaped by choices about data inclusion, measurement, and recording, reflecting broader aspects of the world even before data reach the workflow.
 :::
 
 
-## {{< bi 5-circle >}} Share Findings
+## Core Workflow Components
 
-- High-fidelity communication essential
-- Document all decisions
-- Build credibility through transparency
+*Plan, Simulate, Acquire, Explore / Analyze, Share*
+
+<br>
+
+### {{< bi 5-circle >}} Share Findings
+
+High-fidelity communication is essential<br>
+Document all decisions<br>
+Build credibility through transparency
+
+<br>
 
 Include:
 
-- What was done
-- Why it was done
-- What was found
-- Weaknesses of the approach
+What was done<br>
+Why it was done<br>
+What was found<br>
+Weaknesses of the approach
 
 ::: {.notes}
 The final step is to share what was done and what was found, communicating with as much clarity and fidelity as possible. Effective communication involves detailing the decisions made throughout the workflow, the reasons behind them, the findings, and the limitations of the approach. We aim to uncover something important, so it's essential to document everything initially, even if other forms of communication supplement the written record later. Openness about the entire process—from data acquisition to analysis—builds credibility and ensures others can fully engage with and understand the work. Without clear communication, even excellent work can be overlooked or misunderstood. While the world may not always reward merit alone, thorough and transparent communication enhances the impact of our work, and achieving mastery in this area requires significant experience and practice.
 :::
 
+# Quantitative Research Essentials
 
-## The Foundation
+## Quantitative Research Essentials
 
 <br>
 
@@ -167,7 +229,7 @@ Scaling<br>
 :::
 ::::
 
-## {{< bi 1-circle >}} Communication (Most Important)
+## Communication (Most Important)
 
 > "Simple analysis, communicated well, is more valuable than complicated analysis communicated poorly." [@alexander2023telling]
 
@@ -177,33 +239,35 @@ Scaling<br>
 - Use tables, graphs, and models effectively
 - Focus on the audience's perspective
 
-## {{< bi 2-circle >}} Reproducibility
+## Reproducibility
 
 *Everything must be independently repeatable.* 
 
+<br>
+
 Requirements:
 
-- Open access to code
-- Data availability or simulation
-- Automated testing
-- Clear documentation
-- Aim for autonomous end-to-end reproducibility
+Open access to code<br>
+Data availability or simulation<br>
+Automated testing<br>
+Clear documentation<br>
+Aim for autonomous end-to-end reproducibility
 
-## {{< bi 3-circle >}} Ethics
+## Ethics
 
 > "This means considering things like: who is in the dataset, who is missing, and why? To what extent will our story perpetuate the past? And is this something that ought to happen?" [@alexander2023telling]
 
-- Consider the full context of the dataset [@datafeminism2020]
-- Acknowledge the social, cultural, and political forces [@crawford]
-- Use data ethically with concern for impact and equity
+Consider the full context of the dataset [@datafeminism2020]<br>
+Acknowledge the social, cultural, and political forces [@crawford]<br>
+Use data ethically with concern for impact and equity
 
-## {{< bi 4-circle >}} Questions
+## Questions
 
-- Questions evolve through understanding
-- Challenge of operationalizing variables
-- Curiosity is essential, drives deeper exploration
-- Value of "hybrid" knowledge that combines multiple disciplines
-- Comfort with asking "dumb" questions
+Questions evolve through understanding<br>
+Challenge of operationalizing variables<br>
+Curiosity is essential, drives deeper exploration<br>
+Value of "hybrid" knowledge that combines multiple disciplines<br>
+Comfort with asking "dumb" questions
 
 ::: {.notes}
 Curiosity is a key source of internal motivation that drives us to thoroughly explore a dataset and its associated processes. As we delve deeper, each question we pose tends to generate additional questions, leading to continual improvement and refinement of our understanding. This **iterative questioning** contrasts with the traditional **Popperian approach** of fixed hypothesis testing often taught quantitative methods courses in the sciences; instead, questions evolve continuously throughout the exploration. Finding an initial research question can be challenging, especially when attempting to operationalize it into measurable and available variables. 
@@ -212,24 +276,16 @@ Strategies to overcome this include selecting an area of genuine interest, sketc
 :::
 
 
-## {{< bi 5-circle >}} Measurement
+## Measurement
 
 > "The world is so vibrant that it is difficult to reduce it to something that is possible to consistently measure and collect." [@alexander2023telling]
 
 :::: {.columns}
 ::: {.column width="60%"}
-Measuring even simple things is challenging
+Measuring even simple things is challenging (e.g., measuring height: Shoes on or off? Time of day affects height. Different tools yield different results). More complex measurements are even harder. How do we measure happiness or pain?
 
-Example: Measuring height
-
-- Shoes on or off?
-- Time of day affects height.
-- Different tools yield different results.
-
-More complex measurements are even harder. How do we measure happiness or pain?
-
-- Measurement requires decisions and is not value-free
-- Context and purpose guide all measurement choices
+<br>
+Measurement requires decisions and is not value-free. Context and purpose guide all measurement choices.
 :::
 
 ::: {.column width="40%"}
@@ -242,66 +298,72 @@ Measurement and data collection involve the complex task of deciding how to tran
 :::
 
 
-## {{< bi 6-circle >}} & {{< bi 7-circle >}} Data Collection & Cleaning
+## Data Collection & Cleaning
 
 > "Data never speak for themselves; they are the puppets of the ventriloquists that cleaned and prepared them." [@alexander2023telling]
 
-- **Collection determines possibilities**
-  - What and how we measure matters.
-- **Cleaning requires many decisions**
-  - Example: Survey responses on gender
-  - Options: "man", "woman", "prefer not to say", "other"
-  - Handling "prefer not to say" and open-text responses.
-- **Document every step**
-  - Ensures transparency and reproducibility.
-- **Consider implications of choices**
-  - Ethical considerations and representation.
+**Collection determines possibilities**<br>
+What and how we measure matters.
+
+**Cleaning requires many decisions**<br>
+E.g., Handling "prefer not to say" and open-text responses.
+
+**Document every step**<br>
+To ensure transparency and reproducibility.
+
+**Consider implications of choices**<br>
+E.g., ethics, representation.
 
 ::: {.notes}
-Data cleaning and preparation is a critical and complex part of data analysis that requires careful attention and numerous decisions. Using the example of a survey collecting gender information with options like “man,” “woman,” “prefer not to say,” and “other” (which includes open-text responses), the text illustrates the challenges researchers face in handling sensitive and diverse data entries. Decisions such as whether to exclude “prefer not to say” responses (which would ignore certain participants) or how to categorize open-text entries (where merging them with other categories might disrespect respondents' specific choices) have significant implications. There is no universally correct approach; choices depend on the context and purpose of the analysis. Therefore, it's vital to meticulously record every step of the data cleaning process to ensure transparency and allow others to understand the decisions made. Ultimately, data do not speak for themselves; they reflect the interpretations and choices of those who prepare and analyze them.
+Data cleaning and preparation is a critical and complex part of data analysis that requires careful attention and numerous decisions. Decisions such as whether to exclude “prefer not to say” responses (which would ignore certain participants) or how to categorize open-text entries (where merging them with other categories might disrespect respondents' specific choices) have significant implications. There is no universally correct approach; choices depend on the context and purpose of the analysis. Therefore, it's vital to meticulously record every step of the data cleaning process to ensure transparency and allow others to understand the decisions made. Ultimately, data do not speak for themselves; they reflect the interpretations and choices of those who prepare and analyze them.
 :::
 
 
-## {{< bi 8-circle >}}+ EDA, Modeling, & Scaling
+# EDA, Modeling, & Scaling
 
-### Exploratory Data Analysis (EDA)
-- Iterative process
-- Never truly complete
-- Shapes understanding
+## Exploratory Data Analysis (EDA)
 
-### Modeling
+Iterative process<br>
+Never truly complete<br>
+Shapes understanding
 
-- Tool for understanding
-- Not a recipe to follow
-- Just one representation of reality
-- Statistical significance $\neq$ scientific significance
-- Statistical models help us explore the shape of the data; are like **echolocation**
-
-### Scaling
-
-- **Using programming languages like R and Python**
-  - Handle large datasets efficiently
-  - Automate repetitive tasks
-  - Share work widely and quickly
-- **Outputs can reach many people easily**
-- **APIs can make analyses accessible in real-time**
 
 ::: {.notes}
 **Exploratory Data Analysis (EDA)** is an open-ended, iterative process that involves immersing ourselves in the data to understand its shape and structure before formal modeling begins. It includes producing summary statistics, creating graphs and tables, and sometimes even preliminary modeling. EDA requires a variety of skills and never truly finishes, as there's always more to explore. Although it's challenging to delineate where EDA ends and formal statistical modeling begins—since our beliefs and understanding evolve continuously—EDA is foundational in shaping the story we tell about our data. While not typically included explicitly in the final narrative, it's crucial that all steps taken during EDA are recorded and shared.
+:::
 
+## Modeling
+
+Tool for understanding<br>
+Not a recipe to follow<br>
+Just one representation of reality<br>
+Statistical significance $\neq$ scientific significance<br>
+Statistical models help us explore the shape of the data; are like **echolocation**
+
+
+::: {.notes}
 **Statistical modeling** builds upon the insights gained from EDA and has a rich history spanning hundreds of years. Statistics is not merely a collection of dry theorems and proofs; it's a way of exploring and understanding the world. A statistical model is not a rigid recipe to follow mechanically but a tool for making sense of data. Modeling is usually required to infer statistical patterns, formally known as statistical inference—the process of using data to infer the distribution that generated them. Importantly, statistical significance does not equate to scientific significance, and relying on arbitrary pass/fail tests is rarely appropriate. Instead, we should use statistical modeling as a form of echolocation, listening to what the models tell us about the shape of the world while recognizing that they offer just one representation of reality.
+:::
 
+## Scaling
+
+**Using programming languages like R and Python**<br>
+
+Handle large datasets efficiently<br>
+Automate repetitive tasks<br>
+Share work widely and quickly<br>
+Outputs can reach many people easily<br>
+APIs can make analyses accessible in real-time<br>
+
+::: {.notes}
 **Scaling our work** becomes feasible with the use of programming languages like R and Python, which allow us to handle vast amounts of data efficiently. Scaling refers to both inputs and outputs; it's essentially as easy to analyze ten observations as it is to analyze a million. This capability enables us to quickly determine the extent to which our findings apply. Additionally, our outputs can be disseminated to a wide audience effortlessly—whether it's one person or a hundred. By utilizing Application Programming Interfaces (APIs), our analyses and stories can be accessed thousands of times per second, greatly enhancing their impact and accessibility.
 :::
 
+# How Do Our Worlds Become Data?
 
 ## How Do Our Worlds Become Data?
 
-> "There is the famous story by Eddington about some people who went fishing in the sea with a net. Upon examining the size of the fish they had caught, they decided there was a minimum size to the fish in the sea! Their conclusion arose from the tool used and not from reality." [@hamming1996, 177]
-
-## How Do Our Worlds Become Data?
-
-> To a certain extent we are wasting our time. We have a perfect model of the world---it is the world! But it is too complicated. If we knew perfectly how everything was affected by the uncountable factors that influence it, then we could forecast perfectly a coin toss, a dice roll, and every other seemingly random process each time. But we cannot. Instead, **we must simplify things to that which is plausibly measurable, and it is that which we define as data**. Our data are a simplification of the messy, complex world from which they were derived. 
+> To a certain extent we are wasting our time. **We have a perfect model of the world---it is the world! But it is too complicated.** If we knew perfectly how everything was affected by the uncountable factors that influence it, then we could forecast perfectly a coin toss, a dice roll, and every other seemingly random process each time. But we cannot. Instead, **we must simplify things to that which is plausibly measurable, and it is that which we define as data**. Our data are a simplification of the messy, complex world from which they were derived. 
 ><br><br>
 > There are different approximations of "plausibly measurable". Hence, **datasets are always the result of choices**. We must decide whether they are nonetheless reasonable for the task at hand. We use statistical models to help us think deeply about, explore, and hopefully come to better understand, our data. [@alexander2023telling]
 
@@ -311,47 +373,27 @@ Data cleaning and preparation is a critical and complex part of data analysis th
 **Through skillful<br>[reduction 👨‍🍳]{.huge}**
 
 ::: {.notes}
-Just as a chef reduces a rich sauce to concentrate its essential flavors, we simplify reality into data—plausibly measurable approximations that capture the essence of the complex world. This reduction process involves deliberate choices about what aspects of reality to include, much like deciding which ingredients to emphasize in a culinary reduction. Our datasets, therefore, are distilled versions of reality, highlighting specific components while inevitably leaving out others.
+Just as a chef reduces a rich sauce to concentrate its essential flavors, **we simplify reality into data—plausibly measurable approximations that capture the essence of the complex world.** This reduction process involves deliberate choices about what aspects of reality to include, much like deciding which ingredients to emphasize in a culinary reduction. Our datasets, therefore, are distilled versions of reality, highlighting specific components while inevitably leaving out others.
 
-As we employ statistical models to explore and understand these datasets, it's crucial to recognize both what the data include and what they omit. Similar to how a reduction in cooking intensifies certain flavors while others may be lost or muted, the process of data simplification can inadvertently exclude important nuances or perspectives. Particularly in data science, where human-generated data are prevalent, we must consider who or what is systematically missing from our datasets. Some individuals or phenomena may not fit neatly into our chosen methods and might be oversimplified or excluded entirely. The abstraction and simplification inherent in turning the world into data require careful judgment—much like a chef monitoring a reduction to achieve the desired consistency without overcooking—to determine when simplification is appropriate and when it risks losing critical information.
+As we employ statistical models to explore and understand these datasets, it's crucial to recognize both what the data include and what they omit. **Similar to how a reduction in cooking intensifies certain flavors while others may be lost or muted, the process of data simplification can inadvertently exclude important nuances or perspectives.** Particularly in data science, where human-generated data are prevalent, we must consider who or what is systematically missing from our datasets. Some individuals or phenomena may not fit neatly into our chosen methods and might be oversimplified or excluded entirely. The abstraction and simplification inherent in turning the world into data require careful judgment—much like a chef monitoring a reduction to achieve the desired consistency without overcooking—to determine when simplification is appropriate and when it risks losing critical information.
 
-Measurement itself presents significant challenges, and those deeply involved in the data collection process often have less trust in the data than those removed from it. Just as the process of reducing a sauce demands constant attention to prevent burning or altering the intended flavor, converting the world into data involves numerous decisions and potential errors—from selecting what to measure to deciding on the methods and accuracy required. Advances in instruments—from telescopes in astronomy to real-time internet data collection—have expanded our ability to gather data, much like new culinary techniques enhance a chef's ability to create complex dishes. However, the world still imperfectly becomes data, and to truly learn from it, we must actively seek to understand the imperfections in our datasets and consider how our “reduction” process may have altered or omitted important aspects of reality.
+Measurement itself presents significant challenges, and those deeply involved in the data collection process often have less trust in the data than those removed from it. **Just as the process of reducing a sauce demands constant attention to prevent burning or altering the intended flavor, converting the world into data involves numerous decisions and potential errors—from selecting what to measure to deciding on the methods and accuracy required.** Advances in instruments—from telescopes in astronomy to real-time internet data collection—have expanded our ability to gather data, much like new culinary techniques enhance a chef's ability to create complex dishes. However, the world still imperfectly becomes data, and to truly learn from it, **we must actively seek to understand the imperfections in our datasets and consider how our “reduction” process may have altered or omitted important aspects of reality.**
 :::
 
-## What is Data Science?
-
-> "Data science can be defined as something like: humans measuring things, typically related to other humans, and using sophisticated averaging to explain and predict." [@alexander2023telling]
-
-Key Principles
-
-- Data are generated, and must be gathered, cleaned, and prepared
-- These decisions matter
-- The process will be difficult
-- Develop resilience and intrinsic motivation
-
-## The Power of Multiple Perspectives
-
-> "The strength of data science is that it brings together people with a variety of backgrounds and training to the task of learning about some dataset. It is not constrained by what was done in the past." [@alexander2023telling]
-
-- Data science is multi-disciplinary
-- Combines statistics, software engineering, subject-matter expertise, and more.
-- Diversity enhances understanding
-- Different perspectives lead to better questions and solutions.
-- Collaboration is key
-- Respect and integrate insights from various fields.
+# Embracing the Challenge
 
 ## Embracing the Challenge
 
-Our world is messy, and so are our data. Telling stories with data is difficult but rewarding.
-
-- Develop resilience and intrinsic motivation
-- Accept that failure is part of the process.
-- Consider possibilities and probabilities
-- Learn to make trade-offs.
-- No perfect analysis exists
-- Aim for transparency and continuous improvement.
-
 > "Ultimately, we are all just telling stories with data, but these stories are increasingly among the most important in the world." [@alexander2023telling]
+
+**Telling good stories with data is difficult but rewarding.**
+
+Develop resilience and intrinsic motivation.<br>
+Accept that failure is part of the process.<br>
+Consider possibilities and probabilities.<br>
+Learn to make trade-offs.<br>
+No perfect analysis exists.<br>
+Aim for transparency and continuous improvement.
 
 ## Key Takeaways
 
@@ -364,3 +406,24 @@ Our world is messy, and so are our data. Telling stories with data is difficult 
 - Leverage technology to scale and share your work
 - Be mindful of the limitations of your data
 
+# What will we do? Where is everything?
+
+##
+
+The Brightspace page links to the course website [johnmclevey.com/SOCI3040/](https://www.johnmclevey.com/SOCI3040/), which contains:
+
+the course syllabus<br>
+schedule of topics, readings, assignments, and exams<br>
+links to open access readings (and supplementary materials)<br>
+slides and class notes
+
+## Next class
+
+**Before class**: Complete the assigned reading<br>
+**In class**: Introduction to R and RStudio
+
+## 
+
+*Thanks!*
+
+<mclevey@mun.ca>

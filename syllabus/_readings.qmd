@@ -1,6 +1,6 @@
 # {{< fa book >}}&nbsp;&nbsp;&nbsp;Assigned Readings
 
-This courses uses Rohan Alexander's [-@alexander2023telling] [*Telling Stories with Data*](https://tellingstorieswithdata.com) and Kieran Healy's [-@healy2019data] [*Data Visualization: A Practical Introduction*](https://socviz.co/index.html), both of which are **freely available online**, in full. The [schedule](schedule.qmd) contains links to specific chapter assignments for each class. You can also quickly access specific chapters using the drop down menus in the top navbar on the course website.
+This courses uses Rohan Alexander's [-@alexander2023telling] [*Telling Stories with Data*](https://tellingstorieswithdata.com), which is **freely available online**, in full. The [schedule](schedule.qmd) contains links to specific chapter assignments for each class. You can also quickly access specific chapters using the drop down menus in the top navbar on the course website.
 
 ## {{< bi fire >}} @alexander2023telling *Telling Stories with Data*
 
@@ -24,7 +24,12 @@ This courses uses Rohan Alexander's [-@alexander2023telling] [*Telling Stories w
 > -- [Daniela Witten](https://www.danielawitten.com/)
 
 
-## {{< bi activity >}} @healy2019data *Data Visualization*
+## Recommended / Optional
+
+You may also wish to consult Kieran Healy's [-@healy2019data] [*Data Visualization: A Practical Introduction*](https://socviz.co/index.html), which is also available for free online, in full.
+
+
+### {{< bi activity >}} @healy2019data *Data Visualization*
 
 > "Finally! A data visualization guide that is **simultaneously practical and elegant**. ... Data Visualization is brimming with insights into how quantitative analysts can use **visualization as a tool for understanding and communication**. A must-read for anyone who works with data." 
 > -- [Elizabeth Bruch](https://mhbsd.net/)

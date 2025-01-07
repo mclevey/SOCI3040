@@ -3,62 +3,90 @@ title: "{{< bi check2-square >}} Assessment"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 toc: true
 bibliography: ../references.bib
-listing:
-  id: assignment-listing
-  contents: ../deliverables/*.qmd
-  type: table
-  sort: "date"
-  date-format: full
-  categories: true
-  fields: [date, time, title, weight]
-  field-display-names:
-    date: "Due (On or Before)"
-    title: "Assignment"
-    weight: "Grade Weight"
-    time: "By"
-  sort-ui: false
-  filter-ui: false
-  page-size: 30
+# listing:
+#   id: assignment-listing
+#   contents: ../deliverables/*.qmd
+#   type: table
+#   sort: "date"
+#   date-format: full
+#   categories: true
+#   fields: [date, time, title, weight]
+#   field-display-names:
+#     date: "Due (On or Before)"
+#     title: "Assignment"
+#     weight: "Grade Weight"
+#     time: "By"
+#   sort-ui: false
+#   filter-ui: false
+#   page-size: 30
 ---
 
-The table below, {{< lipsum 1 >}}
+There are four lab assignments (i.e., "Data Stories") and a final exam in this course.
 
+| Due (on or before) | By | Assignment | Weight |
+|:-------------------|:---|:-----------|:-------|
+| January 28, 2025 | 11:59 pm | Data Stories 1 | 10% |
+| February 20, 2025 | 11:59 pm | Data Stories 2 | 15% |
+| March 20, 2025 | 11:59 pm | Data Stories 3 | 25% |
+| April 8, 2025 | 11:59 pm | Data Stories 4 | 25% |
+| TBA | TBA | **Final Exam** | 25% |
+
+
+<!-- 
 ::: {#assignment-listing}
 :::
+ -->
+
 
 # {{< bi file-post >}} Data Stories 1
 
-## Instructions
+Assignment information will be posted after the second class. Work will be done in and outside of class. 
+<!-- ## Instructions
 
 ## Grading Rubric
 
-## Student Work
+## Student Work -->
 
 
 # {{< bi file-post >}} Data Stories 2
 
-## Instructions
+Assignment information will be posted after the second class. Work will be done in and outside of class. 
+
+<!-- ## Instructions
 
 ## Grading Rubric
 
-## Student Work
+## Student Work -->
 
 
 # {{< bi file-post >}} Data Stories 3
 
-## Instructions
+Assignment information will be posted after the second class. Work will be done in and outside of class. 
+
+<!-- ## Instructions
 
 ## Grading Rubric
 
-## Student Work
+## Student Work -->
 
 
 # {{< bi file-post >}} Data Stories 4
 
-## Instructions
+Assignment information will be posted after the second class. Work will be done in and outside of class. 
+
+<!-- ## Instructions
 
 ## Grading Rubric
 
-## Student Work
+## Student Work -->
 
 # Final Exam
+
+Not yet scheduled. Will be in the final exam block scheduled by the Registrars Office (RO).
+
+- Multiple choice
+- True / false
+- Short answer questions
+- Sketch models and graphs
+- Interpret models and graphs
+- Explain code snippets at a high-level

@@ -1,3 +1,0 @@
-Coming soon...
-
-{{< include _lecture_02_imports.qmd >}}

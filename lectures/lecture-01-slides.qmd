@@ -18,9 +18,3 @@ controls: true
 
 ::: {#refs}
 :::
-
-<!-- 
-# {.appendix}
-
-## Appendix A {.smaller}
- -->

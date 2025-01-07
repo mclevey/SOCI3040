@@ -25,12 +25,12 @@ website:
       <!-- Simple Analytics - 100% privacy-first analytics -->
       <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
       <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
-  announcement:
-    icon: cone-striped
-    dismissable: true
-    content: "**WORK IN PROGRESS** -- I am actively developing these course materials. They are not yet complete and may change at any point before the first day of class in January 2025. ✌️ John"
-    type: info
-    position: below-navbar
+  # announcement:
+  #   icon: cone-striped
+  #   dismissable: true
+  #   content: "**WORK IN PROGRESS** -- I am actively developing these course materials. They are not yet complete and may change at any point before the first day of class in January 2025. ✌️ John"
+  #   type: info
+  #   position: below-navbar
 
 
   title: "🔥 Quantitative Research Methods"
@@ -256,12 +256,12 @@ website:
           - text: "&nbsp;&nbsp;Computing"
             icon: laptop
             href: syllabus/computing.qmd
-          - text: "&nbsp;&nbsp;Conventions"
-            href: syllabus/conventions.qmd
-            icon: signpost-split-fill
-          - text: "&nbsp;&nbsp;Model Notation"
-            href: syllabus/notation.qmd
-            icon: pencil
+          # - text: "&nbsp;&nbsp;Conventions"
+          #   href: syllabus/conventions.qmd
+          #   icon: signpost-split-fill
+          # - text: "&nbsp;&nbsp;Model Notation"
+          #   href: syllabus/notation.qmd
+          #   icon: pencil
           - text: "&nbsp;&nbsp;Policies"
             icon: box-fill
             href: syllabus/policies.qmd

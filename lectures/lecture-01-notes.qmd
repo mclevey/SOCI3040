@@ -25,7 +25,6 @@ number-sections: true
 
 ## {{< bi file-slides-fill >}}&nbsp;&nbsp;Lecture Slides {.unnumbered}
 
-
 {{< revealjs "lecture-01-slides.html" >}}
 
 ## {{< bi file-code >}}&nbsp;&nbsp;Class / Lab Notes {.unnumbered}

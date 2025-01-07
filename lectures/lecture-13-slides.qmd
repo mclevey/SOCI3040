@@ -13,14 +13,16 @@ controls: true
 mermaid:
   theme: default
 toc: true
+toc_float: true
 toc-depth: 1
 toc-title: agenda.
 number-sections: true
 top-level-heading: 2
 ---
 
+Coming soon...
 
-{{< include lecture-13-content.qmd >}}
+<!-- {{< include lecture-13-content.qmd >}} -->
 
 ## References
 

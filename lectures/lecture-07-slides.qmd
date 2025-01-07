@@ -19,8 +19,9 @@ number-sections: true
 top-level-heading: 2
 ---
 
+Coming soon...
 
-{{< include lecture-07-content.qmd >}}
+<!-- {{< include lecture-07-content.qmd >}} -->
 
 ## References
 

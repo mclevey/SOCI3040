@@ -31,5 +31,5 @@ number-sections: true
 :::
 
 
-{{< include lecture-05-content.qmd >}}
+<!-- {{< include lecture-05-content.qmd >}} -->
 

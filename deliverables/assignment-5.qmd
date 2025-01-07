@@ -3,11 +3,20 @@ title: "{{< bi file-post >}} Final Exam"
 subtitle: SOCI 3040 -- Quantitative Research Methods
 author: 25%
 author-title: Grade Weight
-date: January 10, 2025
+date: TBA
 published-title: "Due Date"
 time: 11:59 pm
 weight: 25%
 bibliography: ../references.bib
 ---
 
-Coming soon...
+Not yet scheduled!
+
+Information coming soon...
+
+- Multiple choice
+- True / false
+- Short answer
+- Sketch models and graphs
+- Interpret models and graphs
+- Explain code snippets at a high-level

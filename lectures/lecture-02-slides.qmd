@@ -19,11 +19,11 @@ number-sections: true
 top-level-heading: 2
 ---
 
-# Test 1
+Coming soon...
 
+<!--  
 {{< include lecture-02-content.qmd >}}
-
-# Test 2
+ -->
 
 ## References
 

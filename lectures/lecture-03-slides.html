@@ -31,10 +31,76 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -341,6 +407,10 @@
       margin-right: 0; 
     }
   </style>
+  <meta name="mermaid-theme" content="default">
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -363,27 +433,817 @@ John McLevey (he/him)
 
   <p class="date">January 14, 2025</p>
 </section>
-<section class="slide level2">
+<section>
+<section id="drinking-from-the-firehose" class="title-slide slide level1 center" data-number="1">
+<h1><span class="header-section-number">1</span> Drinking From the Firehose</h1>
 
-<p>Coming soon… <!-- {{< include lecture-03-content.qmd >}} --></p>
 </section>
-<section id="references" class="slide level2 smaller scrollable" data-number="1">
-<h2><span class="header-section-number">1</span> References</h2>
-<div id="refs" role="list">
+<section id="the-firehose" class="slide level2" data-number="1.1">
+<h2><span class="header-section-number">1.1</span> the firehose</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  p[[Plan]]
+  sim[[Simulate]]
+  a[[Acquire]]
+  e[[Explore/Understand]]
+  s[[Share]]
 
+  p --&gt; sim --&gt; a --&gt; e --&gt; s
+</pre>
 </div>
-<!-- 
-# {.appendix}
+<p></p><figcaption> Rohan Alexander’s <span class="citation" data-cites="alexander2023telling">(<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span> <strong>Telling Stories with Data</strong> workflow</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+<p><br></p>
+<ol type="1">
+<li class="fragment">Australian elections</li>
+<li class="fragment">Toronto shelters</li>
+<li class="fragment">Neonatal mortality rates (NMR)</li>
+</ol>
+</section>
+<section id="the-firehose-1" class="slide level2" data-number="1.2">
+<h2><span class="header-section-number">1.2</span> the firehose</h2>
+<blockquote>
+<p>Whenever you’re learning a new tool, for a long time, you’re going to suck<span class="math inline">\(\dots\)</span> But the good news is that is typical; that’s something that happens to everyone, and it’s only temporary.</p>
+<p><span class="small">Hadley Wickham as quoted by <span class="citation" data-cites="citeBarrett">Barrett (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span></span></p>
+</blockquote>
+<p><br><br></p>
+<blockquote>
+<p>You will be guided thoroughly here. Hopefully by experiencing the excitement of telling stories with data, you will feel empowered to stick with it.</p>
+<p><span class="small">Rohan <span class="citation" data-cites="alexander2023telling">Alexander (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span></span></p>
+</blockquote>
+<!-- {{< include _firehose_setup.qmd >}} -->
+</section>
+<section id="import-libraries" class="slide level2" data-number="1.3">
+<h2><span class="header-section-number">1.3</span> import libraries</h2>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(<span class="st">"janitor"</span>)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(<span class="st">"knitr"</span>)</span>
+<span id="cb1-3"><a></a><span class="fu">library</span>(<span class="st">"lubridate"</span>)</span>
+<span id="cb1-4"><a></a><span class="fu">library</span>(<span class="st">"opendatatoronto"</span>)</span>
+<span id="cb1-5"><a></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb1-6"><a></a><span class="fu">library</span>(<span class="st">"here"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="plan" class="title-slide slide level1 center" data-background-color="#2E3440" data-number="2">
+<h1><span class="header-section-number">2</span> Plan</h1>
+<p><span class="huge">Australian Elections</span></p>
+</section>
+<section id="plan-1" class="slide level2" data-number="2.1">
+<h2><span class="header-section-number">2.1</span> plan</h2>
+<p><br></p>
+<h3 data-number="2.1.1" id="australian-elections"><span class="header-section-number">2.1.1</span> Australian Elections</h3>
+<div class="callout callout-note no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>How many seats did each political party win in the 2022 Australian Federal Election?</p>
+</div>
+</div>
+</div>
+<p><br> Australia is a parliamentary democracy<br>with 151 seats in the House of Representatives. <br><br></p>
+<p>Major parties: <strong>Liberal</strong> and <strong>Labour</strong><br> Minor parties: <strong>Nationals</strong> and <strong>Greens</strong><br> Many smaller parties and independents</p>
+</section>
+<section id="plan-2" class="slide level2" data-number="2.2">
+<h2><span class="header-section-number">2.2</span> plan</h2>
+<div id="fig-australiaexample" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-australiaexample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-australiaexample" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-australiaexample-data" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-australiaexample-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="../media/tswd-figures/02-divisiontable.png" style="width:80.0%" data-ref-parent="fig-australiaexample">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-australiaexample-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Sketch of a possible dataset to create a graph
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-australiaexample" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-australiaexample-graph" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-australiaexample-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="../media/tswd-figures/02-divisiongraph.png" style="width:80.0%" data-ref-parent="fig-australiaexample">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-australiaexample-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Sketch of a possible graph to answer our question
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-australiaexample-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Sketches of a potential dataset and graph related to an Australian election. The basic requirement for the dataset is that it has <strong>the name of the seat</strong> (i.e., a “division” in Australia) and <strong>the party of the person elected</strong>.
+</figcaption>
+</figure>
+</div>
+</section></section>
+<section>
+<section id="simulate" class="title-slide slide level1 center" data-background-color="#2E3440" data-number="3">
+<h1><span class="header-section-number">3</span> Simulate</h1>
+<p><span class="huge">Australian Elections</span></p>
+</section>
+<section id="simulate-1" class="slide level2" data-number="3.1">
+<h2><span class="header-section-number">3.1</span> simulate</h2>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="simulate-2" class="slide level2" data-number="3.2">
+<h2><span class="header-section-number">3.2</span> simulate</h2>
+<p><br></p>
+<p>We’ll simulate a dataset with two variables,<br><strong>Division</strong> and <strong>Party</strong>, and some values for each.</p>
+<p><br></p>
+<p><code>division</code><br>the name of one of the 131 Australian divisions <br><br> <code>party</code><br>the name of one of the political parties<br><span class="small">Liberal, Labor, National, Green, or Other</span></p>
+</section>
+<section id="simulate-3" class="slide level2" data-number="3.3">
+<h2><span class="header-section-number">3.3</span> simulate</h2>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>simulated_data <span class="ot">&lt;-</span></span>
+<span id="cb3-2"><a></a>    <span class="fu">tibble</span>(</span>
+<span id="cb3-3"><a></a>        <span class="co"># Use 1 through to 151 to represent each division</span></span>
+<span id="cb3-4"><a></a>        <span class="st">"Division"</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">151</span>,</span>
+<span id="cb3-5"><a></a>        <span class="co"># Randomly pick an option, with replacement, 151 times</span></span>
+<span id="cb3-6"><a></a>        <span class="st">"Party"</span> <span class="ot">=</span> <span class="fu">sample</span>(</span>
+<span id="cb3-7"><a></a>            <span class="at">x =</span> <span class="fu">c</span>(<span class="st">"Liberal"</span>, <span class="st">"Labor"</span>, <span class="st">"National"</span>, <span class="st">"Green"</span>, <span class="st">"Other"</span>),</span>
+<span id="cb3-8"><a></a>            <span class="at">size =</span> <span class="dv">151</span>,</span>
+<span id="cb3-9"><a></a>            <span class="at">replace =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-10"><a></a>        )</span>
+<span id="cb3-11"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+<p>The <code>&lt;-</code> symbol is an assignment operator in R. It assigns the value on the right to the variable name on the left. Here, we’re creating a new data object called <code>simulated_data</code>, which will store a table of simulated information.</p>
+<p><code>tibble()</code> is a function from the <code>tidyverse</code> package that creates a data frame, which is a type of table used to organize data. Unlike traditional data frames, <code>tibble</code> handles data more cleanly and is especially useful in data analysis.</p>
+<p>Inside the <code>tibble()</code> function, we specify columns and the values we want in each. On Line 4, we create a column named “Division”. <code>1:151</code> generates a sequence of numbers from 1 to 151. This sequence will represent each unique division (or group) in our simulated dataset and helps to identify each row in the data.</p>
+<p>Then we create another column in our <code>tibble</code> called <code>Party</code>. <code>sample()</code> is a function that randomly selects values from a specified set. Here, it’s used to pick a political party for each division, simulating party representation across divisions.</p>
+<p><code>x</code> defines the set of values that <code>sample()</code> will pick from. The <code>c()</code> function combines these five options — “Liberal”, “Labor”, “National”, “Green”, and “Other” — into a list of possible parties. In other words, each division will be randomly assigned one of these five party names, representing the political party that wins the division in our simulation. <code>size = 151</code> specifies that <code>sample()</code> should generate 151 random selections, matching the number of divisions we created in the “Division” column.</p>
+<p>When sampling, <code>replace = TRUE</code> allows each party name to be selected multiple times, as though we’re picking “with replacement” (i.e., once we sample a party name, it goes back into the bag so it can be drawn again). Without this, each party could only be chosen once, which wouldn’t match our goal of assigning a random party to each division.</p>
+<p>We can print the <code>simulated_data</code> object to view the simulated dataset. When we run this line, R will display the table with two columns, <code>Division</code> and <code>Party</code>, where each division is assigned one of the five parties randomly.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="simulate-4" class="slide level2" data-number="3.4">
+<h2><span class="header-section-number">3.4</span> simulate</h2>
+<p><span class="extra-large">🤘</span> We have our <strong>fake</strong> data!</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>simulated_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 151 × 2
+   Division Party   
+      &lt;int&gt; &lt;chr&gt;   
+ 1        1 National
+ 2        2 Green   
+ 3        3 National
+ 4        4 Green   
+ 5        5 Green   
+ 6        6 National
+ 7        7 Other   
+ 8        8 Labor   
+ 9        9 Green   
+10       10 Other   
+# ℹ 141 more rows</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="acquire" class="title-slide slide level1 center" data-background-color="#2E3440" data-number="4">
+<h1><span class="header-section-number">4</span> Acquire</h1>
+<p><span class="huge">Australian Elections</span></p>
+</section>
+<section id="acquire-1" class="slide level2" data-number="4.1">
+<h2><span class="header-section-number">4.1</span> acquire</h2>
+<p><br></p>
+<p>The data we want is provided by the <strong>Australian Electoral Commission (AEC)</strong>, which is the non-partisan agency that organizes Australian federal elections. We can download the data using <a href="https://results.aec.gov.au/27966/website/Downloads/HouseMembersElectedDownload-27966.csv">this link</a>, but we want to do it <strong>programatically</strong>, storing the results to a dataframe object called <code>raw_elections_data</code>.</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>data_url <span class="ot">&lt;-</span> <span class="st">"https://results.aec.gov.au/27966/website/Downloads/HouseMembersElectedDownload-27966.csv"</span></span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a>raw_elections_data <span class="ot">&lt;-</span></span>
+<span id="cb6-4"><a></a>    <span class="fu">read_csv</span>(</span>
+<span id="cb6-5"><a></a>        <span class="at">file =</span> data_url,</span>
+<span id="cb6-6"><a></a>        <span class="at">show_col_types =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-7"><a></a>        <span class="at">skip =</span> <span class="dv">1</span></span>
+<span id="cb6-8"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="acquire-2" class="slide level2" data-number="4.2">
+<h2><span class="header-section-number">4.2</span> acquire</h2>
+<p><br></p>
+<p>We’ll save the data as a CSV file.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(here)</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a><span class="fu">write_csv</span>(</span>
+<span id="cb7-4"><a></a>    <span class="at">x =</span> raw_elections_data,</span>
+<span id="cb7-5"><a></a>    <span class="at">file =</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"australian_voting.csv"</span>)</span>
+<span id="cb7-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div class="callout callout-tip no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>✌️ R Tip</p>
+<p>The <code>here()</code> function, from the <code>here</code> library, simplifies file paths by always referencing the root directory for a project. This makes code more reproducible and eliminates issues with working directories, especially when you are using more than one machine, collaborating, or sharing code with someone else. <a href="https://jennybryan.org/">Jenny Bryan</a> wrote a brief “Ode to the here package,” “here here,” which you can read… <a href="https://github.com/jennybc/here_here">here</a>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="acquire-3" class="slide level2" data-number="4.3">
+<h2><span class="header-section-number">4.3</span> acquire</h2>
+<p><span class="extra-large">🤘</span> We have our <strong>real</strong> data!</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>raw_elections_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 151 × 8
+   DivisionID DivisionNm StateAb CandidateID GivenNm Surname
+        &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
+ 1        179 Adelaide   SA            36973 Steve   GEORGA…
+ 2        197 Aston      VIC           36704 Alan    TUDGE  
+ 3        198 Ballarat   VIC           36409 Cather… KING   
+ 4        103 Banks      NSW           37018 David   COLEMAN
+ 5        180 Barker     SA            37083 Tony    PASIN  
+ 6        104 Barton     NSW           36820 Linda   BURNEY 
+ 7        192 Bass       TAS           37134 Bridge… ARCHER 
+ 8        318 Bean       ACT           36231 David   SMITH  
+ 9        200 Bendigo    VIC           36424 Lisa    CHESTE…
+10        105 Bennelong  NSW           36827 Jerome  LAXALE 
+# ℹ 141 more rows
+# ℹ 2 more variables: PartyNm &lt;chr&gt;, PartyAb &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="acquire-4" class="slide level2" data-number="4.4">
+<h2><span class="header-section-number">4.4</span> acquire</h2>
+<p><code>head()</code> shows the first six rows.</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">head</span>(raw_elections_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  DivisionID DivisionNm StateAb CandidateID GivenNm  Surname
+       &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  
+1        179 Adelaide   SA            36973 Steve    GEORGA…
+2        197 Aston      VIC           36704 Alan     TUDGE  
+3        198 Ballarat   VIC           36409 Catheri… KING   
+4        103 Banks      NSW           37018 David    COLEMAN
+5        180 Barker     SA            37083 Tony     PASIN  
+6        104 Barton     NSW           36820 Linda    BURNEY 
+# ℹ 2 more variables: PartyNm &lt;chr&gt;, PartyAb &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="acquire-5" class="slide level2" data-number="4.5">
+<h2><span class="header-section-number">4.5</span> acquire</h2>
+<p><code>tail()</code> shows the last six rows.</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">tail</span>(raw_elections_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  DivisionID DivisionNm StateAb CandidateID GivenNm  Surname
+       &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  
+1        152 Wentworth  NSW           37451 Allegra  SPENDER
+2        153 Werriwa    NSW           36810 Anne Ma… STANLEY
+3        150 Whitlam    NSW           36811 Stephen  JONES  
+4        178 Wide Bay   QLD           37506 Llew     O'BRIEN
+5        234 Wills      VIC           36452 Peter    KHALIL 
+6        316 Wright     QLD           37500 Scott    BUCHHO…
+# ℹ 2 more variables: PartyNm &lt;chr&gt;, PartyAb &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="acquire-6" class="slide level2" data-number="4.6">
+<h2><span class="header-section-number">4.6</span> acquire</h2>
+<blockquote>
+<p>“We are trying to make it similar to the dataset that we thought we wanted in the planning stage. While it is fine to move away from the plan, this needs to be a deliberate, reasoned decision.” <span class="citation" data-cites="alexander2023telling">(<a href="#/references" role="doc-biblioref" onclick="">Alexander 2023</a>)</span></p>
+</blockquote>
+<p><br></p>
+<p>Let’s clean.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>aus_voting_data <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"australian_voting.csv"</span>)</span>
+<span id="cb14-2"><a></a></span>
+<span id="cb14-3"><a></a>raw_elections_data <span class="ot">&lt;-</span></span>
+<span id="cb14-4"><a></a>    <span class="fu">read_csv</span>(</span>
+<span id="cb14-5"><a></a>        <span class="at">file =</span> aus_voting_data,</span>
+<span id="cb14-6"><a></a>        <span class="at">show_col_types =</span> <span class="cn">FALSE</span></span>
+<span id="cb14-7"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="acquire-7" class="slide level2" data-number="4.7">
+<h2><span class="header-section-number">4.7</span> acquire</h2>
+<p><br></p>
+<p><code>clean_names()</code> makes variables easier to type.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>cleaned_elections_data <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(raw_elections_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br> Let’s look at the first 6 rows.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">head</span>(cleaned_elections_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  division_id division_nm state_ab candidate_id given_nm 
+        &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt;    
+1         179 Adelaide    SA              36973 Steve    
+2         197 Aston       VIC             36704 Alan     
+3         198 Ballarat    VIC             36409 Catherine
+4         103 Banks       NSW             37018 David    
+5         180 Barker      SA              37083 Tony     
+6         104 Barton      NSW             36820 Linda    
+# ℹ 3 more variables: surname &lt;chr&gt;, party_nm &lt;chr&gt;,
+#   party_ab &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="acquire-8" class="slide level2" data-number="4.8">
+<h2><span class="header-section-number">4.8</span> acquire</h2>
+<div class="callout callout-tip no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>✌️ R Tip</p>
+<p>We can choose certain variables of interest with <code>select()</code> from <code>dplyr</code>, which we loaded as part of the <code>tidyverse</code>. The <strong>pipe operator</strong> <code>|&gt;</code> pushes the output of one line to be the first input of the function on the next line.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>We are primarily interested in two variables:</p>
+<p><code>division_nm</code> (division name)<br><code>party_nm</code> (party name)</p>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>cleaned_elections_data <span class="ot">&lt;-</span></span>
+<span id="cb18-2"><a></a>    cleaned_elections_data <span class="sc">|&gt;</span></span>
+<span id="cb18-3"><a></a>    <span class="fu">select</span>(</span>
+<span id="cb18-4"><a></a>        division_nm,</span>
+<span id="cb18-5"><a></a>        party_nm</span>
+<span id="cb18-6"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="acquire-9" class="slide level2" data-number="4.9">
+<h2><span class="header-section-number">4.9</span> acquire</h2>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">head</span>(cleaned_elections_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  division_nm party_nm              
+  &lt;chr&gt;       &lt;chr&gt;                 
+1 Adelaide    Australian Labor Party
+2 Aston       Liberal               
+3 Ballarat    Australian Labor Party
+4 Banks       Liberal               
+5 Barker      Liberal               
+6 Barton      Australian Labor Party</code></pre>
+</div>
+</div>
+<p><br></p>
+<p>This looks good, but some of the variable names are still not obvious because they are abbreviated.</p>
+</section>
+<section id="acquire-10" class="slide level2" data-number="4.10">
+<h2><span class="header-section-number">4.10</span> acquire</h2>
+<p><br></p>
+<div class="callout callout-tip no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>✌️ R Tip</p>
+<p>We can look at the names of the columns (i.e., variables) in a dataset using <code>names()</code>. We can change them using <code>rename()</code> from <code>dplyr</code>.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">names</span>(cleaned_elections_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "division_nm" "party_nm"   </code></pre>
+</div>
+</div>
+<p><br></p>
+<p>Let’s rename.</p>
+</section>
+<section id="acquire-11" class="slide level2" data-number="4.11">
+<h2><span class="header-section-number">4.11</span> acquire</h2>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>cleaned_elections_data <span class="ot">&lt;-</span></span>
+<span id="cb23-2"><a></a>    cleaned_elections_data <span class="sc">|&gt;</span></span>
+<span id="cb23-3"><a></a>    <span class="fu">rename</span>(</span>
+<span id="cb23-4"><a></a>        <span class="at">division =</span> division_nm,</span>
+<span id="cb23-5"><a></a>        <span class="at">elected_party =</span> party_nm</span>
+<span id="cb23-6"><a></a>    )</span>
+<span id="cb23-7"><a></a></span>
+<span id="cb23-8"><a></a><span class="fu">head</span>(cleaned_elections_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  division elected_party         
+  &lt;chr&gt;    &lt;chr&gt;                 
+1 Adelaide Australian Labor Party
+2 Aston    Liberal               
+3 Ballarat Australian Labor Party
+4 Banks    Liberal               
+5 Barker   Liberal               
+6 Barton   Australian Labor Party</code></pre>
+</div>
+</div>
+</section>
+<section id="acquire-12" class="slide level2" data-number="4.12">
+<h2><span class="header-section-number">4.12</span> acquire</h2>
+<p><br></p>
+<p>What are the unique values in <code>elected_party</code>?</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>cleaned_elections_data<span class="sc">$</span>elected_party <span class="sc">|&gt;</span></span>
+<span id="cb25-2"><a></a>    <span class="fu">unique</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Australian Labor Party"              
+[2] "Liberal"                             
+[3] "Liberal National Party of Queensland"
+[4] "The Greens"                          
+[5] "The Nationals"                       
+[6] "Independent"                         
+[7] "Katter's Australian Party (KAP)"     
+[8] "Centre Alliance"                     </code></pre>
+</div>
+</div>
+<p><br></p>
+<p>Cool, but let’s simplify the party names in <code>elected_party</code> to match what we simulated. We can do this with <code>case_match()</code> from <code>dplyr</code>.</p>
+</section>
+<section id="acquire-13" class="slide level2" data-number="4.13">
+<h2><span class="header-section-number">4.13</span> acquire</h2>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>cleaned_elections_data <span class="ot">&lt;-</span></span>
+<span id="cb27-2"><a></a>    cleaned_elections_data <span class="sc">|&gt;</span></span>
+<span id="cb27-3"><a></a>    <span class="fu">mutate</span>(</span>
+<span id="cb27-4"><a></a>        <span class="at">elected_party =</span></span>
+<span id="cb27-5"><a></a>            <span class="fu">case_match</span>(</span>
+<span id="cb27-6"><a></a>                elected_party,</span>
+<span id="cb27-7"><a></a>                <span class="st">"Australian Labor Party"</span> <span class="sc">~</span> <span class="st">"Labor"</span>,</span>
+<span id="cb27-8"><a></a>                <span class="st">"Liberal National Party of Queensland"</span> <span class="sc">~</span> <span class="st">"Liberal"</span>,</span>
+<span id="cb27-9"><a></a>                <span class="st">"Liberal"</span> <span class="sc">~</span> <span class="st">"Liberal"</span>,</span>
+<span id="cb27-10"><a></a>                <span class="st">"The Nationals"</span> <span class="sc">~</span> <span class="st">"Nationals"</span>,</span>
+<span id="cb27-11"><a></a>                <span class="st">"The Greens"</span> <span class="sc">~</span> <span class="st">"Greens"</span>,</span>
+<span id="cb27-12"><a></a>                <span class="st">"Independent"</span> <span class="sc">~</span> <span class="st">"Other"</span>,</span>
+<span id="cb27-13"><a></a>                <span class="st">"Katter's Australian Party (KAP)"</span> <span class="sc">~</span> <span class="st">"Other"</span>,</span>
+<span id="cb27-14"><a></a>                <span class="st">"Centre Alliance"</span> <span class="sc">~</span> <span class="st">"Other"</span></span>
+<span id="cb27-15"><a></a>            )</span>
+<span id="cb27-16"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="acquire-14" class="slide level2" data-number="4.14">
+<h2><span class="header-section-number">4.14</span> acquire</h2>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="fu">head</span>(cleaned_elections_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  division elected_party
+  &lt;chr&gt;    &lt;chr&gt;        
+1 Adelaide Labor        
+2 Aston    Liberal      
+3 Ballarat Labor        
+4 Banks    Liberal      
+5 Barker   Liberal      
+6 Barton   Labor        </code></pre>
+</div>
+</div>
+<p><br></p>
+<p>Our data now matches our plan! 😎</p>
+</section>
+<section id="aus_elections_clean_path" class="slide level2" data-number="4.15">
+<h2><span class="header-section-number">4.15</span> acquire</h2>
+<p><br></p>
+<p>Let’s save the cleaned data so that we can start with it data in the next stage. We’ll use a new filename to preserve the original and make it easy to identify the <strong>clean</strong> version.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>aus_elections_clean_path <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"cleaned_elections_data.csv"</span>)</span>
+<span id="cb30-2"><a></a></span>
+<span id="cb30-3"><a></a><span class="fu">write_csv</span>(</span>
+<span id="cb30-4"><a></a>    <span class="at">x =</span> cleaned_elections_data,</span>
+<span id="cb30-5"><a></a>    <span class="at">file =</span> aus_elections_clean_path</span>
+<span id="cb30-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="explore-understand" class="title-slide slide level1 center" data-background-color="#2E3440" data-number="5">
+<h1><span class="header-section-number">5</span> Explore / Understand</h1>
+<p><span class="huge">Australian Elections</span></p>
+</section>
+<section id="explore-understand-1" class="slide level2" data-number="5.1">
+<h2><span class="header-section-number">5.1</span> explore / understand</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:25%;">
+<p><br><br><br> How do we build the graph that we <strong>planned</strong>?</p>
+</div><div class="column" style="width:5%;">
 
-## Appendix A {.smaller}
- -->
+</div><div class="column" style="width:60%;">
+<p><img data-src="../media/tswd-figures/02-divisiongraph.png" style="width:80.0%"></p>
+</div></div>
+</section>
+<section id="explore-understand-2" class="slide level2" data-number="5.2">
+<h2><span class="header-section-number">5.2</span> explore / understand</h2>
+<p><br></p>
+<p>First, we read in the <em>cleaned</em> dataset that we just created.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>cleaned_elections_data <span class="ot">&lt;-</span></span>
+<span id="cb31-2"><a></a>    <span class="fu">read_csv</span>(</span>
+<span id="cb31-3"><a></a>        <span class="at">file =</span> aus_elections_clean_path,</span>
+<span id="cb31-4"><a></a>        <span class="at">show_col_types =</span> <span class="cn">FALSE</span></span>
+<span id="cb31-5"><a></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div class="callout callout-tip no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>✌️ R Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>I’m using the filepath object I <a href="#/aus_elections_clean_path">previously created</a>: <code>aus_elections_clean_path</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>aus_elections_clean_path</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/Users/johnmclevey/SOCI3040/data/cleaned_elections_data.csv"</code></pre>
+</div>
+</div>
+<p><br> This won’t work in a <em>new</em> script unless we re-create the object. Can you explain why?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="explore-understand-3" class="slide level2" data-number="5.3">
+<h2><span class="header-section-number">5.3</span> explore / understand</h2>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">head</span>(cleaned_elections_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  division elected_party
+  &lt;chr&gt;    &lt;chr&gt;        
+1 Adelaide Labor        
+2 Aston    Liberal      
+3 Ballarat Labor        
+4 Banks    Liberal      
+5 Barker   Liberal      
+6 Barton   Labor        </code></pre>
+</div>
+</div>
+<p>😎</p>
+</section>
+<section id="explore-understand-4" class="slide level2" data-number="5.4">
+<h2><span class="header-section-number">5.4</span> explore / understand</h2>
+<div class="callout callout-note no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>How many seats did each party win?</p>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>We can get a quick count with <code>count()</code> from <code>dplyr</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>cleaned_elections_data <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a></a>    <span class="fu">count</span>(elected_party)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  elected_party     n
+  &lt;chr&gt;         &lt;int&gt;
+1 Greens            4
+2 Labor            77
+3 Liberal          48
+4 Nationals        10
+5 Other            12</code></pre>
+</div>
+</div>
+</section>
+<section id="explore-understand-5" class="slide level2" data-number="5.5">
+<h2><span class="header-section-number">5.5</span> explore / understand</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../media/tswd-figures/02-divisiongraph.png" style="width:100.0%"></p>
+<figcaption>Remember, we’re trying to make something like this.</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:65%;">
+<div class="callout callout-tip no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>✌️ R Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>The <strong>grammar of graphics</strong> is a conceptual framework for constructing data visualizations. It breaks down plots to their most basic elements, like <em>data</em>, <em>scales</em>, <em>geoms</em> (geometric objects), <em>coordinates</em>, and <em>statistical transformations</em>. The idea is to plan and build our vizualizations by <em>layering</em> these basic elements together rather than mindlessly relying on generic chart types.</p>
+<p><code>ggplot2</code>, a data visualization library from the <code>tidyverse</code>, is designed around the grammar of graphics idea. We build data visualizations by <strong>layering</strong> the desired elements of our plots. For example, we use <code>aes()</code> to specify <strong>aesthetic mappings</strong> that link our data to visual elements like position, color, size, shape, and transparency. We can create and tweak just about any visualization we want by layering <strong>data</strong>, <strong>aesthetics</strong>, and <strong>geoms</strong> using the <strong>add operator</strong>, <code>+</code>.</p>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p>, allowing the viewer to interpret the values and relationships in the dataset visually. By mapping data to these properties, we can layer information on the same plot and enhance the viewer’s understanding of patterns, trends, and differences.</p>
+<p>In ggplot2, aesthetics are specified within the aes() function, where each aesthetic is mapped to a data variable. For instance, x and y represent positions on the axes, while color, fill, size, and shape control other visual aspects. By carefully selecting aesthetics, we can add depth to the plot without clutter, guiding the viewer’s eye to the most important parts.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="explore-understand-6" class="slide level2" data-number="5.6">
+<h2><span class="header-section-number">5.6</span> explore / understand</h2>
+<p><br></p>
+<p>Let’s visualize the counts as vertical bars using <code>geom_bar()</code> from <code>ggplot2</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">ggplot</span>(</span>
+<span id="cb38-2"><a></a>    cleaned_elections_data, <span class="co"># specify the data</span></span>
+<span id="cb38-3"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> elected_party) <span class="co"># specify aesthetics</span></span>
+<span id="cb38-4"><a></a>) <span class="sc">+</span> <span class="co"># add a layer with the + operator</span></span>
+<span id="cb38-5"><a></a>    <span class="fu">geom_bar</span>() <span class="co"># specify a geometric shape (bar)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<p>But it’s cleaner to use the <strong>pipe operator</strong> <code>|&gt;</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>cleaned_elections_data <span class="sc">|&gt;</span></span>
+<span id="cb39-2"><a></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> elected_party)) <span class="sc">+</span></span>
+<span id="cb39-3"><a></a>    <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+</section>
+<section id="explore-understand-6-output" class="slide level2 output-location-slide"><h2><span class="header-section-number">5.6</span> explore / understand</h2><div class="cell output-location-slide" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-meh" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-meh-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="lecture-03-slides_files/figure-revealjs/fig-meh-1.png" class="quarto-figure quarto-figure-center" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-meh-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Meh. We can do better.
+</figcaption>
+</figure>
+</div>
+</div>
+</div></section><section id="explore-understand-7" class="slide level2" data-number="5.7">
+<h2><span class="header-section-number">5.7</span> explore / understand</h2>
+<p><br></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>cleaned_elections_data <span class="sc">|&gt;</span></span>
+<span id="cb40-2"><a></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> elected_party)) <span class="sc">+</span></span>
+<span id="cb40-3"><a></a>    <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb40-4"><a></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co"># Improve the theme</span></span>
+<span id="cb40-5"><a></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Party"</span>, <span class="at">y =</span> <span class="st">"Number of seats"</span>) <span class="co"># Improve the labels</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+</section>
+<section id="explore-understand-7-output" class="slide level2 output-location-slide"><h2><span class="header-section-number">5.7</span> explore / understand</h2><div class="cell output-location-slide" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-aus-seats" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-aus-seats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="lecture-03-slides_files/figure-revealjs/fig-aus-seats-1.png" class="quarto-figure quarto-figure-center" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aus-seats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Number of seats won, by political party, at the 2022 Australian Federal Election. 😎
+</figcaption>
+</figure>
+</div>
+</div>
+</div></section><section id="section" class="slide level2" data-number="5.8">
+<h2><span class="header-section-number">5.8</span> </h2>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>cleaned_elections_data <span class="sc">|&gt;</span></span>
+<span id="cb41-2"><a></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> elected_party)) <span class="sc">+</span></span>
+<span id="cb41-3"><a></a>    <span class="fu">geom_bar</span>()</span>
+<span id="cb41-4"><a></a></span>
+<span id="cb41-5"><a></a>cleaned_elections_data <span class="sc">|&gt;</span></span>
+<span id="cb41-6"><a></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> elected_party)) <span class="sc">+</span></span>
+<span id="cb41-7"><a></a>    <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb41-8"><a></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb41-9"><a></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Party"</span>, <span class="at">y =</span> <span class="st">"Number of seats"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-comparison" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-comparison" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-comparison-1" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-comparison-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="lecture-03-slides_files/figure-revealjs/fig-comparison-1.png" class="quarto-figure quarto-figure-center" style="width:80.0%" data-ref-parent="fig-comparison">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-comparison-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Default theme and labels
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-comparison" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-comparison-2" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-comparison-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="lecture-03-slides_files/figure-revealjs/fig-comparison-2.png" class="quarto-figure quarto-figure-center" style="width:80.0%" data-ref-parent="fig-comparison">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-comparison-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Improved theme and labels
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Both versions of the plot, and the code that produced them, side-by-side for comparison.
+</figcaption>
+</figure>
+</div>
+</section></section>
+<section>
+<section id="share" class="title-slide slide level1 center" data-background-color="#2E3440" data-number="6">
+<h1><span class="header-section-number">6</span> Share</h1>
+<p><span class="huge">Australian Elections</span></p>
+</section>
+<section id="share-1" class="slide level2" data-number="6.1">
+<h2><span class="header-section-number">6.1</span> share</h2>
+<p>Example taken directly from <span class="citation" data-cites="alexander2023telling">Alexander (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span>, <a href="https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html#share">here</a>.</p>
+<div class="callout callout-note no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>Australia is a parliamentary democracy with 151 seats in the House of Representatives, which is the house from which government is formed. There are two major parties—“Liberal” and “Labor”—two minor parties—“Nationals” and “Greens”—and many smaller parties. The 2022 Federal Election occurred on 21 May, and around 15 million votes were cast. We were interested in the number of seats that were won by each party.</p>
+<p>We downloaded the results, on a seat-specific basis, from the Australian Electoral Commission website. We cleaned and tidied the dataset using the statistical programming language R <span class="citation" data-cites="citeR">(<a href="#/references" role="doc-biblioref" onclick="">R Core Team 2023</a>)</span> including the <code>tidyverse</code> <span class="citation" data-cites="tidyverse">(<a href="#/references" role="doc-biblioref" onclick="">Wickham et al. 2019</a>)</span> and <code>janitor</code> <span class="citation" data-cites="janitor">(<a href="#/references" role="doc-biblioref" onclick="">Firke 2023</a>)</span>. We then created a graph of the number of seats that each political party won (<a href="#/explore-understand-7-output" class="quarto-xref">Figure&nbsp;3</a>).</p>
+<p>We found that the Labor Party won 77 seats, followed by the Liberal Party with 48 seats. The minor parties won the following number of seats: the Nationals won 10 seats and the Greens won 4 seats. Finally, there were 10 Independents elected as well as candidates from smaller parties.</p>
+<p>The distribution of seats is skewed toward the two major parties which could reflect relatively stable preferences on the part of Australian voters, or possibly inertia due to the benefits of already being a major party such a national network or funding. A better understanding of the reasons for this distribution are of interest in future work. While the dataset consists of everyone who voted, it worth noting that in Australia some are systematically excluded from voting, and it is much more difficult for some to vote than others.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>One aspect to be especially concerned with is making sure that this communication is focused on the needs of the audience and telling a story. Data journalism provides some excellent examples of how analysis needs to be tailored to the audience, for instance, <span class="citation" data-cites="biasbehindbars">Cardoso (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span> and <span class="citation" data-cites="bronnerftw">Bronner (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- {{< include _firehose_toronto_shelters.qmd >}} -->
+<!-- {{< include _firehose_toronto_shelters.qmd >}} -->
+<!-- {{< include _firehose_neonatal_mortality_rates.qmd >}} -->
+</section>
+<section id="references" class="slide level2 smaller scrollable" data-number="6.2">
+<h2><span class="header-section-number">6.2</span> References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-alexander2023telling" class="csl-entry" role="listitem">
+Alexander, Rohan. 2023. <em>Telling Stories with Data: With Applications in <span>R</span></em>. Chapman; Hall/CRC.
+</div>
+<div id="ref-citeBarrett" class="csl-entry" role="listitem">
+Barrett, Malcolm. 2021. <em>Data Science as an Atomic Habit</em>. <a href="https://malco.io/articles/2021-01-04-data-science-as-an-atomic-habit">https://malco.io/articles/2021-01-04-data-science-as-an-atomic-habit</a>.
+</div>
+<div id="ref-bronnerftw" class="csl-entry" role="listitem">
+Bronner, Laura. 2020. <span>“Why Statistics Don’t Capture the Full Extent of the Systemic Bias in Policing.”</span> <em>FiveThirtyEight</em>, June. <a href="https://fivethirtyeight.com/features/why-statistics-dont-capture-the-full-extent-of-the-systemic-bias-in-policing/">https://fivethirtyeight.com/features/why-statistics-dont-capture-the-full-extent-of-the-systemic-bias-in-policing/</a>.
+</div>
+<div id="ref-biasbehindbars" class="csl-entry" role="listitem">
+Cardoso, Tom. 2020. <span>“<span class="nocase">Bias behind bars: A Globe investigation finds a prison system stacked against Black and Indigenous inmates</span>.”</span> <em>The Globe and Mail</em>, October. <a href="https://www.theglobeandmail.com/canada/article-investigation-racial-bias-in-canadian-prison-risk-assessments/">https://www.theglobeandmail.com/canada/article-investigation-racial-bias-in-canadian-prison-risk-assessments/</a>.
+</div>
+<div id="ref-janitor" class="csl-entry" role="listitem">
+Firke, Sam. 2023. <em><span class="nocase">janitor: Simple Tools for Examining and Cleaning Dirty Data</span></em>. <a href="https://CRAN.R-project.org/package=janitor">https://CRAN.R-project.org/package=janitor</a>.
+</div>
+<div id="ref-citeR" class="csl-entry" role="listitem">
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-tidyverse" class="csl-entry" role="listitem">
+Wickham, Hadley, Mara Averick, Jenny Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“<span class="nocase">Welcome to the Tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p><a href="https://www.johnmclevey.com/quantitative-research-methods"><i class="bi-house-fill " style="color: #2E3440;" role="img" aria-hidden="true"></i></a></p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -594,6 +1454,44 @@ John McLevey (he/him)
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

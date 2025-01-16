@@ -103,7 +103,7 @@
     "href": "lectures/lecture-03-content.html#simulate-4",
     "title": "Drinking From the Firehose",
     "section": "simulate",
-    "text": "simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Liberal \n 2        2 National\n 3        3 National\n 4        4 National\n 5        5 Labor   \n 6        6 National\n 7        7 National\n 8        8 Liberal \n 9        9 Liberal \n10       10 Other   \n# ℹ 141 more rows"
+    "text": "simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Liberal \n 2        2 Labor   \n 3        3 Green   \n 4        4 Liberal \n 5        5 Liberal \n 6        6 Liberal \n 7        7 National\n 8        8 Labor   \n 9        9 Labor   \n10       10 National\n# ℹ 141 more rows"
   },
   {
     "objectID": "lectures/lecture-03-content.html#acquire-1",
@@ -274,464 +274,450 @@
     "text": "share\nExample taken directly from @alexander2023telling, here.\n\n\n\n\n\n\nAustralia is a parliamentary democracy with 151 seats in the House of Representatives, which is the house from which government is formed. There are two major parties—“Liberal” and “Labor”—two minor parties—“Nationals” and “Greens”—and many smaller parties. The 2022 Federal Election occurred on 21 May, and around 15 million votes were cast. We were interested in the number of seats that were won by each party.\nWe downloaded the results, on a seat-specific basis, from the Australian Electoral Commission website. We cleaned and tidied the dataset using the statistical programming language R [@citeR] including the tidyverse [@tidyverse] and janitor [@janitor]. We then created a graph of the number of seats that each political party won (Figure 3).\nWe found that the Labor Party won 77 seats, followed by the Liberal Party with 48 seats. The minor parties won the following number of seats: the Nationals won 10 seats and the Greens won 4 seats. Finally, there were 10 Independents elected as well as candidates from smaller parties.\nThe distribution of seats is skewed toward the two major parties which could reflect relatively stable preferences on the part of Australian voters, or possibly inertia due to the benefits of already being a major party such a national network or funding. A better understanding of the reasons for this distribution are of interest in future work. While the dataset consists of everyone who voted, it worth noting that in Australia some are systematically excluded from voting, and it is much more difficult for some to vote than others.\n\n\n\n\nOne aspect to be especially concerned with is making sure that this communication is focused on the needs of the audience and telling a story. Data journalism provides some excellent examples of how analysis needs to be tailored to the audience, for instance, @biasbehindbars and @bronnerftw."
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#the-firehose",
-    "href": "lectures/lecture-03-slides.html#the-firehose",
+    "objectID": "lectures/lecture-03-notes.html",
+    "href": "lectures/lecture-03-notes.html",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "",
+    "text": "Lecture Slides\nView slides in full screen\nClass Notes"
+  },
+  {
+    "objectID": "lectures/lecture-03-notes.html#the-firehose",
+    "href": "lectures/lecture-03-notes.html#the-firehose",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "1.1 the firehose",
     "text": "1.1 the firehose\n\n\n\n\n\nflowchart LR\n  p[[Plan]]\n  sim[[Simulate]]\n  a[[Acquire]]\n  e[[Explore/Understand]]\n  s[[Share]]\n\n  p --&gt; sim --&gt; a --&gt; e --&gt; s\n\n\n Rohan Alexander’s (2023) Telling Stories with Data workflow \n\n\n\n\n\nAustralian elections\nToronto shelters\nNeonatal mortality rates (NMR)"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#the-firehose-1",
-    "href": "lectures/lecture-03-slides.html#the-firehose-1",
+    "objectID": "lectures/lecture-03-notes.html#the-firehose-1",
+    "href": "lectures/lecture-03-notes.html#the-firehose-1",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "1.2 the firehose",
     "text": "1.2 the firehose\n\nWhenever you’re learning a new tool, for a long time, you’re going to suck\\(\\dots\\) But the good news is that is typical; that’s something that happens to everyone, and it’s only temporary.\nHadley Wickham as quoted by Barrett (2021)\n\n\n\nYou will be guided thoroughly here. Hopefully by experiencing the excitement of telling stories with data, you will feel empowered to stick with it.\nRohan Alexander (2023)"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#import-libraries",
-    "href": "lectures/lecture-03-slides.html#import-libraries",
+    "objectID": "lectures/lecture-03-notes.html#import-libraries",
+    "href": "lectures/lecture-03-notes.html#import-libraries",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "1.3 import libraries",
     "text": "1.3 import libraries\n\n\nlibrary(\"janitor\")\nlibrary(\"knitr\")\nlibrary(\"lubridate\")\nlibrary(\"opendatatoronto\")\nlibrary(\"tidyverse\")\nlibrary(\"here\")"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#plan-1",
-    "href": "lectures/lecture-03-slides.html#plan-1",
+    "objectID": "lectures/lecture-03-notes.html#plan-1",
+    "href": "lectures/lecture-03-notes.html#plan-1",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "2.1 plan",
-    "text": "2.1 plan\n\n2.1.1 Australian Elections\n\n\n\nHow many seats did each political party win in the 2022 Australian Federal Election?\n\n\n\n Australia is a parliamentary democracywith 151 seats in the House of Representatives. \nMajor parties: Liberal and Labour Minor parties: Nationals and Greens Many smaller parties and independents"
+    "text": "2.1 plan\n\n\n2.1.1 Australian Elections\n\n\n\n\n\n\nHow many seats did each political party win in the 2022 Australian Federal Election?\n\n\n\n Australia is a parliamentary democracywith 151 seats in the House of Representatives. \nMajor parties: Liberal and Labour Minor parties: Nationals and Greens Many smaller parties and independents"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#plan-2",
-    "href": "lectures/lecture-03-slides.html#plan-2",
+    "objectID": "lectures/lecture-03-notes.html#plan-2",
+    "href": "lectures/lecture-03-notes.html#plan-2",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "2.2 plan",
     "text": "2.2 plan\n\n\n\n\n\n\n\n\n\n\n\n(a) Sketch of a possible dataset to create a graph\n\n\n\n\n\n\n\n\n\n\n\n(b) Sketch of a possible graph to answer our question\n\n\n\n\n\n\n\nFigure 1: Sketches of a potential dataset and graph related to an Australian election. The basic requirement for the dataset is that it has the name of the seat (i.e., a “division” in Australia) and the party of the person elected."
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#simulate-1",
-    "href": "lectures/lecture-03-slides.html#simulate-1",
+    "objectID": "lectures/lecture-03-notes.html#simulate-1",
+    "href": "lectures/lecture-03-notes.html#simulate-1",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "3.1 simulate",
     "text": "3.1 simulate\n\n\nlibrary(tidyverse)\nlibrary(janitor)"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#simulate-2",
-    "href": "lectures/lecture-03-slides.html#simulate-2",
+    "objectID": "lectures/lecture-03-notes.html#simulate-2",
+    "href": "lectures/lecture-03-notes.html#simulate-2",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "3.2 simulate",
     "text": "3.2 simulate\n\nWe’ll simulate a dataset with two variables,Division and Party, and some values for each.\n\ndivisionthe name of one of the 131 Australian divisions  partythe name of one of the political partiesLiberal, Labor, National, Green, or Other"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#simulate-3",
-    "href": "lectures/lecture-03-slides.html#simulate-3",
+    "objectID": "lectures/lecture-03-notes.html#simulate-3",
+    "href": "lectures/lecture-03-notes.html#simulate-3",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "3.3 simulate",
     "text": "3.3 simulate\n\n\nsimulated_data &lt;-\n    tibble(\n        # Use 1 through to 151 to represent each division\n        \"Division\" = 1:151,\n        # Randomly pick an option, with replacement, 151 times\n        \"Party\" = sample(\n            x = c(\"Liberal\", \"Labor\", \"National\", \"Green\", \"Other\"),\n            size = 151,\n            replace = TRUE\n        )\n    )\n\n\nThe &lt;- symbol is an assignment operator in R. It assigns the value on the right to the variable name on the left. Here, we’re creating a new data object called simulated_data, which will store a table of simulated information.\ntibble() is a function from the tidyverse package that creates a data frame, which is a type of table used to organize data. Unlike traditional data frames, tibble handles data more cleanly and is especially useful in data analysis.\nInside the tibble() function, we specify columns and the values we want in each. On Line 4, we create a column named “Division”. 1:151 generates a sequence of numbers from 1 to 151. This sequence will represent each unique division (or group) in our simulated dataset and helps to identify each row in the data.\nThen we create another column in our tibble called Party. sample() is a function that randomly selects values from a specified set. Here, it’s used to pick a political party for each division, simulating party representation across divisions.\nx defines the set of values that sample() will pick from. The c() function combines these five options — “Liberal”, “Labor”, “National”, “Green”, and “Other” — into a list of possible parties. In other words, each division will be randomly assigned one of these five party names, representing the political party that wins the division in our simulation. size = 151 specifies that sample() should generate 151 random selections, matching the number of divisions we created in the “Division” column.\nWhen sampling, replace = TRUE allows each party name to be selected multiple times, as though we’re picking “with replacement” (i.e., once we sample a party name, it goes back into the bag so it can be drawn again). Without this, each party could only be chosen once, which wouldn’t match our goal of assigning a random party to each division.\nWe can print the simulated_data object to view the simulated dataset. When we run this line, R will display the table with two columns, Division and Party, where each division is assigned one of the five parties randomly."
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#simulate-4",
-    "href": "lectures/lecture-03-slides.html#simulate-4",
+    "objectID": "lectures/lecture-03-notes.html#simulate-4",
+    "href": "lectures/lecture-03-notes.html#simulate-4",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "3.4 simulate",
-    "text": "3.4 simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 National\n 2        2 Green   \n 3        3 National\n 4        4 Green   \n 5        5 Green   \n 6        6 National\n 7        7 Other   \n 8        8 Labor   \n 9        9 Green   \n10       10 Other   \n# ℹ 141 more rows"
+    "text": "3.4 simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party  \n      &lt;int&gt; &lt;chr&gt;  \n 1        1 Other  \n 2        2 Other  \n 3        3 Liberal\n 4        4 Labor  \n 5        5 Other  \n 6        6 Liberal\n 7        7 Liberal\n 8        8 Liberal\n 9        9 Labor  \n10       10 Liberal\n# ℹ 141 more rows"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-1",
-    "href": "lectures/lecture-03-slides.html#acquire-1",
+    "objectID": "lectures/lecture-03-notes.html#acquire-1",
+    "href": "lectures/lecture-03-notes.html#acquire-1",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.1 acquire",
     "text": "4.1 acquire\n\nThe data we want is provided by the Australian Electoral Commission (AEC), which is the non-partisan agency that organizes Australian federal elections. We can download the data using this link, but we want to do it programatically, storing the results to a dataframe object called raw_elections_data.\n\n\ndata_url &lt;- \"https://results.aec.gov.au/27966/website/Downloads/HouseMembersElectedDownload-27966.csv\"\n\nraw_elections_data &lt;-\n    read_csv(\n        file = data_url,\n        show_col_types = FALSE,\n        skip = 1\n    )"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-2",
-    "href": "lectures/lecture-03-slides.html#acquire-2",
+    "objectID": "lectures/lecture-03-notes.html#acquire-2",
+    "href": "lectures/lecture-03-notes.html#acquire-2",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.2 acquire",
-    "text": "4.2 acquire\n\nWe’ll save the data as a CSV file.\n\nlibrary(here)\n\nwrite_csv(\n    x = raw_elections_data,\n    file = here(\"data\", \"australian_voting.csv\")\n)\n\n\n\n\n\n✌️ R Tip\nThe here() function, from the here library, simplifies file paths by always referencing the root directory for a project. This makes code more reproducible and eliminates issues with working directories, especially when you are using more than one machine, collaborating, or sharing code with someone else. Jenny Bryan wrote a brief “Ode to the here package,” “here here,” which you can read… here."
+    "text": "4.2 acquire\n\nWe’ll save the data as a CSV file.\n\nlibrary(here)\n\nwrite_csv(\n    x = raw_elections_data,\n    file = here(\"data\", \"australian_voting.csv\")\n)\n\n\n\n\n\n\n\n\n✌️ R Tip\nThe here() function, from the here library, simplifies file paths by always referencing the root directory for a project. This makes code more reproducible and eliminates issues with working directories, especially when you are using more than one machine, collaborating, or sharing code with someone else. Jenny Bryan wrote a brief “Ode to the here package,” “here here,” which you can read… here."
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-3",
-    "href": "lectures/lecture-03-slides.html#acquire-3",
+    "objectID": "lectures/lecture-03-notes.html#acquire-3",
+    "href": "lectures/lecture-03-notes.html#acquire-3",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.3 acquire",
     "text": "4.3 acquire\n🤘 We have our real data!\n\n\nraw_elections_data\n\n# A tibble: 151 × 8\n   DivisionID DivisionNm StateAb CandidateID GivenNm Surname\n        &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  \n 1        179 Adelaide   SA            36973 Steve   GEORGA…\n 2        197 Aston      VIC           36704 Alan    TUDGE  \n 3        198 Ballarat   VIC           36409 Cather… KING   \n 4        103 Banks      NSW           37018 David   COLEMAN\n 5        180 Barker     SA            37083 Tony    PASIN  \n 6        104 Barton     NSW           36820 Linda   BURNEY \n 7        192 Bass       TAS           37134 Bridge… ARCHER \n 8        318 Bean       ACT           36231 David   SMITH  \n 9        200 Bendigo    VIC           36424 Lisa    CHESTE…\n10        105 Bennelong  NSW           36827 Jerome  LAXALE \n# ℹ 141 more rows\n# ℹ 2 more variables: PartyNm &lt;chr&gt;, PartyAb &lt;chr&gt;"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-4",
-    "href": "lectures/lecture-03-slides.html#acquire-4",
+    "objectID": "lectures/lecture-03-notes.html#acquire-4",
+    "href": "lectures/lecture-03-notes.html#acquire-4",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.4 acquire",
     "text": "4.4 acquire\nhead() shows the first six rows.\n\n\nhead(raw_elections_data)\n\n# A tibble: 6 × 8\n  DivisionID DivisionNm StateAb CandidateID GivenNm  Surname\n       &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  \n1        179 Adelaide   SA            36973 Steve    GEORGA…\n2        197 Aston      VIC           36704 Alan     TUDGE  \n3        198 Ballarat   VIC           36409 Catheri… KING   \n4        103 Banks      NSW           37018 David    COLEMAN\n5        180 Barker     SA            37083 Tony     PASIN  \n6        104 Barton     NSW           36820 Linda    BURNEY \n# ℹ 2 more variables: PartyNm &lt;chr&gt;, PartyAb &lt;chr&gt;"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-5",
-    "href": "lectures/lecture-03-slides.html#acquire-5",
+    "objectID": "lectures/lecture-03-notes.html#acquire-5",
+    "href": "lectures/lecture-03-notes.html#acquire-5",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.5 acquire",
     "text": "4.5 acquire\ntail() shows the last six rows.\n\n\ntail(raw_elections_data)\n\n# A tibble: 6 × 8\n  DivisionID DivisionNm StateAb CandidateID GivenNm  Surname\n       &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  \n1        152 Wentworth  NSW           37451 Allegra  SPENDER\n2        153 Werriwa    NSW           36810 Anne Ma… STANLEY\n3        150 Whitlam    NSW           36811 Stephen  JONES  \n4        178 Wide Bay   QLD           37506 Llew     O'BRIEN\n5        234 Wills      VIC           36452 Peter    KHALIL \n6        316 Wright     QLD           37500 Scott    BUCHHO…\n# ℹ 2 more variables: PartyNm &lt;chr&gt;, PartyAb &lt;chr&gt;"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-6",
-    "href": "lectures/lecture-03-slides.html#acquire-6",
+    "objectID": "lectures/lecture-03-notes.html#acquire-6",
+    "href": "lectures/lecture-03-notes.html#acquire-6",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.6 acquire",
     "text": "4.6 acquire\n\n“We are trying to make it similar to the dataset that we thought we wanted in the planning stage. While it is fine to move away from the plan, this needs to be a deliberate, reasoned decision.” (Alexander 2023)\n\n\nLet’s clean.\n\naus_voting_data &lt;- here(\"data\", \"australian_voting.csv\")\n\nraw_elections_data &lt;-\n    read_csv(\n        file = aus_voting_data,\n        show_col_types = FALSE\n    )"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-7",
-    "href": "lectures/lecture-03-slides.html#acquire-7",
+    "objectID": "lectures/lecture-03-notes.html#acquire-7",
+    "href": "lectures/lecture-03-notes.html#acquire-7",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.7 acquire",
     "text": "4.7 acquire\n\nclean_names() makes variables easier to type.\n\ncleaned_elections_data &lt;- clean_names(raw_elections_data)\n\n Let’s look at the first 6 rows.\n\nhead(cleaned_elections_data)\n\n# A tibble: 6 × 8\n  division_id division_nm state_ab candidate_id given_nm \n        &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt;    \n1         179 Adelaide    SA              36973 Steve    \n2         197 Aston       VIC             36704 Alan     \n3         198 Ballarat    VIC             36409 Catherine\n4         103 Banks       NSW             37018 David    \n5         180 Barker      SA              37083 Tony     \n6         104 Barton      NSW             36820 Linda    \n# ℹ 3 more variables: surname &lt;chr&gt;, party_nm &lt;chr&gt;,\n#   party_ab &lt;chr&gt;"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-8",
-    "href": "lectures/lecture-03-slides.html#acquire-8",
+    "objectID": "lectures/lecture-03-notes.html#acquire-8",
+    "href": "lectures/lecture-03-notes.html#acquire-8",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.8 acquire",
-    "text": "4.8 acquire\n\n\n\n✌️ R Tip\nWe can choose certain variables of interest with select() from dplyr, which we loaded as part of the tidyverse. The pipe operator |&gt; pushes the output of one line to be the first input of the function on the next line.\n\n\n\n\nWe are primarily interested in two variables:\ndivision_nm (division name)party_nm (party name)\n\n\ncleaned_elections_data &lt;-\n    cleaned_elections_data |&gt;\n    select(\n        division_nm,\n        party_nm\n    )"
+    "text": "4.8 acquire\n\n\n\n\n\n\n✌️ R Tip\nWe can choose certain variables of interest with select() from dplyr, which we loaded as part of the tidyverse. The pipe operator |&gt; pushes the output of one line to be the first input of the function on the next line.\n\n\n\n\nWe are primarily interested in two variables:\ndivision_nm (division name)party_nm (party name)\n\n\ncleaned_elections_data &lt;-\n    cleaned_elections_data |&gt;\n    select(\n        division_nm,\n        party_nm\n    )"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-9",
-    "href": "lectures/lecture-03-slides.html#acquire-9",
+    "objectID": "lectures/lecture-03-notes.html#acquire-9",
+    "href": "lectures/lecture-03-notes.html#acquire-9",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.9 acquire",
     "text": "4.9 acquire\n\n\nhead(cleaned_elections_data)\n\n# A tibble: 6 × 2\n  division_nm party_nm              \n  &lt;chr&gt;       &lt;chr&gt;                 \n1 Adelaide    Australian Labor Party\n2 Aston       Liberal               \n3 Ballarat    Australian Labor Party\n4 Banks       Liberal               \n5 Barker      Liberal               \n6 Barton      Australian Labor Party\n\n\n\nThis looks good, but some of the variable names are still not obvious because they are abbreviated."
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-10",
-    "href": "lectures/lecture-03-slides.html#acquire-10",
+    "objectID": "lectures/lecture-03-notes.html#acquire-10",
+    "href": "lectures/lecture-03-notes.html#acquire-10",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.10 acquire",
-    "text": "4.10 acquire\n\n\n\n\n✌️ R Tip\nWe can look at the names of the columns (i.e., variables) in a dataset using names(). We can change them using rename() from dplyr.\n\n\n\n\nnames(cleaned_elections_data)\n\n[1] \"division_nm\" \"party_nm\"   \n\n\n\nLet’s rename."
+    "text": "4.10 acquire\n\n\n\n\n\n\n\n✌️ R Tip\nWe can look at the names of the columns (i.e., variables) in a dataset using names(). We can change them using rename() from dplyr.\n\n\n\n\nnames(cleaned_elections_data)\n\n[1] \"division_nm\" \"party_nm\"   \n\n\n\nLet’s rename."
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-11",
-    "href": "lectures/lecture-03-slides.html#acquire-11",
+    "objectID": "lectures/lecture-03-notes.html#acquire-11",
+    "href": "lectures/lecture-03-notes.html#acquire-11",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.11 acquire",
     "text": "4.11 acquire\n\n\ncleaned_elections_data &lt;-\n    cleaned_elections_data |&gt;\n    rename(\n        division = division_nm,\n        elected_party = party_nm\n    )\n\nhead(cleaned_elections_data)\n\n# A tibble: 6 × 2\n  division elected_party         \n  &lt;chr&gt;    &lt;chr&gt;                 \n1 Adelaide Australian Labor Party\n2 Aston    Liberal               \n3 Ballarat Australian Labor Party\n4 Banks    Liberal               \n5 Barker   Liberal               \n6 Barton   Australian Labor Party"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-12",
-    "href": "lectures/lecture-03-slides.html#acquire-12",
+    "objectID": "lectures/lecture-03-notes.html#acquire-12",
+    "href": "lectures/lecture-03-notes.html#acquire-12",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.12 acquire",
     "text": "4.12 acquire\n\nWhat are the unique values in elected_party?\n\ncleaned_elections_data$elected_party |&gt;\n    unique()\n\n[1] \"Australian Labor Party\"              \n[2] \"Liberal\"                             \n[3] \"Liberal National Party of Queensland\"\n[4] \"The Greens\"                          \n[5] \"The Nationals\"                       \n[6] \"Independent\"                         \n[7] \"Katter's Australian Party (KAP)\"     \n[8] \"Centre Alliance\"                     \n\n\n\nCool, but let’s simplify the party names in elected_party to match what we simulated. We can do this with case_match() from dplyr."
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-13",
-    "href": "lectures/lecture-03-slides.html#acquire-13",
+    "objectID": "lectures/lecture-03-notes.html#acquire-13",
+    "href": "lectures/lecture-03-notes.html#acquire-13",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.13 acquire",
     "text": "4.13 acquire\n\n\ncleaned_elections_data &lt;-\n    cleaned_elections_data |&gt;\n    mutate(\n        elected_party =\n            case_match(\n                elected_party,\n                \"Australian Labor Party\" ~ \"Labor\",\n                \"Liberal National Party of Queensland\" ~ \"Liberal\",\n                \"Liberal\" ~ \"Liberal\",\n                \"The Nationals\" ~ \"Nationals\",\n                \"The Greens\" ~ \"Greens\",\n                \"Independent\" ~ \"Other\",\n                \"Katter's Australian Party (KAP)\" ~ \"Other\",\n                \"Centre Alliance\" ~ \"Other\"\n            )\n    )"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#acquire-14",
-    "href": "lectures/lecture-03-slides.html#acquire-14",
+    "objectID": "lectures/lecture-03-notes.html#acquire-14",
+    "href": "lectures/lecture-03-notes.html#acquire-14",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.14 acquire",
     "text": "4.14 acquire\n\n\nhead(cleaned_elections_data)\n\n# A tibble: 6 × 2\n  division elected_party\n  &lt;chr&gt;    &lt;chr&gt;        \n1 Adelaide Labor        \n2 Aston    Liberal      \n3 Ballarat Labor        \n4 Banks    Liberal      \n5 Barker   Liberal      \n6 Barton   Labor        \n\n\n\nOur data now matches our plan! 😎"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#aus_elections_clean_path",
-    "href": "lectures/lecture-03-slides.html#aus_elections_clean_path",
+    "objectID": "lectures/lecture-03-notes.html#aus_elections_clean_path",
+    "href": "lectures/lecture-03-notes.html#aus_elections_clean_path",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.15 acquire",
     "text": "4.15 acquire\n\nLet’s save the cleaned data so that we can start with it data in the next stage. We’ll use a new filename to preserve the original and make it easy to identify the clean version.\n\naus_elections_clean_path &lt;- here(\"data\", \"cleaned_elections_data.csv\")\n\nwrite_csv(\n    x = cleaned_elections_data,\n    file = aus_elections_clean_path\n)"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#explore-understand-1",
-    "href": "lectures/lecture-03-slides.html#explore-understand-1",
+    "objectID": "lectures/lecture-03-notes.html#explore-understand-1",
+    "href": "lectures/lecture-03-notes.html#explore-understand-1",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.1 explore / understand",
     "text": "5.1 explore / understand\n\n\n\n How do we build the graph that we planned?"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#explore-understand-2",
-    "href": "lectures/lecture-03-slides.html#explore-understand-2",
+    "objectID": "lectures/lecture-03-notes.html#explore-understand-2",
+    "href": "lectures/lecture-03-notes.html#explore-understand-2",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.2 explore / understand",
-    "text": "5.2 explore / understand\n\nFirst, we read in the cleaned dataset that we just created.\n\ncleaned_elections_data &lt;-\n    read_csv(\n        file = aus_elections_clean_path,\n        show_col_types = FALSE\n    )\n\n\n\n\n\n✌️ R Tip\n\n\nI’m using the filepath object I previously created: aus_elections_clean_path.\n\naus_elections_clean_path\n\n[1] \"/Users/johnmclevey/SOCI3040/data/cleaned_elections_data.csv\"\n\n\n This won’t work in a new script unless we re-create the object. Can you explain why?"
+    "text": "5.2 explore / understand\n\nFirst, we read in the cleaned dataset that we just created.\n\ncleaned_elections_data &lt;-\n    read_csv(\n        file = aus_elections_clean_path,\n        show_col_types = FALSE\n    )\n\n\n\n\n\n\n\n\n✌️ R Tip\n\n\n\nI’m using the filepath object I previously created: aus_elections_clean_path.\n\naus_elections_clean_path\n\n[1] \"/Users/johnmclevey/SOCI3040/data/cleaned_elections_data.csv\"\n\n\n This won’t work in a new script unless we re-create the object. Can you explain why?"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#explore-understand-3",
-    "href": "lectures/lecture-03-slides.html#explore-understand-3",
+    "objectID": "lectures/lecture-03-notes.html#explore-understand-3",
+    "href": "lectures/lecture-03-notes.html#explore-understand-3",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.3 explore / understand",
     "text": "5.3 explore / understand\n\n\nhead(cleaned_elections_data)\n\n# A tibble: 6 × 2\n  division elected_party\n  &lt;chr&gt;    &lt;chr&gt;        \n1 Adelaide Labor        \n2 Aston    Liberal      \n3 Ballarat Labor        \n4 Banks    Liberal      \n5 Barker   Liberal      \n6 Barton   Labor        \n\n\n😎"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#explore-understand-4",
-    "href": "lectures/lecture-03-slides.html#explore-understand-4",
+    "objectID": "lectures/lecture-03-notes.html#explore-understand-4",
+    "href": "lectures/lecture-03-notes.html#explore-understand-4",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.4 explore / understand",
-    "text": "5.4 explore / understand\n\n\n\nHow many seats did each party win?\n\n\n\n\nWe can get a quick count with count() from dplyr.\n\ncleaned_elections_data |&gt;\n    count(elected_party)\n\n# A tibble: 5 × 2\n  elected_party     n\n  &lt;chr&gt;         &lt;int&gt;\n1 Greens            4\n2 Labor            77\n3 Liberal          48\n4 Nationals        10\n5 Other            12"
+    "text": "5.4 explore / understand\n\n\n\n\n\n\nHow many seats did each party win?\n\n\n\n\nWe can get a quick count with count() from dplyr.\n\ncleaned_elections_data |&gt;\n    count(elected_party)\n\n# A tibble: 5 × 2\n  elected_party     n\n  &lt;chr&gt;         &lt;int&gt;\n1 Greens            4\n2 Labor            77\n3 Liberal          48\n4 Nationals        10\n5 Other            12"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#explore-understand-5",
-    "href": "lectures/lecture-03-slides.html#explore-understand-5",
+    "objectID": "lectures/lecture-03-notes.html#explore-understand-5",
+    "href": "lectures/lecture-03-notes.html#explore-understand-5",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.5 explore / understand",
-    "text": "5.5 explore / understand\n\n\n\n\n\n\nRemember, we’re trying to make something like this.\n\n\n\n\n\n\n✌️ R Tip\n\n\nThe grammar of graphics is a conceptual framework for constructing data visualizations. It breaks down plots to their most basic elements, like data, scales, geoms (geometric objects), coordinates, and statistical transformations. The idea is to plan and build our vizualizations by layering these basic elements together rather than mindlessly relying on generic chart types.\nggplot2, a data visualization library from the tidyverse, is designed around the grammar of graphics idea. We build data visualizations by layering the desired elements of our plots. For example, we use aes() to specify aesthetic mappings that link our data to visual elements like position, color, size, shape, and transparency. We can create and tweak just about any visualization we want by layering data, aesthetics, and geoms using the add operator, +.\n\n\n\n\n\n, allowing the viewer to interpret the values and relationships in the dataset visually. By mapping data to these properties, we can layer information on the same plot and enhance the viewer’s understanding of patterns, trends, and differences.\nIn ggplot2, aesthetics are specified within the aes() function, where each aesthetic is mapped to a data variable. For instance, x and y represent positions on the axes, while color, fill, size, and shape control other visual aspects. By carefully selecting aesthetics, we can add depth to the plot without clutter, guiding the viewer’s eye to the most important parts."
+    "text": "5.5 explore / understand\n\n\n\n\n\n\nRemember, we’re trying to make something like this.\n\n\n\n\n\n\n\n\n\n✌️ R Tip\n\n\n\nThe grammar of graphics is a conceptual framework for constructing data visualizations. It breaks down plots to their most basic elements, like data, scales, geoms (geometric objects), coordinates, and statistical transformations. The idea is to plan and build our vizualizations by layering these basic elements together rather than mindlessly relying on generic chart types.\nggplot2, a data visualization library from the tidyverse, is designed around the grammar of graphics idea. We build data visualizations by layering the desired elements of our plots. For example, we use aes() to specify aesthetic mappings that link our data to visual elements like position, color, size, shape, and transparency. We can create and tweak just about any visualization we want by layering data, aesthetics, and geoms using the add operator, +.\n\n\n\n\n\n, allowing the viewer to interpret the values and relationships in the dataset visually. By mapping data to these properties, we can layer information on the same plot and enhance the viewer’s understanding of patterns, trends, and differences.\nIn ggplot2, aesthetics are specified within the aes() function, where each aesthetic is mapped to a data variable. For instance, x and y represent positions on the axes, while color, fill, size, and shape control other visual aspects. By carefully selecting aesthetics, we can add depth to the plot without clutter, guiding the viewer’s eye to the most important parts."
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#explore-understand-6",
-    "href": "lectures/lecture-03-slides.html#explore-understand-6",
+    "objectID": "lectures/lecture-03-notes.html#explore-understand-6",
+    "href": "lectures/lecture-03-notes.html#explore-understand-6",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.6 explore / understand",
-    "text": "5.6 explore / understand\n\nLet’s visualize the counts as vertical bars using geom_bar() from ggplot2.\n\nggplot(\n    cleaned_elections_data, # specify the data\n    aes(x = elected_party) # specify aesthetics\n) + # add a layer with the + operator\n    geom_bar() # specify a geometric shape (bar)\n\n\nBut it’s cleaner to use the pipe operator |&gt;.\n\ncleaned_elections_data |&gt;\n    ggplot(aes(x = elected_party)) +\n    geom_bar()"
+    "text": "5.6 explore / understand\n\nLet’s visualize the counts as vertical bars using geom_bar() from ggplot2.\n\nggplot(\n    cleaned_elections_data, # specify the data\n    aes(x = elected_party) # specify aesthetics\n) + # add a layer with the + operator\n    geom_bar() # specify a geometric shape (bar)\n\n\nBut it’s cleaner to use the pipe operator |&gt;.\n\ncleaned_elections_data |&gt;\n    ggplot(aes(x = elected_party)) +\n    geom_bar()\n\n\n\n\n\n\n\nFigure 2: Meh. We can do better."
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#explore-understand-6-output",
-    "href": "lectures/lecture-03-slides.html#explore-understand-6-output",
-    "title": "Data Analysis Workflow – The Firehose",
-    "section": "5.6 explore / understand",
-    "text": "5.6 explore / understand\n\n\n\n\n\n\n\nFigure 2: Meh. We can do better."
-  },
-  {
-    "objectID": "lectures/lecture-03-slides.html#explore-understand-7",
-    "href": "lectures/lecture-03-slides.html#explore-understand-7",
+    "objectID": "lectures/lecture-03-notes.html#explore-understand-7",
+    "href": "lectures/lecture-03-notes.html#explore-understand-7",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.7 explore / understand",
-    "text": "5.7 explore / understand\n\n\ncleaned_elections_data |&gt;\n    ggplot(aes(x = elected_party)) +\n    geom_bar() +\n    theme_minimal() + # Improve the theme\n    labs(x = \"Party\", y = \"Number of seats\") # Improve the labels"
+    "text": "5.7 explore / understand\n\n\ncleaned_elections_data |&gt;\n    ggplot(aes(x = elected_party)) +\n    geom_bar() +\n    theme_minimal() + # Improve the theme\n    labs(x = \"Party\", y = \"Number of seats\") # Improve the labels\n\n\n\n\n\n\n\nFigure 3: Number of seats won, by political party, at the 2022 Australian Federal Election. 😎"
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#explore-understand-7-output",
-    "href": "lectures/lecture-03-slides.html#explore-understand-7-output",
-    "title": "Data Analysis Workflow – The Firehose",
-    "section": "5.7 explore / understand",
-    "text": "5.7 explore / understand\n\n\n\n\n\n\n\nFigure 3: Number of seats won, by political party, at the 2022 Australian Federal Election. 😎"
-  },
-  {
-    "objectID": "lectures/lecture-03-slides.html#section",
-    "href": "lectures/lecture-03-slides.html#section",
+    "objectID": "lectures/lecture-03-notes.html#section",
+    "href": "lectures/lecture-03-notes.html#section",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.8 ",
     "text": "5.8 \ncleaned_elections_data |&gt;\n    ggplot(aes(x = elected_party)) +\n    geom_bar()\n\ncleaned_elections_data |&gt;\n    ggplot(aes(x = elected_party)) +\n    geom_bar() +\n    theme_minimal() +\n    labs(x = \"Party\", y = \"Number of seats\")\n\n\n\n\n\n\n\n\n\n\n\n(a) Default theme and labels\n\n\n\n\n\n\n\n\n\n\n\n(b) Improved theme and labels\n\n\n\n\n\n\n\nFigure 4: Both versions of the plot, and the code that produced them, side-by-side for comparison."
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#share-1",
-    "href": "lectures/lecture-03-slides.html#share-1",
+    "objectID": "lectures/lecture-03-notes.html#share-1",
+    "href": "lectures/lecture-03-notes.html#share-1",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "6.1 share",
-    "text": "6.1 share\nExample taken directly from Alexander (2023), here.\n\n\n\nAustralia is a parliamentary democracy with 151 seats in the House of Representatives, which is the house from which government is formed. There are two major parties—“Liberal” and “Labor”—two minor parties—“Nationals” and “Greens”—and many smaller parties. The 2022 Federal Election occurred on 21 May, and around 15 million votes were cast. We were interested in the number of seats that were won by each party.\nWe downloaded the results, on a seat-specific basis, from the Australian Electoral Commission website. We cleaned and tidied the dataset using the statistical programming language R (R Core Team 2023) including the tidyverse (Wickham et al. 2019) and janitor (Firke 2023). We then created a graph of the number of seats that each political party won (Figure 3).\nWe found that the Labor Party won 77 seats, followed by the Liberal Party with 48 seats. The minor parties won the following number of seats: the Nationals won 10 seats and the Greens won 4 seats. Finally, there were 10 Independents elected as well as candidates from smaller parties.\nThe distribution of seats is skewed toward the two major parties which could reflect relatively stable preferences on the part of Australian voters, or possibly inertia due to the benefits of already being a major party such a national network or funding. A better understanding of the reasons for this distribution are of interest in future work. While the dataset consists of everyone who voted, it worth noting that in Australia some are systematically excluded from voting, and it is much more difficult for some to vote than others.\n\n\n\n\nOne aspect to be especially concerned with is making sure that this communication is focused on the needs of the audience and telling a story. Data journalism provides some excellent examples of how analysis needs to be tailored to the audience, for instance, Cardoso (2020) and Bronner (2020)."
+    "text": "6.1 share\nExample taken directly from Alexander (2023), here.\n\n\n\n\n\n\nAustralia is a parliamentary democracy with 151 seats in the House of Representatives, which is the house from which government is formed. There are two major parties—“Liberal” and “Labor”—two minor parties—“Nationals” and “Greens”—and many smaller parties. The 2022 Federal Election occurred on 21 May, and around 15 million votes were cast. We were interested in the number of seats that were won by each party.\nWe downloaded the results, on a seat-specific basis, from the Australian Electoral Commission website. We cleaned and tidied the dataset using the statistical programming language R (R Core Team 2023) including the tidyverse (Wickham et al. 2019) and janitor (Firke 2023). We then created a graph of the number of seats that each political party won (Figure 3).\nWe found that the Labor Party won 77 seats, followed by the Liberal Party with 48 seats. The minor parties won the following number of seats: the Nationals won 10 seats and the Greens won 4 seats. Finally, there were 10 Independents elected as well as candidates from smaller parties.\nThe distribution of seats is skewed toward the two major parties which could reflect relatively stable preferences on the part of Australian voters, or possibly inertia due to the benefits of already being a major party such a national network or funding. A better understanding of the reasons for this distribution are of interest in future work. While the dataset consists of everyone who voted, it worth noting that in Australia some are systematically excluded from voting, and it is much more difficult for some to vote than others.\n\n\n\n\nOne aspect to be especially concerned with is making sure that this communication is focused on the needs of the audience and telling a story. Data journalism provides some excellent examples of how analysis needs to be tailored to the audience, for instance, Cardoso (2020) and Bronner (2020)."
   },
   {
-    "objectID": "lectures/lecture-03-slides.html#references",
-    "href": "lectures/lecture-03-slides.html#references",
-    "title": "Data Analysis Workflow – The Firehose",
-    "section": "6.2 References",
-    "text": "6.2 References\n\n\nAlexander, Rohan. 2023. Telling Stories with Data: With Applications in R. Chapman; Hall/CRC.\n\n\nBarrett, Malcolm. 2021. Data Science as an Atomic Habit. https://malco.io/articles/2021-01-04-data-science-as-an-atomic-habit.\n\n\nBronner, Laura. 2020. “Why Statistics Don’t Capture the Full Extent of the Systemic Bias in Policing.” FiveThirtyEight, June. https://fivethirtyeight.com/features/why-statistics-dont-capture-the-full-extent-of-the-systemic-bias-in-policing/.\n\n\nCardoso, Tom. 2020. “Bias behind bars: A Globe investigation finds a prison system stacked against Black and Indigenous inmates.” The Globe and Mail, October. https://www.theglobeandmail.com/canada/article-investigation-racial-bias-in-canadian-prison-risk-assessments/.\n\n\nFirke, Sam. 2023. janitor: Simple Tools for Examining and Cleaning Dirty Data. https://CRAN.R-project.org/package=janitor.\n\n\nR Core Team. 2023. R: A Language and Environment for Statistical Computing. Vienna, Austria: R Foundation for Statistical Computing. https://www.R-project.org/.\n\n\nWickham, Hadley, Mara Averick, Jenny Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the Tidyverse.” Journal of Open Source Software 4 (43): 1686. https://doi.org/10.21105/joss.01686."
+    "objectID": "lectures/lecture-25-notes.html",
+    "href": "lectures/lecture-25-notes.html",
+    "title": "Project Work",
+    "section": "",
+    "text": "Required: ?meta:assigned_reading\nRecommended: ?meta:recommended_reading\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-24-notes.html",
-    "href": "lectures/lecture-24-notes.html",
+    "objectID": "lectures/lecture-25-notes.html#reading-assignment",
+    "href": "lectures/lecture-25-notes.html#reading-assignment",
+    "title": "Project Work",
+    "section": "",
+    "text": "Required: ?meta:assigned_reading\nRecommended: ?meta:recommended_reading"
+  },
+  {
+    "objectID": "lectures/lecture-25-notes.html#lecture-slides",
+    "href": "lectures/lecture-25-notes.html#lecture-slides",
+    "title": "Project Work",
+    "section": "",
+    "text": "View slides in full screen"
+  },
+  {
+    "objectID": "lectures/lecture-23-notes.html",
+    "href": "lectures/lecture-23-notes.html",
     "title": "Generalized Linear Models (GLMs)",
     "section": "",
     "text": "Required:   Ch 13\nRecommended:   Ch 6\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-24-notes.html#reading-assignment",
-    "href": "lectures/lecture-24-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-23-notes.html#reading-assignment",
+    "href": "lectures/lecture-23-notes.html#reading-assignment",
     "title": "Generalized Linear Models (GLMs)",
     "section": "",
     "text": "Required:   Ch 13\nRecommended:   Ch 6"
   },
   {
-    "objectID": "lectures/lecture-24-notes.html#lecture-slides",
-    "href": "lectures/lecture-24-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-23-notes.html#lecture-slides",
+    "href": "lectures/lecture-23-notes.html#lecture-slides",
     "title": "Generalized Linear Models (GLMs)",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-22-notes.html",
-    "href": "lectures/lecture-22-notes.html",
+    "objectID": "lectures/lecture-21-notes.html",
+    "href": "lectures/lecture-21-notes.html",
     "title": "Linear Models",
     "section": "",
     "text": "Required:   Ch 12\nRecommended:   Geocentric Models\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-22-notes.html#reading-assignment",
-    "href": "lectures/lecture-22-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-21-notes.html#reading-assignment",
+    "href": "lectures/lecture-21-notes.html#reading-assignment",
     "title": "Linear Models",
     "section": "",
     "text": "Required:   Ch 12\nRecommended:   Geocentric Models"
   },
   {
-    "objectID": "lectures/lecture-22-notes.html#lecture-slides",
-    "href": "lectures/lecture-22-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-21-notes.html#lecture-slides",
+    "href": "lectures/lecture-21-notes.html#lecture-slides",
     "title": "Linear Models",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-20-notes.html",
-    "href": "lectures/lecture-20-notes.html",
+    "objectID": "lectures/lecture-19-notes.html",
+    "href": "lectures/lecture-19-notes.html",
     "title": "Exploratory Data Analysis (EDA)",
     "section": "",
     "text": "Required:   Ch 11\nRecommended:   The Garden of Forking Data\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-20-notes.html#reading-assignment",
-    "href": "lectures/lecture-20-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-19-notes.html#reading-assignment",
+    "href": "lectures/lecture-19-notes.html#reading-assignment",
     "title": "Exploratory Data Analysis (EDA)",
     "section": "",
     "text": "Required:   Ch 11\nRecommended:   The Garden of Forking Data"
   },
   {
-    "objectID": "lectures/lecture-20-notes.html#lecture-slides",
-    "href": "lectures/lecture-20-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-19-notes.html#lecture-slides",
+    "href": "lectures/lecture-19-notes.html#lecture-slides",
     "title": "Exploratory Data Analysis (EDA)",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-18-notes.html",
-    "href": "lectures/lecture-18-notes.html",
+    "objectID": "lectures/lecture-17-notes.html",
+    "href": "lectures/lecture-17-notes.html",
     "title": "Cleaning, Preparing, and Testing",
     "section": "",
     "text": "Required:   Ch 9\nRecommended:   Statistical Golems\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-18-notes.html#reading-assignment",
-    "href": "lectures/lecture-18-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-17-notes.html#reading-assignment",
+    "href": "lectures/lecture-17-notes.html#reading-assignment",
     "title": "Cleaning, Preparing, and Testing",
     "section": "",
     "text": "Required:   Ch 9\nRecommended:   Statistical Golems"
   },
   {
-    "objectID": "lectures/lecture-18-notes.html#lecture-slides",
-    "href": "lectures/lecture-18-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-17-notes.html#lecture-slides",
+    "href": "lectures/lecture-17-notes.html#lecture-slides",
     "title": "Cleaning, Preparing, and Testing",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-16-notes.html",
-    "href": "lectures/lecture-16-notes.html",
+    "objectID": "lectures/lecture-15-notes.html",
+    "href": "lectures/lecture-15-notes.html",
     "title": "Experiments and Surveys",
     "section": "",
     "text": "Required:   Ch 8\nRecommended:   Ch 8\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-16-notes.html#reading-assignment",
-    "href": "lectures/lecture-16-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-15-notes.html#reading-assignment",
+    "href": "lectures/lecture-15-notes.html#reading-assignment",
     "title": "Experiments and Surveys",
     "section": "",
     "text": "Required:   Ch 8\nRecommended:   Ch 8"
   },
   {
-    "objectID": "lectures/lecture-16-notes.html#lecture-slides",
-    "href": "lectures/lecture-16-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-15-notes.html#lecture-slides",
+    "href": "lectures/lecture-15-notes.html#lecture-slides",
     "title": "Experiments and Surveys",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-14-notes.html",
-    "href": "lectures/lecture-14-notes.html",
+    "objectID": "lectures/lecture-13-notes.html",
+    "href": "lectures/lecture-13-notes.html",
     "title": "APIs, Scraping, and Parsing",
     "section": "",
     "text": "Required:   Ch 7\nRecommended:   Ch 7\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-14-notes.html#reading-assignment",
-    "href": "lectures/lecture-14-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-13-notes.html#reading-assignment",
+    "href": "lectures/lecture-13-notes.html#reading-assignment",
     "title": "APIs, Scraping, and Parsing",
     "section": "",
     "text": "Required:   Ch 7\nRecommended:   Ch 7"
   },
   {
-    "objectID": "lectures/lecture-14-notes.html#lecture-slides",
-    "href": "lectures/lecture-14-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-13-notes.html#lecture-slides",
+    "href": "lectures/lecture-13-notes.html#lecture-slides",
     "title": "APIs, Scraping, and Parsing",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-12-notes.html",
-    "href": "lectures/lecture-12-notes.html",
+    "objectID": "lectures/lecture-11-notes.html",
+    "href": "lectures/lecture-11-notes.html",
     "title": "Measurement, Censuses, and Sampling",
     "section": "",
     "text": "Required:   Ch 6\nRecommended:   Ch 5\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-12-notes.html#reading-assignment",
-    "href": "lectures/lecture-12-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-11-notes.html#reading-assignment",
+    "href": "lectures/lecture-11-notes.html#reading-assignment",
     "title": "Measurement, Censuses, and Sampling",
     "section": "",
     "text": "Required:   Ch 6\nRecommended:   Ch 5"
   },
   {
-    "objectID": "lectures/lecture-12-notes.html#lecture-slides",
-    "href": "lectures/lecture-12-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-11-notes.html#lecture-slides",
+    "href": "lectures/lecture-11-notes.html#lecture-slides",
     "title": "Measurement, Censuses, and Sampling",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-10-notes.html",
-    "href": "lectures/lecture-10-notes.html",
-    "title": "Creating Graphs, Tables, & Maps",
-    "section": "",
-    "text": "Required:   Ch 5\nRecommended:   Ch 4\n\n\n\n\n    View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lecture-10-notes.html#reading-assignment",
-    "href": "lectures/lecture-10-notes.html#reading-assignment",
-    "title": "Creating Graphs, Tables, & Maps",
-    "section": "",
-    "text": "Required:   Ch 5\nRecommended:   Ch 4"
-  },
-  {
-    "objectID": "lectures/lecture-10-notes.html#lecture-slides",
-    "href": "lectures/lecture-10-notes.html#lecture-slides",
-    "title": "Creating Graphs, Tables, & Maps",
-    "section": "",
-    "text": "View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lecture-07-notes.html",
-    "href": "lectures/lecture-07-notes.html",
+    "objectID": "lectures/lecture-08-notes.html",
+    "href": "lectures/lecture-08-notes.html",
     "title": "Writing and Developing Research Questions",
     "section": "",
     "text": "Required:   Ch 4\nRecommended:   Ch 3\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-07-notes.html#reading-assignment",
-    "href": "lectures/lecture-07-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-08-notes.html#reading-assignment",
+    "href": "lectures/lecture-08-notes.html#reading-assignment",
     "title": "Writing and Developing Research Questions",
     "section": "",
     "text": "Required:   Ch 4\nRecommended:   Ch 3"
   },
   {
-    "objectID": "lectures/lecture-07-notes.html#lecture-slides",
-    "href": "lectures/lecture-07-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-08-notes.html#lecture-slides",
+    "href": "lectures/lecture-08-notes.html#lecture-slides",
     "title": "Writing and Developing Research Questions",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-04-notes.html",
-    "href": "lectures/lecture-04-notes.html",
-    "title": "Data Analysis Workflow – The Firehose",
+    "objectID": "lectures/lecture-06-notes.html",
+    "href": "lectures/lecture-06-notes.html",
+    "title": "Reproducible Workflows with R & RStudio",
     "section": "",
-    "text": "Required:   Ch 2\nRecommended:   Ch 1\n\n\n\n\n    View slides in full screen"
+    "text": "Required:   Ch 3\nRecommended:   Ch 2\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-04-notes.html#reading-assignment",
-    "href": "lectures/lecture-04-notes.html#reading-assignment",
-    "title": "Data Analysis Workflow – The Firehose",
+    "objectID": "lectures/lecture-06-notes.html#reading-assignment",
+    "href": "lectures/lecture-06-notes.html#reading-assignment",
+    "title": "Reproducible Workflows with R & RStudio",
     "section": "",
-    "text": "Required:   Ch 2\nRecommended:   Ch 1"
+    "text": "Required:   Ch 3\nRecommended:   Ch 2"
   },
   {
-    "objectID": "lectures/lecture-04-notes.html#lecture-slides",
-    "href": "lectures/lecture-04-notes.html#lecture-slides",
-    "title": "Data Analysis Workflow – The Firehose",
+    "objectID": "lectures/lecture-06-notes.html#lecture-slides",
+    "href": "lectures/lecture-06-notes.html#lecture-slides",
+    "title": "Reproducible Workflows with R & RStudio",
     "section": "",
     "text": "View slides in full screen"
   },
@@ -1291,14 +1277,14 @@
     "href": "deliverables/submissions/assignment-4/example-submission-5.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nEtiam congue quam eget velit convallis, eu sagittis orci vestibulum. Vestibulum at massa turpis. Curabitur ornare ex sed purus vulputate, vitae porta augue rhoncus. Phasellus auctor suscipit purus, vel ultricies nunc. Nunc eleifend nulla ac purus volutpat, id fringilla felis aliquet. Duis vitae porttitor nibh, in rhoncus risus. Vestibulum a est vitae est tristique vehicula. Proin mollis justo id est tempus hendrerit. Praesent suscipit placerat congue. Aliquam eu elit gravida, consequat augue non, ultricies sapien. Nunc ultricies viverra ante, sit amet vehicula ante volutpat id. Etiam tempus purus vitae tellus mollis viverra. Donec at ornare mauris. Aliquam sodales hendrerit ornare. Suspendisse accumsan lacinia sapien, sit amet imperdiet dui molestie ut.\nEtiam non efficitur urna, quis elementum nisi. Mauris posuere a augue vel gravida. Praesent luctus erat et ex iaculis interdum. Nulla vestibulum quam ac nunc consequat vulputate. Nullam iaculis lobortis sem sit amet fringilla. Aliquam semper, metus ut blandit semper, nulla velit fermentum sapien, fermentum ultrices dolor sapien sed leo. Vestibulum molestie faucibus magna, at feugiat nulla ullamcorper a. Aliquam erat volutpat. Praesent scelerisque magna a justo maximus, sit amet suscipit mauris tempor. Nulla nec dolor eget ipsum pellentesque lobortis a in ipsum. Morbi turpis turpis, fringilla a eleifend maximus, viverra nec neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
+    "text": "Example Submission\nPraesent ornare dolor turpis, sed tincidunt nisl pretium eget. Curabitur sed iaculis ex, vitae tristique sapien. Quisque nec ex dolor. Quisque ut nisl a libero egestas molestie. Nulla vel porta nulla. Phasellus id pretium arcu. Etiam sed mi pellentesque nibh scelerisque elementum sed at urna. Ut congue molestie nibh, sit amet pretium ligula consectetur eu. Integer consectetur augue justo, at placerat erat posuere at. Ut elementum urna lectus, vitae bibendum neque pulvinar quis. Suspendisse vulputate cursus eros id maximus. Duis pulvinar facilisis massa, et condimentum est viverra congue. Curabitur ornare convallis nisl. Morbi dictum scelerisque turpis quis pellentesque. Etiam lectus risus, luctus lobortis risus ut, rutrum vulputate justo. Nulla facilisi.\nProin sodales neque erat, varius cursus diam tincidunt sit amet. Etiam scelerisque fringilla nisl eu venenatis. Donec sem ipsum, scelerisque ac venenatis quis, hendrerit vel mauris. Praesent semper erat sit amet purus condimentum, sit amet auctor mi feugiat. In hac habitasse platea dictumst. Nunc ac mauris in massa feugiat bibendum id in dui. Praesent accumsan urna at lacinia aliquet. Proin ultricies eu est quis pellentesque. In vel lorem at nisl rhoncus cursus eu quis mi. In eu rutrum ante, quis placerat justo. Etiam euismod nibh nibh, sed elementum nunc imperdiet in. Praesent gravida nunc vel odio lacinia, at tempus nisl placerat. Aenean id ipsum sed est sagittis hendrerit non in tortor."
   },
   {
     "objectID": "deliverables/submissions/assignment-4/example-submission-3.html",
     "href": "deliverables/submissions/assignment-4/example-submission-3.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet.\nEtiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a, fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio, vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus nec leo maximus blandit."
+    "text": "Example Submission\n\nAenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.\nUt ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti."
   },
   {
     "objectID": "deliverables/submissions/assignment-4/example-submission-1.html",
@@ -1312,49 +1298,49 @@
     "href": "deliverables/submissions/assignment-3/example-submission-4.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
+    "text": "Example Submission\nEtiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a, fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio, vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus nec leo maximus blandit.\nMaecenas turpis velit, ultricies non elementum vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra, finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna. Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis."
   },
   {
     "objectID": "deliverables/submissions/assignment-3/example-submission-2.html",
     "href": "deliverables/submissions/assignment-3/example-submission-2.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
+    "text": "Example Submission\n\nEtiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a, fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio, vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus nec leo maximus blandit.\nMaecenas turpis velit, ultricies non elementum vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra, finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna. Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis."
   },
   {
     "objectID": "deliverables/submissions/assignment-2/example-submission-5.html",
     "href": "deliverables/submissions/assignment-2/example-submission-5.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nEtiam maximus accumsan gravida. Maecenas at nunc dignissim, euismod enim ac, bibendum ipsum. Maecenas vehicula velit in nisl aliquet ultricies. Nam eget massa interdum, maximus arcu vel, pretium erat. Maecenas sit amet tempor purus, vitae aliquet nunc. Vivamus cursus urna velit, eleifend dictum magna laoreet ut. Duis eu erat mollis, blandit magna id, tincidunt ipsum. Integer massa nibh, commodo eu ex vel, venenatis efficitur ligula. Integer convallis lacus elit, maximus eleifend lacus ornare ac. Vestibulum scelerisque viverra urna id lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean eget enim at diam bibendum tincidunt eu non purus. Nullam id magna ultrices, sodales metus viverra, tempus turpis.\nDuis ornare ex ac iaculis pretium. Maecenas sagittis odio id erat pharetra, sit amet consectetur quam sollicitudin. Vivamus pharetra quam purus, nec sagittis risus pretium at. Nullam feugiat, turpis ac accumsan interdum, sem tellus blandit neque, id vulputate diam quam semper nisl. Donec sit amet enim at neque porttitor aliquet. Phasellus facilisis nulla eget placerat eleifend. Vestibulum non egestas eros, eget lobortis ipsum. Nulla rutrum massa eget enim aliquam, id porttitor erat luctus. Nunc sagittis quis eros eu sagittis. Pellentesque dictum, erat at pellentesque sollicitudin, justo augue pulvinar metus, quis rutrum est mi nec felis. Vestibulum efficitur mi lorem, at elementum purus tincidunt a. Aliquam finibus enim magna, vitae pellentesque erat faucibus at. Nulla mauris tellus, imperdiet id lobortis et, dignissim condimentum ipsum. Morbi nulla orci, varius at aliquet sed, facilisis id tortor. Donec ut urna nisi."
+    "text": "Example Submission\nAenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.\nUt ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti."
   },
   {
     "objectID": "deliverables/submissions/assignment-2/example-submission-3.html",
     "href": "deliverables/submissions/assignment-2/example-submission-3.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti.\nEtiam maximus accumsan gravida. Maecenas at nunc dignissim, euismod enim ac, bibendum ipsum. Maecenas vehicula velit in nisl aliquet ultricies. Nam eget massa interdum, maximus arcu vel, pretium erat. Maecenas sit amet tempor purus, vitae aliquet nunc. Vivamus cursus urna velit, eleifend dictum magna laoreet ut. Duis eu erat mollis, blandit magna id, tincidunt ipsum. Integer massa nibh, commodo eu ex vel, venenatis efficitur ligula. Integer convallis lacus elit, maximus eleifend lacus ornare ac. Vestibulum scelerisque viverra urna id lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean eget enim at diam bibendum tincidunt eu non purus. Nullam id magna ultrices, sodales metus viverra, tempus turpis."
+    "text": "Example Submission\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
   },
   {
     "objectID": "deliverables/submissions/assignment-2/example-submission-1.html",
     "href": "deliverables/submissions/assignment-2/example-submission-1.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nNullam dapibus cursus dolor sit amet consequat. Nulla facilisi. Curabitur vel nulla non magna lacinia tincidunt. Duis porttitor quam leo, et blandit velit efficitur ut. Etiam auctor tincidunt porttitor. Phasellus sed accumsan mi. Fusce ut erat dui. Suspendisse eu augue eget turpis condimentum finibus eu non lorem. Donec finibus eros eu ante condimentum, sed pharetra sapien sagittis. Phasellus non dolor ac ante mollis auctor nec et sapien. Pellentesque vulputate at nisi eu tincidunt. Vestibulum at dolor aliquam, hendrerit purus eu, eleifend massa. Morbi consectetur eros id tincidunt gravida. Fusce ut enim quis orci hendrerit lacinia sed vitae enim.\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet."
+    "text": "Example Submission\n\nMaecenas turpis velit, ultricies non elementum vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra, finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna. Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis.\nVestibulum ultrices, tortor at mattis porta, odio nisi rutrum nulla, sit amet tincidunt eros quam facilisis tellus. Fusce eleifend lectus in elementum lacinia. Nam auctor nunc in massa ullamcorper, sit amet auctor ante accumsan. Nam ut varius metus. Curabitur eget tristique leo. Cras finibus euismod erat eget elementum. Integer vel placerat ex. Ut id eros quis lectus lacinia venenatis hendrerit vel ante."
   },
   {
     "objectID": "deliverables/submissions/assignment-1/example-submission-4.html",
     "href": "deliverables/submissions/assignment-1/example-submission-4.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nProin sodales neque erat, varius cursus diam tincidunt sit amet. Etiam scelerisque fringilla nisl eu venenatis. Donec sem ipsum, scelerisque ac venenatis quis, hendrerit vel mauris. Praesent semper erat sit amet purus condimentum, sit amet auctor mi feugiat. In hac habitasse platea dictumst. Nunc ac mauris in massa feugiat bibendum id in dui. Praesent accumsan urna at lacinia aliquet. Proin ultricies eu est quis pellentesque. In vel lorem at nisl rhoncus cursus eu quis mi. In eu rutrum ante, quis placerat justo. Etiam euismod nibh nibh, sed elementum nunc imperdiet in. Praesent gravida nunc vel odio lacinia, at tempus nisl placerat. Aenean id ipsum sed est sagittis hendrerit non in tortor.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    "text": "Example Submission\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
   },
   {
     "objectID": "deliverables/submissions/assignment-1/example-submission-2.html",
     "href": "deliverables/submissions/assignment-1/example-submission-2.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet.\nEtiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a, fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio, vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus nec leo maximus blandit."
+    "text": "Example Submission\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
   },
   {
     "objectID": "syllabus/schedule.html",
@@ -1596,49 +1582,49 @@
     "href": "deliverables/submissions/assignment-1/example-submission-1.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet.\nEtiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a, fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio, vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus nec leo maximus blandit."
+    "text": "Example Submission\n\nNullam dapibus cursus dolor sit amet consequat. Nulla facilisi. Curabitur vel nulla non magna lacinia tincidunt. Duis porttitor quam leo, et blandit velit efficitur ut. Etiam auctor tincidunt porttitor. Phasellus sed accumsan mi. Fusce ut erat dui. Suspendisse eu augue eget turpis condimentum finibus eu non lorem. Donec finibus eros eu ante condimentum, sed pharetra sapien sagittis. Phasellus non dolor ac ante mollis auctor nec et sapien. Pellentesque vulputate at nisi eu tincidunt. Vestibulum at dolor aliquam, hendrerit purus eu, eleifend massa. Morbi consectetur eros id tincidunt gravida. Fusce ut enim quis orci hendrerit lacinia sed vitae enim.\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet."
   },
   {
     "objectID": "deliverables/submissions/assignment-1/example-submission-3.html",
     "href": "deliverables/submissions/assignment-1/example-submission-3.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nProin sodales neque erat, varius cursus diam tincidunt sit amet. Etiam scelerisque fringilla nisl eu venenatis. Donec sem ipsum, scelerisque ac venenatis quis, hendrerit vel mauris. Praesent semper erat sit amet purus condimentum, sit amet auctor mi feugiat. In hac habitasse platea dictumst. Nunc ac mauris in massa feugiat bibendum id in dui. Praesent accumsan urna at lacinia aliquet. Proin ultricies eu est quis pellentesque. In vel lorem at nisl rhoncus cursus eu quis mi. In eu rutrum ante, quis placerat justo. Etiam euismod nibh nibh, sed elementum nunc imperdiet in. Praesent gravida nunc vel odio lacinia, at tempus nisl placerat. Aenean id ipsum sed est sagittis hendrerit non in tortor.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    "text": "Example Submission\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
   },
   {
     "objectID": "deliverables/submissions/assignment-1/example-submission-5.html",
     "href": "deliverables/submissions/assignment-1/example-submission-5.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nProin sodales neque erat, varius cursus diam tincidunt sit amet. Etiam scelerisque fringilla nisl eu venenatis. Donec sem ipsum, scelerisque ac venenatis quis, hendrerit vel mauris. Praesent semper erat sit amet purus condimentum, sit amet auctor mi feugiat. In hac habitasse platea dictumst. Nunc ac mauris in massa feugiat bibendum id in dui. Praesent accumsan urna at lacinia aliquet. Proin ultricies eu est quis pellentesque. In vel lorem at nisl rhoncus cursus eu quis mi. In eu rutrum ante, quis placerat justo. Etiam euismod nibh nibh, sed elementum nunc imperdiet in. Praesent gravida nunc vel odio lacinia, at tempus nisl placerat. Aenean id ipsum sed est sagittis hendrerit non in tortor.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    "text": "Example Submission\nMaecenas turpis velit, ultricies non elementum vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra, finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna. Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis.\nVestibulum ultrices, tortor at mattis porta, odio nisi rutrum nulla, sit amet tincidunt eros quam facilisis tellus. Fusce eleifend lectus in elementum lacinia. Nam auctor nunc in massa ullamcorper, sit amet auctor ante accumsan. Nam ut varius metus. Curabitur eget tristique leo. Cras finibus euismod erat eget elementum. Integer vel placerat ex. Ut id eros quis lectus lacinia venenatis hendrerit vel ante."
   },
   {
     "objectID": "deliverables/submissions/assignment-2/example-submission-2.html",
     "href": "deliverables/submissions/assignment-2/example-submission-2.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nNullam dapibus cursus dolor sit amet consequat. Nulla facilisi. Curabitur vel nulla non magna lacinia tincidunt. Duis porttitor quam leo, et blandit velit efficitur ut. Etiam auctor tincidunt porttitor. Phasellus sed accumsan mi. Fusce ut erat dui. Suspendisse eu augue eget turpis condimentum finibus eu non lorem. Donec finibus eros eu ante condimentum, sed pharetra sapien sagittis. Phasellus non dolor ac ante mollis auctor nec et sapien. Pellentesque vulputate at nisi eu tincidunt. Vestibulum at dolor aliquam, hendrerit purus eu, eleifend massa. Morbi consectetur eros id tincidunt gravida. Fusce ut enim quis orci hendrerit lacinia sed vitae enim.\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet."
+    "text": "Example Submission\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
   },
   {
     "objectID": "deliverables/submissions/assignment-2/example-submission-4.html",
     "href": "deliverables/submissions/assignment-2/example-submission-4.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti.\nEtiam maximus accumsan gravida. Maecenas at nunc dignissim, euismod enim ac, bibendum ipsum. Maecenas vehicula velit in nisl aliquet ultricies. Nam eget massa interdum, maximus arcu vel, pretium erat. Maecenas sit amet tempor purus, vitae aliquet nunc. Vivamus cursus urna velit, eleifend dictum magna laoreet ut. Duis eu erat mollis, blandit magna id, tincidunt ipsum. Integer massa nibh, commodo eu ex vel, venenatis efficitur ligula. Integer convallis lacus elit, maximus eleifend lacus ornare ac. Vestibulum scelerisque viverra urna id lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean eget enim at diam bibendum tincidunt eu non purus. Nullam id magna ultrices, sodales metus viverra, tempus turpis."
+    "text": "Example Submission\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
   },
   {
     "objectID": "deliverables/submissions/assignment-3/example-submission-1.html",
     "href": "deliverables/submissions/assignment-3/example-submission-1.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nEtiam maximus accumsan gravida. Maecenas at nunc dignissim, euismod enim ac, bibendum ipsum. Maecenas vehicula velit in nisl aliquet ultricies. Nam eget massa interdum, maximus arcu vel, pretium erat. Maecenas sit amet tempor purus, vitae aliquet nunc. Vivamus cursus urna velit, eleifend dictum magna laoreet ut. Duis eu erat mollis, blandit magna id, tincidunt ipsum. Integer massa nibh, commodo eu ex vel, venenatis efficitur ligula. Integer convallis lacus elit, maximus eleifend lacus ornare ac. Vestibulum scelerisque viverra urna id lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean eget enim at diam bibendum tincidunt eu non purus. Nullam id magna ultrices, sodales metus viverra, tempus turpis.\nDuis ornare ex ac iaculis pretium. Maecenas sagittis odio id erat pharetra, sit amet consectetur quam sollicitudin. Vivamus pharetra quam purus, nec sagittis risus pretium at. Nullam feugiat, turpis ac accumsan interdum, sem tellus blandit neque, id vulputate diam quam semper nisl. Donec sit amet enim at neque porttitor aliquet. Phasellus facilisis nulla eget placerat eleifend. Vestibulum non egestas eros, eget lobortis ipsum. Nulla rutrum massa eget enim aliquam, id porttitor erat luctus. Nunc sagittis quis eros eu sagittis. Pellentesque dictum, erat at pellentesque sollicitudin, justo augue pulvinar metus, quis rutrum est mi nec felis. Vestibulum efficitur mi lorem, at elementum purus tincidunt a. Aliquam finibus enim magna, vitae pellentesque erat faucibus at. Nulla mauris tellus, imperdiet id lobortis et, dignissim condimentum ipsum. Morbi nulla orci, varius at aliquet sed, facilisis id tortor. Donec ut urna nisi."
+    "text": "Example Submission\n\nAenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.\nUt ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti."
   },
   {
     "objectID": "deliverables/submissions/assignment-3/example-submission-3.html",
     "href": "deliverables/submissions/assignment-3/example-submission-3.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
+    "text": "Example Submission\n\nEtiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a, fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio, vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus nec leo maximus blandit.\nMaecenas turpis velit, ultricies non elementum vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra, finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna. Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis."
   },
   {
     "objectID": "deliverables/submissions/assignment-3/example-submission-5.html",
@@ -1652,14 +1638,14 @@
     "href": "deliverables/submissions/assignment-4/example-submission-2.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nVestibulum ultrices, tortor at mattis porta, odio nisi rutrum nulla, sit amet tincidunt eros quam facilisis tellus. Fusce eleifend lectus in elementum lacinia. Nam auctor nunc in massa ullamcorper, sit amet auctor ante accumsan. Nam ut varius metus. Curabitur eget tristique leo. Cras finibus euismod erat eget elementum. Integer vel placerat ex. Ut id eros quis lectus lacinia venenatis hendrerit vel ante.\nEtiam congue quam eget velit convallis, eu sagittis orci vestibulum. Vestibulum at massa turpis. Curabitur ornare ex sed purus vulputate, vitae porta augue rhoncus. Phasellus auctor suscipit purus, vel ultricies nunc. Nunc eleifend nulla ac purus volutpat, id fringilla felis aliquet. Duis vitae porttitor nibh, in rhoncus risus. Vestibulum a est vitae est tristique vehicula. Proin mollis justo id est tempus hendrerit. Praesent suscipit placerat congue. Aliquam eu elit gravida, consequat augue non, ultricies sapien. Nunc ultricies viverra ante, sit amet vehicula ante volutpat id. Etiam tempus purus vitae tellus mollis viverra. Donec at ornare mauris. Aliquam sodales hendrerit ornare. Suspendisse accumsan lacinia sapien, sit amet imperdiet dui molestie ut."
+    "text": "Example Submission\n\nAenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.\nUt ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti."
   },
   {
     "objectID": "deliverables/submissions/assignment-4/example-submission-4.html",
     "href": "deliverables/submissions/assignment-4/example-submission-4.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet.\nEtiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a, fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio, vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus nec leo maximus blandit."
+    "text": "Example Submission\nAenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.\nUt ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti."
   },
   {
     "objectID": "lectures/lecture-05-notes.html",
@@ -2017,452 +2003,515 @@
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-06-notes.html",
-    "href": "lectures/lecture-06-notes.html",
-    "title": "Reproducible Workflows with R & RStudio",
-    "section": "",
-    "text": "Required:   Ch 3\nRecommended:   Ch 2\n\n\n\n\n    View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lecture-06-notes.html#reading-assignment",
-    "href": "lectures/lecture-06-notes.html#reading-assignment",
-    "title": "Reproducible Workflows with R & RStudio",
-    "section": "",
-    "text": "Required:   Ch 3\nRecommended:   Ch 2"
-  },
-  {
-    "objectID": "lectures/lecture-06-notes.html#lecture-slides",
-    "href": "lectures/lecture-06-notes.html#lecture-slides",
-    "title": "Reproducible Workflows with R & RStudio",
-    "section": "",
-    "text": "View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lecture-08-notes.html",
-    "href": "lectures/lecture-08-notes.html",
+    "objectID": "lectures/lecture-07-notes.html",
+    "href": "lectures/lecture-07-notes.html",
     "title": "Writing and Developing Research Questions",
     "section": "",
     "text": "Required:   Ch 4\nRecommended:   Ch 3\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-08-notes.html#reading-assignment",
-    "href": "lectures/lecture-08-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-07-notes.html#reading-assignment",
+    "href": "lectures/lecture-07-notes.html#reading-assignment",
     "title": "Writing and Developing Research Questions",
     "section": "",
     "text": "Required:   Ch 4\nRecommended:   Ch 3"
   },
   {
-    "objectID": "lectures/lecture-08-notes.html#lecture-slides",
-    "href": "lectures/lecture-08-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-07-notes.html#lecture-slides",
+    "href": "lectures/lecture-07-notes.html#lecture-slides",
     "title": "Writing and Developing Research Questions",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-11-notes.html",
-    "href": "lectures/lecture-11-notes.html",
+    "objectID": "lectures/lecture-10-notes.html",
+    "href": "lectures/lecture-10-notes.html",
+    "title": "Creating Graphs, Tables, & Maps",
+    "section": "",
+    "text": "Required:   Ch 5\nRecommended:   Ch 4\n\n\n\n\n    View slides in full screen"
+  },
+  {
+    "objectID": "lectures/lecture-10-notes.html#reading-assignment",
+    "href": "lectures/lecture-10-notes.html#reading-assignment",
+    "title": "Creating Graphs, Tables, & Maps",
+    "section": "",
+    "text": "Required:   Ch 5\nRecommended:   Ch 4"
+  },
+  {
+    "objectID": "lectures/lecture-10-notes.html#lecture-slides",
+    "href": "lectures/lecture-10-notes.html#lecture-slides",
+    "title": "Creating Graphs, Tables, & Maps",
+    "section": "",
+    "text": "View slides in full screen"
+  },
+  {
+    "objectID": "lectures/lecture-12-notes.html",
+    "href": "lectures/lecture-12-notes.html",
     "title": "Measurement, Censuses, and Sampling",
     "section": "",
     "text": "Required:   Ch 6\nRecommended:   Ch 5\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-11-notes.html#reading-assignment",
-    "href": "lectures/lecture-11-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-12-notes.html#reading-assignment",
+    "href": "lectures/lecture-12-notes.html#reading-assignment",
     "title": "Measurement, Censuses, and Sampling",
     "section": "",
     "text": "Required:   Ch 6\nRecommended:   Ch 5"
   },
   {
-    "objectID": "lectures/lecture-11-notes.html#lecture-slides",
-    "href": "lectures/lecture-11-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-12-notes.html#lecture-slides",
+    "href": "lectures/lecture-12-notes.html#lecture-slides",
     "title": "Measurement, Censuses, and Sampling",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-13-notes.html",
-    "href": "lectures/lecture-13-notes.html",
+    "objectID": "lectures/lecture-14-notes.html",
+    "href": "lectures/lecture-14-notes.html",
     "title": "APIs, Scraping, and Parsing",
     "section": "",
     "text": "Required:   Ch 7\nRecommended:   Ch 7\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-13-notes.html#reading-assignment",
-    "href": "lectures/lecture-13-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-14-notes.html#reading-assignment",
+    "href": "lectures/lecture-14-notes.html#reading-assignment",
     "title": "APIs, Scraping, and Parsing",
     "section": "",
     "text": "Required:   Ch 7\nRecommended:   Ch 7"
   },
   {
-    "objectID": "lectures/lecture-13-notes.html#lecture-slides",
-    "href": "lectures/lecture-13-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-14-notes.html#lecture-slides",
+    "href": "lectures/lecture-14-notes.html#lecture-slides",
     "title": "APIs, Scraping, and Parsing",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-15-notes.html",
-    "href": "lectures/lecture-15-notes.html",
+    "objectID": "lectures/lecture-16-notes.html",
+    "href": "lectures/lecture-16-notes.html",
     "title": "Experiments and Surveys",
     "section": "",
     "text": "Required:   Ch 8\nRecommended:   Ch 8\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-15-notes.html#reading-assignment",
-    "href": "lectures/lecture-15-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-16-notes.html#reading-assignment",
+    "href": "lectures/lecture-16-notes.html#reading-assignment",
     "title": "Experiments and Surveys",
     "section": "",
     "text": "Required:   Ch 8\nRecommended:   Ch 8"
   },
   {
-    "objectID": "lectures/lecture-15-notes.html#lecture-slides",
-    "href": "lectures/lecture-15-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-16-notes.html#lecture-slides",
+    "href": "lectures/lecture-16-notes.html#lecture-slides",
     "title": "Experiments and Surveys",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-17-notes.html",
-    "href": "lectures/lecture-17-notes.html",
+    "objectID": "lectures/lecture-18-notes.html",
+    "href": "lectures/lecture-18-notes.html",
     "title": "Cleaning, Preparing, and Testing",
     "section": "",
     "text": "Required:   Ch 9\nRecommended:   Statistical Golems\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-17-notes.html#reading-assignment",
-    "href": "lectures/lecture-17-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-18-notes.html#reading-assignment",
+    "href": "lectures/lecture-18-notes.html#reading-assignment",
     "title": "Cleaning, Preparing, and Testing",
     "section": "",
     "text": "Required:   Ch 9\nRecommended:   Statistical Golems"
   },
   {
-    "objectID": "lectures/lecture-17-notes.html#lecture-slides",
-    "href": "lectures/lecture-17-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-18-notes.html#lecture-slides",
+    "href": "lectures/lecture-18-notes.html#lecture-slides",
     "title": "Cleaning, Preparing, and Testing",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-19-notes.html",
-    "href": "lectures/lecture-19-notes.html",
+    "objectID": "lectures/lecture-20-notes.html",
+    "href": "lectures/lecture-20-notes.html",
     "title": "Exploratory Data Analysis (EDA)",
     "section": "",
     "text": "Required:   Ch 11\nRecommended:   The Garden of Forking Data\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-19-notes.html#reading-assignment",
-    "href": "lectures/lecture-19-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-20-notes.html#reading-assignment",
+    "href": "lectures/lecture-20-notes.html#reading-assignment",
     "title": "Exploratory Data Analysis (EDA)",
     "section": "",
     "text": "Required:   Ch 11\nRecommended:   The Garden of Forking Data"
   },
   {
-    "objectID": "lectures/lecture-19-notes.html#lecture-slides",
-    "href": "lectures/lecture-19-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-20-notes.html#lecture-slides",
+    "href": "lectures/lecture-20-notes.html#lecture-slides",
     "title": "Exploratory Data Analysis (EDA)",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-21-notes.html",
-    "href": "lectures/lecture-21-notes.html",
+    "objectID": "lectures/lecture-22-notes.html",
+    "href": "lectures/lecture-22-notes.html",
     "title": "Linear Models",
     "section": "",
     "text": "Required:   Ch 12\nRecommended:   Geocentric Models\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-21-notes.html#reading-assignment",
-    "href": "lectures/lecture-21-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-22-notes.html#reading-assignment",
+    "href": "lectures/lecture-22-notes.html#reading-assignment",
     "title": "Linear Models",
     "section": "",
     "text": "Required:   Ch 12\nRecommended:   Geocentric Models"
   },
   {
-    "objectID": "lectures/lecture-21-notes.html#lecture-slides",
-    "href": "lectures/lecture-21-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-22-notes.html#lecture-slides",
+    "href": "lectures/lecture-22-notes.html#lecture-slides",
     "title": "Linear Models",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-23-notes.html",
-    "href": "lectures/lecture-23-notes.html",
+    "objectID": "lectures/lecture-24-notes.html",
+    "href": "lectures/lecture-24-notes.html",
     "title": "Generalized Linear Models (GLMs)",
     "section": "",
     "text": "Required:   Ch 13\nRecommended:   Ch 6\n\n\n\n\n    View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-23-notes.html#reading-assignment",
-    "href": "lectures/lecture-23-notes.html#reading-assignment",
+    "objectID": "lectures/lecture-24-notes.html#reading-assignment",
+    "href": "lectures/lecture-24-notes.html#reading-assignment",
     "title": "Generalized Linear Models (GLMs)",
     "section": "",
     "text": "Required:   Ch 13\nRecommended:   Ch 6"
   },
   {
-    "objectID": "lectures/lecture-23-notes.html#lecture-slides",
-    "href": "lectures/lecture-23-notes.html#lecture-slides",
+    "objectID": "lectures/lecture-24-notes.html#lecture-slides",
+    "href": "lectures/lecture-24-notes.html#lecture-slides",
     "title": "Generalized Linear Models (GLMs)",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-25-notes.html",
-    "href": "lectures/lecture-25-notes.html",
-    "title": "Project Work",
-    "section": "",
-    "text": "Required: ?meta:assigned_reading\nRecommended: ?meta:recommended_reading\n\n\n\n\n    View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lecture-25-notes.html#reading-assignment",
-    "href": "lectures/lecture-25-notes.html#reading-assignment",
-    "title": "Project Work",
-    "section": "",
-    "text": "Required: ?meta:assigned_reading\nRecommended: ?meta:recommended_reading"
-  },
-  {
-    "objectID": "lectures/lecture-25-notes.html#lecture-slides",
-    "href": "lectures/lecture-25-notes.html#lecture-slides",
-    "title": "Project Work",
-    "section": "",
-    "text": "View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lecture-03-notes.html",
-    "href": "lectures/lecture-03-notes.html",
-    "title": "Data Analysis Workflow – The Firehose",
-    "section": "",
-    "text": "Lecture Slides\nView slides in full screen\nClass Notes"
-  },
-  {
-    "objectID": "lectures/lecture-03-notes.html#the-firehose",
-    "href": "lectures/lecture-03-notes.html#the-firehose",
+    "objectID": "lectures/lecture-03-slides.html#the-firehose",
+    "href": "lectures/lecture-03-slides.html#the-firehose",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "1.1 the firehose",
     "text": "1.1 the firehose\n\n\n\n\n\nflowchart LR\n  p[[Plan]]\n  sim[[Simulate]]\n  a[[Acquire]]\n  e[[Explore/Understand]]\n  s[[Share]]\n\n  p --&gt; sim --&gt; a --&gt; e --&gt; s\n\n\n Rohan Alexander’s (2023) Telling Stories with Data workflow \n\n\n\n\n\nAustralian elections\nToronto shelters\nNeonatal mortality rates (NMR)"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#the-firehose-1",
-    "href": "lectures/lecture-03-notes.html#the-firehose-1",
+    "objectID": "lectures/lecture-03-slides.html#the-firehose-1",
+    "href": "lectures/lecture-03-slides.html#the-firehose-1",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "1.2 the firehose",
     "text": "1.2 the firehose\n\nWhenever you’re learning a new tool, for a long time, you’re going to suck\\(\\dots\\) But the good news is that is typical; that’s something that happens to everyone, and it’s only temporary.\nHadley Wickham as quoted by Barrett (2021)\n\n\n\nYou will be guided thoroughly here. Hopefully by experiencing the excitement of telling stories with data, you will feel empowered to stick with it.\nRohan Alexander (2023)"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#import-libraries",
-    "href": "lectures/lecture-03-notes.html#import-libraries",
+    "objectID": "lectures/lecture-03-slides.html#import-libraries",
+    "href": "lectures/lecture-03-slides.html#import-libraries",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "1.3 import libraries",
     "text": "1.3 import libraries\n\n\nlibrary(\"janitor\")\nlibrary(\"knitr\")\nlibrary(\"lubridate\")\nlibrary(\"opendatatoronto\")\nlibrary(\"tidyverse\")\nlibrary(\"here\")"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#plan-1",
-    "href": "lectures/lecture-03-notes.html#plan-1",
+    "objectID": "lectures/lecture-03-slides.html#plan-1",
+    "href": "lectures/lecture-03-slides.html#plan-1",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "2.1 plan",
-    "text": "2.1 plan\n\n\n2.1.1 Australian Elections\n\n\n\n\n\n\nHow many seats did each political party win in the 2022 Australian Federal Election?\n\n\n\n Australia is a parliamentary democracywith 151 seats in the House of Representatives. \nMajor parties: Liberal and Labour Minor parties: Nationals and Greens Many smaller parties and independents"
+    "text": "2.1 plan\n\n2.1.1 Australian Elections\n\n\n\nHow many seats did each political party win in the 2022 Australian Federal Election?\n\n\n\n Australia is a parliamentary democracywith 151 seats in the House of Representatives. \nMajor parties: Liberal and Labour Minor parties: Nationals and Greens Many smaller parties and independents"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#plan-2",
-    "href": "lectures/lecture-03-notes.html#plan-2",
+    "objectID": "lectures/lecture-03-slides.html#plan-2",
+    "href": "lectures/lecture-03-slides.html#plan-2",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "2.2 plan",
     "text": "2.2 plan\n\n\n\n\n\n\n\n\n\n\n\n(a) Sketch of a possible dataset to create a graph\n\n\n\n\n\n\n\n\n\n\n\n(b) Sketch of a possible graph to answer our question\n\n\n\n\n\n\n\nFigure 1: Sketches of a potential dataset and graph related to an Australian election. The basic requirement for the dataset is that it has the name of the seat (i.e., a “division” in Australia) and the party of the person elected."
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#simulate-1",
-    "href": "lectures/lecture-03-notes.html#simulate-1",
+    "objectID": "lectures/lecture-03-slides.html#simulate-1",
+    "href": "lectures/lecture-03-slides.html#simulate-1",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "3.1 simulate",
     "text": "3.1 simulate\n\n\nlibrary(tidyverse)\nlibrary(janitor)"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#simulate-2",
-    "href": "lectures/lecture-03-notes.html#simulate-2",
+    "objectID": "lectures/lecture-03-slides.html#simulate-2",
+    "href": "lectures/lecture-03-slides.html#simulate-2",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "3.2 simulate",
     "text": "3.2 simulate\n\nWe’ll simulate a dataset with two variables,Division and Party, and some values for each.\n\ndivisionthe name of one of the 131 Australian divisions  partythe name of one of the political partiesLiberal, Labor, National, Green, or Other"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#simulate-3",
-    "href": "lectures/lecture-03-notes.html#simulate-3",
+    "objectID": "lectures/lecture-03-slides.html#simulate-3",
+    "href": "lectures/lecture-03-slides.html#simulate-3",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "3.3 simulate",
     "text": "3.3 simulate\n\n\nsimulated_data &lt;-\n    tibble(\n        # Use 1 through to 151 to represent each division\n        \"Division\" = 1:151,\n        # Randomly pick an option, with replacement, 151 times\n        \"Party\" = sample(\n            x = c(\"Liberal\", \"Labor\", \"National\", \"Green\", \"Other\"),\n            size = 151,\n            replace = TRUE\n        )\n    )\n\n\nThe &lt;- symbol is an assignment operator in R. It assigns the value on the right to the variable name on the left. Here, we’re creating a new data object called simulated_data, which will store a table of simulated information.\ntibble() is a function from the tidyverse package that creates a data frame, which is a type of table used to organize data. Unlike traditional data frames, tibble handles data more cleanly and is especially useful in data analysis.\nInside the tibble() function, we specify columns and the values we want in each. On Line 4, we create a column named “Division”. 1:151 generates a sequence of numbers from 1 to 151. This sequence will represent each unique division (or group) in our simulated dataset and helps to identify each row in the data.\nThen we create another column in our tibble called Party. sample() is a function that randomly selects values from a specified set. Here, it’s used to pick a political party for each division, simulating party representation across divisions.\nx defines the set of values that sample() will pick from. The c() function combines these five options — “Liberal”, “Labor”, “National”, “Green”, and “Other” — into a list of possible parties. In other words, each division will be randomly assigned one of these five party names, representing the political party that wins the division in our simulation. size = 151 specifies that sample() should generate 151 random selections, matching the number of divisions we created in the “Division” column.\nWhen sampling, replace = TRUE allows each party name to be selected multiple times, as though we’re picking “with replacement” (i.e., once we sample a party name, it goes back into the bag so it can be drawn again). Without this, each party could only be chosen once, which wouldn’t match our goal of assigning a random party to each division.\nWe can print the simulated_data object to view the simulated dataset. When we run this line, R will display the table with two columns, Division and Party, where each division is assigned one of the five parties randomly."
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#simulate-4",
-    "href": "lectures/lecture-03-notes.html#simulate-4",
+    "objectID": "lectures/lecture-03-slides.html#simulate-4",
+    "href": "lectures/lecture-03-slides.html#simulate-4",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "3.4 simulate",
-    "text": "3.4 simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Liberal \n 2        2 Labor   \n 3        3 Labor   \n 4        4 National\n 5        5 Liberal \n 6        6 Liberal \n 7        7 Liberal \n 8        8 Green   \n 9        9 Green   \n10       10 Green   \n# ℹ 141 more rows"
+    "text": "3.4 simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Green   \n 2        2 Green   \n 3        3 Green   \n 4        4 Green   \n 5        5 Other   \n 6        6 National\n 7        7 Other   \n 8        8 National\n 9        9 Labor   \n10       10 Other   \n# ℹ 141 more rows"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-1",
-    "href": "lectures/lecture-03-notes.html#acquire-1",
+    "objectID": "lectures/lecture-03-slides.html#acquire-1",
+    "href": "lectures/lecture-03-slides.html#acquire-1",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.1 acquire",
     "text": "4.1 acquire\n\nThe data we want is provided by the Australian Electoral Commission (AEC), which is the non-partisan agency that organizes Australian federal elections. We can download the data using this link, but we want to do it programatically, storing the results to a dataframe object called raw_elections_data.\n\n\ndata_url &lt;- \"https://results.aec.gov.au/27966/website/Downloads/HouseMembersElectedDownload-27966.csv\"\n\nraw_elections_data &lt;-\n    read_csv(\n        file = data_url,\n        show_col_types = FALSE,\n        skip = 1\n    )"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-2",
-    "href": "lectures/lecture-03-notes.html#acquire-2",
+    "objectID": "lectures/lecture-03-slides.html#acquire-2",
+    "href": "lectures/lecture-03-slides.html#acquire-2",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.2 acquire",
-    "text": "4.2 acquire\n\nWe’ll save the data as a CSV file.\n\nlibrary(here)\n\nwrite_csv(\n    x = raw_elections_data,\n    file = here(\"data\", \"australian_voting.csv\")\n)\n\n\n\n\n\n\n\n\n✌️ R Tip\nThe here() function, from the here library, simplifies file paths by always referencing the root directory for a project. This makes code more reproducible and eliminates issues with working directories, especially when you are using more than one machine, collaborating, or sharing code with someone else. Jenny Bryan wrote a brief “Ode to the here package,” “here here,” which you can read… here."
+    "text": "4.2 acquire\n\nWe’ll save the data as a CSV file.\n\nlibrary(here)\n\nwrite_csv(\n    x = raw_elections_data,\n    file = here(\"data\", \"australian_voting.csv\")\n)\n\n\n\n\n\n✌️ R Tip\nThe here() function, from the here library, simplifies file paths by always referencing the root directory for a project. This makes code more reproducible and eliminates issues with working directories, especially when you are using more than one machine, collaborating, or sharing code with someone else. Jenny Bryan wrote a brief “Ode to the here package,” “here here,” which you can read… here."
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-3",
-    "href": "lectures/lecture-03-notes.html#acquire-3",
+    "objectID": "lectures/lecture-03-slides.html#acquire-3",
+    "href": "lectures/lecture-03-slides.html#acquire-3",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.3 acquire",
     "text": "4.3 acquire\n🤘 We have our real data!\n\n\nraw_elections_data\n\n# A tibble: 151 × 8\n   DivisionID DivisionNm StateAb CandidateID GivenNm Surname\n        &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  \n 1        179 Adelaide   SA            36973 Steve   GEORGA…\n 2        197 Aston      VIC           36704 Alan    TUDGE  \n 3        198 Ballarat   VIC           36409 Cather… KING   \n 4        103 Banks      NSW           37018 David   COLEMAN\n 5        180 Barker     SA            37083 Tony    PASIN  \n 6        104 Barton     NSW           36820 Linda   BURNEY \n 7        192 Bass       TAS           37134 Bridge… ARCHER \n 8        318 Bean       ACT           36231 David   SMITH  \n 9        200 Bendigo    VIC           36424 Lisa    CHESTE…\n10        105 Bennelong  NSW           36827 Jerome  LAXALE \n# ℹ 141 more rows\n# ℹ 2 more variables: PartyNm &lt;chr&gt;, PartyAb &lt;chr&gt;"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-4",
-    "href": "lectures/lecture-03-notes.html#acquire-4",
+    "objectID": "lectures/lecture-03-slides.html#acquire-4",
+    "href": "lectures/lecture-03-slides.html#acquire-4",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.4 acquire",
     "text": "4.4 acquire\nhead() shows the first six rows.\n\n\nhead(raw_elections_data)\n\n# A tibble: 6 × 8\n  DivisionID DivisionNm StateAb CandidateID GivenNm  Surname\n       &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  \n1        179 Adelaide   SA            36973 Steve    GEORGA…\n2        197 Aston      VIC           36704 Alan     TUDGE  \n3        198 Ballarat   VIC           36409 Catheri… KING   \n4        103 Banks      NSW           37018 David    COLEMAN\n5        180 Barker     SA            37083 Tony     PASIN  \n6        104 Barton     NSW           36820 Linda    BURNEY \n# ℹ 2 more variables: PartyNm &lt;chr&gt;, PartyAb &lt;chr&gt;"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-5",
-    "href": "lectures/lecture-03-notes.html#acquire-5",
+    "objectID": "lectures/lecture-03-slides.html#acquire-5",
+    "href": "lectures/lecture-03-slides.html#acquire-5",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.5 acquire",
     "text": "4.5 acquire\ntail() shows the last six rows.\n\n\ntail(raw_elections_data)\n\n# A tibble: 6 × 8\n  DivisionID DivisionNm StateAb CandidateID GivenNm  Surname\n       &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  \n1        152 Wentworth  NSW           37451 Allegra  SPENDER\n2        153 Werriwa    NSW           36810 Anne Ma… STANLEY\n3        150 Whitlam    NSW           36811 Stephen  JONES  \n4        178 Wide Bay   QLD           37506 Llew     O'BRIEN\n5        234 Wills      VIC           36452 Peter    KHALIL \n6        316 Wright     QLD           37500 Scott    BUCHHO…\n# ℹ 2 more variables: PartyNm &lt;chr&gt;, PartyAb &lt;chr&gt;"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-6",
-    "href": "lectures/lecture-03-notes.html#acquire-6",
+    "objectID": "lectures/lecture-03-slides.html#acquire-6",
+    "href": "lectures/lecture-03-slides.html#acquire-6",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.6 acquire",
     "text": "4.6 acquire\n\n“We are trying to make it similar to the dataset that we thought we wanted in the planning stage. While it is fine to move away from the plan, this needs to be a deliberate, reasoned decision.” (Alexander 2023)\n\n\nLet’s clean.\n\naus_voting_data &lt;- here(\"data\", \"australian_voting.csv\")\n\nraw_elections_data &lt;-\n    read_csv(\n        file = aus_voting_data,\n        show_col_types = FALSE\n    )"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-7",
-    "href": "lectures/lecture-03-notes.html#acquire-7",
+    "objectID": "lectures/lecture-03-slides.html#acquire-7",
+    "href": "lectures/lecture-03-slides.html#acquire-7",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.7 acquire",
     "text": "4.7 acquire\n\nclean_names() makes variables easier to type.\n\ncleaned_elections_data &lt;- clean_names(raw_elections_data)\n\n Let’s look at the first 6 rows.\n\nhead(cleaned_elections_data)\n\n# A tibble: 6 × 8\n  division_id division_nm state_ab candidate_id given_nm \n        &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt;    \n1         179 Adelaide    SA              36973 Steve    \n2         197 Aston       VIC             36704 Alan     \n3         198 Ballarat    VIC             36409 Catherine\n4         103 Banks       NSW             37018 David    \n5         180 Barker      SA              37083 Tony     \n6         104 Barton      NSW             36820 Linda    \n# ℹ 3 more variables: surname &lt;chr&gt;, party_nm &lt;chr&gt;,\n#   party_ab &lt;chr&gt;"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-8",
-    "href": "lectures/lecture-03-notes.html#acquire-8",
+    "objectID": "lectures/lecture-03-slides.html#acquire-8",
+    "href": "lectures/lecture-03-slides.html#acquire-8",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.8 acquire",
-    "text": "4.8 acquire\n\n\n\n\n\n\n✌️ R Tip\nWe can choose certain variables of interest with select() from dplyr, which we loaded as part of the tidyverse. The pipe operator |&gt; pushes the output of one line to be the first input of the function on the next line.\n\n\n\n\nWe are primarily interested in two variables:\ndivision_nm (division name)party_nm (party name)\n\n\ncleaned_elections_data &lt;-\n    cleaned_elections_data |&gt;\n    select(\n        division_nm,\n        party_nm\n    )"
+    "text": "4.8 acquire\n\n\n\n✌️ R Tip\nWe can choose certain variables of interest with select() from dplyr, which we loaded as part of the tidyverse. The pipe operator |&gt; pushes the output of one line to be the first input of the function on the next line.\n\n\n\n\nWe are primarily interested in two variables:\ndivision_nm (division name)party_nm (party name)\n\n\ncleaned_elections_data &lt;-\n    cleaned_elections_data |&gt;\n    select(\n        division_nm,\n        party_nm\n    )"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-9",
-    "href": "lectures/lecture-03-notes.html#acquire-9",
+    "objectID": "lectures/lecture-03-slides.html#acquire-9",
+    "href": "lectures/lecture-03-slides.html#acquire-9",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.9 acquire",
     "text": "4.9 acquire\n\n\nhead(cleaned_elections_data)\n\n# A tibble: 6 × 2\n  division_nm party_nm              \n  &lt;chr&gt;       &lt;chr&gt;                 \n1 Adelaide    Australian Labor Party\n2 Aston       Liberal               \n3 Ballarat    Australian Labor Party\n4 Banks       Liberal               \n5 Barker      Liberal               \n6 Barton      Australian Labor Party\n\n\n\nThis looks good, but some of the variable names are still not obvious because they are abbreviated."
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-10",
-    "href": "lectures/lecture-03-notes.html#acquire-10",
+    "objectID": "lectures/lecture-03-slides.html#acquire-10",
+    "href": "lectures/lecture-03-slides.html#acquire-10",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.10 acquire",
-    "text": "4.10 acquire\n\n\n\n\n\n\n\n✌️ R Tip\nWe can look at the names of the columns (i.e., variables) in a dataset using names(). We can change them using rename() from dplyr.\n\n\n\n\nnames(cleaned_elections_data)\n\n[1] \"division_nm\" \"party_nm\"   \n\n\n\nLet’s rename."
+    "text": "4.10 acquire\n\n\n\n\n✌️ R Tip\nWe can look at the names of the columns (i.e., variables) in a dataset using names(). We can change them using rename() from dplyr.\n\n\n\n\nnames(cleaned_elections_data)\n\n[1] \"division_nm\" \"party_nm\"   \n\n\n\nLet’s rename."
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-11",
-    "href": "lectures/lecture-03-notes.html#acquire-11",
+    "objectID": "lectures/lecture-03-slides.html#acquire-11",
+    "href": "lectures/lecture-03-slides.html#acquire-11",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.11 acquire",
     "text": "4.11 acquire\n\n\ncleaned_elections_data &lt;-\n    cleaned_elections_data |&gt;\n    rename(\n        division = division_nm,\n        elected_party = party_nm\n    )\n\nhead(cleaned_elections_data)\n\n# A tibble: 6 × 2\n  division elected_party         \n  &lt;chr&gt;    &lt;chr&gt;                 \n1 Adelaide Australian Labor Party\n2 Aston    Liberal               \n3 Ballarat Australian Labor Party\n4 Banks    Liberal               \n5 Barker   Liberal               \n6 Barton   Australian Labor Party"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-12",
-    "href": "lectures/lecture-03-notes.html#acquire-12",
+    "objectID": "lectures/lecture-03-slides.html#acquire-12",
+    "href": "lectures/lecture-03-slides.html#acquire-12",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.12 acquire",
     "text": "4.12 acquire\n\nWhat are the unique values in elected_party?\n\ncleaned_elections_data$elected_party |&gt;\n    unique()\n\n[1] \"Australian Labor Party\"              \n[2] \"Liberal\"                             \n[3] \"Liberal National Party of Queensland\"\n[4] \"The Greens\"                          \n[5] \"The Nationals\"                       \n[6] \"Independent\"                         \n[7] \"Katter's Australian Party (KAP)\"     \n[8] \"Centre Alliance\"                     \n\n\n\nCool, but let’s simplify the party names in elected_party to match what we simulated. We can do this with case_match() from dplyr."
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-13",
-    "href": "lectures/lecture-03-notes.html#acquire-13",
+    "objectID": "lectures/lecture-03-slides.html#acquire-13",
+    "href": "lectures/lecture-03-slides.html#acquire-13",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.13 acquire",
     "text": "4.13 acquire\n\n\ncleaned_elections_data &lt;-\n    cleaned_elections_data |&gt;\n    mutate(\n        elected_party =\n            case_match(\n                elected_party,\n                \"Australian Labor Party\" ~ \"Labor\",\n                \"Liberal National Party of Queensland\" ~ \"Liberal\",\n                \"Liberal\" ~ \"Liberal\",\n                \"The Nationals\" ~ \"Nationals\",\n                \"The Greens\" ~ \"Greens\",\n                \"Independent\" ~ \"Other\",\n                \"Katter's Australian Party (KAP)\" ~ \"Other\",\n                \"Centre Alliance\" ~ \"Other\"\n            )\n    )"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#acquire-14",
-    "href": "lectures/lecture-03-notes.html#acquire-14",
+    "objectID": "lectures/lecture-03-slides.html#acquire-14",
+    "href": "lectures/lecture-03-slides.html#acquire-14",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.14 acquire",
     "text": "4.14 acquire\n\n\nhead(cleaned_elections_data)\n\n# A tibble: 6 × 2\n  division elected_party\n  &lt;chr&gt;    &lt;chr&gt;        \n1 Adelaide Labor        \n2 Aston    Liberal      \n3 Ballarat Labor        \n4 Banks    Liberal      \n5 Barker   Liberal      \n6 Barton   Labor        \n\n\n\nOur data now matches our plan! 😎"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#aus_elections_clean_path",
-    "href": "lectures/lecture-03-notes.html#aus_elections_clean_path",
+    "objectID": "lectures/lecture-03-slides.html#aus_elections_clean_path",
+    "href": "lectures/lecture-03-slides.html#aus_elections_clean_path",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "4.15 acquire",
     "text": "4.15 acquire\n\nLet’s save the cleaned data so that we can start with it data in the next stage. We’ll use a new filename to preserve the original and make it easy to identify the clean version.\n\naus_elections_clean_path &lt;- here(\"data\", \"cleaned_elections_data.csv\")\n\nwrite_csv(\n    x = cleaned_elections_data,\n    file = aus_elections_clean_path\n)"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#explore-understand-1",
-    "href": "lectures/lecture-03-notes.html#explore-understand-1",
+    "objectID": "lectures/lecture-03-slides.html#explore-understand-1",
+    "href": "lectures/lecture-03-slides.html#explore-understand-1",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.1 explore / understand",
     "text": "5.1 explore / understand\n\n\n\n How do we build the graph that we planned?"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#explore-understand-2",
-    "href": "lectures/lecture-03-notes.html#explore-understand-2",
+    "objectID": "lectures/lecture-03-slides.html#explore-understand-2",
+    "href": "lectures/lecture-03-slides.html#explore-understand-2",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.2 explore / understand",
-    "text": "5.2 explore / understand\n\nFirst, we read in the cleaned dataset that we just created.\n\ncleaned_elections_data &lt;-\n    read_csv(\n        file = aus_elections_clean_path,\n        show_col_types = FALSE\n    )\n\n\n\n\n\n\n\n\n✌️ R Tip\n\n\n\nI’m using the filepath object I previously created: aus_elections_clean_path.\n\naus_elections_clean_path\n\n[1] \"/Users/johnmclevey/SOCI3040/data/cleaned_elections_data.csv\"\n\n\n This won’t work in a new script unless we re-create the object. Can you explain why?"
+    "text": "5.2 explore / understand\n\nFirst, we read in the cleaned dataset that we just created.\n\ncleaned_elections_data &lt;-\n    read_csv(\n        file = aus_elections_clean_path,\n        show_col_types = FALSE\n    )\n\n\n\n\n\n✌️ R Tip\n\n\nI’m using the filepath object I previously created: aus_elections_clean_path.\n\naus_elections_clean_path\n\n[1] \"/Users/johnmclevey/SOCI3040/data/cleaned_elections_data.csv\"\n\n\n This won’t work in a new script unless we re-create the object. Can you explain why?"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#explore-understand-3",
-    "href": "lectures/lecture-03-notes.html#explore-understand-3",
+    "objectID": "lectures/lecture-03-slides.html#explore-understand-3",
+    "href": "lectures/lecture-03-slides.html#explore-understand-3",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.3 explore / understand",
     "text": "5.3 explore / understand\n\n\nhead(cleaned_elections_data)\n\n# A tibble: 6 × 2\n  division elected_party\n  &lt;chr&gt;    &lt;chr&gt;        \n1 Adelaide Labor        \n2 Aston    Liberal      \n3 Ballarat Labor        \n4 Banks    Liberal      \n5 Barker   Liberal      \n6 Barton   Labor        \n\n\n😎"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#explore-understand-4",
-    "href": "lectures/lecture-03-notes.html#explore-understand-4",
+    "objectID": "lectures/lecture-03-slides.html#explore-understand-4",
+    "href": "lectures/lecture-03-slides.html#explore-understand-4",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.4 explore / understand",
-    "text": "5.4 explore / understand\n\n\n\n\n\n\nHow many seats did each party win?\n\n\n\n\nWe can get a quick count with count() from dplyr.\n\ncleaned_elections_data |&gt;\n    count(elected_party)\n\n# A tibble: 5 × 2\n  elected_party     n\n  &lt;chr&gt;         &lt;int&gt;\n1 Greens            4\n2 Labor            77\n3 Liberal          48\n4 Nationals        10\n5 Other            12"
+    "text": "5.4 explore / understand\n\n\n\nHow many seats did each party win?\n\n\n\n\nWe can get a quick count with count() from dplyr.\n\ncleaned_elections_data |&gt;\n    count(elected_party)\n\n# A tibble: 5 × 2\n  elected_party     n\n  &lt;chr&gt;         &lt;int&gt;\n1 Greens            4\n2 Labor            77\n3 Liberal          48\n4 Nationals        10\n5 Other            12"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#explore-understand-5",
-    "href": "lectures/lecture-03-notes.html#explore-understand-5",
+    "objectID": "lectures/lecture-03-slides.html#explore-understand-5",
+    "href": "lectures/lecture-03-slides.html#explore-understand-5",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.5 explore / understand",
-    "text": "5.5 explore / understand\n\n\n\n\n\n\nRemember, we’re trying to make something like this.\n\n\n\n\n\n\n\n\n\n✌️ R Tip\n\n\n\nThe grammar of graphics is a conceptual framework for constructing data visualizations. It breaks down plots to their most basic elements, like data, scales, geoms (geometric objects), coordinates, and statistical transformations. The idea is to plan and build our vizualizations by layering these basic elements together rather than mindlessly relying on generic chart types.\nggplot2, a data visualization library from the tidyverse, is designed around the grammar of graphics idea. We build data visualizations by layering the desired elements of our plots. For example, we use aes() to specify aesthetic mappings that link our data to visual elements like position, color, size, shape, and transparency. We can create and tweak just about any visualization we want by layering data, aesthetics, and geoms using the add operator, +.\n\n\n\n\n\n, allowing the viewer to interpret the values and relationships in the dataset visually. By mapping data to these properties, we can layer information on the same plot and enhance the viewer’s understanding of patterns, trends, and differences.\nIn ggplot2, aesthetics are specified within the aes() function, where each aesthetic is mapped to a data variable. For instance, x and y represent positions on the axes, while color, fill, size, and shape control other visual aspects. By carefully selecting aesthetics, we can add depth to the plot without clutter, guiding the viewer’s eye to the most important parts."
+    "text": "5.5 explore / understand\n\n\n\n\n\n\nRemember, we’re trying to make something like this.\n\n\n\n\n\n\n✌️ R Tip\n\n\nThe grammar of graphics is a conceptual framework for constructing data visualizations. It breaks down plots to their most basic elements, like data, scales, geoms (geometric objects), coordinates, and statistical transformations. The idea is to plan and build our vizualizations by layering these basic elements together rather than mindlessly relying on generic chart types.\nggplot2, a data visualization library from the tidyverse, is designed around the grammar of graphics idea. We build data visualizations by layering the desired elements of our plots. For example, we use aes() to specify aesthetic mappings that link our data to visual elements like position, color, size, shape, and transparency. We can create and tweak just about any visualization we want by layering data, aesthetics, and geoms using the add operator, +.\n\n\n\n\n\n, allowing the viewer to interpret the values and relationships in the dataset visually. By mapping data to these properties, we can layer information on the same plot and enhance the viewer’s understanding of patterns, trends, and differences.\nIn ggplot2, aesthetics are specified within the aes() function, where each aesthetic is mapped to a data variable. For instance, x and y represent positions on the axes, while color, fill, size, and shape control other visual aspects. By carefully selecting aesthetics, we can add depth to the plot without clutter, guiding the viewer’s eye to the most important parts."
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#explore-understand-6",
-    "href": "lectures/lecture-03-notes.html#explore-understand-6",
+    "objectID": "lectures/lecture-03-slides.html#explore-understand-6",
+    "href": "lectures/lecture-03-slides.html#explore-understand-6",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.6 explore / understand",
-    "text": "5.6 explore / understand\n\nLet’s visualize the counts as vertical bars using geom_bar() from ggplot2.\n\nggplot(\n    cleaned_elections_data, # specify the data\n    aes(x = elected_party) # specify aesthetics\n) + # add a layer with the + operator\n    geom_bar() # specify a geometric shape (bar)\n\n\nBut it’s cleaner to use the pipe operator |&gt;.\n\ncleaned_elections_data |&gt;\n    ggplot(aes(x = elected_party)) +\n    geom_bar()\n\n\n\n\n\n\n\nFigure 2: Meh. We can do better."
+    "text": "5.6 explore / understand\n\nLet’s visualize the counts as vertical bars using geom_bar() from ggplot2.\n\nggplot(\n    cleaned_elections_data, # specify the data\n    aes(x = elected_party) # specify aesthetics\n) + # add a layer with the + operator\n    geom_bar() # specify a geometric shape (bar)\n\n\nBut it’s cleaner to use the pipe operator |&gt;.\n\ncleaned_elections_data |&gt;\n    ggplot(aes(x = elected_party)) +\n    geom_bar()"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#explore-understand-7",
-    "href": "lectures/lecture-03-notes.html#explore-understand-7",
+    "objectID": "lectures/lecture-03-slides.html#explore-understand-6-output",
+    "href": "lectures/lecture-03-slides.html#explore-understand-6-output",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "5.6 explore / understand",
+    "text": "5.6 explore / understand\n\n\n\n\n\n\n\nFigure 2: Meh. We can do better."
+  },
+  {
+    "objectID": "lectures/lecture-03-slides.html#explore-understand-7",
+    "href": "lectures/lecture-03-slides.html#explore-understand-7",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.7 explore / understand",
-    "text": "5.7 explore / understand\n\n\ncleaned_elections_data |&gt;\n    ggplot(aes(x = elected_party)) +\n    geom_bar() +\n    theme_minimal() + # Improve the theme\n    labs(x = \"Party\", y = \"Number of seats\") # Improve the labels\n\n\n\n\n\n\n\nFigure 3: Number of seats won, by political party, at the 2022 Australian Federal Election. 😎"
+    "text": "5.7 explore / understand\n\n\ncleaned_elections_data |&gt;\n    ggplot(aes(x = elected_party)) +\n    geom_bar() +\n    theme_minimal() + # Improve the theme\n    labs(x = \"Party\", y = \"Number of seats\") # Improve the labels"
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#section",
-    "href": "lectures/lecture-03-notes.html#section",
+    "objectID": "lectures/lecture-03-slides.html#explore-understand-7-output",
+    "href": "lectures/lecture-03-slides.html#explore-understand-7-output",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "5.7 explore / understand",
+    "text": "5.7 explore / understand\n\n\n\n\n\n\n\nFigure 3: Number of seats won, by political party, at the 2022 Australian Federal Election. 😎"
+  },
+  {
+    "objectID": "lectures/lecture-03-slides.html#section",
+    "href": "lectures/lecture-03-slides.html#section",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "5.8 ",
     "text": "5.8 \ncleaned_elections_data |&gt;\n    ggplot(aes(x = elected_party)) +\n    geom_bar()\n\ncleaned_elections_data |&gt;\n    ggplot(aes(x = elected_party)) +\n    geom_bar() +\n    theme_minimal() +\n    labs(x = \"Party\", y = \"Number of seats\")\n\n\n\n\n\n\n\n\n\n\n\n(a) Default theme and labels\n\n\n\n\n\n\n\n\n\n\n\n(b) Improved theme and labels\n\n\n\n\n\n\n\nFigure 4: Both versions of the plot, and the code that produced them, side-by-side for comparison."
   },
   {
-    "objectID": "lectures/lecture-03-notes.html#share-1",
-    "href": "lectures/lecture-03-notes.html#share-1",
+    "objectID": "lectures/lecture-03-slides.html#share-1",
+    "href": "lectures/lecture-03-slides.html#share-1",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "6.1 share",
-    "text": "6.1 share\nExample taken directly from Alexander (2023), here.\n\n\n\n\n\n\nAustralia is a parliamentary democracy with 151 seats in the House of Representatives, which is the house from which government is formed. There are two major parties—“Liberal” and “Labor”—two minor parties—“Nationals” and “Greens”—and many smaller parties. The 2022 Federal Election occurred on 21 May, and around 15 million votes were cast. We were interested in the number of seats that were won by each party.\nWe downloaded the results, on a seat-specific basis, from the Australian Electoral Commission website. We cleaned and tidied the dataset using the statistical programming language R (R Core Team 2023) including the tidyverse (Wickham et al. 2019) and janitor (Firke 2023). We then created a graph of the number of seats that each political party won (Figure 3).\nWe found that the Labor Party won 77 seats, followed by the Liberal Party with 48 seats. The minor parties won the following number of seats: the Nationals won 10 seats and the Greens won 4 seats. Finally, there were 10 Independents elected as well as candidates from smaller parties.\nThe distribution of seats is skewed toward the two major parties which could reflect relatively stable preferences on the part of Australian voters, or possibly inertia due to the benefits of already being a major party such a national network or funding. A better understanding of the reasons for this distribution are of interest in future work. While the dataset consists of everyone who voted, it worth noting that in Australia some are systematically excluded from voting, and it is much more difficult for some to vote than others.\n\n\n\n\nOne aspect to be especially concerned with is making sure that this communication is focused on the needs of the audience and telling a story. Data journalism provides some excellent examples of how analysis needs to be tailored to the audience, for instance, Cardoso (2020) and Bronner (2020)."
+    "text": "6.1 share\nExample taken directly from Alexander (2023), here.\n\n\n\nAustralia is a parliamentary democracy with 151 seats in the House of Representatives, which is the house from which government is formed. There are two major parties—“Liberal” and “Labor”—two minor parties—“Nationals” and “Greens”—and many smaller parties. The 2022 Federal Election occurred on 21 May, and around 15 million votes were cast. We were interested in the number of seats that were won by each party.\nWe downloaded the results, on a seat-specific basis, from the Australian Electoral Commission website. We cleaned and tidied the dataset using the statistical programming language R (R Core Team 2023) including the tidyverse (Wickham et al. 2019) and janitor (Firke 2023). We then created a graph of the number of seats that each political party won (Figure 3).\nWe found that the Labor Party won 77 seats, followed by the Liberal Party with 48 seats. The minor parties won the following number of seats: the Nationals won 10 seats and the Greens won 4 seats. Finally, there were 10 Independents elected as well as candidates from smaller parties.\nThe distribution of seats is skewed toward the two major parties which could reflect relatively stable preferences on the part of Australian voters, or possibly inertia due to the benefits of already being a major party such a national network or funding. A better understanding of the reasons for this distribution are of interest in future work. While the dataset consists of everyone who voted, it worth noting that in Australia some are systematically excluded from voting, and it is much more difficult for some to vote than others.\n\n\n\n\nOne aspect to be especially concerned with is making sure that this communication is focused on the needs of the audience and telling a story. Data journalism provides some excellent examples of how analysis needs to be tailored to the audience, for instance, Cardoso (2020) and Bronner (2020)."
+  },
+  {
+    "objectID": "lectures/lecture-03-slides.html#references",
+    "href": "lectures/lecture-03-slides.html#references",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "6.2 References",
+    "text": "6.2 References\n\n\nAlexander, Rohan. 2023. Telling Stories with Data: With Applications in R. Chapman; Hall/CRC.\n\n\nBarrett, Malcolm. 2021. Data Science as an Atomic Habit. https://malco.io/articles/2021-01-04-data-science-as-an-atomic-habit.\n\n\nBronner, Laura. 2020. “Why Statistics Don’t Capture the Full Extent of the Systemic Bias in Policing.” FiveThirtyEight, June. https://fivethirtyeight.com/features/why-statistics-dont-capture-the-full-extent-of-the-systemic-bias-in-policing/.\n\n\nCardoso, Tom. 2020. “Bias behind bars: A Globe investigation finds a prison system stacked against Black and Indigenous inmates.” The Globe and Mail, October. https://www.theglobeandmail.com/canada/article-investigation-racial-bias-in-canadian-prison-risk-assessments/.\n\n\nFirke, Sam. 2023. janitor: Simple Tools for Examining and Cleaning Dirty Data. https://CRAN.R-project.org/package=janitor.\n\n\nR Core Team. 2023. R: A Language and Environment for Statistical Computing. Vienna, Austria: R Foundation for Statistical Computing. https://www.R-project.org/.\n\n\nWickham, Hadley, Mara Averick, Jenny Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the Tidyverse.” Journal of Open Source Software 4 (43): 1686. https://doi.org/10.21105/joss.01686."
+  },
+  {
+    "objectID": "lectures/lecture-04-notes.html",
+    "href": "lectures/lecture-04-notes.html",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "",
+    "text": "Required:   Ch 2\nRecommended:   Ch 1\n\n\n\n\nIn class work in RStudio! See notes below."
+  },
+  {
+    "objectID": "lectures/lecture-04-notes.html#reading-assignment",
+    "href": "lectures/lecture-04-notes.html#reading-assignment",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "",
+    "text": "Required:   Ch 2\nRecommended:   Ch 1"
+  },
+  {
+    "objectID": "lectures/lecture-04-notes.html#lecture-slides",
+    "href": "lectures/lecture-04-notes.html#lecture-slides",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "",
+    "text": "In class work in RStudio! See notes below."
+  },
+  {
+    "objectID": "lectures/lecture-04-notes.html#import-libraries",
+    "href": "lectures/lecture-04-notes.html#import-libraries",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "1.1 Import Libraries",
+    "text": "1.1 Import Libraries\nYou might see a lot of text print to the console when you import these libraries. You can ignore that for now!\n\nlibrary(\"janitor\") # For cleaning and formatting column names and data.\n\n\nAttaching package: 'janitor'\n\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\nlibrary(\"knitr\") # For creating tables and reports.\nlibrary(\"lubridate\") # For working with dates and times.\n\n\nAttaching package: 'lubridate'\n\n\nThe following objects are masked from 'package:base':\n\n    date, intersect, setdiff, union\n\nlibrary(\"opendatatoronto\") # For accessing Toronto's open data directly.\nlibrary(\"tidyverse\") # A collection of R packages for data manipulation, visualization, and more.\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr   1.1.4     ✔ readr   2.1.5\n✔ forcats 1.0.0     ✔ stringr 1.5.1\n✔ ggplot2 3.5.1     ✔ tibble  3.2.1\n✔ purrr   1.0.2     ✔ tidyr   1.3.1\n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(\"here\") # For managing file paths in a project-oriented workflow.\n\nhere() starts at /Users/johnmclevey/SOCI3040\n\n\nThe libraries listed here are essential for managing the workflow. Each library serves a specific purpose:\n\njanitor: Simplifies data cleaning tasks, such as renaming columns or identifying missing values.\nknitr: Provides functionality to integrate R code into reports and create professional tables.\nlubridate: Makes working with dates easier, such as extracting months or years from a date column.\nopendatatoronto: Offers tools to download and work with datasets provided by the City of Toronto.\ntidyverse: A suite of tools for data science, including dplyr for data manipulation and ggplot2 for visualization.\nhere: Ensures consistent file paths regardless of the working directory."
+  },
+  {
+    "objectID": "lectures/lecture-04-notes.html#plan",
+    "href": "lectures/lecture-04-notes.html#plan",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "1.2 Plan",
+    "text": "1.2 Plan\nThe dataset we are interested in needs to have the date, the shelter, and the number of beds that were occupied that night. A quick sketch of a dataset that would work is shown in Figure Figure 1.\n\n\n\n\n\n\nFigure 1: Quick sketch of a dataset\n\n\n\nWe aim to create a table summarizing the monthly average number of beds occupied each night. A sketch of such a table is shown in Figure Figure 2.\n\n\n\n\n\n\nFigure 2: Quick sketch of a table\n\n\n\nThese sketches provide a conceptual understanding of the expected output and guide the workflow. First, we simulate data to refine our understanding of the data-generating process."
+  },
+  {
+    "objectID": "lectures/lecture-04-notes.html#simulate",
+    "href": "lectures/lecture-04-notes.html#simulate",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "1.3 Simulate",
+    "text": "1.3 Simulate\nSimulation is a crucial step for understanding the problem before analyzing real data. It allows us to:\n\nDefine assumptions about the data.\nCreate a test dataset that mimics the real dataset’s structure.\n\nHere, we simulate a dataset representing the daily occupancy of three shelters over one year (2021):\n\nset.seed(853)\n\nsimulated_occupancy_data &lt;-\n    tibble(\n        date = rep(x = as.Date(\"2021-01-01\") + c(0:364), times = 3),\n        shelter = c(\n            rep(x = \"Shelter 1\", times = 365),\n            rep(x = \"Shelter 2\", times = 365),\n            rep(x = \"Shelter 3\", times = 365)\n        ),\n        number_occupied =\n            rpois(\n                n = 365 * 3,\n                lambda = 30\n            )\n    )\n\nsimulated_occupancy_data\n\n# A tibble: 1,095 × 3\n   date       shelter   number_occupied\n   &lt;date&gt;     &lt;chr&gt;               &lt;int&gt;\n 1 2021-01-01 Shelter 1              28\n 2 2021-01-02 Shelter 1              29\n 3 2021-01-03 Shelter 1              35\n 4 2021-01-04 Shelter 1              25\n 5 2021-01-05 Shelter 1              21\n 6 2021-01-06 Shelter 1              30\n 7 2021-01-07 Shelter 1              28\n 8 2021-01-08 Shelter 1              31\n 9 2021-01-09 Shelter 1              27\n10 2021-01-10 Shelter 1              27\n# ℹ 1,085 more rows\n\n\n\n1.3.1 Code Breakdown:\n\nset.seed(853): Ensures reproducibility of random numbers.\ndate column:\n\nas.Date(\"2021-01-01\"): Creates the starting date (January 1, 2021).\n+ c(0:364): Adds consecutive days to generate a sequence for the entire year.\nrep(..., times = 3): Repeats the year-long sequence for three shelters.\n\nshelter column:\n\nCategorical variable indicating which shelter the data belongs to.\nrep(..., times = 365): Repeats the shelter name for each day of the year.\n\nnumber_occupied column:\n\nSimulated using the Poisson distribution (rpois).\nlambda = 30: Assumes an average of 30 beds occupied per shelter per day.\n\n\nThe simulated dataset has three columns:\n\ndate: The date of observation.\nshelter: The shelter’s name.\nnumber_occupied: The number of beds occupied on that date."
+  },
+  {
+    "objectID": "lectures/lecture-04-notes.html#acquire",
+    "href": "lectures/lecture-04-notes.html#acquire",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "1.4 Acquire",
+    "text": "1.4 Acquire\nThe next step is to download and process the real dataset from Toronto’s Open Data portal.\n\ntoronto_shelters &lt;-\n    list_package_resources(\"21c83b32-d5a8-4106-a54f-010dbe49f6f2\") |&gt;\n    filter(name == \"daily-shelter-overnight-service-occupancy-capacity-2021.csv\") |&gt;\n    get_resource()\n\nwrite_csv(\n    x = toronto_shelters,\n    file = here(\"data\", \"toronto_shelters.csv\")\n)\n\n\n1.4.1 Code Breakdown:\n\nlist_package_resources():\n\nRetrieves metadata for datasets in the specified package.\nThe package ID is specific to the Toronto shelter data.\n\nfilter():\n\nExtracts the 2021 dataset by matching the dataset name.\n\nget_resource():\n\nDownloads the selected dataset.\n\nwrite_csv():\n\nSaves the dataset locally for future use.\n\n\nNext, we clean the dataset:\n\ntoronto_shelters &lt;-\n    read_csv(\n        here(\"data\", \"toronto_shelters.csv\"),\n        show_col_types = FALSE\n    )\n\nhead(toronto_shelters)\n\n# A tibble: 6 × 32\n   X_id OCCUPANCY_DATE ORGANIZATION_ID ORGANIZATION_NAME        SHELTER_ID\n  &lt;dbl&gt; &lt;chr&gt;                    &lt;dbl&gt; &lt;chr&gt;                         &lt;dbl&gt;\n1     1 21-01-01                    24 COSTI Immigrant Services         40\n2     2 21-01-01                    24 COSTI Immigrant Services         40\n3     3 21-01-01                    24 COSTI Immigrant Services         40\n4     4 21-01-01                    24 COSTI Immigrant Services         40\n5     5 21-01-01                    24 COSTI Immigrant Services         40\n6     6 21-01-01                    24 COSTI Immigrant Services         40\n# ℹ 27 more variables: SHELTER_GROUP &lt;chr&gt;, LOCATION_ID &lt;dbl&gt;,\n#   LOCATION_NAME &lt;chr&gt;, LOCATION_ADDRESS &lt;chr&gt;, LOCATION_POSTAL_CODE &lt;chr&gt;,\n#   LOCATION_CITY &lt;chr&gt;, LOCATION_PROVINCE &lt;chr&gt;, PROGRAM_ID &lt;dbl&gt;,\n#   PROGRAM_NAME &lt;chr&gt;, SECTOR &lt;chr&gt;, PROGRAM_MODEL &lt;chr&gt;,\n#   OVERNIGHT_SERVICE_TYPE &lt;chr&gt;, PROGRAM_AREA &lt;chr&gt;, SERVICE_USER_COUNT &lt;dbl&gt;,\n#   CAPACITY_TYPE &lt;chr&gt;, CAPACITY_ACTUAL_BED &lt;dbl&gt;, CAPACITY_FUNDING_BED &lt;dbl&gt;,\n#   OCCUPIED_BEDS &lt;dbl&gt;, UNOCCUPIED_BEDS &lt;dbl&gt;, UNAVAILABLE_BEDS &lt;dbl&gt;, …\n\ntoronto_shelters_clean &lt;-\n    clean_names(toronto_shelters) |&gt;\n    mutate(occupancy_date = ymd(occupancy_date)) |&gt;\n    select(occupancy_date, occupied_beds)\n\nhead(toronto_shelters_clean)\n\n# A tibble: 6 × 2\n  occupancy_date occupied_beds\n  &lt;date&gt;                 &lt;dbl&gt;\n1 2021-01-01                NA\n2 2021-01-01                NA\n3 2021-01-01                NA\n4 2021-01-01                NA\n5 2021-01-01                NA\n6 2021-01-01                 6\n\nwrite_csv(\n    x = toronto_shelters_clean,\n    file = here(\"data\", \"cleaned_toronto_shelters.csv\")\n)\n\n\n\n1.4.2 Code Breakdown:\n\nread_csv(): Reads the downloaded CSV file.\nclean_names(): Converts column names to snake_case for easier handling.\nmutate(): Converts the occupancy_date column to a date format.\nselect(): Retains only the relevant columns (occupancy_date and occupied_beds)."
+  },
+  {
+    "objectID": "lectures/lecture-04-notes.html#exploreunderstand",
+    "href": "lectures/lecture-04-notes.html#exploreunderstand",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "1.5 Explore/Understand",
+    "text": "1.5 Explore/Understand\nThe cleaned dataset is now ready for exploration. We compute the monthly average number of occupied beds:\n\ntoronto_shelters_clean &lt;-\n    read_csv(\n        here(\"data\", \"cleaned_toronto_shelters.csv\"),\n        show_col_types = FALSE\n    )\n\n#| label: tbl-homelessoccupancyd\n#| tbl-cap: \"Shelter usage in Toronto in 2021\"\n\ntoronto_shelters_clean |&gt;\n    mutate(occupancy_month = month(\n        occupancy_date,\n        label = TRUE,\n        abbr = FALSE\n    )) |&gt;\n    arrange(month(occupancy_date)) |&gt;\n    drop_na(occupied_beds) |&gt;\n    summarise(\n        number_occupied = mean(occupied_beds),\n        .by = occupancy_month\n    ) |&gt;\n    kable()\n\n\n\n\noccupancy_month\nnumber_occupied\n\n\n\n\nJanuary\n28.55708\n\n\nFebruary\n27.73821\n\n\nMarch\n27.18521\n\n\nApril\n26.31561\n\n\nMay\n27.42596\n\n\nJune\n28.88300\n\n\nJuly\n29.67137\n\n\nAugust\n30.83975\n\n\nSeptember\n31.65405\n\n\nOctober\n32.32991\n\n\nNovember\n33.26980\n\n\nDecember\n33.52426\n\n\n\n\n\n\n1.5.1 Code Breakdown:\n\nmutate():\n\nAdds a new column, occupancy_month, extracted from the occupancy_date.\nUses month() from lubridate to get the month name.\n\ndrop_na(): Removes rows with missing values in occupied_beds.\nsummarise(): Groups data by month and calculates the mean.\nkable(): Creates a neatly formatted table.\n\nThe table provides insights into monthly shelter usage."
+  },
+  {
+    "objectID": "lectures/lecture-04-notes.html#share",
+    "href": "lectures/lecture-04-notes.html#share",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "1.6 Share",
+    "text": "1.6 Share\nThe findings are summarized in a brief report:\n\n\n\n\n\n\n“Toronto has a large unhoused population. Freezing winters mean it is critical there are enough places in shelters. We are interested to understand how usage of shelters changes in colder months, compared with warmer months.\nWe use data provided by the City of Toronto about Toronto shelter bed occupancy. Specifically, at 4 a.m. each night a count is made of the occupied beds. We are interested in averaging this over the month. We cleaned, tidied, and analyzed the dataset using the statistical programming language R as well as the tidyverse, janitor, opendatatoronto, lubridate, and knitr. We then made a table of the average number of occupied beds each night for each month.\nWe found that the daily average number of occupied beds was higher in December 2021 than July 2021, with 34 occupied beds in December, compared with 30 in July. More generally, there was a steady increase in the daily average number of occupied beds between July and December, with a slight overall increase each month.”"
+  },
+  {
+    "objectID": "lectures/lecture-04-notes.html#share-1",
+    "href": "lectures/lecture-04-notes.html#share-1",
+    "title": "Data Analysis Workflow – The Firehose",
+    "section": "1.7 SHARE!",
+    "text": "1.7 SHARE!\nYour turn…"
   },
   {
     "objectID": "index.html",

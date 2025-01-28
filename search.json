@@ -103,7 +103,7 @@
     "href": "lectures/lecture-03-content.html#simulate-4",
     "title": "Drinking From the Firehose",
     "section": "simulate",
-    "text": "simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Liberal \n 2        2 Labor   \n 3        3 Green   \n 4        4 Liberal \n 5        5 Liberal \n 6        6 Liberal \n 7        7 National\n 8        8 Labor   \n 9        9 Labor   \n10       10 National\n# ℹ 141 more rows"
+    "text": "simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Green   \n 2        2 Liberal \n 3        3 Green   \n 4        4 Liberal \n 5        5 Green   \n 6        6 Green   \n 7        7 National\n 8        8 National\n 9        9 Liberal \n10       10 Other   \n# ℹ 141 more rows"
   },
   {
     "objectID": "lectures/lecture-03-content.html#acquire-1",
@@ -341,7 +341,7 @@
     "href": "lectures/lecture-03-notes.html#simulate-4",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "3.4 simulate",
-    "text": "3.4 simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party  \n      &lt;int&gt; &lt;chr&gt;  \n 1        1 Other  \n 2        2 Other  \n 3        3 Liberal\n 4        4 Labor  \n 5        5 Other  \n 6        6 Liberal\n 7        7 Liberal\n 8        8 Liberal\n 9        9 Labor  \n10       10 Liberal\n# ℹ 141 more rows"
+    "text": "3.4 simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Labor   \n 2        2 National\n 3        3 Labor   \n 4        4 National\n 5        5 Labor   \n 6        6 National\n 7        7 Other   \n 8        8 Liberal \n 9        9 Liberal \n10       10 Other   \n# ℹ 141 more rows"
   },
   {
     "objectID": "lectures/lecture-03-notes.html#acquire-1",
@@ -680,27 +680,6 @@
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lecture-08-notes.html",
-    "href": "lectures/lecture-08-notes.html",
-    "title": "Writing and Developing Research Questions",
-    "section": "",
-    "text": "Required:   Ch 4\nRecommended:   Ch 3\n\n\n\n\n    View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lecture-08-notes.html#reading-assignment",
-    "href": "lectures/lecture-08-notes.html#reading-assignment",
-    "title": "Writing and Developing Research Questions",
-    "section": "",
-    "text": "Required:   Ch 4\nRecommended:   Ch 3"
-  },
-  {
-    "objectID": "lectures/lecture-08-notes.html#lecture-slides",
-    "href": "lectures/lecture-08-notes.html#lecture-slides",
-    "title": "Writing and Developing Research Questions",
-    "section": "",
-    "text": "View slides in full screen"
-  },
-  {
     "objectID": "lectures/lecture-06-notes.html",
     "href": "lectures/lecture-06-notes.html",
     "title": "Reproducible Workflows with R & RStudio",
@@ -946,6 +925,20 @@
     "text": "8.2 Next class\n\nBefore class: Complete the assigned reading In class: Introduction to R and RStudio"
   },
   {
+    "objectID": "lectures/lecture-07-notes.html",
+    "href": "lectures/lecture-07-notes.html",
+    "title": "Writing and Developing Research Questions",
+    "section": "",
+    "text": "Required:   Ch 4\nRecommended:   Ch 3"
+  },
+  {
+    "objectID": "lectures/lecture-07-notes.html#reading-assignment",
+    "href": "lectures/lecture-07-notes.html#reading-assignment",
+    "title": "Writing and Developing Research Questions",
+    "section": "",
+    "text": "Required:   Ch 4\nRecommended:   Ch 3"
+  },
+  {
     "objectID": "lectures/lecture-01-slides.html#welcome-to-soci-3040",
     "href": "lectures/lecture-01-slides.html#welcome-to-soci-3040",
     "title": "Introduction + Telling Stories with Data",
@@ -1156,102 +1149,6 @@
     "text": "References\n\n\nAlexander, Rohan. 2023. Telling Stories with Data: With Applications in R. Chapman; Hall/CRC.\n\n\nCrawford, Kate. 2021. Atlas of AI. 1st ed. New Haven: Yale University Press.\n\n\nD’Ignazio, Catherine, and Lauren Klein. 2020. Data Feminism. Massachusetts: The MIT Press. https://data-feminism.mitpress.mit.edu.\n\n\nHamming, Richard. (1997) 2020. The Art of Doing Science and Engineering. 2nd ed. Stripe Press.\n\n\nHuntington-Klein, Nick, Andreu Arenas, Emily Beam, Marco Bertoni, Jeffrey Bloem, Pralhad Burli, Naibin Chen, et al. 2021. “The Influence of Hidden Researcher Decisions in Applied Microeconomics.” Economic Inquiry 59: 944–60. https://doi.org/10.1111/ecin.12992."
   },
   {
-    "objectID": "deliverables/assignment-4.html",
-    "href": "deliverables/assignment-4.html",
-    "title": " Data Stories 4",
-    "section": "",
-    "text": "Assignment information will be posted after the second class. Work will be done in and outside of class.\n\n\n\n\n\n\n\n\n\n\nflowchart TB\n  p[[Plan]]\n  sim[[Simulate]]\n  a[[Acquire]]\n  e[[Explore/Understand]]\n  s[[Share]]\n\n  p --&gt; sim --&gt; a --&gt; e --&gt; s\n\n\n\n\n\n\n\n\nFigure 1: Rohan Alexander’s (2023) Telling Stories with Data workflow",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories  4"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-4.html#assignment-instructions",
-    "href": "deliverables/assignment-4.html#assignment-instructions",
-    "title": " Data Stories 4",
-    "section": "",
-    "text": "Assignment information will be posted after the second class. Work will be done in and outside of class.\n\n\n\n\n\n\n\n\n\n\nflowchart TB\n  p[[Plan]]\n  sim[[Simulate]]\n  a[[Acquire]]\n  e[[Explore/Understand]]\n  s[[Share]]\n\n  p --&gt; sim --&gt; a --&gt; e --&gt; s\n\n\n\n\n\n\n\n\nFigure 1: Rohan Alexander’s (2023) Telling Stories with Data workflow",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories  4"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-4.html#grading-rubric",
-    "href": "deliverables/assignment-4.html#grading-rubric",
-    "title": " Data Stories 4",
-    "section": "Grading Rubric",
-    "text": "Grading Rubric\nWill be posted after the second class.",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories  4"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-4.html#student-work",
-    "href": "deliverables/assignment-4.html#student-work",
-    "title": " Data Stories 4",
-    "section": "Student Work",
-    "text": "Student Work\nWill be posted after the assignment has been completed.",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories  4"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-2.html",
-    "href": "deliverables/assignment-2.html",
-    "title": " Data Stories 2",
-    "section": "",
-    "text": "Assignment information will be posted after the second class. Work will be done in and outside of class.\n\n\n\n\n\n\n\n\n\n\nflowchart TB\n  p[[Plan]]\n  sim[[Simulate]]\n  a[[Acquire]]\n  e[[Explore/Understand]]\n  s[[Share]]\n\n  p --&gt; sim --&gt; a --&gt; e --&gt; s\n\n\n\n\n\n\n\n\nFigure 1: Rohan Alexander’s (2023) Telling Stories with Data workflow",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories 2"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-2.html#assignment-instructions",
-    "href": "deliverables/assignment-2.html#assignment-instructions",
-    "title": " Data Stories 2",
-    "section": "",
-    "text": "Assignment information will be posted after the second class. Work will be done in and outside of class.\n\n\n\n\n\n\n\n\n\n\nflowchart TB\n  p[[Plan]]\n  sim[[Simulate]]\n  a[[Acquire]]\n  e[[Explore/Understand]]\n  s[[Share]]\n\n  p --&gt; sim --&gt; a --&gt; e --&gt; s\n\n\n\n\n\n\n\n\nFigure 1: Rohan Alexander’s (2023) Telling Stories with Data workflow",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories 2"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-2.html#grading-rubric",
-    "href": "deliverables/assignment-2.html#grading-rubric",
-    "title": " Data Stories 2",
-    "section": "Grading Rubric",
-    "text": "Grading Rubric\nWill be posted after the second class.",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories 2"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-2.html#student-work",
-    "href": "deliverables/assignment-2.html#student-work",
-    "title": " Data Stories 2",
-    "section": "Student Work",
-    "text": "Student Work\nWill be posted after the assignment has been completed.",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories 2"
-    ]
-  },
-  {
     "objectID": "lectures/lecture-09-notes.html",
     "href": "lectures/lecture-09-notes.html",
     "title": "Creating Graphs, Tables, & Maps",
@@ -1277,14 +1174,14 @@
     "href": "deliverables/submissions/assignment-4/example-submission-5.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nPraesent ornare dolor turpis, sed tincidunt nisl pretium eget. Curabitur sed iaculis ex, vitae tristique sapien. Quisque nec ex dolor. Quisque ut nisl a libero egestas molestie. Nulla vel porta nulla. Phasellus id pretium arcu. Etiam sed mi pellentesque nibh scelerisque elementum sed at urna. Ut congue molestie nibh, sit amet pretium ligula consectetur eu. Integer consectetur augue justo, at placerat erat posuere at. Ut elementum urna lectus, vitae bibendum neque pulvinar quis. Suspendisse vulputate cursus eros id maximus. Duis pulvinar facilisis massa, et condimentum est viverra congue. Curabitur ornare convallis nisl. Morbi dictum scelerisque turpis quis pellentesque. Etiam lectus risus, luctus lobortis risus ut, rutrum vulputate justo. Nulla facilisi.\nProin sodales neque erat, varius cursus diam tincidunt sit amet. Etiam scelerisque fringilla nisl eu venenatis. Donec sem ipsum, scelerisque ac venenatis quis, hendrerit vel mauris. Praesent semper erat sit amet purus condimentum, sit amet auctor mi feugiat. In hac habitasse platea dictumst. Nunc ac mauris in massa feugiat bibendum id in dui. Praesent accumsan urna at lacinia aliquet. Proin ultricies eu est quis pellentesque. In vel lorem at nisl rhoncus cursus eu quis mi. In eu rutrum ante, quis placerat justo. Etiam euismod nibh nibh, sed elementum nunc imperdiet in. Praesent gravida nunc vel odio lacinia, at tempus nisl placerat. Aenean id ipsum sed est sagittis hendrerit non in tortor."
+    "text": "Example Submission\nEtiam maximus accumsan gravida. Maecenas at nunc dignissim, euismod enim ac, bibendum ipsum. Maecenas vehicula velit in nisl aliquet ultricies. Nam eget massa interdum, maximus arcu vel, pretium erat. Maecenas sit amet tempor purus, vitae aliquet nunc. Vivamus cursus urna velit, eleifend dictum magna laoreet ut. Duis eu erat mollis, blandit magna id, tincidunt ipsum. Integer massa nibh, commodo eu ex vel, venenatis efficitur ligula. Integer convallis lacus elit, maximus eleifend lacus ornare ac. Vestibulum scelerisque viverra urna id lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean eget enim at diam bibendum tincidunt eu non purus. Nullam id magna ultrices, sodales metus viverra, tempus turpis.\nDuis ornare ex ac iaculis pretium. Maecenas sagittis odio id erat pharetra, sit amet consectetur quam sollicitudin. Vivamus pharetra quam purus, nec sagittis risus pretium at. Nullam feugiat, turpis ac accumsan interdum, sem tellus blandit neque, id vulputate diam quam semper nisl. Donec sit amet enim at neque porttitor aliquet. Phasellus facilisis nulla eget placerat eleifend. Vestibulum non egestas eros, eget lobortis ipsum. Nulla rutrum massa eget enim aliquam, id porttitor erat luctus. Nunc sagittis quis eros eu sagittis. Pellentesque dictum, erat at pellentesque sollicitudin, justo augue pulvinar metus, quis rutrum est mi nec felis. Vestibulum efficitur mi lorem, at elementum purus tincidunt a. Aliquam finibus enim magna, vitae pellentesque erat faucibus at. Nulla mauris tellus, imperdiet id lobortis et, dignissim condimentum ipsum. Morbi nulla orci, varius at aliquet sed, facilisis id tortor. Donec ut urna nisi."
   },
   {
     "objectID": "deliverables/submissions/assignment-4/example-submission-3.html",
     "href": "deliverables/submissions/assignment-4/example-submission-3.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nAenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.\nUt ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti."
+    "text": "Example Submission\n\nDuis urna urna, pellentesque eu urna ut, malesuada bibendum dolor. Suspendisse potenti. Vivamus ornare, arcu quis molestie ultrices, magna est accumsan augue, auctor vulputate erat quam quis neque. Nullam scelerisque odio vel ultricies facilisis. Ut porta arcu non magna sagittis lacinia. Cras ornare vulputate lectus a tristique. Pellentesque ac arcu congue, rhoncus mi id, dignissim ligula.\nPraesent ornare dolor turpis, sed tincidunt nisl pretium eget. Curabitur sed iaculis ex, vitae tristique sapien. Quisque nec ex dolor. Quisque ut nisl a libero egestas molestie. Nulla vel porta nulla. Phasellus id pretium arcu. Etiam sed mi pellentesque nibh scelerisque elementum sed at urna. Ut congue molestie nibh, sit amet pretium ligula consectetur eu. Integer consectetur augue justo, at placerat erat posuere at. Ut elementum urna lectus, vitae bibendum neque pulvinar quis. Suspendisse vulputate cursus eros id maximus. Duis pulvinar facilisis massa, et condimentum est viverra congue. Curabitur ornare convallis nisl. Morbi dictum scelerisque turpis quis pellentesque. Etiam lectus risus, luctus lobortis risus ut, rutrum vulputate justo. Nulla facilisi."
   },
   {
     "objectID": "deliverables/submissions/assignment-4/example-submission-1.html",
@@ -1298,21 +1195,21 @@
     "href": "deliverables/submissions/assignment-3/example-submission-4.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nEtiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a, fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio, vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus nec leo maximus blandit.\nMaecenas turpis velit, ultricies non elementum vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra, finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna. Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis."
+    "text": "Example Submission\nEtiam congue quam eget velit convallis, eu sagittis orci vestibulum. Vestibulum at massa turpis. Curabitur ornare ex sed purus vulputate, vitae porta augue rhoncus. Phasellus auctor suscipit purus, vel ultricies nunc. Nunc eleifend nulla ac purus volutpat, id fringilla felis aliquet. Duis vitae porttitor nibh, in rhoncus risus. Vestibulum a est vitae est tristique vehicula. Proin mollis justo id est tempus hendrerit. Praesent suscipit placerat congue. Aliquam eu elit gravida, consequat augue non, ultricies sapien. Nunc ultricies viverra ante, sit amet vehicula ante volutpat id. Etiam tempus purus vitae tellus mollis viverra. Donec at ornare mauris. Aliquam sodales hendrerit ornare. Suspendisse accumsan lacinia sapien, sit amet imperdiet dui molestie ut.\nEtiam non efficitur urna, quis elementum nisi. Mauris posuere a augue vel gravida. Praesent luctus erat et ex iaculis interdum. Nulla vestibulum quam ac nunc consequat vulputate. Nullam iaculis lobortis sem sit amet fringilla. Aliquam semper, metus ut blandit semper, nulla velit fermentum sapien, fermentum ultrices dolor sapien sed leo. Vestibulum molestie faucibus magna, at feugiat nulla ullamcorper a. Aliquam erat volutpat. Praesent scelerisque magna a justo maximus, sit amet suscipit mauris tempor. Nulla nec dolor eget ipsum pellentesque lobortis a in ipsum. Morbi turpis turpis, fringilla a eleifend maximus, viverra nec neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
   },
   {
     "objectID": "deliverables/submissions/assignment-3/example-submission-2.html",
     "href": "deliverables/submissions/assignment-3/example-submission-2.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nEtiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a, fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio, vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus nec leo maximus blandit.\nMaecenas turpis velit, ultricies non elementum vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra, finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna. Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis."
+    "text": "Example Submission\n\nEtiam congue quam eget velit convallis, eu sagittis orci vestibulum. Vestibulum at massa turpis. Curabitur ornare ex sed purus vulputate, vitae porta augue rhoncus. Phasellus auctor suscipit purus, vel ultricies nunc. Nunc eleifend nulla ac purus volutpat, id fringilla felis aliquet. Duis vitae porttitor nibh, in rhoncus risus. Vestibulum a est vitae est tristique vehicula. Proin mollis justo id est tempus hendrerit. Praesent suscipit placerat congue. Aliquam eu elit gravida, consequat augue non, ultricies sapien. Nunc ultricies viverra ante, sit amet vehicula ante volutpat id. Etiam tempus purus vitae tellus mollis viverra. Donec at ornare mauris. Aliquam sodales hendrerit ornare. Suspendisse accumsan lacinia sapien, sit amet imperdiet dui molestie ut.\nEtiam non efficitur urna, quis elementum nisi. Mauris posuere a augue vel gravida. Praesent luctus erat et ex iaculis interdum. Nulla vestibulum quam ac nunc consequat vulputate. Nullam iaculis lobortis sem sit amet fringilla. Aliquam semper, metus ut blandit semper, nulla velit fermentum sapien, fermentum ultrices dolor sapien sed leo. Vestibulum molestie faucibus magna, at feugiat nulla ullamcorper a. Aliquam erat volutpat. Praesent scelerisque magna a justo maximus, sit amet suscipit mauris tempor. Nulla nec dolor eget ipsum pellentesque lobortis a in ipsum. Morbi turpis turpis, fringilla a eleifend maximus, viverra nec neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
   },
   {
     "objectID": "deliverables/submissions/assignment-2/example-submission-5.html",
     "href": "deliverables/submissions/assignment-2/example-submission-5.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nAenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.\nUt ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti."
+    "text": "Example Submission\nEtiam non efficitur urna, quis elementum nisi. Mauris posuere a augue vel gravida. Praesent luctus erat et ex iaculis interdum. Nulla vestibulum quam ac nunc consequat vulputate. Nullam iaculis lobortis sem sit amet fringilla. Aliquam semper, metus ut blandit semper, nulla velit fermentum sapien, fermentum ultrices dolor sapien sed leo. Vestibulum molestie faucibus magna, at feugiat nulla ullamcorper a. Aliquam erat volutpat. Praesent scelerisque magna a justo maximus, sit amet suscipit mauris tempor. Nulla nec dolor eget ipsum pellentesque lobortis a in ipsum. Morbi turpis turpis, fringilla a eleifend maximus, viverra nec neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.\nDuis urna urna, pellentesque eu urna ut, malesuada bibendum dolor. Suspendisse potenti. Vivamus ornare, arcu quis molestie ultrices, magna est accumsan augue, auctor vulputate erat quam quis neque. Nullam scelerisque odio vel ultricies facilisis. Ut porta arcu non magna sagittis lacinia. Cras ornare vulputate lectus a tristique. Pellentesque ac arcu congue, rhoncus mi id, dignissim ligula."
   },
   {
     "objectID": "deliverables/submissions/assignment-2/example-submission-3.html",
@@ -1326,28 +1223,28 @@
     "href": "deliverables/submissions/assignment-2/example-submission-1.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nMaecenas turpis velit, ultricies non elementum vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra, finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna. Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis.\nVestibulum ultrices, tortor at mattis porta, odio nisi rutrum nulla, sit amet tincidunt eros quam facilisis tellus. Fusce eleifend lectus in elementum lacinia. Nam auctor nunc in massa ullamcorper, sit amet auctor ante accumsan. Nam ut varius metus. Curabitur eget tristique leo. Cras finibus euismod erat eget elementum. Integer vel placerat ex. Ut id eros quis lectus lacinia venenatis hendrerit vel ante."
+    "text": "Example Submission\n\nNullam dapibus cursus dolor sit amet consequat. Nulla facilisi. Curabitur vel nulla non magna lacinia tincidunt. Duis porttitor quam leo, et blandit velit efficitur ut. Etiam auctor tincidunt porttitor. Phasellus sed accumsan mi. Fusce ut erat dui. Suspendisse eu augue eget turpis condimentum finibus eu non lorem. Donec finibus eros eu ante condimentum, sed pharetra sapien sagittis. Phasellus non dolor ac ante mollis auctor nec et sapien. Pellentesque vulputate at nisi eu tincidunt. Vestibulum at dolor aliquam, hendrerit purus eu, eleifend massa. Morbi consectetur eros id tincidunt gravida. Fusce ut enim quis orci hendrerit lacinia sed vitae enim.\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet."
   },
   {
     "objectID": "deliverables/submissions/assignment-1/example-submission-4.html",
     "href": "deliverables/submissions/assignment-1/example-submission-4.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
+    "text": "Example Submission\nNullam dapibus cursus dolor sit amet consequat. Nulla facilisi. Curabitur vel nulla non magna lacinia tincidunt. Duis porttitor quam leo, et blandit velit efficitur ut. Etiam auctor tincidunt porttitor. Phasellus sed accumsan mi. Fusce ut erat dui. Suspendisse eu augue eget turpis condimentum finibus eu non lorem. Donec finibus eros eu ante condimentum, sed pharetra sapien sagittis. Phasellus non dolor ac ante mollis auctor nec et sapien. Pellentesque vulputate at nisi eu tincidunt. Vestibulum at dolor aliquam, hendrerit purus eu, eleifend massa. Morbi consectetur eros id tincidunt gravida. Fusce ut enim quis orci hendrerit lacinia sed vitae enim.\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet."
   },
   {
     "objectID": "deliverables/submissions/assignment-1/example-submission-2.html",
     "href": "deliverables/submissions/assignment-1/example-submission-2.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
+    "text": "Example Submission\n\nNullam dapibus cursus dolor sit amet consequat. Nulla facilisi. Curabitur vel nulla non magna lacinia tincidunt. Duis porttitor quam leo, et blandit velit efficitur ut. Etiam auctor tincidunt porttitor. Phasellus sed accumsan mi. Fusce ut erat dui. Suspendisse eu augue eget turpis condimentum finibus eu non lorem. Donec finibus eros eu ante condimentum, sed pharetra sapien sagittis. Phasellus non dolor ac ante mollis auctor nec et sapien. Pellentesque vulputate at nisi eu tincidunt. Vestibulum at dolor aliquam, hendrerit purus eu, eleifend massa. Morbi consectetur eros id tincidunt gravida. Fusce ut enim quis orci hendrerit lacinia sed vitae enim.\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet."
   },
   {
     "objectID": "syllabus/schedule.html",
     "href": "syllabus/schedule.html",
     "title": " Course Schedule",
     "section": "",
-    "text": "In the table below,\n\n refers to Alexander’s (2023) Telling Stories with Data (required)\n refers to Healy’s (2019) Data Visualization: A Practical Introduction (supplementary / optional)\n refers to McElreath’s (2023) Statistical Rethinking 2023 Lectures (supplementary / optional)\n\nEach file icon links directly to the assigned or supplementary materials.\n\n\n\n\n\n\n\n\n\nNo.\n\n\nClass Date\n\n\nClass & Lab Notes + Slides\n\n\n Required\n\n\n Recommended\n\n\nDue by 5:00 pm\n\n\n\n\n\n\n01\n\n\n1/7/25\n\n\nIntroduction + Telling Stories with Data\n\n\nBrowse this site\n\n\n \n\n\n \n\n\n\n\n02\n\n\n1/9/25\n\n\nTelling Stories with Data + R & the Tidyverse\n\n\n  Ch 1\n\n\n  Appendix A\n\n\n \n\n\n\n\n03\n\n\n1/14/25\n\n\nData Analysis Workflow – The Firehose\n\n\n  Ch 2\n\n\n  Ch 1\n\n\n \n\n\n\n\n04\n\n\n1/16/25\n\n\nData Analysis Workflow – The Firehose\n\n\n  Ch 2\n\n\n  Ch 1\n\n\n \n\n\n\n\n05\n\n\n1/21/25\n\n\nReproducible Workflows with R & RStudio\n\n\n  Ch 3\n\n\n  Ch 2\n\n\n \n\n\n\n\n06\n\n\n1/23/25\n\n\nReproducible Workflows with R & RStudio\n\n\n  Ch 3\n\n\n  Ch 2\n\n\n \n\n\n\n\n07\n\n\n1/28/25\n\n\nWriting and Developing Research Questions\n\n\n  Ch 4\n\n\n  Ch 3\n\n\nData Stories 1\n\n\n\n\n08\n\n\n1/30/25\n\n\nWriting and Developing Research Questions\n\n\n  Ch 4\n\n\n  Ch 3\n\n\n \n\n\n\n\n09\n\n\n2/4/25\n\n\nCreating Graphs, Tables, & Maps\n\n\n  Ch 5\n\n\n  Ch 4\n\n\n \n\n\n\n\n10\n\n\n2/6/25\n\n\nCreating Graphs, Tables, & Maps\n\n\n  Ch 5\n\n\n  Ch 4\n\n\n \n\n\n\n\n11\n\n\n2/11/25\n\n\nMeasurement, Censuses, and Sampling\n\n\n  Ch 6\n\n\n  Ch 5\n\n\n \n\n\n\n\n12\n\n\n2/13/25\n\n\nMeasurement, Censuses, and Sampling\n\n\n  Ch 6\n\n\n  Ch 5\n\n\n \n\n\n\n\n13\n\n\n2/18/25\n\n\nAPIs, Scraping, and Parsing\n\n\n  Ch 7\n\n\n  Ch 7\n\n\n \n\n\n\n\n14\n\n\n2/20/25\n\n\nAPIs, Scraping, and Parsing\n\n\n  Ch 7\n\n\n  Ch 7\n\n\nData Stories 2\n\n\n\n\n15\n\n\n3/4/25\n\n\nExperiments and Surveys\n\n\n  Ch 8\n\n\n  Ch 8\n\n\n \n\n\n\n\n16\n\n\n3/6/25\n\n\nExperiments and Surveys\n\n\n  Ch 8\n\n\n  Ch 8\n\n\n \n\n\n\n\n17\n\n\n3/11/25\n\n\nCleaning, Preparing, and Testing\n\n\n  Ch 9\n\n\n  Statistical Golems\n\n\n \n\n\n\n\n18\n\n\n3/13/25\n\n\nCleaning, Preparing, and Testing\n\n\n  Ch 9\n\n\n  Statistical Golems\n\n\n \n\n\n\n\n19\n\n\n3/18/25\n\n\nExploratory Data Analysis (EDA)\n\n\n  Ch 11\n\n\n  The Garden of Forking Data\n\n\n \n\n\n\n\n20\n\n\n3/20/25\n\n\nExploratory Data Analysis (EDA)\n\n\n  Ch 11\n\n\n  The Garden of Forking Data\n\n\nData Stories 3\n\n\n\n\n21\n\n\n3/25/25\n\n\nLinear Models\n\n\n  Ch 12\n\n\n  Geocentric Models\n\n\n \n\n\n\n\n22\n\n\n3/27/25\n\n\nLinear Models\n\n\n  Ch 12\n\n\n  Geocentric Models\n\n\n \n\n\n\n\n23\n\n\n4/1/25\n\n\nGeneralized Linear Models (GLMs)\n\n\n  Ch 13\n\n\n  Ch 6\n\n\n \n\n\n\n\n24\n\n\n4/3/25\n\n\nGeneralized Linear Models (GLMs)\n\n\n  Ch 13\n\n\n  Ch 6\n\n\n \n\n\n\n\n25\n\n\n4/8/25\n\n\nProject Work\n\n\n \n\n\n \n\n\nData Stories 4\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\n\n\nReferences\n\nAlexander, Rohan. 2023. Telling Stories with Data: With Applications in R. Chapman; Hall/CRC.\n\n\nHealy, Kieran. 2019. Data Visualization: A Practical Introduction. Princeton University Press.\n\n\nMcElreath, Richard. 2023. “Statistical Rethinking Lectures.” YouTube. https://www.youtube.com/playlist?list=PLDcUM9US4XdPz-KxHM4XHt7uUVGWWVSus.",
+    "text": "In the table below,\n\n refers to Alexander’s (2023) Telling Stories with Data (required)\n refers to Healy’s (2019) Data Visualization: A Practical Introduction (supplementary / optional)\n refers to McElreath’s (2023) Statistical Rethinking 2023 Lectures (supplementary / optional)\n\nEach file icon links directly to the assigned or supplementary materials.\n\n\n\n\n\n\n\n\n\nNo.\n\n\nClass Date\n\n\nClass & Lab Notes + Slides\n\n\n Required\n\n\n Recommended\n\n\nDue by 5:00 pm\n\n\n\n\n\n\n01\n\n\n1/7/25\n\n\nIntroduction + Telling Stories with Data\n\n\nBrowse this site\n\n\n \n\n\n \n\n\n\n\n02\n\n\n1/9/25\n\n\nTelling Stories with Data + R & the Tidyverse\n\n\n  Ch 1\n\n\n  Appendix A\n\n\n \n\n\n\n\n03\n\n\n1/14/25\n\n\nData Analysis Workflow – The Firehose\n\n\n  Ch 2\n\n\n  Ch 1\n\n\n \n\n\n\n\n04\n\n\n1/16/25\n\n\nData Analysis Workflow – The Firehose\n\n\n  Ch 2\n\n\n  Ch 1\n\n\n \n\n\n\n\n05\n\n\n1/21/25\n\n\nReproducible Workflows with R & RStudio\n\n\n  Ch 3\n\n\n  Ch 2\n\n\n \n\n\n\n\n06\n\n\n1/23/25\n\n\nReproducible Workflows with R & RStudio\n\n\n  Ch 3\n\n\n  Ch 2\n\n\n \n\n\n\n\n07\n\n\n1/28/25\n\n\nWriting and Developing Research Questions\n\n\n  Ch 4\n\n\n  Ch 3\n\n\n \n\n\n\n\n08\n\n\n1/30/25\n\n\nWriting and Developing Research Questions\n\n\n  Ch 4\n\n\n  Ch 3\n\n\nData Stories 1\n\n\n\n\n09\n\n\n2/4/25\n\n\nCreating Graphs, Tables, & Maps\n\n\n  Ch 5\n\n\n  Ch 4\n\n\n \n\n\n\n\n10\n\n\n2/6/25\n\n\nCreating Graphs, Tables, & Maps\n\n\n  Ch 5\n\n\n  Ch 4\n\n\n \n\n\n\n\n11\n\n\n2/11/25\n\n\nMeasurement, Censuses, and Sampling\n\n\n  Ch 6\n\n\n  Ch 5\n\n\n \n\n\n\n\n12\n\n\n2/13/25\n\n\nMeasurement, Censuses, and Sampling\n\n\n  Ch 6\n\n\n  Ch 5\n\n\n \n\n\n\n\n13\n\n\n2/18/25\n\n\nAPIs, Scraping, and Parsing\n\n\n  Ch 7\n\n\n  Ch 7\n\n\n \n\n\n\n\n14\n\n\n2/20/25\n\n\nAPIs, Scraping, and Parsing\n\n\n  Ch 7\n\n\n  Ch 7\n\n\nData Stories 2\n\n\n\n\n15\n\n\n3/4/25\n\n\nExperiments and Surveys\n\n\n  Ch 8\n\n\n  Ch 8\n\n\n \n\n\n\n\n16\n\n\n3/6/25\n\n\nExperiments and Surveys\n\n\n  Ch 8\n\n\n  Ch 8\n\n\n \n\n\n\n\n17\n\n\n3/11/25\n\n\nCleaning, Preparing, and Testing\n\n\n  Ch 9\n\n\n  Statistical Golems\n\n\n \n\n\n\n\n18\n\n\n3/13/25\n\n\nCleaning, Preparing, and Testing\n\n\n  Ch 9\n\n\n  Statistical Golems\n\n\n \n\n\n\n\n19\n\n\n3/18/25\n\n\nExploratory Data Analysis (EDA)\n\n\n  Ch 11\n\n\n  The Garden of Forking Data\n\n\n \n\n\n\n\n20\n\n\n3/20/25\n\n\nExploratory Data Analysis (EDA)\n\n\n  Ch 11\n\n\n  The Garden of Forking Data\n\n\nData Stories 3\n\n\n\n\n21\n\n\n3/25/25\n\n\nLinear Models\n\n\n  Ch 12\n\n\n  Geocentric Models\n\n\n \n\n\n\n\n22\n\n\n3/27/25\n\n\nLinear Models\n\n\n  Ch 12\n\n\n  Geocentric Models\n\n\n \n\n\n\n\n23\n\n\n4/1/25\n\n\nGeneralized Linear Models (GLMs)\n\n\n  Ch 13\n\n\n  Ch 6\n\n\n \n\n\n\n\n24\n\n\n4/3/25\n\n\nGeneralized Linear Models (GLMs)\n\n\n  Ch 13\n\n\n  Ch 6\n\n\n \n\n\n\n\n25\n\n\n4/8/25\n\n\nProject Work\n\n\n \n\n\n \n\n\nData Stories 4\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\n\n\nReferences\n\nAlexander, Rohan. 2023. Telling Stories with Data: With Applications in R. Chapman; Hall/CRC.\n\n\nHealy, Kieran. 2019. Data Visualization: A Practical Introduction. Princeton University Press.\n\n\nMcElreath, Richard. 2023. “Statistical Rethinking Lectures.” YouTube. https://www.youtube.com/playlist?list=PLDcUM9US4XdPz-KxHM4XHt7uUVGWWVSus.",
     "crumbs": [
       "Syllabus",
       "<strong>SYLLABUS</strong>",
@@ -1449,6 +1346,123 @@
     "title": "Data Analysis Workflow – The Firehose",
     "section": "1 References",
     "text": "1 References"
+  },
+  {
+    "objectID": "deliverables/assignment-4.html",
+    "href": "deliverables/assignment-4.html",
+    "title": " Data Stories 4",
+    "section": "",
+    "text": "Assignment information will be finalized by the end of the week.",
+    "crumbs": [
+      "Syllabus",
+      "<strong>ASSIGNMENTS</strong>",
+      "&nbsp;&nbsp;Data Stories  4"
+    ]
+  },
+  {
+    "objectID": "deliverables/assignment-4.html#assignment-instructions",
+    "href": "deliverables/assignment-4.html#assignment-instructions",
+    "title": " Data Stories 4",
+    "section": "",
+    "text": "Assignment information will be finalized by the end of the week.",
+    "crumbs": [
+      "Syllabus",
+      "<strong>ASSIGNMENTS</strong>",
+      "&nbsp;&nbsp;Data Stories  4"
+    ]
+  },
+  {
+    "objectID": "deliverables/assignment-2.html",
+    "href": "deliverables/assignment-2.html",
+    "title": " Data Stories 2",
+    "section": "",
+    "text": "Assignment information will be finalized by the end of the week.",
+    "crumbs": [
+      "Syllabus",
+      "<strong>ASSIGNMENTS</strong>",
+      "&nbsp;&nbsp;Data Stories 2"
+    ]
+  },
+  {
+    "objectID": "deliverables/assignment-2.html#assignment-instructions",
+    "href": "deliverables/assignment-2.html#assignment-instructions",
+    "title": " Data Stories 2",
+    "section": "",
+    "text": "Assignment information will be finalized by the end of the week.",
+    "crumbs": [
+      "Syllabus",
+      "<strong>ASSIGNMENTS</strong>",
+      "&nbsp;&nbsp;Data Stories 2"
+    ]
+  },
+  {
+    "objectID": "lectures/lecture-08-content.html",
+    "href": "lectures/lecture-08-content.html",
+    "title": "Work on Assignment 1 in Class",
+    "section": "",
+    "text": "Work on Assignment 1 in Class\nYou may complete the assignment individually or in groups of 2-3. If working collaboratively, each member must submit their own assignment with the group’s names listed in the author metadata above.\nSteps to Complete the Assignment:\n\nCreate a free or student account ($5/month) with PositCloud.\nCreate a new workspace.\nIn the workspace, create a new project from a Github repository using this link: https://github.com/mclevey/3040-2025-assignment-1-posit.git.\nOpen assignment-1.qmd and update the author metadata at the top of the file.\nFollow the instructions in the notebook, executing the code cells as you go. Note that one of the instructions asks you to insert a citation to the assigned reading. Citation information is already entered into the refs.bib file.\n“Knit” your document to an HTML file. Make sure it executes without errors and preview the result.\nSave the HTML file and upload it to the Dropbox on Brightspace."
+  },
+  {
+    "objectID": "lectures/lecture-05-content.html",
+    "href": "lectures/lecture-05-content.html",
+    "title": "🔥 Quantitative Research Methods",
+    "section": "",
+    "text": "Sociology Student Society? Rep?\nHave made some decisions about pacing and assignments\n\npacing and delivery: more walkthroughs, pace seems OK so far?\nfirst assignment: basic use of RStudio, the workflow components, more writing, limited code, will not include Git or GitHub\n\n\nToday:\n\nR Projects\nQuarto – examples form chapter, more metadata\nLoad the data from last class"
+  },
+  {
+    "objectID": "lectures/lecture-07-content.html",
+    "href": "lectures/lecture-07-content.html",
+    "title": "Work on Assignment 1 in Class",
+    "section": "",
+    "text": "Work on Assignment 1 in Class\nYou may complete the assignment individually or in groups of 2-3. If working collaboratively, each member must submit their own assignment with the group’s names listed in the author metadata above.\nSteps to Complete the Assignment:\n\nCreate a free or student account ($5/month) with PositCloud.\nCreate a new workspace.\nIn the workspace, create a new project from a Github repository using this link: https://github.com/mclevey/3040-2025-assignment-1-posit.git.\nOpen assignment-1.qmd and update the author metadata at the top of the file.\nFollow the instructions in the notebook, executing the code cells as you go. Note that one of the instructions asks you to insert a citation to the assigned reading. Citation information is already entered into the refs.bib file.\n“Knit” your document to an HTML file. Make sure it executes without errors and preview the result.\nSave the HTML file and upload it to the Dropbox on Brightspace."
+  },
+  {
+    "objectID": "deliverables/assignment-1.html",
+    "href": "deliverables/assignment-1.html",
+    "title": " Data Stories 1",
+    "section": "",
+    "text": "You may complete the assignment individually or in groups of 2-3. If working collaboratively, each member must submit their own assignment with the group’s names listed in the author metadata above.\nSteps to Complete the Assignment:\n\nCreate a free or student account ($5/month) with PositCloud.\nCreate a new workspace.\nIn the workspace, create a new project from a Github repository using this link: https://github.com/mclevey/3040-2025-assignment-1-posit.git.\nOpen assignment-1.qmd and update the author metadata at the top of the file.\nFollow the instructions in the notebook, executing the code cells as you go. Note that one of the instructions asks you to insert a citation to the assigned reading. Citation information is already entered into the refs.bib file.\n“Knit” your document to an HTML file. Make sure it executes without errors and preview the result.\nSave the HTML file and upload it to the Dropbox on Brightspace.",
+    "crumbs": [
+      "Syllabus",
+      "<strong>ASSIGNMENTS</strong>",
+      "&nbsp;&nbsp;Data Stories 1"
+    ]
+  },
+  {
+    "objectID": "deliverables/assignment-1.html#assignment-1-overview",
+    "href": "deliverables/assignment-1.html#assignment-1-overview",
+    "title": " Data Stories 1",
+    "section": "",
+    "text": "You may complete the assignment individually or in groups of 2-3. If working collaboratively, each member must submit their own assignment with the group’s names listed in the author metadata above.\nSteps to Complete the Assignment:\n\nCreate a free or student account ($5/month) with PositCloud.\nCreate a new workspace.\nIn the workspace, create a new project from a Github repository using this link: https://github.com/mclevey/3040-2025-assignment-1-posit.git.\nOpen assignment-1.qmd and update the author metadata at the top of the file.\nFollow the instructions in the notebook, executing the code cells as you go. Note that one of the instructions asks you to insert a citation to the assigned reading. Citation information is already entered into the refs.bib file.\n“Knit” your document to an HTML file. Make sure it executes without errors and preview the result.\nSave the HTML file and upload it to the Dropbox on Brightspace.",
+    "crumbs": [
+      "Syllabus",
+      "<strong>ASSIGNMENTS</strong>",
+      "&nbsp;&nbsp;Data Stories 1"
+    ]
+  },
+  {
+    "objectID": "deliverables/assignment-3.html",
+    "href": "deliverables/assignment-3.html",
+    "title": " Data Stories 3",
+    "section": "",
+    "text": "Assignment information will be finalized by the end of the week.",
+    "crumbs": [
+      "Syllabus",
+      "<strong>ASSIGNMENTS</strong>",
+      "&nbsp;&nbsp;Data Stories 3"
+    ]
+  },
+  {
+    "objectID": "deliverables/assignment-3.html#assignment-instructions",
+    "href": "deliverables/assignment-3.html#assignment-instructions",
+    "title": " Data Stories 3",
+    "section": "",
+    "text": "Assignment information will be finalized by the end of the week.",
+    "crumbs": [
+      "Syllabus",
+      "<strong>ASSIGNMENTS</strong>",
+      "&nbsp;&nbsp;Data Stories 3"
+    ]
   },
   {
     "objectID": "deliverables/assignment-5.html",
@@ -1582,21 +1596,21 @@
     "href": "deliverables/submissions/assignment-1/example-submission-1.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nNullam dapibus cursus dolor sit amet consequat. Nulla facilisi. Curabitur vel nulla non magna lacinia tincidunt. Duis porttitor quam leo, et blandit velit efficitur ut. Etiam auctor tincidunt porttitor. Phasellus sed accumsan mi. Fusce ut erat dui. Suspendisse eu augue eget turpis condimentum finibus eu non lorem. Donec finibus eros eu ante condimentum, sed pharetra sapien sagittis. Phasellus non dolor ac ante mollis auctor nec et sapien. Pellentesque vulputate at nisi eu tincidunt. Vestibulum at dolor aliquam, hendrerit purus eu, eleifend massa. Morbi consectetur eros id tincidunt gravida. Fusce ut enim quis orci hendrerit lacinia sed vitae enim.\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet."
+    "text": "Example Submission\n\nDuis ornare ex ac iaculis pretium. Maecenas sagittis odio id erat pharetra, sit amet consectetur quam sollicitudin. Vivamus pharetra quam purus, nec sagittis risus pretium at. Nullam feugiat, turpis ac accumsan interdum, sem tellus blandit neque, id vulputate diam quam semper nisl. Donec sit amet enim at neque porttitor aliquet. Phasellus facilisis nulla eget placerat eleifend. Vestibulum non egestas eros, eget lobortis ipsum. Nulla rutrum massa eget enim aliquam, id porttitor erat luctus. Nunc sagittis quis eros eu sagittis. Pellentesque dictum, erat at pellentesque sollicitudin, justo augue pulvinar metus, quis rutrum est mi nec felis. Vestibulum efficitur mi lorem, at elementum purus tincidunt a. Aliquam finibus enim magna, vitae pellentesque erat faucibus at. Nulla mauris tellus, imperdiet id lobortis et, dignissim condimentum ipsum. Morbi nulla orci, varius at aliquet sed, facilisis id tortor. Donec ut urna nisi.\nAenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat."
   },
   {
     "objectID": "deliverables/submissions/assignment-1/example-submission-3.html",
     "href": "deliverables/submissions/assignment-1/example-submission-3.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sagittis posuere ligula sit amet lacinia. Duis dignissim pellentesque magna, rhoncus congue sapien finibus mollis. Ut eu sem laoreet, vehicula ipsum in, convallis erat. Vestibulum magna sem, blandit pulvinar augue sit amet, auctor malesuada sapien. Nullam faucibus leo eget eros hendrerit, non laoreet ipsum lacinia. Curabitur cursus diam elit, non tempus ante volutpat a. Quisque hendrerit blandit purus non fringilla. Integer sit amet elit viverra ante dapibus semper. Vestibulum viverra rutrum enim, at luctus enim posuere eu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\nNunc ac dignissim magna. Vestibulum vitae egestas elit. Proin feugiat leo quis ante condimentum, eu ornare mauris feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris cursus laoreet ex, dignissim bibendum est posuere iaculis. Suspendisse et maximus elit. In fringilla gravida ornare. Aenean id lectus pulvinar, sagittis felis nec, rutrum risus. Nam vel neque eu arcu blandit fringilla et in quam. Aliquam luctus est sit amet vestibulum eleifend. Phasellus elementum sagittis molestie. Proin tempor lorem arcu, at condimentum purus volutpat eu. Fusce et pellentesque ligula. Pellentesque id tellus at erat luctus fringilla. Suspendisse potenti."
+    "text": "Example Submission\n\nNullam dapibus cursus dolor sit amet consequat. Nulla facilisi. Curabitur vel nulla non magna lacinia tincidunt. Duis porttitor quam leo, et blandit velit efficitur ut. Etiam auctor tincidunt porttitor. Phasellus sed accumsan mi. Fusce ut erat dui. Suspendisse eu augue eget turpis condimentum finibus eu non lorem. Donec finibus eros eu ante condimentum, sed pharetra sapien sagittis. Phasellus non dolor ac ante mollis auctor nec et sapien. Pellentesque vulputate at nisi eu tincidunt. Vestibulum at dolor aliquam, hendrerit purus eu, eleifend massa. Morbi consectetur eros id tincidunt gravida. Fusce ut enim quis orci hendrerit lacinia sed vitae enim.\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet."
   },
   {
     "objectID": "deliverables/submissions/assignment-1/example-submission-5.html",
     "href": "deliverables/submissions/assignment-1/example-submission-5.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nMaecenas turpis velit, ultricies non elementum vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra, finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna. Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis.\nVestibulum ultrices, tortor at mattis porta, odio nisi rutrum nulla, sit amet tincidunt eros quam facilisis tellus. Fusce eleifend lectus in elementum lacinia. Nam auctor nunc in massa ullamcorper, sit amet auctor ante accumsan. Nam ut varius metus. Curabitur eget tristique leo. Cras finibus euismod erat eget elementum. Integer vel placerat ex. Ut id eros quis lectus lacinia venenatis hendrerit vel ante."
+    "text": "Example Submission\nNullam dapibus cursus dolor sit amet consequat. Nulla facilisi. Curabitur vel nulla non magna lacinia tincidunt. Duis porttitor quam leo, et blandit velit efficitur ut. Etiam auctor tincidunt porttitor. Phasellus sed accumsan mi. Fusce ut erat dui. Suspendisse eu augue eget turpis condimentum finibus eu non lorem. Donec finibus eros eu ante condimentum, sed pharetra sapien sagittis. Phasellus non dolor ac ante mollis auctor nec et sapien. Pellentesque vulputate at nisi eu tincidunt. Vestibulum at dolor aliquam, hendrerit purus eu, eleifend massa. Morbi consectetur eros id tincidunt gravida. Fusce ut enim quis orci hendrerit lacinia sed vitae enim.\nNulla eget cursus ipsum. Vivamus porttitor leo diam, sed volutpat lectus facilisis sit amet. Maecenas et pulvinar metus. Ut at dignissim tellus. In in tincidunt elit. Etiam vulputate lobortis arcu, vel faucibus leo lobortis ac. Aliquam erat volutpat. In interdum orci ac est euismod euismod. Nunc eleifend tristique risus, at lacinia odio commodo in. Sed aliquet ligula odio, sed tempor neque ultricies sit amet."
   },
   {
     "objectID": "deliverables/submissions/assignment-2/example-submission-2.html",
@@ -1617,14 +1631,14 @@
     "href": "deliverables/submissions/assignment-3/example-submission-1.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nAenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.\nUt ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti."
+    "text": "Example Submission\n\nEtiam non efficitur urna, quis elementum nisi. Mauris posuere a augue vel gravida. Praesent luctus erat et ex iaculis interdum. Nulla vestibulum quam ac nunc consequat vulputate. Nullam iaculis lobortis sem sit amet fringilla. Aliquam semper, metus ut blandit semper, nulla velit fermentum sapien, fermentum ultrices dolor sapien sed leo. Vestibulum molestie faucibus magna, at feugiat nulla ullamcorper a. Aliquam erat volutpat. Praesent scelerisque magna a justo maximus, sit amet suscipit mauris tempor. Nulla nec dolor eget ipsum pellentesque lobortis a in ipsum. Morbi turpis turpis, fringilla a eleifend maximus, viverra nec neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.\nDuis urna urna, pellentesque eu urna ut, malesuada bibendum dolor. Suspendisse potenti. Vivamus ornare, arcu quis molestie ultrices, magna est accumsan augue, auctor vulputate erat quam quis neque. Nullam scelerisque odio vel ultricies facilisis. Ut porta arcu non magna sagittis lacinia. Cras ornare vulputate lectus a tristique. Pellentesque ac arcu congue, rhoncus mi id, dignissim ligula."
   },
   {
     "objectID": "deliverables/submissions/assignment-3/example-submission-3.html",
     "href": "deliverables/submissions/assignment-3/example-submission-3.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nEtiam quis tortor luctus, pellentesque ante a, finibus dolor. Phasellus in nibh et magna pulvinar malesuada. Ut nisl ex, sagittis at sollicitudin et, sollicitudin id nunc. In id porta urna. Proin porta dolor dolor, vel dapibus nisi lacinia in. Pellentesque ante mauris, ornare non euismod a, fermentum ut sapien. Proin sed vehicula enim. Aliquam tortor odio, vestibulum vitae odio in, tempor molestie justo. Praesent maximus lacus nec leo maximus blandit.\nMaecenas turpis velit, ultricies non elementum vel, luctus nec nunc. Nulla a diam interdum, faucibus sapien viverra, finibus metus. Donec non tortor diam. In ut elit aliquet, bibendum sem et, aliquam tortor. Donec congue, sem at rhoncus ultrices, nunc augue cursus erat, quis porttitor mauris libero ut ex. Nullam quis leo urna. Donec faucibus ligula eget pellentesque interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rhoncus interdum erat ut ultricies. Aenean tempus ex non elit suscipit, quis dignissim enim efficitur. Proin laoreet enim massa, vitae laoreet nulla mollis quis."
+    "text": "Example Submission\n\nEtiam congue quam eget velit convallis, eu sagittis orci vestibulum. Vestibulum at massa turpis. Curabitur ornare ex sed purus vulputate, vitae porta augue rhoncus. Phasellus auctor suscipit purus, vel ultricies nunc. Nunc eleifend nulla ac purus volutpat, id fringilla felis aliquet. Duis vitae porttitor nibh, in rhoncus risus. Vestibulum a est vitae est tristique vehicula. Proin mollis justo id est tempus hendrerit. Praesent suscipit placerat congue. Aliquam eu elit gravida, consequat augue non, ultricies sapien. Nunc ultricies viverra ante, sit amet vehicula ante volutpat id. Etiam tempus purus vitae tellus mollis viverra. Donec at ornare mauris. Aliquam sodales hendrerit ornare. Suspendisse accumsan lacinia sapien, sit amet imperdiet dui molestie ut.\nEtiam non efficitur urna, quis elementum nisi. Mauris posuere a augue vel gravida. Praesent luctus erat et ex iaculis interdum. Nulla vestibulum quam ac nunc consequat vulputate. Nullam iaculis lobortis sem sit amet fringilla. Aliquam semper, metus ut blandit semper, nulla velit fermentum sapien, fermentum ultrices dolor sapien sed leo. Vestibulum molestie faucibus magna, at feugiat nulla ullamcorper a. Aliquam erat volutpat. Praesent scelerisque magna a justo maximus, sit amet suscipit mauris tempor. Nulla nec dolor eget ipsum pellentesque lobortis a in ipsum. Morbi turpis turpis, fringilla a eleifend maximus, viverra nec neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
   },
   {
     "objectID": "deliverables/submissions/assignment-3/example-submission-5.html",
@@ -1638,14 +1652,14 @@
     "href": "deliverables/submissions/assignment-4/example-submission-2.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\n\nAenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.\nUt ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti."
+    "text": "Example Submission\n\nVestibulum ultrices, tortor at mattis porta, odio nisi rutrum nulla, sit amet tincidunt eros quam facilisis tellus. Fusce eleifend lectus in elementum lacinia. Nam auctor nunc in massa ullamcorper, sit amet auctor ante accumsan. Nam ut varius metus. Curabitur eget tristique leo. Cras finibus euismod erat eget elementum. Integer vel placerat ex. Ut id eros quis lectus lacinia venenatis hendrerit vel ante.\nEtiam congue quam eget velit convallis, eu sagittis orci vestibulum. Vestibulum at massa turpis. Curabitur ornare ex sed purus vulputate, vitae porta augue rhoncus. Phasellus auctor suscipit purus, vel ultricies nunc. Nunc eleifend nulla ac purus volutpat, id fringilla felis aliquet. Duis vitae porttitor nibh, in rhoncus risus. Vestibulum a est vitae est tristique vehicula. Proin mollis justo id est tempus hendrerit. Praesent suscipit placerat congue. Aliquam eu elit gravida, consequat augue non, ultricies sapien. Nunc ultricies viverra ante, sit amet vehicula ante volutpat id. Etiam tempus purus vitae tellus mollis viverra. Donec at ornare mauris. Aliquam sodales hendrerit ornare. Suspendisse accumsan lacinia sapien, sit amet imperdiet dui molestie ut."
   },
   {
     "objectID": "deliverables/submissions/assignment-4/example-submission-4.html",
     "href": "deliverables/submissions/assignment-4/example-submission-4.html",
     "title": "This is an Example Submission",
     "section": "",
-    "text": "Example Submission\nAenean placerat luctus tortor vitae molestie. Nulla at aliquet nulla. Sed efficitur tellus orci, sed fringilla lectus laoreet eget. Vivamus maximus quam sit amet arcu dignissim, sed accumsan massa ullamcorper. Sed iaculis tincidunt feugiat. Nulla in est at nunc ultricies dictum ut vitae nunc. Aenean convallis vel diam at malesuada. Suspendisse arcu libero, vehicula tempus ultrices a, placerat sit amet tortor. Sed dictum id nulla commodo mattis. Aliquam mollis, nunc eu tristique faucibus, purus lacus tincidunt nulla, ac pretium lorem nunc ut enim. Curabitur eget mattis nisl, vitae sodales augue. Nam felis massa, bibendum sit amet nulla vel, vulputate rutrum lacus. Aenean convallis odio pharetra nulla mattis consequat.\nUt ut condimentum augue, nec eleifend nisl. Sed facilisis egestas odio ac pretium. Pellentesque consequat magna sed venenatis sagittis. Vivamus feugiat lobortis magna vitae accumsan. Pellentesque euismod malesuada hendrerit. Ut non mauris non arcu condimentum sodales vitae vitae dolor. Nullam dapibus, velit eget lacinia rutrum, ipsum justo malesuada odio, et lobortis sapien magna vel lacus. Nulla purus neque, hendrerit non malesuada eget, mattis vel erat. Suspendisse potenti."
+    "text": "Example Submission\nDuis urna urna, pellentesque eu urna ut, malesuada bibendum dolor. Suspendisse potenti. Vivamus ornare, arcu quis molestie ultrices, magna est accumsan augue, auctor vulputate erat quam quis neque. Nullam scelerisque odio vel ultricies facilisis. Ut porta arcu non magna sagittis lacinia. Cras ornare vulputate lectus a tristique. Pellentesque ac arcu congue, rhoncus mi id, dignissim ligula.\nPraesent ornare dolor turpis, sed tincidunt nisl pretium eget. Curabitur sed iaculis ex, vitae tristique sapien. Quisque nec ex dolor. Quisque ut nisl a libero egestas molestie. Nulla vel porta nulla. Phasellus id pretium arcu. Etiam sed mi pellentesque nibh scelerisque elementum sed at urna. Ut congue molestie nibh, sit amet pretium ligula consectetur eu. Integer consectetur augue justo, at placerat erat posuere at. Ut elementum urna lectus, vitae bibendum neque pulvinar quis. Suspendisse vulputate cursus eros id maximus. Duis pulvinar facilisis massa, et condimentum est viverra congue. Curabitur ornare convallis nisl. Morbi dictum scelerisque turpis quis pellentesque. Etiam lectus risus, luctus lobortis risus ut, rutrum vulputate justo. Nulla facilisi."
   },
   {
     "objectID": "lectures/lecture-05-notes.html",
@@ -1667,102 +1681,6 @@
     "title": "Reproducible Workflows with R & RStudio",
     "section": "",
     "text": "View slides in full screen"
-  },
-  {
-    "objectID": "deliverables/assignment-1.html",
-    "href": "deliverables/assignment-1.html",
-    "title": " Data Stories 1",
-    "section": "",
-    "text": "Assignment information will be posted after the second class. Work will be done in and outside of class.\n\n\n\n\n\n\n\n\n\n\nflowchart TB\n  p[[Plan]]\n  sim[[Simulate]]\n  a[[Acquire]]\n  e[[Explore/Understand]]\n  s[[Share]]\n\n  p --&gt; sim --&gt; a --&gt; e --&gt; s\n\n\n\n\n\n\n\n\nFigure 1: Rohan Alexander’s (2023) Telling Stories with Data workflow",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories 1"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-1.html#assignment-instructions",
-    "href": "deliverables/assignment-1.html#assignment-instructions",
-    "title": " Data Stories 1",
-    "section": "",
-    "text": "Assignment information will be posted after the second class. Work will be done in and outside of class.\n\n\n\n\n\n\n\n\n\n\nflowchart TB\n  p[[Plan]]\n  sim[[Simulate]]\n  a[[Acquire]]\n  e[[Explore/Understand]]\n  s[[Share]]\n\n  p --&gt; sim --&gt; a --&gt; e --&gt; s\n\n\n\n\n\n\n\n\nFigure 1: Rohan Alexander’s (2023) Telling Stories with Data workflow",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories 1"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-1.html#grading-rubric",
-    "href": "deliverables/assignment-1.html#grading-rubric",
-    "title": " Data Stories 1",
-    "section": "Grading Rubric",
-    "text": "Grading Rubric\nWill be posted after the second class.",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories 1"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-1.html#student-work",
-    "href": "deliverables/assignment-1.html#student-work",
-    "title": " Data Stories 1",
-    "section": "Student Work",
-    "text": "Student Work\nWill be posted after the assignment has been completed.",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories 1"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-3.html",
-    "href": "deliverables/assignment-3.html",
-    "title": " Data Stories 3",
-    "section": "",
-    "text": "Assignment information will be posted after the second class. Work will be done in and outside of class.\n\n\n\n\n\n\n\n\n\n\nflowchart TB\n  p[[Plan]]\n  sim[[Simulate]]\n  a[[Acquire]]\n  e[[Explore/Understand]]\n  s[[Share]]\n\n  p --&gt; sim --&gt; a --&gt; e --&gt; s\n\n\n\n\n\n\n\n\nFigure 1: Rohan Alexander’s (2023) Telling Stories with Data workflow",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories 3"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-3.html#assignment-instructions",
-    "href": "deliverables/assignment-3.html#assignment-instructions",
-    "title": " Data Stories 3",
-    "section": "",
-    "text": "Assignment information will be posted after the second class. Work will be done in and outside of class.\n\n\n\n\n\n\n\n\n\n\nflowchart TB\n  p[[Plan]]\n  sim[[Simulate]]\n  a[[Acquire]]\n  e[[Explore/Understand]]\n  s[[Share]]\n\n  p --&gt; sim --&gt; a --&gt; e --&gt; s\n\n\n\n\n\n\n\n\nFigure 1: Rohan Alexander’s (2023) Telling Stories with Data workflow",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories 3"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-3.html#grading-rubric",
-    "href": "deliverables/assignment-3.html#grading-rubric",
-    "title": " Data Stories 3",
-    "section": "Grading Rubric",
-    "text": "Grading Rubric\nWill be posted after the second class.",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories 3"
-    ]
-  },
-  {
-    "objectID": "deliverables/assignment-3.html#student-work",
-    "href": "deliverables/assignment-3.html#student-work",
-    "title": " Data Stories 3",
-    "section": "Student Work",
-    "text": "Student Work\nWill be posted after the assignment has been completed.",
-    "crumbs": [
-      "Syllabus",
-      "<strong>ASSIGNMENTS</strong>",
-      "&nbsp;&nbsp;Data Stories 3"
-    ]
   },
   {
     "objectID": "lectures/lecture-01-content.html",
@@ -1982,6 +1900,20 @@
     "text": "1 References"
   },
   {
+    "objectID": "lectures/lecture-08-notes.html",
+    "href": "lectures/lecture-08-notes.html",
+    "title": "Writing and Developing Research Questions",
+    "section": "",
+    "text": "Required:   Ch 4\nRecommended:   Ch 3"
+  },
+  {
+    "objectID": "lectures/lecture-08-notes.html#reading-assignment",
+    "href": "lectures/lecture-08-notes.html#reading-assignment",
+    "title": "Writing and Developing Research Questions",
+    "section": "",
+    "text": "Required:   Ch 4\nRecommended:   Ch 3"
+  },
+  {
     "objectID": "lectures/lecture-02-notes.html",
     "href": "lectures/lecture-02-notes.html",
     "title": "Telling Stories with Data + R & the Tidyverse",
@@ -1999,27 +1931,6 @@
     "objectID": "lectures/lecture-02-notes.html#lecture-slides",
     "href": "lectures/lecture-02-notes.html#lecture-slides",
     "title": "Telling Stories with Data + R & the Tidyverse",
-    "section": "",
-    "text": "View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lecture-07-notes.html",
-    "href": "lectures/lecture-07-notes.html",
-    "title": "Writing and Developing Research Questions",
-    "section": "",
-    "text": "Required:   Ch 4\nRecommended:   Ch 3\n\n\n\n\n    View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lecture-07-notes.html#reading-assignment",
-    "href": "lectures/lecture-07-notes.html#reading-assignment",
-    "title": "Writing and Developing Research Questions",
-    "section": "",
-    "text": "Required:   Ch 4\nRecommended:   Ch 3"
-  },
-  {
-    "objectID": "lectures/lecture-07-notes.html#lecture-slides",
-    "href": "lectures/lecture-07-notes.html#lecture-slides",
-    "title": "Writing and Developing Research Questions",
     "section": "",
     "text": "View slides in full screen"
   },
@@ -2252,7 +2163,7 @@
     "href": "lectures/lecture-03-slides.html#simulate-4",
     "title": "Data Analysis Workflow – The Firehose",
     "section": "3.4 simulate",
-    "text": "3.4 simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Green   \n 2        2 Green   \n 3        3 Green   \n 4        4 Green   \n 5        5 Other   \n 6        6 National\n 7        7 Other   \n 8        8 National\n 9        9 Labor   \n10       10 Other   \n# ℹ 141 more rows"
+    "text": "3.4 simulate\n🤘 We have our fake data!\n\nsimulated_data\n\n# A tibble: 151 × 2\n   Division Party   \n      &lt;int&gt; &lt;chr&gt;   \n 1        1 Liberal \n 2        2 National\n 3        3 National\n 4        4 Labor   \n 5        5 Labor   \n 6        6 Other   \n 7        7 Liberal \n 8        8 Liberal \n 9        9 Labor   \n10       10 Green   \n# ℹ 141 more rows"
   },
   {
     "objectID": "lectures/lecture-03-slides.html#acquire-1",

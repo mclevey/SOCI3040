@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -649,8 +683,42 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="-1">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#setup-loading-required-packages" id="toc-setup-loading-required-packages" class="nav-link" data-scroll-target="#setup-loading-required-packages">Setup: Loading Required Packages</a></li>
+  <li><a href="#why-graphing-your-data-is-important" id="toc-why-graphing-your-data-is-important" class="nav-link" data-scroll-target="#why-graphing-your-data-is-important">Why Graphing Your Data is Important</a>
+  <ul>
+  <li><a href="#example-1-the-datasaurus-dozen" id="toc-example-1-the-datasaurus-dozen" class="nav-link" data-scroll-target="#example-1-the-datasaurus-dozen">Example 1: The Datasaurus Dozen</a>
+  <ul>
+  <li><a href="#computing-summary-statistics" id="toc-computing-summary-statistics" class="nav-link" data-scroll-target="#computing-summary-statistics">Computing Summary Statistics</a></li>
+  <li><a href="#visualizing-the-datasaurus-dozen" id="toc-visualizing-the-datasaurus-dozen" class="nav-link" data-scroll-target="#visualizing-the-datasaurus-dozen">Visualizing the Datasaurus Dozen</a></li>
+  </ul></li>
+  <li><a href="#example-2-anscombes-quartet" id="toc-example-2-anscombes-quartet" class="nav-link" data-scroll-target="#example-2-anscombes-quartet">Example 2: Anscombe’s Quartet</a>
+  <ul>
+  <li><a href="#tidying-the-data" id="toc-tidying-the-data" class="nav-link" data-scroll-target="#tidying-the-data">Tidying the Data</a></li>
+  <li><a href="#computing-summary-statistics-1" id="toc-computing-summary-statistics-1" class="nav-link" data-scroll-target="#computing-summary-statistics-1">Computing Summary Statistics</a></li>
+  <li><a href="#visualizing-anscombes-quartet" id="toc-visualizing-anscombes-quartet" class="nav-link" data-scroll-target="#visualizing-anscombes-quartet">Visualizing Anscombe’s Quartet</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#bar-charts-comparing-categorical-variables" id="toc-bar-charts-comparing-categorical-variables" class="nav-link" data-scroll-target="#bar-charts-comparing-categorical-variables">Bar Charts: Comparing Categorical Variables</a>
+  <ul>
+  <li><a href="#loading-and-cleaning-the-data" id="toc-loading-and-cleaning-the-data" class="nav-link" data-scroll-target="#loading-and-cleaning-the-data">Loading and Cleaning the Data</a></li>
+  <li><a href="#creating-age-groups" id="toc-creating-age-groups" class="nav-link" data-scroll-target="#creating-age-groups">Creating Age Groups</a></li>
+  <li><a href="#plotting-the-distribution-of-age-groups" id="toc-plotting-the-distribution-of-age-groups" class="nav-link" data-scroll-target="#plotting-the-distribution-of-age-groups">Plotting the Distribution of Age Groups</a></li>
+  </ul></li>
+  <li><a href="#scatterplots-exploring-relationships-between-variables" id="toc-scatterplots-exploring-relationships-between-variables" class="nav-link" data-scroll-target="#scatterplots-exploring-relationships-between-variables">Scatterplots: Exploring Relationships Between Variables</a>
+  <ul>
+  <li><a href="#downloading-the-data" id="toc-downloading-the-data" class="nav-link" data-scroll-target="#downloading-the-data">Downloading the Data</a></li>
+  <li><a href="#plotting-gdp-growth-vs.-inflation" id="toc-plotting-gdp-growth-vs.-inflation" class="nav-link" data-scroll-target="#plotting-gdp-growth-vs.-inflation">Plotting GDP Growth vs.&nbsp;Inflation</a></li>
+  </ul></li>
+  <li><a href="#line-plots-time-series-data" id="toc-line-plots-time-series-data" class="nav-link" data-scroll-target="#line-plots-time-series-data">Line Plots: Time-Series Data</a></li>
+  <li><a href="#remember" id="toc-remember" class="nav-link" data-scroll-target="#remember">Remember…</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -658,8 +726,555 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<p>Graphs are an essential component of data storytelling. They help us recognize patterns, understand distributions, and communicate findings effectively. This notebook introduces best practices for graphing in R using <code>ggplot2</code> and demonstrates how summary statistics can sometimes be misleading if we do not visualize our data.</p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this session, students will: - Understand the importance of graphing raw data before relying on summary statistics. - Learn to use <code>ggplot2</code> for scatterplots, bar charts, line plots, and faceted plots. - Explore different themes, color palettes, and aesthetic modifications. - Apply these techniques to real-world datasets.</p>
+</section>
+<section id="setup-loading-required-packages" class="level2">
+<h2 class="anchored" data-anchor-id="setup-loading-required-packages">Setup: Loading Required Packages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># Core tidyverse package for data wrangling &amp; visualization</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datasauRus) <span class="co"># Fun dataset illustrating the importance of visualization</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># Graphing package</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor) <span class="co"># Cleaning column names</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'janitor'
+
+The following objects are masked from 'package:stats':
+
+    chisq.test, fisher.test</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(WDI) <span class="co"># Accessing World Bank economic indicators</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(carData) <span class="co"># British Election Panel Study dataset</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork) <span class="co"># Combining multiple plots</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygeocoder) <span class="co"># Geocoding support</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tinytable) <span class="co"># Nice formatted tables</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set theme for all plots</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_minimal</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="why-graphing-your-data-is-important" class="level2">
+<h2 class="anchored" data-anchor-id="why-graphing-your-data-is-important">Why Graphing Your Data is Important</h2>
+<section id="example-1-the-datasaurus-dozen" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-the-datasaurus-dozen">Example 1: The Datasaurus Dozen</h3>
+<p>The <code>datasaurus_dozen</code> dataset illustrates why we should always plot our data instead of relying solely on summary statistics.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the dataset</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>datasaurus_dozen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,846 × 3
+   dataset     x     y
+   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
+ 1 dino     55.4  97.2
+ 2 dino     51.5  96.0
+ 3 dino     46.2  94.5
+ 4 dino     42.8  91.4
+ 5 dino     40.8  88.3
+ 6 dino     38.7  84.9
+ 7 dino     35.6  79.9
+ 8 dino     33.1  77.6
+ 9 dino     29.0  74.5
+10 dino     26.2  71.4
+# ℹ 1,836 more rows</code></pre>
+</div>
+</div>
+<p>Each subset of this dataset has the same mean and standard deviation for x and y, yet their visual patterns are completely different.</p>
+<section id="computing-summary-statistics" class="level4">
+<h4 class="anchored" data-anchor-id="computing-summary-statistics">Computing Summary Statistics</h4>
+<p>This code below is a pipeline that processes the datasaurus_dozen dataset to compute and display summary statistics (mean and standard deviation) for four selected datasets: “dino”, “star”, “away”, and “bullseye”. The pipeline begins by using filter(dataset %in% c(“dino”, “star”, “away”, “bullseye”)), which subsets the data to only include these four specific datasets. The summarise() function then calculates the mean and standard deviation for both the x and y variables, applying the across() function to compute these statistics for each dataset separately. The .by = dataset argument ensures that the summary statistics are grouped by dataset, so each subset receives its own computed values.</p>
+<p>After computing the summary statistics, the code formats the output into a visually appealing table. The tt() function (from the tinytable package) is used to create a neatly formatted table, and style_tt(j = 2:5, align = “r”) aligns the numeric columns (x mean, x sd, y mean, y sd) to the right for better readability. The format_tt(digits = 1, num_fmt = “decimal”) function ensures that numerical values are displayed with one decimal place. Finally, setNames(c(“Dataset”, “x mean”, “x sd”, “y mean”, “y sd”)) renames the columns to more descriptive labels for clarity. This pipeline efficiently extracts, summarizes, and presents key statistical insights from the datasaurus_dozen dataset while emphasizing the importance of looking beyond summary statistics to understand data distributions visually.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>datasaurus_dozen <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(dataset <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"dino"</span>, <span class="st">"star"</span>, <span class="st">"away"</span>, <span class="st">"bullseye"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">across</span>(<span class="fu">c</span>(x, y), <span class="fu">list</span>(<span class="at">mean =</span> mean, <span class="at">sd =</span> sd)),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">.by =</span> dataset</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">j =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">align =</span> <span class="st">"r"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">format_tt</span>(<span class="at">digits =</span> <span class="dv">1</span>, <span class="at">num_fmt =</span> <span class="st">"decimal"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">setNames</span>(<span class="fu">c</span>(<span class="st">"Dataset"</span>, <span class="st">"x mean"</span>, <span class="st">"x sd"</span>, <span class="st">"y mean"</span>, <span class="st">"y sd"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <script>
+      function styleCell_lfv8c5gfquobep276ahh(i, j, css_id) {
+        var table = document.getElementById("tinytable_lfv8c5gfquobep276ahh");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_lfv8c5gfquobep276ahh');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_lfv8c5gfquobep276ahh(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_lfv8c5gfquobep276ahh");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(0, 0, 'tinytable_css_id9tcsj6so3vcxmjprgiej') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(0, 1, 'tinytable_css_id47ja4ztf7wbhpf6b5o5y') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(0, 2, 'tinytable_css_id47ja4ztf7wbhpf6b5o5y') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(0, 3, 'tinytable_css_id47ja4ztf7wbhpf6b5o5y') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(0, 4, 'tinytable_css_id47ja4ztf7wbhpf6b5o5y') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(1, 1, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(1, 2, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(1, 3, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(1, 4, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(2, 1, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(2, 2, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(2, 3, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(2, 4, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(3, 1, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(3, 2, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(3, 3, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(3, 4, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(4, 1, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(4, 2, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(4, 3, 'tinytable_css_idocmf1fvc6dsides16lly') })
+window.addEventListener('load', function () { styleCell_lfv8c5gfquobep276ahh(4, 4, 'tinytable_css_idocmf1fvc6dsides16lly') })
+    </script>
+
+    <style>
+    .table td.tinytable_css_id9tcsj6so3vcxmjprgiej, .table th.tinytable_css_id9tcsj6so3vcxmjprgiej {  border-bottom: solid 0.1em #d3d8dc; }
+    .table td.tinytable_css_id47ja4ztf7wbhpf6b5o5y, .table th.tinytable_css_id47ja4ztf7wbhpf6b5o5y {  text-align: right;  border-bottom: solid 0.1em #d3d8dc; }
+    .table td.tinytable_css_idocmf1fvc6dsides16lly, .table th.tinytable_css_idocmf1fvc6dsides16lly {  text-align: right; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_lfv8c5gfquobep276ahh" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col">Dataset</th>
+                <th scope="col">x mean</th>
+                <th scope="col">x sd</th>
+                <th scope="col">y mean</th>
+                <th scope="col">y sd</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>dino</td>
+                  <td>54.3</td>
+                  <td>16.8</td>
+                  <td>47.8</td>
+                  <td>26.9</td>
+                </tr>
+                <tr>
+                  <td>away</td>
+                  <td>54.3</td>
+                  <td>16.8</td>
+                  <td>47.8</td>
+                  <td>26.9</td>
+                </tr>
+                <tr>
+                  <td>star</td>
+                  <td>54.3</td>
+                  <td>16.8</td>
+                  <td>47.8</td>
+                  <td>26.9</td>
+                </tr>
+                <tr>
+                  <td>bullseye</td>
+                  <td>54.3</td>
+                  <td>16.8</td>
+                  <td>47.8</td>
+                  <td>26.9</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+<p>👉 Key Takeaway: These datasets appear identical in summary statistics, but let’s plot them.</p>
+<p>Recall that <strong>the mean</strong>, or <strong>average</strong>, is a measure of central tendency that represents the typical value in a dataset. It is calculated by adding up all the values and dividing by the total number of values. The mean gives us a sense of where most of the data points are centered. The <strong>standard deviation</strong> measures how spread out the values are from the mean. If the standard deviation is small, most values are close to the mean; if it’s large, the values are more spread out.</p>
+<p>In short:</p>
+<ul>
+<li>low standard deviation = data points are close together</li>
+<li>high standard deviation = data points are more spread out</li>
+</ul>
+<p>These concepts help us understand how typical or how varied our data is.</p>
+</section>
+<section id="visualizing-the-datasaurus-dozen" class="level4">
+<h4 class="anchored" data-anchor-id="visualizing-the-datasaurus-dozen">Visualizing the Datasaurus Dozen</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the datasets</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>datasaurus_dozen <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(dataset <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"dino"</span>, <span class="st">"star"</span>, <span class="st">"away"</span>, <span class="st">"bullseye"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">colour =</span> dataset)) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(dataset), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Dataset"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lecture-09-content_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>👉 Observation: Despite having identical summary statistics, each dataset has a distinct shape!</p>
+</section>
+</section>
+<section id="example-2-anscombes-quartet" class="level3">
+<h3 class="anchored" data-anchor-id="example-2-anscombes-quartet">Example 2: Anscombe’s Quartet</h3>
+<p>Frank Anscombe developed Anscombe’s Quartet to highlight the same issue.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(anscombe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  x1 x2 x3 x4   y1   y2    y3   y4
+1 10 10 10  8 8.04 9.14  7.46 6.58
+2  8  8  8  8 6.95 8.14  6.77 5.76
+3 13 13 13  8 7.58 8.74 12.74 7.71
+4  9  9  9  8 8.81 8.77  7.11 8.84
+5 11 11 11  8 8.33 9.26  7.81 8.47
+6 14 14 14  8 9.96 8.10  8.84 7.04</code></pre>
+</div>
+</div>
+<p>This dataset contains four sets of (x, y) values that share identical means, variances, and regression lines.</p>
+<section id="tidying-the-data" class="level4">
+<h4 class="anchored" data-anchor-id="tidying-the-data">Tidying the Data</h4>
+<p>We use pivot_longer() to convert it into tidy format.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>tidy_anscombe <span class="ot">&lt;-</span> anscombe <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">everything</span>(),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">".value"</span>, <span class="st">"set"</span>),</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_pattern =</span> <span class="st">"(.)(.)"</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>tidy_anscombe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 44 × 3
+   set       x     y
+   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 1        10  8.04
+ 2 2        10  9.14
+ 3 3        10  7.46
+ 4 4         8  6.58
+ 5 1         8  6.95
+ 6 2         8  8.14
+ 7 3         8  6.77
+ 8 4         8  5.76
+ 9 1        13  7.58
+10 2        13  8.74
+# ℹ 34 more rows</code></pre>
+</div>
+</div>
+<p>This code reshapes the anscombe dataset into a tidy format using the pivot_longer() function. The tidy format (or tidy data) is a structured way of organizing data where each row represents an observation, each column represents a variable, and each cell contains a single value. This format, introduced by Hadley Wickham, makes data easier to manipulate, visualize, and analyze using tools like ggplot2 and dplyr. For example, in a non-tidy format, you might have separate columns for x1, y1, x2, y2, etc. (like in Anscombe’s Quartet). In a tidy format, you would restructure the data so that there are only three columns: set (indicating the dataset), x, and y, with each row representing one observation. Tidy data is particularly useful because it works seamlessly with the tidyverse, allowing for easier grouping, filtering, summarizing, and plotting.</p>
+<p>The everything() argument ensures that all columns in the dataset are transformed. The names_to = c(“.value”, “set”) argument tells pivot_longer() to split the original column names into two parts: one representing the variable (x or y) and the other representing the dataset number (1, 2, 3, or 4). The names_pattern = “(.)(.)” uses regular expressions to separate column names based on their structure (e.g., x1, y1 → x, y for dataset 1). As a result, the tidy_anscombe dataset now has three columns: set (identifying the dataset number), x (the independent variable), and y (the dependent variable). This transformation makes the data more structured and easier to work with, particularly for grouped analysis and visualization in ggplot2.</p>
+</section>
+<section id="computing-summary-statistics-1" class="level4">
+<h4 class="anchored" data-anchor-id="computing-summary-statistics-1">Computing Summary Statistics</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>tidy_anscombe <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">across</span>(<span class="fu">c</span>(x, y), <span class="fu">list</span>(<span class="at">mean =</span> mean, <span class="at">sd =</span> sd)),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">.by =</span> set</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">style_tt</span>(<span class="at">j =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">align =</span> <span class="st">"r"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">format_tt</span>(<span class="at">digits =</span> <span class="dv">1</span>, <span class="at">num_fmt =</span> <span class="st">"decimal"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">setNames</span>(<span class="fu">c</span>(<span class="st">"Dataset"</span>, <span class="st">"x mean"</span>, <span class="st">"x sd"</span>, <span class="st">"y mean"</span>, <span class="st">"y sd"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<!-- preamble start -->
+
+    <script>
+      function styleCell_27by21itr4vtl7nrw6k5(i, j, css_id) {
+        var table = document.getElementById("tinytable_27by21itr4vtl7nrw6k5");
+        table.rows[i].cells[j].classList.add(css_id);
+      }
+      function insertSpanRow(i, colspan, content) {
+        var table = document.getElementById('tinytable_27by21itr4vtl7nrw6k5');
+        var newRow = table.insertRow(i);
+        var newCell = newRow.insertCell(0);
+        newCell.setAttribute("colspan", colspan);
+        // newCell.innerText = content;
+        // this may be unsafe, but innerText does not interpret <br>
+        newCell.innerHTML = content;
+      }
+      function spanCell_27by21itr4vtl7nrw6k5(i, j, rowspan, colspan) {
+        var table = document.getElementById("tinytable_27by21itr4vtl7nrw6k5");
+        const targetRow = table.rows[i];
+        const targetCell = targetRow.cells[j];
+        for (let r = 0; r < rowspan; r++) {
+          // Only start deleting cells to the right for the first row (r == 0)
+          if (r === 0) {
+            // Delete cells to the right of the target cell in the first row
+            for (let c = colspan - 1; c > 0; c--) {
+              if (table.rows[i + r].cells[j + c]) {
+                table.rows[i + r].deleteCell(j + c);
+              }
+            }
+          }
+          // For rows below the first, delete starting from the target column
+          if (r > 0) {
+            for (let c = colspan - 1; c >= 0; c--) {
+              if (table.rows[i + r] && table.rows[i + r].cells[j]) {
+                table.rows[i + r].deleteCell(j);
+              }
+            }
+          }
+        }
+        // Set rowspan and colspan of the target cell
+        targetCell.rowSpan = rowspan;
+        targetCell.colSpan = colspan;
+      }
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(0, 0, 'tinytable_css_idoz6s2gb4zwtpl872jwe4') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(0, 1, 'tinytable_css_idw4k3d4zl70d2texbz4t7') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(0, 2, 'tinytable_css_idw4k3d4zl70d2texbz4t7') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(0, 3, 'tinytable_css_idw4k3d4zl70d2texbz4t7') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(0, 4, 'tinytable_css_idw4k3d4zl70d2texbz4t7') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(1, 1, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(1, 2, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(1, 3, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(1, 4, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(2, 1, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(2, 2, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(2, 3, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(2, 4, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(3, 1, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(3, 2, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(3, 3, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(3, 4, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(4, 1, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(4, 2, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(4, 3, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+window.addEventListener('load', function () { styleCell_27by21itr4vtl7nrw6k5(4, 4, 'tinytable_css_id5elp3q3glmzem773pgsa') })
+    </script>
+
+    <style>
+    .table td.tinytable_css_idoz6s2gb4zwtpl872jwe4, .table th.tinytable_css_idoz6s2gb4zwtpl872jwe4 {  border-bottom: solid 0.1em #d3d8dc; }
+    .table td.tinytable_css_idw4k3d4zl70d2texbz4t7, .table th.tinytable_css_idw4k3d4zl70d2texbz4t7 {  text-align: right;  border-bottom: solid 0.1em #d3d8dc; }
+    .table td.tinytable_css_id5elp3q3glmzem773pgsa, .table th.tinytable_css_id5elp3q3glmzem773pgsa {  text-align: right; }
+    </style>
+    <div class="container">
+      <table class="table table-borderless" id="tinytable_27by21itr4vtl7nrw6k5" style="width: auto; margin-left: auto; margin-right: auto;" data-quarto-disable-processing="true">
+        <thead>
+        
+              <tr>
+                <th scope="col">Dataset</th>
+                <th scope="col">x mean</th>
+                <th scope="col">x sd</th>
+                <th scope="col">y mean</th>
+                <th scope="col">y sd</th>
+              </tr>
+        </thead>
+        
+        <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>9</td>
+                  <td>3.3</td>
+                  <td>7.5</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>9</td>
+                  <td>3.3</td>
+                  <td>7.5</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>9</td>
+                  <td>3.3</td>
+                  <td>7.5</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>9</td>
+                  <td>3.3</td>
+                  <td>7.5</td>
+                  <td>2</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- hack to avoid NA insertion in last line -->
+</div>
+</div>
+</section>
+<section id="visualizing-anscombes-quartet" class="level4">
+<h4 class="anchored" data-anchor-id="visualizing-anscombes-quartet">Visualizing Anscombe’s Quartet</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tidy_anscombe <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">colour =</span> set)) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(set), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">colour =</span> <span class="st">"Dataset"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lecture-09-content_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>👉 Insight: Again, summary statistics don’t tell the full story!</p>
+</section>
+</section>
+</section>
+<section id="bar-charts-comparing-categorical-variables" class="level2">
+<h2 class="anchored" data-anchor-id="bar-charts-comparing-categorical-variables">Bar Charts: Comparing Categorical Variables</h2>
+<p>We now explore bar charts using the British Election Panel Study.</p>
+<section id="loading-and-cleaning-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="loading-and-cleaning-the-data">Loading and Cleaning the Data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>beps <span class="ot">&lt;-</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    BEPS <span class="sc">|&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">clean_names</span>() <span class="sc">|&gt;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(age, vote, gender, political_knowledge)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creating-age-groups" class="level3">
+<h3 class="anchored" data-anchor-id="creating-age-groups">Creating Age Groups</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>beps <span class="ot">&lt;-</span> beps <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">age_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>            age <span class="sc">&lt;</span> <span class="dv">35</span> <span class="sc">~</span> <span class="st">"&lt;35"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>            age <span class="sc">&lt;</span> <span class="dv">50</span> <span class="sc">~</span> <span class="st">"35-49"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>            age <span class="sc">&lt;</span> <span class="dv">65</span> <span class="sc">~</span> <span class="st">"50-64"</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>            age <span class="sc">&lt;</span> <span class="dv">80</span> <span class="sc">~</span> <span class="st">"65-79"</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>            age <span class="sc">&lt;</span> <span class="dv">100</span> <span class="sc">~</span> <span class="st">"80-99"</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">age_group =</span> <span class="fu">factor</span>(age_group, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"&lt;35"</span>, <span class="st">"35-49"</span>, <span class="st">"50-64"</span>, <span class="st">"65-79"</span>, <span class="st">"80-99"</span>))</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="plotting-the-distribution-of-age-groups" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-the-distribution-of-age-groups">Plotting the Distribution of Age Groups</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>beps <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> age_group)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age group"</span>, <span class="at">y =</span> <span class="st">"Number of respondents"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lecture-09-content_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="scatterplots-exploring-relationships-between-variables" class="level2">
+<h2 class="anchored" data-anchor-id="scatterplots-exploring-relationships-between-variables">Scatterplots: Exploring Relationships Between Variables</h2>
+<p>Using World Bank Data, we analyze GDP growth and inflation.</p>
+<section id="downloading-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="downloading-the-data">Downloading the Data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>world_bank_data <span class="ot">&lt;-</span> <span class="fu">WDI</span>(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicator =</span> <span class="fu">c</span>(<span class="st">"FP.CPI.TOTL.ZG"</span>, <span class="st">"NY.GDP.MKTP.KD.ZG"</span>),</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">country =</span> <span class="fu">c</span>(<span class="st">"AU"</span>, <span class="st">"ET"</span>, <span class="st">"IN"</span>, <span class="st">"US"</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">inflation =</span> FP.CPI.TOTL.ZG, <span class="at">gdp_growth =</span> NY.GDP.MKTP.KD.ZG)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="plotting-gdp-growth-vs.-inflation" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-gdp-growth-vs.-inflation">Plotting GDP Growth vs.&nbsp;Inflation</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>world_bank_data <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> gdp_growth, <span class="at">y =</span> inflation, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP Growth"</span>, <span class="at">y =</span> <span class="st">"Inflation"</span>, <span class="at">color =</span> <span class="st">"Country"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 9 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lecture-09-content_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="line-plots-time-series-data" class="level2">
+<h2 class="anchored" data-anchor-id="line-plots-time-series-data">Line Plots: Time-Series Data</h2>
+<p>Let’s analyze US GDP growth over time.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>world_bank_data <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"United States"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> gdp_growth)) <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"GDP Growth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
+(`geom_line()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lecture-09-content_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="remember" class="level1">
+<h1>Remember…</h1>
+<ul>
+<li>Always visualize your data!</li>
+<li>Summary statistics alone can be misleading.</li>
+<li>Use scatterplots, bar charts, and line plots to explore relationships.</li>
+</ul>
+<p>On Thursday, we’ll continue with Graphs, Tables, and Maps.</p>
 
 
+</section>
 
 <script async="" defer="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

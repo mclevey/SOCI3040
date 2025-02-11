@@ -1,5 +1,5 @@
 ---
-title: "Data Analysis Workflow -- The Firehose" # Plan, Simulate, Acquire, Explore, Share
+title: "Data Analysis Workflow -- The Firehose"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author:
   - name: "John McLevey (he/him)"
@@ -12,24 +12,16 @@ footer: "[{{< bi house-fill color=#2E3440 >}}](https://www.johnmclevey.com/quant
 controls: true
 mermaid:
   theme: default
-toc: true
+toc: false
 toc-depth: 1
 toc-title: agenda.
 number-sections: true
 top-level-heading: 2
 ---
 
-Coming soon...
-<!-- {{< include lecture-03-content.qmd >}} -->
+{{< include lecture-03-content.qmd >}}
 
 ## References
 
 ::: {#refs}
 :::
-
-<!-- 
-# {.appendix}
-
-## Appendix A {.smaller}
- -->
-

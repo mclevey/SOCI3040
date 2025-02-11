@@ -1,0 +1,20 @@
+# Drinking From the Firehose
+
+```{r setup, include=FALSE}
+options(
+    tibble.max_extra_cols = 6,
+    tibble.width = 60
+)
+```
+
+{{< include _firehose_introduction.qmd >}}
+<!-- {{< include _firehose_setup.qmd >}} -->
+
+{{< include _firehose_imports.qmd >}}
+{{< include _firehose_aus_elections.qmd >}}
+
+<!-- {{< include _firehose_toronto_shelters.qmd >}}
+{{< include _firehose_toronto_shelters.qmd >}} -->
+
+<!-- {{< include _firehose_neonatal_mortality_rates.qmd >}} -->
+

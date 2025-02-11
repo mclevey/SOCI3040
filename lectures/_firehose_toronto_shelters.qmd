@@ -4,10 +4,10 @@
 
 Toronto has a large unhoused population [@torontohomeless]. Freezing winters mean it is important there are enough places in shelters. In this example we will make a table of shelter usage in 2021 to compare average use in each month. Our expectation is that there is greater usage in the colder months, for instance, December, compared with warmer months, for instance, July.
 
-# {{< bi 1-circle >}} Plan {background-color="#2E3440"}
+# Plan {background-color="#2E3440"}
 [Toronto Shelters]{.huge}
 
-## {{< bi 1-circle >}} plan
+## plan
 <br>
 
 The dataset that we are interested in would need to have the **date**, the **shelter**, and the **number of beds that were occupied that night**. A quick sketch of a dataset that would work is @fig-torontohomelessness-data (next slide). 
@@ -15,7 +15,7 @@ The dataset that we are interested in would need to have the **date**, the **she
 We are interested in creating a table that has the monthly average number of beds occupied each night. The table would probably look something like @fig-torontohomelessness-table (next slide).
 
 
-## {{< bi 1-circle >}} plan
+## plan
 <br>
 
 ::: {#fig-torontohomelessness layout-ncol="2"}
@@ -27,15 +27,15 @@ Sketches of a dataset and table of the average number of beds occupied each mont
 :::
 
 
-# {{< bi 2-circle >}} Simulate {background-color="#2E3440"}
+# Simulate {background-color="#2E3440"}
 [Toronto Shelters]{.huge}
 
-## {{< bi 2-circle >}} simulate
+## simulate
 <br>
 
 > The next step is to simulate some data that could resemble our dataset.\index{simulation} Simulation provides us with an opportunity to think deeply about our data generating process. When we turn to analysis, it will provide us with a guide. Conducting analysis without first using simulation can be thought of as shooting arrows without a target---while you are certainly doing something, it is not clear whether you are doing it well.
 
-## {{< bi 2-circle >}} simulate
+## simulate
 <br>
 
 ```{r}
@@ -66,10 +66,10 @@ In this simulation we first create a list of all the dates in 2021. We repeat th
 :::
 
 
-# {{< bi 3-circle >}} Acquire {background-color="#2E3440"}
+# Acquire {background-color="#2E3440"}
 [Toronto Shelters]{.huge}
 
-## {{< bi 3-circle >}} acquire
+## acquire
 <br>
 
 ```{r}
@@ -92,7 +92,7 @@ write_csv(
 )
 ```
 
-## {{< bi 3-circle >}} acquire
+## acquire
 <br>
 
 ```{r}
@@ -105,7 +105,7 @@ toronto_shelters <-
 head(toronto_shelters)
 ```
 
-## {{< bi 3-circle >}} acquire
+## acquire
 <br>
 
 We'll change the names to make them easier to type using `clean_names()`, and `select()` the relevant columns.
@@ -119,7 +119,7 @@ toronto_shelters_clean <-
 head(toronto_shelters_clean)
 ```
 
-## {{< bi 3-circle >}} acquire
+## acquire
 <br>
 
 All that remains for this step is to save the cleaned dataset.
@@ -133,10 +133,10 @@ write_csv(
 
 - **WHERE ARE THESE `NA`s COMING FROM?**
 
-# {{< bi 4-circle >}} Explore/Understand {background-color="#2E3440"}
+# Explore/Understand {background-color="#2E3440"}
 [Toronto Shelters]{.huge}
 
-## {{< bi 4-circle >}} explore / understand
+## explore / understand
 <br>
 
 ```{r}
@@ -149,11 +149,10 @@ toronto_shelters_clean <-
 toronto_shelters_clean
 ```
 
-## {{< bi 4-circle >}} explore / understand
+## explore / understand
 <br>
 
 ```{r}
-#| label: tbl-homelessoccupancyd
 #| tbl-cap: "Shelter usage in Toronto in 2021"
 #| output-location: slide
 
@@ -173,10 +172,10 @@ toronto_shelters_clean |>
 ```
 
 ::: {.notes}
-> The dataset contains daily records for each shelter. We are interested in understanding average usage for each month. To do this, we need to add a month column using `month()` from `lubridate`. By default, `month()` provides the number of the month, and so we include two arguments---"label" and "abbr"---to get the full name of the month. We remove rows that do not have any data for the number of beds using `drop_na()` from `tidyr`, which is part of the `tidyverse`. We will do this here unthinkingly because our focus is on getting started, but this is an important decision and we talk more about missing data in `sec-farm-data` and `sec-exploratory-data-analysis`. We then create a summary statistic on the basis of monthly groups, using `summarise()` from `dplyr`. We use `kable()` from `knitr` to create `tbl-homelessoccupancyd`.
+> The dataset contains daily records for each shelter. We are interested in understanding average usage for each month. To do this, we need to add a month column using `month()` from `lubridate`. By default, `month()` provides the number of the month, and so we include two arguments---"label" and "abbr"---to get the full name of the month. We remove rows that do not have any data for the number of beds using `drop_na()` from `tidyr`, which is part of the `tidyverse`. We will do this here unthinkingly because our focus is on getting started, but this is an important decision and we talk more about missing data in `sec-farm-data` and `sec-exploratory-data-analysis`. We then create a summary statistic on the basis of monthly groups, using `summarise()` from `dplyr`. We use `kable()` from `knitr` to create `tbl homelessoccupancyd`.
 :::
 
-## {{< bi 4-circle >}} explore / understand
+## explore / understand
 <br>
 
 ```{r}
@@ -206,11 +205,11 @@ As with before, this looks fine, and achieves what we set out to do. But we can 
 :::
 
 
-# {{< bi 5-circle >}} Share {background-color="#2E3440"}
+# Share {background-color="#2E3440"}
 [Toronto Shelters]{.huge}
 
 
-## {{< bi 5-circle >}} share
+## share
 
 Example taken directly from @alexander2023telling, [here]().
 

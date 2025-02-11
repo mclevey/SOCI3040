@@ -2,16 +2,16 @@
 
 Neonatal mortality refers to a death that occurs within the first month of life. The neonatal mortality rate (NMR) is the number of neonatal deaths per 1,000 live births [@unigme]. The Third Sustainable Development Goal (SDG) calls for a reduction in NMR to 12. In this example we will create a graph of the estimated NMR for the past 50 years for: Argentina, Australia, Canada, and Kenya.
 
-# {{< bi 1-circle >}} Plan {background-color="#2E3440"}
+# Plan {background-color="#2E3440"}
 [Neonatal Mortality Rates (NMR)]{.huge}
 
-## {{< bi 1-circle >}} plan
+## plan
 <br>
 
 The dataset needs to have variables that specify the country and the year. It also needs to have a variable with the NMR estimate for that year for that country. Roughly, it should look like @fig-nmrexample-data (next slide). We are interested to make a graph with year on the x-axis and estimated NMR on the y-axis. Each country should have its own series. A quick sketch of what we are looking for is @fig-nmrexample-graph (next slide).
 
 
-## {{< bi 1-circle >}} plan
+## plan
 
 ::: {#fig-nmrexample layout-ncol="2"}
 ![Quick sketch of a potentially useful NMR dataset](../media/tswd-figures/02-nmr_dataset_sketch.png){#fig-nmrexample-data width="85%"}
@@ -22,16 +22,16 @@ Sketches of a dataset and graph about the neonatal mortality rate (NMR)
 :::
 
 
-# {{< bi 2-circle >}} Simulate {background-color="#2E3440"}
+# Simulate {background-color="#2E3440"}
 [Neonatal Mortality Rates (NMR)]{.huge}
 
 
-## {{< bi 1-circle >}} simulate
+## simulate
 <br>
 
 > To simulate some data that aligns with our plan, we will need three columns: `country`, `year`, and `NMR`. We can do this by repeating the name of each country 50 times with `rep()`, and enabling the passing of 50 years. Then we draw from the uniform distribution with `runif()` to simulate an estimated NMR value for that year for that country.
 
-## {{< bi 1-circle >}} simulate
+## simulate
 <br>
 
 ```{r}
@@ -54,12 +54,12 @@ simulated_nmr_data <-
 head(simulated_nmr_data)
 ```
 
-## {{< bi 1-circle >}} simulate
+## simulate
 <br>
 
 > While this simulation works, it would be time consuming and error prone if we decided that instead of 50 years, we were interested in simulating, say, 60 years. One way to improve this code is to replace all instances of 50 with a variable.\index{simulation}\index{distribution!uniform}
 
-## {{< bi 1-circle >}} simulate
+## simulate
 <br>
 
 ```{r}
@@ -86,7 +86,7 @@ head(simulated_nmr_data)
 
 The result will be the same, but now if we want to change from 50 to 60 years, we only have to make the change in one place.
 
-## {{< bi 1-circle >}} simulate
+## simulate
 
 > We can have confidence in this simulated dataset because it is relatively straight forward, and we wrote the code for it. But when we turn to the real dataset, it is more difficult to be sure that it is what it claims to be. Even if we trust the data, we need to be able to share that confidence with others. One way forward is to establish some tests of whether our data are as they should be. For instance, we expect:
 >
@@ -97,7 +97,7 @@ The result will be the same, but now if we want to change from 50 to 60 years, w
 >
 > We can write a series of tests based on these features, that we expect the dataset to pass.
 
-## {{< bi 1-circle >}} simulate
+## simulate
 
 ```{r}
 simulated_nmr_data$country |>
@@ -114,12 +114,12 @@ simulated_nmr_data$nmr |> max() <= 1000
 simulated_nmr_data$nmr |> class() == "numeric"
 ```
 
-## {{< bi 1-circle >}} simulate
+## simulate
 <br>
 
 > Having passed these tests, we can have confidence in the simulated dataset. More importantly, we can apply these tests to the real dataset. This enables us to have greater confidence in that dataset and to share that confidence with others.
 
-# {{< bi 3-circle >}} Acquire {background-color="#2E3440"}
+# Acquire {background-color="#2E3440"}
 [Neonatal Mortality Rates (NMR)]{.huge}
 
 ##
@@ -246,7 +246,7 @@ cleaned_igme_data_path <- here("data", "cleaned_igme_data.csv")
 write_csv(x = cleaned_igme_data, file = cleaned_igme_data_path)
 ```
 
-# {{< bi 4-circle >}} Explore/Understand {background-color="#2E3440"}
+# Explore/Understand {background-color="#2E3440"}
 [Neonatal Mortality Rates (NMR)]{.huge}
 
 ## 
@@ -282,11 +282,11 @@ cleaned_igme_data |>
     theme(legend.position = "bottom")
 ```
 
-# {{< bi 5-circle >}} Share {background-color="#2E3440"}
+# Share {background-color="#2E3440"}
 [Neonatal Mortality Rates (NMR)]{.huge}
 
 
-## {{< bi 5-circle >}} share
+## share
 
 Example taken directly from @alexander2023telling, [here]().
 

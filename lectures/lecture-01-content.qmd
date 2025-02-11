@@ -109,7 +109,7 @@ You will use this workflow in the context of learning foundational quantitative 
 
 <br>
 
-### {{< bi 1-circle >}} Plan and Sketch
+### Plan and Sketch
 
 deliberate, reasoned decisions<br>
 purposeful adjustments<br>
@@ -125,7 +125,7 @@ even 10 minutes of planning is valuable
 
 <br>
 
-### {{< bi 2-circle >}} Simulate Data
+### Simulate Data
 
 Forces detailed thinking<br>
 Clarifies expected data structure and distributions.<br>
@@ -146,7 +146,7 @@ Provides “an intimate feeling for the situation” [@hamming1996]
 
 <br>
 
-### {{< bi 3-circle >}} Acquire and Prepare
+### Acquire and Prepare
 
 Often overlooked but crucial stage<br>
 Many difficult decisions required: data sources, formats, permissions.<br>
@@ -163,7 +163,7 @@ Common challenges: **quantity** (too little or too much data) and **quality**
 
 <br>
 
-### {{< bi 4-circle >}} Explore and Understand
+### Explore and Understand
 
 Begin with descriptive statistics<br>
 Move to statistical models<br>
@@ -181,7 +181,7 @@ In the fourth step, we **explore and understand** the actual data by examining r
 
 <br>
 
-### {{< bi 5-circle >}} Share Findings
+### Share Findings
 
 High-fidelity communication is essential<br>
 Document all decisions<br>

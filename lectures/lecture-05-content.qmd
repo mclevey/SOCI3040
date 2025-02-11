@@ -1,0 +1,12 @@
+
+- Sociology Student Society? Rep?
+- Have made some decisions about pacing and assignments
+    - pacing and delivery: more walkthroughs, pace seems OK so far?
+    - first assignment: basic use of RStudio, the workflow components, more writing, limited code, will not include Git or GitHub
+
+Today: 
+
+1. R Projects
+2. Quarto -- examples form chapter, more metadata
+3. Load the data from last class
+

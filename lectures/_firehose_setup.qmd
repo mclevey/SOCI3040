@@ -1,4 +1,4 @@
-# preliminaries
+<!-- # preliminaries
 
 [setup, etc.]{.large}
 
@@ -10,7 +10,7 @@ RStudio / CodeSpaces / Whatever...
 
 ## preliminaries
 
-<br>
+<br> -->
 
 ```{r}
 #| eval: false

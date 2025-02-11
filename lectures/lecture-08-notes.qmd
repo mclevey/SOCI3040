@@ -15,6 +15,7 @@ class-id: "08"
 assigned_reading: "[{{< bi file-text >}}](https://tellingstorieswithdata.com/04-writing_research.html) {{< bi fire >}} Ch 4"
 recommended_reading: "[{{< bi file-text >}}](https://socviz.co/makeplot.html#makeplot) {{< bi activity >}} Ch 3"
 number-sections: true
+due: "[Data Stories 1](../deliverables/assignment-1.qmd)"
 ---
 
 ::: {#embedded-slides}
@@ -23,10 +24,6 @@ number-sections: true
 - Required: {{< meta assigned_reading >}}
 - Recommended: {{< meta recommended_reading >}}
 
-## {{< bi file-slides-fill >}}&nbsp;&nbsp;Lecture Slides {.unnumbered}
-
-
-{{< revealjs "lecture-08-slides.html" >}}
 
 ## {{< bi file-code >}}&nbsp;&nbsp;Class / Lab Notes {.unnumbered}
 :::

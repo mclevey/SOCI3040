@@ -1,8 +1,8 @@
-# {{< bi 1-circle >}} Plan {background-color="#2E3440"}
+# Plan {background-color="#2E3440"}
 [Australian Elections]{.huge}
 
 
-## {{< bi 1-circle >}} plan
+## plan
 <br>
 
 ### Australian Elections
@@ -21,7 +21,7 @@ Many smaller parties and independents
 
 
 
-## {{< bi 1-circle >}} plan
+## plan
 
 ::: {#fig-australiaexample layout-ncol="2" layout-valign="bottom"}
 ![Sketch of a possible dataset to create a graph](../media/tswd-figures/02-divisiontable.png){#fig-australiaexample-data width="80%"}
@@ -32,12 +32,12 @@ Sketches of a potential dataset and graph related to an Australian election. The
 :::
 
 
-# {{< bi 2-circle >}} Simulate {background-color="#2E3440"}
+# Simulate {background-color="#2E3440"}
 [Australian Elections]{.huge}
 
 
 
-## {{< bi 1-circle >}} simulate
+## simulate
 <br>
 
 ```{r}
@@ -49,7 +49,7 @@ library(tidyverse)
 library(janitor)
 ```
 
-## {{< bi 1-circle >}} simulate
+## simulate
 <br>
 
 We'll simulate a dataset with two variables,<br>**Division** and **Party**, and some values for each.
@@ -60,7 +60,7 @@ We'll simulate a dataset with two variables,<br>**Division** and **Party**, and 
 <br><br>
 `party`<br>the name of one of the political parties<br>[Liberal, Labor, National, Green, or Other]{.small}
 
-## {{< bi 1-circle >}} simulate
+## simulate
 <br>
 
 ```{r}
@@ -98,7 +98,7 @@ When sampling, `replace = TRUE` allows each party name to be selected multiple t
 We can print the `simulated_data` object to view the simulated dataset. When we run this line, R will display the table with two columns, `Division` and `Party`, where each division is assigned one of the five parties randomly.
 :::
 
-## {{< bi 1-circle >}} simulate
+## simulate
 
 [🤘]{.extra-large} We have our **fake** data!
 
@@ -107,10 +107,10 @@ simulated_data
 ```
 
 
-# {{< bi 3-circle >}} Acquire {background-color="#2E3440"}
+# Acquire {background-color="#2E3440"}
 [Australian Elections]{.huge}
 
-## {{< bi 3-circle >}} acquire
+## acquire
 <br>
 
 The data we want is provided by the **Australian Electoral Commission (AEC)**, which is the non-partisan agency that organizes Australian federal elections. We can download the data using [this link](https://results.aec.gov.au/27966/website/Downloads/HouseMembersElectedDownload-27966.csv), but we want to do it **programatically**, storing the results to a dataframe object called `raw_elections_data`.
@@ -130,7 +130,7 @@ raw_elections_data <-
     )
 ```
 
-## {{< bi 3-circle >}} acquire
+## acquire
 <br>
 
 We'll save the data as a CSV file.
@@ -153,7 +153,7 @@ The `here()` function, from the `here` library, simplifies file paths by always 
 :::
 
 
-## {{< bi 3-circle >}} acquire
+## acquire
 
 [🤘]{.extra-large} We have our **real** data!
 
@@ -164,7 +164,7 @@ raw_elections_data
 ```
 
 
-## {{< bi 3-circle >}} acquire
+## acquire
 
 `head()` shows the first six rows.
 
@@ -175,7 +175,7 @@ head(raw_elections_data)
 ```
 
 
-## {{< bi 3-circle >}} acquire
+## acquire
 
 `tail()` shows the last six rows.
 
@@ -185,7 +185,7 @@ head(raw_elections_data)
 tail(raw_elections_data)
 ```
 
-## {{< bi 3-circle >}} acquire
+## acquire
 
 > "We are trying to make it similar to the dataset that we thought we wanted in the planning stage. While it is fine to move away from the plan, this needs to be a deliberate, reasoned decision." [@alexander2023telling]
 
@@ -205,7 +205,7 @@ raw_elections_data <-
     )
 ```
 
-## {{< bi 3-circle >}} acquire
+## acquire
 <br>
 
 `clean_names()` makes variables easier to type.
@@ -224,7 +224,7 @@ Let's look at the first 6 rows.
 head(cleaned_elections_data)
 ```
 
-## {{< bi 3-circle >}} acquire
+## acquire
 
 ::: {.callout-tip appearance="simple" icon="false"}
 ✌️ R Tip
@@ -253,7 +253,7 @@ cleaned_elections_data <-
 ```
 
 
-## {{< bi 3-circle >}} acquire
+## acquire
 <br>
 
 ```{r}
@@ -264,7 +264,7 @@ head(cleaned_elections_data)
 
 This looks good, but some of the variable names are still not obvious because they are abbreviated. 
 
-## {{< bi 3-circle >}} acquire
+## acquire
 <br>
 
 ::: {.callout-tip appearance="simple" icon="false"}
@@ -281,7 +281,7 @@ names(cleaned_elections_data)
 
 Let's rename.
 
-## {{< bi 3-circle >}} acquire
+## acquire
 <br>
 
 ```{r}
@@ -295,7 +295,7 @@ cleaned_elections_data <-
 head(cleaned_elections_data)
 ```
 
-## {{< bi 3-circle >}} acquire
+## acquire
 
 <br>
 
@@ -310,7 +310,7 @@ cleaned_elections_data$elected_party |>
 
 Cool, but let's simplify the party names in `elected_party` to match what we simulated. We can do this with `case_match()` from `dplyr`.
 
-## {{< bi 3-circle >}} acquire
+## acquire
 
 <br>
 
@@ -333,7 +333,7 @@ cleaned_elections_data <-
     )
 ```
 
-## {{< bi 3-circle >}} acquire
+## acquire
 <br>
 
 ```{r}
@@ -344,7 +344,7 @@ head(cleaned_elections_data)
 
 Our data now matches our plan! 😎 
 
-## {{< bi 3-circle >}} acquire {#aus_elections_clean_path}
+## acquire {#aus_elections_clean_path}
 <br>
 
 Let's save the cleaned data so that we can start with it data in the next stage. We'll use a new filename to preserve the original and make it easy to identify the **clean** version.
@@ -360,10 +360,10 @@ write_csv(
 
 
 
-# {{< bi 3-circle >}} Explore / Understand  {background-color="#2E3440"}
+# Explore / Understand  {background-color="#2E3440"}
 [Australian Elections]{.huge}
 
-## {{< bi 4-circle >}} explore / understand 
+## explore / understand 
 <br>
 
 :::: {.columns}
@@ -380,7 +380,7 @@ How do we build the graph that we **planned**?
 :::
 ::::
 
-## {{< bi 4-circle >}} explore / understand 
+## explore / understand 
 <br>
 
 First, we read in the *cleaned* dataset that we just created. 
@@ -408,7 +408,7 @@ aus_elections_clean_path
 This won't work in a *new* script unless we re-create the object. Can you explain why?
 :::
 
-## {{< bi 4-circle >}} explore / understand 
+## explore / understand 
 <br>
 
 ```{r}
@@ -417,7 +417,7 @@ head(cleaned_elections_data)
 
 😎
 
-## {{< bi 4-circle >}} explore / understand 
+## explore / understand 
 
 ::: {.callout-note appearance="minimal"}
 How many seats did each party win?
@@ -432,7 +432,7 @@ cleaned_elections_data |>
     count(elected_party)
 ```
 
-## {{< bi 4-circle >}} explore / understand 
+## explore / understand 
 <br>
 
 ::::: {.columns}
@@ -459,7 +459,7 @@ In ggplot2, aesthetics are specified within the aes() function, where each aesth
 :::
 
 
-## {{< bi 4-circle >}} explore / understand 
+## explore / understand 
 
 <br>
 
@@ -488,7 +488,7 @@ cleaned_elections_data |>
     geom_bar()
 ```
 
-## {{< bi 4-circle >}} explore / understand 
+## explore / understand 
 <br>
 
 ```{r}
@@ -523,10 +523,10 @@ cleaned_elections_data |>
 ```
 
 
-# {{< bi 5-circle >}} Share {background-color="#2E3440"}
+# Share {background-color="#2E3440"}
 [Australian Elections]{.huge}
 
-## {{< bi 5-circle >}} share
+## share
 
 Example taken directly from @alexander2023telling, [here](https://tellingstorieswithdata.com/02-drinking_from_a_fire_hose.html#share).
 

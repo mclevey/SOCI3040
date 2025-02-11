@@ -30,25 +30,4 @@ bibliography: ../references.bib
 
 ## Assignment Instructions
 
-Assignment information will be posted after the second class. Work will be done in and outside of class.
-
-:::: {.aside}
-::: {#fig-workflow}
-{{< include ../partials/_tswd-workflow-diagram-tb.qmd >}}
-
-Rohan Alexander's [-@alexander2023telling] **Telling Stories with Data** workflow
-:::
-::::
-
-
-## Grading Rubric
-
-Will be posted after the second class.
-
-
-## Student Work
-
-Will be posted after the assignment has been completed.
-
-
-## References 
+Assignment information will be finalized by the end of the week.

@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -710,21 +744,1031 @@ ul.task-list li input[type="checkbox"] {
 <li>Required: <a href="https://tellingstorieswithdata.com/08-hunt.html"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-fire " style="" role="img" aria-hidden="true"></i> Ch 8</li>
 <li>Recommended: <a href="https://socviz.co/refineplots.html#refineplots"><i class="bi-file-text " style="" role="img" aria-hidden="true"></i></a> <i class="bi-activity " style="" role="img" aria-hidden="true"></i> Ch 8</li>
 </ul>
-</section>
-<section id="lecture-slides" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="lecture-slides"><i class="bi-file-slides-fill " style="" role="img" aria-hidden="true"></i>&nbsp;&nbsp;Lecture Slides</h2>
-    <p><a href="lecture-15-slides.html" target="_blank">View slides in full screen</a></p>
-       <div>
-      <iframe class="slide-deck" src="lecture-15-slides.html" height="475px"></iframe>
-    </div>
-  
+<!-- ## &nbsp;&nbsp;Lecture Slides {.unnumbered} -->
+<!--  -->
 </section>
 <section id="class-lab-notes" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="class-lab-notes"><i class="bi-file-code " style="" role="img" aria-hidden="true"></i>&nbsp;&nbsp;Class / Lab Notes</h2>
 </section>
 </div>
+<section id="api-example-openalexr" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> API Example: <code>OpenAlexR</code></h1>
+<blockquote class="blockquote">
+<p>Use the “Polite Pool” if you have an API Key!</p>
+</blockquote>
+<p>Our goal will be to retrieve publications by researchers at Memorial University who have authored more than 10 publications (indexed in OpenAlex) using the OpenAlex API, and to begin working with the data objects returned from the API.</p>
+<blockquote class="blockquote">
+<p>Note that some of the code in this notebook will take some time to run, especially when downloading data. Be patient, and change the query parameters if you must.</p>
+</blockquote>
+<p>We’ll load the <code>openalexR</code> and <code>tidyverse</code> packages. Don’t forget to install <code>openalexR</code> in your PostCloud if you haven’t already done so!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openalexR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Thank you for using openalexR!
+To acknowledge our work, please cite the package by calling `citation("openalexR")`.
+To suppress this message, add `openalexR.message = suppressed` to your .Renviron file.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="finding-memorials-openalex-institutional-id" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="finding-memorials-openalex-institutional-id"><span class="header-section-number">1.1</span> Finding Memorial’s OpenAlex Institutional ID</h2>
+<p>To start, we need to find Memorial’s “<strong>Institutional ID</strong>”. We can do this by using the <a href="https://openalex.org/">OpenAlex website</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/open-alex/Screenshot 2025-03-04 at 8.05.28 AM.png" class="img-fluid figure-img"></p>
+<figcaption>OpenAlex search</figcaption>
+</figure>
+</div>
+<p>Click on the <strong>Institution</strong> button and start typing “Memorial University” into the OpenAlex search.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/open-alex/Screenshot 2025-03-04 at 8.05.52 AM.png" class="img-fluid figure-img"></p>
+<figcaption>Search for Memorial University under “Institution”</figcaption>
+</figure>
+</div>
+<p>Take a moment to review the results page – it’s the same page we saw when searching authors and topics in previous classes, only this time it’s for all of Memorial University. As of March 2025, there are almost 50,000 indexed publications.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/open-alex/Screenshot 2025-03-04 at 8.06.01 AM.png" class="img-fluid figure-img"></p>
+<figcaption>The results page</figcaption>
+</figure>
+</div>
+<p>Click on “Memorial University” in the search field.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/open-alex/Screenshot 2025-03-04 at 8.06.15 AM.png" class="img-fluid figure-img"></p>
+<figcaption>Finding an Institutional ID</figcaption>
+</figure>
+</div>
+<p>You should see an <strong>Institution ID</strong> under “Memorial University of Newfoundland.” I’ve highlighted it below to make it easier to see. <strong>This is the number we want to use when we query the OpenAlexAPI!</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/open-alex/Screenshot 2025-03-04 at 8.06.21 AM.png" class="img-fluid figure-img"></p>
+<figcaption>Copying the Institutional ID for an API query</figcaption>
+</figure>
+</div>
+<p>You can click to view MUN’s “Institutional Profile” on Open Alex.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/open-alex/Screenshot 2025-03-04 at 8.06.36 AM.png" class="img-fluid figure-img"></p>
+<figcaption>An OpenAlex institution profile page</figcaption>
+</figure>
+</div>
+</section>
+<section id="query-the-openalex-api" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="query-the-openalex-api"><span class="header-section-number">1.2</span> Query the OpenAlex API</h2>
+<p>Now we know that Memorial’s Institutional ID is <code>i130438778</code>. We can use this to setup an API query. Let’s start by creating a list with our query parameters.</p>
+<p>Recall that a list in R is like a container that holds several pieces of information. In this case, our list will contain three key-value pairs:</p>
+<ul>
+<li><code>entity = "authors"</code> tells the API that we are interested in data about authors.</li>
+<li><code>last_known_institutions.id = "i130438778"</code> specifies that we want authors who are or were affiliated with a particular institution (identified by “i130438778”).</li>
+<li><code>works_count = "&gt;10"</code> means we want authors who have more than 10 published works.</li>
+</ul>
+<p>Let’s set it up!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_arguments <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">entity =</span> <span class="st">"authors"</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">last_known_institutions.id =</span> <span class="st">"i130438778"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">works_count =</span> <span class="st">"&gt;10"</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now let’s we’ll make an API call!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">do.call</span>(oa_fetch, <span class="fu">c</span>(my_arguments, <span class="fu">list</span>(<span class="at">count_only =</span> <span class="cn">TRUE</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     count db_response_time_ms page per_page
+[1,]  2307                 169    1        1</code></pre>
+</div>
+</div>
+<p><code>do.call()</code> is a function that calls another function – in this case <code>oa_fetch</code> – using a list of arguments.</p>
+<p>Here, we combine our <code>my_arguments</code> list with an extra argument list<code>(count_only = TRUE)</code>. This tells the function <code>oa_fetch</code> to <em>only return a count</em> (the number of matching records) instead of all the detailed information OpenAlex has about our search results. Essentially, we’re asking the API: “<em>How many authors match these criteria?</em>”</p>
+<p>So now we’ve defined the search criteria for authors in a list, and we’ve checked if there are any authors matching the criteria by asking for just a count. If there are results (i.e., there is 1 or more authors in the OpenAlex database), then we can make another request to collect detailed information for those authors.</p>
+<p>Run the code block below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">do.call</span>(oa_fetch, <span class="fu">c</span>(my_arguments, <span class="fu">list</span>(<span class="at">count_only =</span> <span class="cn">TRUE</span>)))[<span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">do.call</span>(oa_fetch, my_arguments) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">show_authors</span>() <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `name`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `display_name`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `name`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `display_name`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `name`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Unknown or uninitialised column: `display_name`.</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 15%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: left;">display_name</th>
+<th style="text-align: left;">orcid</th>
+<th style="text-align: right;">works_count</th>
+<th style="text-align: right;">cited_by_count</th>
+<th style="text-align: left;">affiliation_display_name</th>
+<th style="text-align: left;">top_concepts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A5026509039</td>
+<td style="text-align: left;">Fereidoon Shahidi</td>
+<td style="text-align: left;">0000-0002-9912-0330</td>
+<td style="text-align: right;">1113</td>
+<td style="text-align: right;">79559</td>
+<td style="text-align: left;">Memorial University of Newfoundland</td>
+<td style="text-align: left;">Biochemistry, Animal Science and Zoology, Molecular Biology</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A5077149719</td>
+<td style="text-align: left;">Octavia A. Dobre</td>
+<td style="text-align: left;">0000-0001-8528-0512</td>
+<td style="text-align: right;">949</td>
+<td style="text-align: right;">20777</td>
+<td style="text-align: left;">Memorial University of Newfoundland</td>
+<td style="text-align: left;">Electrical and Electronic Engineering, Electrical and Electronic Engineering, Electrical and Electronic Engineering</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A5010428924</td>
+<td style="text-align: left;">David C. Schneider</td>
+<td style="text-align: left;">0000-0003-4771-2155</td>
+<td style="text-align: right;">798</td>
+<td style="text-align: right;">6532</td>
+<td style="text-align: left;">Memorial University of Newfoundland</td>
+<td style="text-align: left;">Global and Planetary Change, Insect Science, Ecology, Evolution, Behavior and Systematics</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A5049089848</td>
+<td style="text-align: left;">Trung Q. Duong</td>
+<td style="text-align: left;">0000-0002-4703-4836</td>
+<td style="text-align: right;">726</td>
+<td style="text-align: right;">18629</td>
+<td style="text-align: left;">Memorial University of Newfoundland</td>
+<td style="text-align: left;">Electrical and Electronic Engineering, Computer Networks and Communications, Electrical and Electronic Engineering</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A5032069177</td>
+<td style="text-align: left;">Ian Fleming</td>
+<td style="text-align: left;">0000-0002-5541-824X</td>
+<td style="text-align: right;">701</td>
+<td style="text-align: right;">23299</td>
+<td style="text-align: left;">Memorial University of Newfoundland</td>
+<td style="text-align: left;">Organic Chemistry, Organic Chemistry, Nature and Landscape Conservation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A5102982237</td>
+<td style="text-align: left;">Robert A. Brown</td>
+<td style="text-align: left;">0000-0003-2350-110X</td>
+<td style="text-align: right;">528</td>
+<td style="text-align: right;">18534</td>
+<td style="text-align: left;">Memorial University of Newfoundland</td>
+<td style="text-align: left;">Materials Chemistry, Astronomy and Astrophysics, Astronomy and Astrophysics</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>In the code above, we check if the count returned by the previous call is greater than zero by using an <code>if</code> statement. Then <code>do.call(oa_fetch, c(my_arguments, list(count_only = TRUE)))[1]</code> retrieves the first element of the result, which is the number of matching authors. If that number is greater than 0 (meaning there is at least one author that meets the criteria), then the code inside the <code>if</code> block (<code>{ ... }</code>) block will run.</p>
+<p>Inside the <code>if</code> block, <code>do.call(oa_fetch, my_arguments)</code> calls the <code>oa_fetch</code> function again with our original arguments, only this time we don’t use <code>count_only = TRUE</code>. This tells to API to fetch all the details of the matching authors. We then use the pipe operator <code>|&gt;</code> to pass the results of that function on to the next function, <code>show_authors()</code>. The <code>show_authors()</code> function formats or selects relevant author information. Finally, we pass the formatted data to <code>knitr::kable()</code>, which converts it into a nicely formatted table.</p>
+</section>
+<section id="store-the-data" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="store-the-data"><span class="header-section-number">1.3</span> Store the Data!</h2>
+<p>So far our code fetches data and processes it for display, but it doesn’t retain the data in memory or write it to disk. If we want to keep it in memory and <em>analyze</em> that data in some way, we need to assign the result to a variable. Recall from previous classes that we want to minimize our APIs calls to be considerate of the servers providing our data.</p>
+<p>Let’s do that now, making yet another API call.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>authors_data <span class="ot">&lt;-</span> <span class="fu">do.call</span>(oa_fetch, my_arguments)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now our data in stored in <code>authors_data</code>. Let’s take a look at the column names.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(authors_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "id"                        "display_name"             
+ [3] "display_name_alternatives" "ids"                      
+ [5] "orcid"                     "works_count"              
+ [7] "cited_by_count"            "counts_by_year"           
+ [9] "affiliation_display_name"  "affiliation_id"           
+[11] "affiliation_ror"           "affiliation_country_code" 
+[13] "affiliation_type"          "affiliation_lineage"      
+[15] "affiliations_other"        "topics"                   
+[17] "works_api_url"            </code></pre>
+</div>
+</div>
+<p>There are 17 variables for us to work with here! We’ll focus on a few today, including <code>display_name</code>, <code>cited_by_count</code>, <code>works_count</code>, <code>counts_by_year</code>, and <code>topics</code>.</p>
+<p>We can print a preview of the <code>tibble</code> like any other. Let’s print 30 rows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(authors_data, <span class="at">n =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,307 × 17
+   id                display_name display_name_alterna…¹ ids   orcid works_count
+   &lt;chr&gt;             &lt;chr&gt;        &lt;list&gt;                 &lt;lis&gt; &lt;chr&gt;       &lt;int&gt;
+ 1 https://openalex… Fereidoon S… &lt;chr [3]&gt;              &lt;chr&gt; http…        1113
+ 2 https://openalex… Octavia A. … &lt;chr [7]&gt;              &lt;chr&gt; http…         949
+ 3 https://openalex… David C. Sc… &lt;chr [6]&gt;              &lt;chr&gt; http…         798
+ 4 https://openalex… Trung Q. Du… &lt;chr [5]&gt;              &lt;chr&gt; http…         726
+ 5 https://openalex… Ian Fleming  &lt;chr [8]&gt;              &lt;chr&gt; http…         701
+ 6 https://openalex… Robert A. B… &lt;chr [6]&gt;              &lt;chr&gt; http…         528
+ 7 https://openalex… Weimin Huang &lt;chr [10]&gt;             &lt;chr&gt; http…         525
+ 8 https://openalex… Laurence K.… &lt;chr [6]&gt;              &lt;chr&gt; &lt;NA&gt;          523
+ 9 https://openalex… G.F. Naterer &lt;chr [4]&gt;              &lt;chr&gt; http…         523
+10 https://openalex… Proton Rahm… &lt;chr [5]&gt;              &lt;chr&gt; http…         492
+11 https://openalex… David G. Be… &lt;chr [6]&gt;              &lt;chr&gt; http…         485
+12 https://openalex… David Molyn… &lt;chr [6]&gt;              &lt;chr&gt; http…         478
+13 https://openalex… Lynn H. Ger… &lt;chr [13]&gt;             &lt;chr&gt; http…         454
+14 https://openalex… M. P. Searle &lt;chr [9]&gt;              &lt;chr&gt; http…         434
+15 https://openalex… Baiyu Zhang  &lt;chr [9]&gt;              &lt;chr&gt; http…         430
+16 https://openalex… Steven M. R… &lt;chr [8]&gt;              &lt;chr&gt; http…         424
+17 https://openalex… Rosemary Ri… &lt;chr [5]&gt;              &lt;chr&gt; http…         412
+18 https://openalex… E. Jacobsen  &lt;chr [4]&gt;              &lt;chr&gt; &lt;NA&gt;          394
+19 https://openalex… Lev Tarasov  &lt;chr [4]&gt;              &lt;chr&gt; http…         390
+20 https://openalex… Sohrab Zend… &lt;chr [3]&gt;              &lt;chr&gt; http…         376
+21 https://openalex… Patrick S. … &lt;chr [5]&gt;              &lt;chr&gt; http…         348
+22 https://openalex… Neil Bose    &lt;chr [7]&gt;              &lt;chr&gt; http…         344
+23 https://openalex… Jian‐Bin Lin &lt;chr [4]&gt;              &lt;chr&gt; http…         336
+24 https://openalex… John T. Bro… &lt;chr [5]&gt;              &lt;chr&gt; http…         332
+25 https://openalex… Jie Xiao     &lt;chr [5]&gt;              &lt;chr&gt; http…         318
+26 https://openalex… Yuming Zhao  &lt;chr [4]&gt;              &lt;chr&gt; http…         317
+27 https://openalex… M. Tariq Iq… &lt;chr [15]&gt;             &lt;chr&gt; http…         315
+28 https://openalex… Michael Lei… &lt;chr [3]&gt;              &lt;chr&gt; http…         308
+29 https://openalex… Abir U. Iga… &lt;chr [6]&gt;              &lt;chr&gt; http…         300
+30 https://openalex… Rachel Berk… &lt;chr [5]&gt;              &lt;chr&gt; http…         299
+# ℹ 2,277 more rows
+# ℹ abbreviated name: ¹​display_name_alternatives
+# ℹ 11 more variables: cited_by_count &lt;int&gt;, counts_by_year &lt;list&gt;,
+#   affiliation_display_name &lt;chr&gt;, affiliation_id &lt;chr&gt;,
+#   affiliation_ror &lt;chr&gt;, affiliation_country_code &lt;chr&gt;,
+#   affiliation_type &lt;chr&gt;, affiliation_lineage &lt;chr&gt;,
+#   affiliations_other &lt;list&gt;, topics &lt;list&gt;, works_api_url &lt;chr&gt;</code></pre>
+</div>
+</div>
+<p>Let’s take a look at the <code>topics</code> data first. We’ll get a sense of what is in here and think about how to filter it to a smaller set of results that interest us.</p>
+<p>One way to proceed is to use the <code>pull()</code> function from the <code>tidyverse</code>. If you run the code below, you’ll see a LOT of text populate your screen – R is printing 2307 dataframes! I won’t print the results here, but you can!</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>authors_data <span class="sc">%&gt;%</span> <span class="fu">pull</span>(topics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When we we pipe <code>authors_data</code> into <code>pull(topics)</code>, we get the contents of the <code>topics</code> column as a <code>vector</code>. Vectors are useful for lots of things, including quick computations, plotting, or applying vectorized functions. Since it’s a simple vector, there’s no extra metadata like column names or row indices.</p>
+<p>That’s not always what we want. Instead, we could use the <code>select()</code> function from the <code>tidyverse</code> to get back a <code>tibble</code> containing the column we want. Because it’s a <code>tibble</code>, <em>it preserves additional information such as column names, types, and row names</em> (implicitly). The <code>tibble</code> still has the structure of a table, so we can see the column name and work with it in the context of other columns! And keeping our data in a <code>tibble</code> format makes it easier to perform further data manipulations, or join with other <code>tibbles</code>, since many tidyverse functions expect data to be in a <code>tibble</code> format.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>authors_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(topics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is a complex data structure! Each publication in our dataset has a <code>tibble</code> stored in the <code>topics</code> column! Nested dataframes! Oh my.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>authors_data <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(topics) <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    .[[<span class="dv">1</span>]] <span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+# A tibble: 100 × 5
+       i count name     id                                  display_name        
+   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;                               &lt;chr&gt;               
+ 1     1   312 topic    https://openalex.org/T10035         Phytochemicals and …
+ 2     1   312 subfield https://openalex.org/subfields/2704 Biochemistry        
+ 3     1   312 field    https://openalex.org/fields/27      Medicine            
+ 4     1   312 domain   https://openalex.org/domains/4      Health Sciences     
+ 5     2   228 topic    https://openalex.org/T10333         Meat and Animal Pro…
+ 6     2   228 subfield https://openalex.org/subfields/1103 Animal Science and …
+ 7     2   228 field    https://openalex.org/fields/11      Agricultural and Bi…
+ 8     2   228 domain   https://openalex.org/domains/1      Life Sciences       
+ 9     3   165 topic    https://openalex.org/T11561         Protein Hydrolysis …
+10     3   165 subfield https://openalex.org/subfields/1312 Molecular Biology   
+# ℹ 90 more rows
+
+[[2]]
+# A tibble: 100 × 5
+       i count name     id                                  display_name        
+   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;                               &lt;chr&gt;               
+ 1     1   303 topic    https://openalex.org/T11458         Advanced Wireless C…
+ 2     1   303 subfield https://openalex.org/subfields/2208 Electrical and Elec…
+ 3     1   303 field    https://openalex.org/fields/22      Engineering         
+ 4     1   303 domain   https://openalex.org/domains/3      Physical Sciences   
+ 5     2   186 topic    https://openalex.org/T10148         Advanced MIMO Syste…
+ 6     2   186 subfield https://openalex.org/subfields/2208 Electrical and Elec…
+ 7     2   186 field    https://openalex.org/fields/22      Engineering         
+ 8     2   186 domain   https://openalex.org/domains/3      Physical Sciences   
+ 9     3   116 topic    https://openalex.org/T10851         Optical Wireless Co…
+10     3   116 subfield https://openalex.org/subfields/2208 Electrical and Elec…
+# ℹ 90 more rows
+
+[[3]]
+# A tibble: 100 × 5
+       i count name     id                                  display_name        
+   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;                               &lt;chr&gt;               
+ 1     1    57 topic    https://openalex.org/T10230         Marine and fisherie…
+ 2     1    57 subfield https://openalex.org/subfields/2306 Global and Planetar…
+ 3     1    57 field    https://openalex.org/fields/23      Environmental Scien…
+ 4     1    57 domain   https://openalex.org/domains/3      Physical Sciences   
+ 5     2    53 topic    https://openalex.org/T10135         Insect-Plant Intera…
+ 6     2    53 subfield https://openalex.org/subfields/1109 Insect Science      
+ 7     2    53 field    https://openalex.org/fields/11      Agricultural and Bi…
+ 8     2    53 domain   https://openalex.org/domains/1      Life Sciences       
+ 9     3    35 topic    https://openalex.org/T12329         Hemiptera Insect St…
+10     3    35 subfield https://openalex.org/subfields/1105 Ecology, Evolution,…
+# ℹ 90 more rows
+
+[[4]]
+# A tibble: 100 × 5
+       i count name     id                                  display_name        
+   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;                               &lt;chr&gt;               
+ 1     1   265 topic    https://openalex.org/T10148         Advanced MIMO Syste…
+ 2     1   265 subfield https://openalex.org/subfields/2208 Electrical and Elec…
+ 3     1   265 field    https://openalex.org/fields/22      Engineering         
+ 4     1   265 domain   https://openalex.org/domains/3      Physical Sciences   
+ 5     2   261 topic    https://openalex.org/T10796         Cooperative Communi…
+ 6     2   261 subfield https://openalex.org/subfields/1705 Computer Networks a…
+ 7     2   261 field    https://openalex.org/fields/17      Computer Science    
+ 8     2   261 domain   https://openalex.org/domains/3      Physical Sciences   
+ 9     3   161 topic    https://openalex.org/T11458         Advanced Wireless C…
+10     3   161 subfield https://openalex.org/subfields/2208 Electrical and Elec…
+# ℹ 90 more rows
+
+[[5]]
+# A tibble: 100 × 5
+       i count name     id                                  display_name        
+   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;                               &lt;chr&gt;               
+ 1     1   210 topic    https://openalex.org/T10013         Asymmetric Synthesi…
+ 2     1   210 subfield https://openalex.org/subfields/1605 Organic Chemistry   
+ 3     1   210 field    https://openalex.org/fields/16      Chemistry           
+ 4     1   210 domain   https://openalex.org/domains/3      Physical Sciences   
+ 5     2   165 topic    https://openalex.org/T11549         Synthetic Organic C…
+ 6     2   165 subfield https://openalex.org/subfields/1605 Organic Chemistry   
+ 7     2   165 field    https://openalex.org/fields/16      Chemistry           
+ 8     2   165 domain   https://openalex.org/domains/3      Physical Sciences   
+ 9     3   133 topic    https://openalex.org/T10302         Fish Ecology and Ma…
+10     3   133 subfield https://openalex.org/subfields/2309 Nature and Landscap…
+# ℹ 90 more rows
+
+[[6]]
+# A tibble: 100 × 5
+       i count name     id                                  display_name        
+   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;                               &lt;chr&gt;               
+ 1     1    86 topic    https://openalex.org/T11087         Solidification and …
+ 2     1    86 subfield https://openalex.org/subfields/2505 Materials Chemistry 
+ 3     1    86 field    https://openalex.org/fields/25      Materials Science   
+ 4     1    86 domain   https://openalex.org/domains/3      Physical Sciences   
+ 5     2    69 topic    https://openalex.org/T10039         Stellar, planetary,…
+ 6     2    69 subfield https://openalex.org/subfields/3103 Astronomy and Astro…
+ 7     2    69 field    https://openalex.org/fields/31      Physics and Astrono…
+ 8     2    69 domain   https://openalex.org/domains/3      Physical Sciences   
+ 9     3    68 topic    https://openalex.org/T10325         Astro and Planetary…
+10     3    68 subfield https://openalex.org/subfields/3103 Astronomy and Astro…
+# ℹ 90 more rows
+
+[[7]]
+# A tibble: 100 × 5
+       i count name     id                                  display_name        
+   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;                               &lt;chr&gt;               
+ 1     1   188 topic    https://openalex.org/T11061         Ocean Waves and Rem…
+ 2     1   188 subfield https://openalex.org/subfields/1910 Oceanography        
+ 3     1   188 field    https://openalex.org/fields/19      Earth and Planetary…
+ 4     1   188 domain   https://openalex.org/domains/3      Physical Sciences   
+ 5     2   107 topic    https://openalex.org/T10891         Radar Systems and S…
+ 6     2   107 subfield https://openalex.org/subfields/2202 Aerospace Engineeri…
+ 7     2   107 field    https://openalex.org/fields/22      Engineering         
+ 8     2   107 domain   https://openalex.org/domains/3      Physical Sciences   
+ 9     3    93 topic    https://openalex.org/T10255         Oceanographic and A…
+10     3    93 subfield https://openalex.org/subfields/1910 Oceanography        
+# ℹ 90 more rows
+
+[[8]]
+# A tibble: 100 × 5
+       i count name     id                                  display_name        
+   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;                               &lt;chr&gt;               
+ 1     1   242 topic    https://openalex.org/T10612         Magnetism in coordi…
+ 2     1   242 subfield https://openalex.org/subfields/2504 Electronic, Optical…
+ 3     1   242 field    https://openalex.org/fields/25      Materials Science   
+ 4     1   242 domain   https://openalex.org/domains/3      Physical Sciences   
+ 5     2   216 topic    https://openalex.org/T11881         Crystallization and…
+ 6     2   216 subfield https://openalex.org/subfields/2505 Materials Chemistry 
+ 7     2   216 field    https://openalex.org/fields/25      Materials Science   
+ 8     2   216 domain   https://openalex.org/domains/3      Physical Sciences   
+ 9     3   215 topic    https://openalex.org/T12613         X-ray Diffraction i…
+10     3   215 subfield https://openalex.org/subfields/2505 Materials Chemistry 
+# ℹ 90 more rows
+
+[[9]]
+# A tibble: 100 × 5
+       i count name     id                                  display_name        
+   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;                               &lt;chr&gt;               
+ 1     1   120 topic    https://openalex.org/T11802         Chemical Looping an…
+ 2     1   120 subfield https://openalex.org/subfields/2204 Biomedical Engineer…
+ 3     1   120 field    https://openalex.org/fields/22      Engineering         
+ 4     1   120 domain   https://openalex.org/domains/3      Physical Sciences   
+ 5     2    78 topic    https://openalex.org/T10998         Heat Transfer and O…
+ 6     2    78 subfield https://openalex.org/subfields/2210 Mechanical Engineer…
+ 7     2    78 field    https://openalex.org/fields/22      Engineering         
+ 8     2    78 domain   https://openalex.org/domains/3      Physical Sciences   
+ 9     3    54 topic    https://openalex.org/T12696         Icing and De-icing …
+10     3    54 subfield https://openalex.org/subfields/2202 Aerospace Engineeri…
+# ℹ 90 more rows
+
+[[10]]
+# A tibble: 100 × 5
+       i count name     id                                  display_name        
+   &lt;int&gt; &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;                               &lt;chr&gt;               
+ 1     1   250 topic    https://openalex.org/T11092         Spondyloarthritis S…
+ 2     1   250 subfield https://openalex.org/subfields/2745 Rheumatology        
+ 3     1   250 field    https://openalex.org/fields/27      Medicine            
+ 4     1   250 domain   https://openalex.org/domains/4      Health Sciences     
+ 5     2   211 topic    https://openalex.org/T10469         Psoriasis: Treatmen…
+ 6     2   211 subfield https://openalex.org/subfields/2403 Immunology          
+ 7     2   211 field    https://openalex.org/fields/24      Immunology and Micr…
+ 8     2   211 domain   https://openalex.org/domains/1      Life Sciences       
+ 9     3   178 topic    https://openalex.org/T10200         Rheumatoid Arthriti…
+10     3   178 subfield https://openalex.org/subfields/2745 Rheumatology        
+# ℹ 90 more rows</code></pre>
+</div>
+</div>
+<p>If we print some rows from the topics <code>tibble</code>, we can see that it contains information on <code>topic</code>, <code>subfield</code>, <code>field</code>, and <code>domain</code>. We’ll focus on topics for now and will come back to fields later.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>authors_data <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(topics) <span class="sc">%&gt;%</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(topics) <span class="sc">%&gt;%</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">distinct</span>(display_name) <span class="sc">%&gt;%</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4,285 × 1
+   display_name                                
+   &lt;chr&gt;                                       
+ 1 Phytochemicals and Antioxidant Activities   
+ 2 Biochemistry                                
+ 3 Medicine                                    
+ 4 Health Sciences                             
+ 5 Meat and Animal Product Quality             
+ 6 Animal Science and Zoology                  
+ 7 Agricultural and Biological Sciences        
+ 8 Life Sciences                               
+ 9 Protein Hydrolysis and Bioactive Peptides   
+10 Molecular Biology                           
+11 Biochemistry, Genetics and Molecular Biology
+12 Antioxidant Activity and Oxidative Stress   
+13 Fatty Acid Research and Health              
+14 Nutrition and Dietetics                     
+15 Nursing                                     
+16 Edible Oils Quality and Analysis            
+17 Organic Chemistry                           
+18 Chemistry                                   
+19 Physical Sciences                           
+20 Aquaculture Nutrition and Growth            
+21 Aquatic Science                             
+22 Free Radicals and Antioxidants              
+23 Advanced Chemical Sensor Technologies       
+24 Biomedical Engineering                      
+25 Engineering                                 
+26 Tea Polyphenols and Effects                 
+27 Pathology and Forensic Medicine             
+28 Nuts composition and effects                
+29 Phytoestrogen effects and research          
+30 Food Chemistry and Fat Analysis             
+# ℹ 4,255 more rows</code></pre>
+</div>
+</div>
+<p>Let’s filter the <code>tibble</code> to find authors (rows in <code>authors_data</code>) who have worked on the topic of “migration.”</p>
+<p>Let’s unpack the code below.</p>
+<p>First, we create a variable called <code>search_topic</code> and assign it the string “migration”. We will use this value later to filter the data. Then we pipe the <code>authors_data</code> into the <code>select()</code> function, where we select the <code>display_name</code> column (containing author names) and the <code>topics</code> column, which contained nested tibbles with information about the topics on which a specific author has published.</p>
+<p>We then pipe the author names and topics into the <code>unnest()</code> function, which <em>unnests</em> the <code>topics</code> column. In other words, we will pull the <code>topics</code> <code>tibble</code> out of the row from the <code>dataframe</code> and expand it so that it is it’s own <code>tibble</code> with separate rows. The <code>names_sep = "_"</code> parameter specifies that* when unnesting, any new column names coming from the nested structure should be concatenated with the original column name using an underscore.* For example, if the nested <code>tibble</code> has a column named <code>display_name</code>, it might become <code>topics_display_name</code>. Why does that matter? Because the nested <code>tibble</code> has columns with the same names as the <code>tibble</code> it’s embedded in, which can cause… chaos.</p>
+<p>Next, we pipe the unnested data into the <code>filter()</code> function. We use it to filter the rows in <code>author_data</code> based on whether the <code>topics_display_name</code> column contains the text stored in <code>search_topic</code> (which is “migration”). To make that happen, we use the <code>str_detect()</code> function to check if a string contains a specific pattern. We use a “regular expression” that ignores case differences by using the argument <code>ignore_case = TRUE</code> (so “Migration” or “migration” both match).</p>
+<p>Now we can display a list of unique authors who meet our search and filter criteria by piping the results into <code>distinct()</code> and then printing the first <code>n</code> results (in this case, 80).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>search_topic <span class="ot">&lt;-</span> <span class="st">"migration"</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>authors_data <span class="sc">%&gt;%</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(display_name, topics) <span class="sc">%&gt;%</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(topics, <span class="at">names_sep =</span> <span class="st">"_"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">str_detect</span>(topics_display_name, <span class="fu">regex</span>(search_topic, <span class="at">ignore_case =</span> <span class="cn">TRUE</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">distinct</span>(display_name) <span class="sc">%&gt;%</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 160 × 1
+   display_name             
+   &lt;chr&gt;                    
+ 1 Sian Neilson             
+ 2 Roger White              
+ 3 Ratana Chuenpagdee       
+ 4 Tony Fang                
+ 5 Trevor Bell              
+ 6 Lewis R. Fischer         
+ 7 Eric Y. Tenkorang        
+ 8 Barbara Neis             
+ 9 R. J. Avery              
+10 Yang Zhen                
+11 Amin A. Muhammad Gadit   
+12 Ashlee Cunsolo           
+13 Derek Nurse              
+14 Mark C. J. Stoddart      
+15 Kelly Vodden             
+16 Stephen Bornstein        
+17 Lisa Philpott            
+18 Marilyn Porter           
+19 Shree Mulay              
+20 Tyler D. Eddy            
+21 Yanqing Yi               
+22 Diana L. Gustafson       
+23 Alex Stewart             
+24 Ben Burt                 
+25 A. Lukyn Williams        
+26 Sharon R. Roseman        
+27 Jennifer A. Selby        
+28 Gillian Kolla            
+29 Sulaimon Gıwa            
+30 Diane Tye                
+31 Victor Maddalena         
+32 Christopher P. Youé      
+33 Fern Brunger             
+34 KL MacPherson            
+35 David Close              
+36 Sonja Boon               
+37 T.E. Roche               
+38 Robert Ormsby            
+39 Benjamin Rich Zendel     
+40 Jane G. Zhu              
+41 Adrian Tanner            
+42 Lisa Rankin              
+43 Alexander Y. Shestopaloff
+44 Stephen Czarnuch         
+45 Dale Kirby               
+46 Martha Traverso-Yépez    
+47 María Andrée López Gómez 
+48 Nancy Pedri              
+49 Rick Audas               
+50 Alan Hall                
+51 M. J. Anderson           
+52 Delores V. Mullings      
+53 Rochelle R. Côté         
+54 Gordon B. Cooke          
+55 Roselyne N. Okech        
+56 Bill Bigelow             
+57 Isabelle Côté            
+58 Gerald Mugford           
+59 Katherine Side           
+60 Nicholas Wells           
+61 Jaro Stacul              
+62 Maisam Najafizada        
+63 Susan Stuckless          
+64 Peter Narváez            
+65 Jean L. Briggs           
+66 Pauline Duke             
+67 Sarah Gander             
+68 Ahmed Afzal              
+69 Yorck Sommerhäuser       
+70 Natalie Beausoleil       
+71 Rainer Baehre            
+72 Valerie Burton           
+73 Frederick Johnstone      
+74 Yolande Pottie‐Sherman   
+75 Nathalie LaCoste         
+76 Hollý                    
+77 Hugh Whalen              
+78 Lisa‐Jo K. van den Scott 
+79 Martin Lovelace          
+80 Jeanne Sinclair          
+# ℹ 80 more rows</code></pre>
+</div>
+</div>
+<p>What are we looking at here? These are authors affiliated with Memorial University who have published <em>at least one</em> paper on the topic of “migration.” It also prints the author’s number of publications and citations (as indexed by OpenAlex). We got that data by developing a small pipeline that:</p>
+<ol type="1">
+<li>Starts with our original dataset.</li>
+<li>Focuses on just the author names and their topics.</li>
+<li>Expands nested topic information into individual rows.</li>
+<li>Filters rows where the topic matches “migration”.</li>
+<li>Removes duplicate author names.</li>
+<li>Prints the results, showing up to 80 rows.</li>
+</ol>
+<p>Now… change the <code>search_topic</code> above to search for other topics. Try “climate change” (or whatever)!</p>
+</section>
+<section id="more-than-names" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="more-than-names"><span class="header-section-number">1.4</span> More than Names</h2>
+<!-- This is great, but maybe we also want to see some other information. We'll modify our pipeline to also include information about the number of works published and the number of citations those works have received.  -->
+<p>OK, cool! But, once again, maybe we want to see some other information, like maybe the name of the author, the title of the publication, and the number of topics assigned to that publication. Let’s do that below and print the top 200 results.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>search_topic <span class="ot">&lt;-</span> <span class="st">"migration"</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>authors_data <span class="sc">%&gt;%</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(display_name, topics, works_count, cited_by_count) <span class="sc">%&gt;%</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(topics, <span class="at">names_sep =</span> <span class="st">"_"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">str_detect</span>(topics_display_name, <span class="fu">regex</span>(search_topic, <span class="at">ignore_case =</span> <span class="cn">TRUE</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(display_name, topics_display_name, topics_count, topics_display_name) <span class="sc">%&gt;%</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">200</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 207 × 3
+    display_name                topics_display_name                 topics_count
+    &lt;chr&gt;                       &lt;chr&gt;                                      &lt;int&gt;
+  1 Sian Neilson                European Law and Migration                     4
+  2 Sian Neilson                Human Rights and Immigration                   3
+  3 Roger White                 Migration and Labor Dynamics                  31
+  4 Roger White                 Migration, Ethnicity, and Economy             25
+  5 Ratana Chuenpagdee          Climate Change, Adaptation, Migrat…            5
+  6 Tony Fang                   Migration and Labor Dynamics                  30
+  7 Tony Fang                   Migration, Ethnicity, and Economy             27
+  8 Tony Fang                   Diaspora, migration, transnational…            5
+  9 Trevor Bell                 Climate Change, Adaptation, Migrat…            4
+ 10 Lewis R. Fischer            Migration, Policy, and Dickens Stu…            1
+ 11 Eric Y. Tenkorang           Migration and Labor Dynamics                   3
+ 12 Eric Y. Tenkorang           Migration, Health and Trauma                   2
+ 13 Barbara Neis                Migration, Aging, and Tourism Stud…            9
+ 14 Barbara Neis                Migration and Labor Dynamics                   4
+ 15 R. J. Avery                 Migration, Aging, and Tourism Stud…            4
+ 16 Yang Zhen                   China's Global Influence and Migra…            1
+ 17 Amin A. Muhammad Gadit      Migration, Health and Trauma                   4
+ 18 Ashlee Cunsolo              Climate Change, Adaptation, Migrat…            9
+ 19 Derek Nurse                 Diaspora, migration, transnational…            1
+ 20 Mark C. J. Stoddart         Climate Change, Adaptation, Migrat…            3
+ 21 Kelly Vodden                Migration, Aging, and Tourism Stud…            5
+ 22 Stephen Bornstein           Migration, Health and Trauma                   2
+ 23 Lisa Philpott               Migration, Ethnicity, and Economy              2
+ 24 Marilyn Porter              Migration, Ethnicity, and Economy              5
+ 25 Marilyn Porter              Migration and Labor Dynamics                   3
+ 26 Shree Mulay                 Migration, Health and Trauma                   3
+ 27 Tyler D. Eddy               Climate Change, Adaptation, Migrat…            3
+ 28 Yanqing Yi                  Migration, Health and Trauma                   7
+ 29 Diana L. Gustafson          Migration, Health and Trauma                   9
+ 30 Alex Stewart                Migration, Ethnicity, and Economy             14
+ 31 Ben Burt                    Climate Change, Adaptation, Migrat…            6
+ 32 Ben Burt                    Italian Social Issues and Migration            1
+ 33 Ben Burt                    Diaspora, migration, transnational…            1
+ 34 A. Lukyn Williams           European Law and Migration                     2
+ 35 Sharon R. Roseman           Migration, Aging, and Tourism Stud…           12
+ 36 Sharon R. Roseman           Migration and Labor Dynamics                   6
+ 37 Sharon R. Roseman           Migration, Ethnicity, and Economy              5
+ 38 Sharon R. Roseman           Diaspora, migration, transnational…            4
+ 39 Sharon R. Roseman           Immigration and Intercultural Educ…            2
+ 40 Sharon R. Roseman           Migration, Refugees, and Integrati…            2
+ 41 Jennifer A. Selby           Multiculturalism, Politics, Migrat…           29
+ 42 Jennifer A. Selby           Migration, Identity, and Health                3
+ 43 Gillian Kolla               Migration, Health and Trauma                   2
+ 44 Sulaimon Gıwa               Migration and Labor Dynamics                   5
+ 45 Sulaimon Gıwa               Migration, Ethnicity, and Economy              4
+ 46 Sulaimon Gıwa               Migration, Health and Trauma                   3
+ 47 Sulaimon Gıwa               Migration, Refugees, and Integrati…            3
+ 48 Sulaimon Gıwa               Migration, Identity, and Health                2
+ 49 Diane Tye                   Migration, Ethnicity, and Economy              1
+ 50 Victor Maddalena            Migration, Health and Trauma                   2
+ 51 Christopher P. Youé         Migration, Ethnicity, and Economy              1
+ 52 Fern Brunger                Migration, Health and Trauma                   3
+ 53 KL MacPherson               China's Global Influence and Migra…            2
+ 54 David Close                 Diaspora, migration, transnational…            2
+ 55 Sonja Boon                  Migration, Ethnicity, and Economy              2
+ 56 T.E. Roche                  Macrophage Migration Inhibitory Fa…            2
+ 57 Robert Ormsby               Migration, Policy, and Dickens Stu…            1
+ 58 Benjamin Rich Zendel        Migration, Aging, and Tourism Stud…            1
+ 59 Jane G. Zhu                 Migration, Ethnicity, and Economy              2
+ 60 Adrian Tanner               Multiculturalism, Politics, Migrat…            2
+ 61 Adrian Tanner               Climate Change, Adaptation, Migrat…            1
+ 62 Lisa Rankin                 Migration, Aging, and Tourism Stud…            1
+ 63 Alexander Y. Shestopaloff   Migration, Health and Trauma                   2
+ 64 Stephen Czarnuch            Migration, Health and Trauma                   2
+ 65 Dale Kirby                  Migration, Ethnicity, and Economy              2
+ 66 Dale Kirby                  Migration and Labor Dynamics                   2
+ 67 Martha Traverso-Yépez       Migration, Racism, and Human Rights            2
+ 68 María Andrée López Gómez    Migration, Aging, and Tourism Stud…            2
+ 69 Nancy Pedri                 Diaspora, migration, transnational…            1
+ 70 Rick Audas                  Migration and Labor Dynamics                   2
+ 71 Alan Hall                   Migration, Identity, and Health                1
+ 72 M. J. Anderson              Macrophage Migration Inhibitory Fa…            1
+ 73 Delores V. Mullings         Migration and Labor Dynamics                   6
+ 74 Delores V. Mullings         Migration, Health and Trauma                   4
+ 75 Delores V. Mullings         Migration, Ethnicity, and Economy              3
+ 76 Rochelle R. Côté            Migration, Ethnicity, and Economy              6
+ 77 Rochelle R. Côté            Migration and Labor Dynamics                   3
+ 78 Gordon B. Cooke             Migration, Aging, and Tourism Stud…            2
+ 79 Roselyne N. Okech           Migration, Ethnicity, and Economy              2
+ 80 Bill Bigelow                Migration, Ethnicity, and Economy              1
+ 81 Isabelle Côté               Migration and Labor Dynamics                   4
+ 82 Isabelle Côté               Migration, Refugees, and Integrati…            4
+ 83 Isabelle Côté               Diaspora, migration, transnational…            2
+ 84 Isabelle Côté               Migration, Identity, and Health                1
+ 85 Gerald Mugford              Migration, Aging, and Tourism Stud…            2
+ 86 Katherine Side              Migration, Refugees, and Integrati…            4
+ 87 Nicholas Wells              Migration, Aging, and Tourism Stud…            2
+ 88 Jaro Stacul                 Italian Social Issues and Migration            1
+ 89 Maisam Najafizada           Migration, Health and Trauma                   2
+ 90 Susan Stuckless             Migration, Aging, and Tourism Stud…            1
+ 91 Peter Narváez               Migration, Ethnicity, and Economy              1
+ 92 Jean L. Briggs              Migration, Education, Indigenous S…            2
+ 93 Pauline Duke                Migration, Health and Trauma                   2
+ 94 Sarah Gander                Migration, Health and Trauma                   4
+ 95 Ahmed Afzal                 Diaspora, migration, transnational…            3
+ 96 Ahmed Afzal                 Migration and Labor Dynamics                   2
+ 97 Ahmed Afzal                 Migration, Ethnicity, and Economy              2
+ 98 Yorck Sommerhäuser          Migration, Ethnicity, and Economy              1
+ 99 Natalie Beausoleil          Multiculturalism, Politics, Migrat…            1
+100 Rainer Baehre               Migration, Ethnicity, and Economy              1
+101 Rainer Baehre               Migration and Labor Dynamics                   1
+102 Valerie Burton              Migration, Ethnicity, and Economy              3
+103 Frederick Johnstone         Migration, Ethnicity, and Economy              3
+104 Yolande Pottie‐Sherman      Migration and Labor Dynamics                   7
+105 Yolande Pottie‐Sherman      Migration, Ethnicity, and Economy              6
+106 Yolande Pottie‐Sherman      Migration, Refugees, and Integrati…            5
+107 Yolande Pottie‐Sherman      Diaspora, migration, transnational…            3
+108 Yolande Pottie‐Sherman      Migration, Aging, and Tourism Stud…            3
+109 Nathalie LaCoste            Multiculturalism, Politics, Migrat…            1
+110 Hollý                       Migration and Labor Dynamics                   1
+111 Hugh Whalen                 Multiculturalism, Politics, Migrat…            1
+112 Lisa‐Jo K. van den Scott    Diaspora, migration, transnational…            1
+113 Martin Lovelace             Migration, Ethnicity, and Economy              1
+114 Jeanne Sinclair             Migration, Aging, and Tourism Stud…            1
+115 Christopher Patey           Italian Social Issues and Migration            1
+116 Dominique Brégent‐Heald     Migration, Health, Geopolitics, Hi…            2
+117 Daze Jefferies              Migration, Ethnicity, and Economy              1
+118 David Peddle                Human Rights and Immigration                   1
+119 Stephen Harold Riggins      Diaspora, migration, transnational…            2
+120 Stephen Harold Riggins      Migration, Ethnicity, and Economy              1
+121 James Valcour               Climate Change, Adaptation, Migrat…            1
+122 Mercedes Steedman           Migration, Ethnicity, and Economy              2
+123 Ivan Emke                   European Law and Migration                     1
+124 Ivan Emke                   Migration, Health and Trauma                   1
+125 Robin Whitaker              Migration, Refugees, and Integrati…            4
+126 Robin Whitaker              Multiculturalism, Politics, Migrat…            1
+127 Lincoln Addison             Migration, Ethnicity, and Economy              3
+128 Lincoln Addison             Migration and Labor Dynamics                   1
+129 Elizabeth Yeoman            Migration, Refugees, and Integrati…            1
+130 Alessandro Giardino         Multiculturalism, Politics, Migrat…            1
+131 D. Codner                   Macrophage Migration Inhibitory Fa…            1
+132 Lesley Butler               Diaspora, migration, transnational…            1
+133 Lesley Butler               Migration, Ethnicity, and Economy              1
+134 Lesley Butler               Climate Change, Adaptation, Migrat…            1
+135 Julia Temple Newhook        Migration, Ethnicity, and Economy              1
+136 Julia Temple Newhook        Migration and Labor Dynamics                   1
+137 Donald W. Nichol            Migration, Policy, and Dickens Stu…            1
+138 John Mannion                Climate Change, Adaptation, Migrat…            1
+139 Santé A. Viselli            Multiculturalism, Politics, Migrat…            1
+140 Ronald Schwartz             Diaspora, migration, transnational…            1
+141 Brenda A. LeFrançois        Labour Market and Migration                    1
+142 Roza Tchoukaleyska          Migration, Identity, and Health                1
+143 Heidi Coombs-Thorne         Migration and Labor Dynamics                   1
+144 Robert Shea                 Migration, Refugees, and Integrati…            1
+145 Paul Alhassan Issahaku      Migration, Health and Trauma                   1
+146 Amy M. Warren               Migration, Aging, and Tourism Stud…            1
+147 Rowena Mercado              Migration, Health and Trauma                   1
+148 Kwamina Abekah‐Carter       Migration, Aging, and Tourism Stud…            2
+149 Angela J. Hyde              Macrophage Migration Inhibitory Fa…            1
+150 Sylvia Moore                Climate Change, Adaptation, Migrat…            1
+151 Christopher Curran          Migration and Labor Dynamics                   4
+152 Katie Gillespie             Migration, Health and Trauma                   4
+153 Catherine Losier            Migration, Identity, and Health                4
+154 Catherine Losier            Migration, Health, Geopolitics, Hi…            1
+155 Barry C. Gaulton            Migration, Health, Geopolitics, Hi…            1
+156 August Carbonella           Migration, Ethnicity, and Economy              4
+157 August Carbonella           Multiculturalism, Politics, Migrat…            1
+158 Nicholas Lynch              Migration, Aging, and Tourism Stud…            1
+159 Russell Dawe                Migration, Health and Trauma                   1
+160 Kodjo Attikpoé              Migration and Exile Studies                    1
+161 Lorna Bennett               Migration, Health and Trauma                   1
+162 Jennifer L. Buckle          Migration, Health and Trauma                   3
+163 Mariya Lesiv                Diaspora, migration, transnational…            2
+164 Mariya Lesiv                Migration, Ethnicity, and Economy              1
+165 John Bodner                 Multiculturalism, Politics, Migrat…            1
+166 Calvin Hollett              Migration, Aging, and Tourism Stud…            1
+167 A. K. M. Shahidullah        Climate Change, Adaptation, Migrat…            1
+168 Rebecca J. Franklin         Migration, Ethnicity, and Economy              2
+169 Beth Leavenworth DuFault    Migration, Ethnicity, and Economy              1
+170 Raquel Ruiz‐Díaz            Climate Change, Adaptation, Migrat…            3
+171 Leanna Butters              Migration, Aging, and Tourism Stud…            5
+172 Jacqueline Hesson           Migration, Health and Trauma                   1
+173 Jennifer Thorburn           Diaspora, migration, transnational…            7
+174 Jennifer Thorburn           Migration and Labor Dynamics                   7
+175 Madonna M. Murphy           Migration, Health and Trauma                   1
+176 Roberta Buchanan            Multiculturalism, Politics, Migrat…            1
+177 Sean W. D. Gray             Migration, Refugees, and Integrati…            3
+178 Cory W. Thorne              Diaspora, migration, transnational…            1
+179 Michael Skipton             Migration, Policy, and Dickens Stu…            2
+180 Neil J. Vincent             Migration, Health and Trauma                   1
+181 Devonne Ryan                Migration, Aging, and Tourism Stud…            1
+182 Margo Wilson                Migration, Health and Trauma                   1
+183 Michael D. Kirkpatrick      Migration, Ethnicity, and Economy              1
+184 Kate Lahey                  Climate Change, Adaptation, Migrat…            1
+185 Elias Bartellas             Migration, Health and Trauma                   1
+186 Mohamed Salah Eddine Madiou Climate Change, Adaptation, Migrat…            1
+187 Elise Thorburn              Migration, Aging, and Tourism Stud…            1
+188 Leslie J. Cake              Migration, Aging, and Tourism Stud…            1
+189 Hua Que                     Migration, Health and Trauma                   6
+190 Hua Que                     Migration and Labor Dynamics                   3
+191 Hua Que                     Migration, Refugees, and Integrati…            2
+192 Caroline Guinard            Migration, Identity, and Health                1
+193 Ban Younghusband            Macrophage Migration Inhibitory Fa…            1
+194 Jessica Squires             Macrophage Migration Inhibitory Fa…            1
+195 Tyler R. Pritchard          Migration, Health and Trauma                   2
+196 Raleen Murphy               Migration, Health and Trauma                   2
+197 Darren Hynes                Migration, Health, Geopolitics, Hi…            1
+198 Halia Koo                   Multiculturalism, Politics, Migrat…            1
+199 Alka Agarwal-Mawal          Macrophage Migration Inhibitory Fa…            1
+200 Jieying Xiong               Macrophage Migration Inhibitory Fa…            1
+# ℹ 7 more rows</code></pre>
+</div>
+</div>
+<p>Let’s store this subset of data for later.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>migration_authors <span class="ot">&lt;-</span> authors_data <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(display_name, topics, works_count, cited_by_count) <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(topics, <span class="at">names_sep =</span> <span class="st">"_"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">str_detect</span>(topics_display_name, <span class="fu">regex</span>(search_topic, <span class="at">ignore_case =</span> <span class="cn">TRUE</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(display_name, topics_display_name, topics_count, topics_display_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="key-concepts-and-common-words" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="key-concepts-and-common-words"><span class="header-section-number">1.5</span> Key Concepts and Common Words</h2>
+<p>What are some of the key concepts that show up in research on migration conducted by Memorial researchers? One simple way to get at this idea is to simply take every unique word that appears across titles and count the number of times it appears. It’s crude, but a useful first pass to get a sense of what we have.</p>
+<p>To do this, we’ll use another package: <code>tidytext</code> for “natural language processing”. We’ll load the library and then start our pipeline by piping the <code>migration_authors</code> data into the <code>tidytext</code>’s <code>unnest_tokens()</code> function. <code>unnest_tokens()</code> splits the <code>topics_display_name</code> column into individual words (tokens). Each word becomes a separate row in the dataset, and the new column is named word. Then we pipe that output into <code>count(word, sort = TRUE)</code> to counts the occurrences of each unique word in the word column. The <code>sort = TRUE</code> argument sorts the results in descending order of frequency.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>word_counts <span class="ot">&lt;-</span> migration_authors <span class="sc">%&gt;%</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest_tokens</span>(word, topics_display_name) <span class="sc">%&gt;%</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(word_counts, <span class="at">n =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 48 × 2
+   word                 n
+   &lt;chr&gt;            &lt;int&gt;
+ 1 migration          204
+ 2 and                149
+ 3 health              44
+ 4 economy             36
+ 5 ethnicity           36
+ 6 trauma              33
+ 7 studies             26
+ 8 dynamics            24
+ 9 identity            23
+10 labor               23
+11 aging               21
+12 tourism             21
+13 adaptation          16
+14 change              16
+15 climate             16
+16 diaspora            16
+17 transnational       16
+18 gender              12
+19 multiculturalism    12
+20 politics            12
+21 integration         10
+22 refugees            10
+23 factor               9
+24 inhibitory           9
+25 macrophage           9
+26 dickens              4
+27 geography            4
+28 geopolitics          4
+29 historical           4
+30 human                4
+31 policy               4
+32 rights               4
+33 social               4
+34 european             3
+35 immigration          3
+36 issues               3
+37 italian              3
+38 law                  3
+39 china's              2
+40 education            2
+41 global               2
+42 influence            2
+43 racism               2
+44 exile                1
+45 indigenous           1
+46 intercultural        1
+47 labour               1
+48 market               1</code></pre>
+</div>
+</div>
+</section>
+<section id="visualizing-word-frequencies" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="visualizing-word-frequencies"><span class="header-section-number">1.6</span> Visualizing Word Frequencies</h2>
+<p>Let’s make a <strong>horizontal bar graph</strong> (where the words are on the y-axis and word frequency is on the x-axis) to visualize this distribution of words. We’ll also remove “stop words” like “and,” “of,” etc.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"stop_words"</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>filtered_word_counts <span class="ot">&lt;-</span> word_counts <span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">"word"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And now for the bar graph!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(filtered_word_counts, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(word, n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Word Frequency in Migration Research"</span>,</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Words"</span>,</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"Frequency"</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lecture-15-notes_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Remember you can save your plot with the <code>ggsave</code> function!</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"migration_word_frequency.png"</span>, <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="fields" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="fields"><span class="header-section-number">1.7</span> Fields</h2>
+<p>The <code>topics</code> data also include “field” classifications. These are <em>multi-level</em> labels attached to publications. By multi-level I mean that some labels are very high-level (e.g., social sciences, sociology) while others are most focused (e.g., sociology of gender, racial inequality). Let’s make a table counting the number of fields in the Memorial Data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>field_counts <span class="ot">&lt;-</span> authors_data <span class="sc">%&gt;%</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(topics) <span class="sc">%&gt;%</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(topics) <span class="sc">%&gt;%</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">count</span>(display_name, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(field_counts, <span class="at">n =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4,285 × 2
+   display_name                                             n
+   &lt;chr&gt;                                                &lt;int&gt;
+ 1 Physical Sciences                                    19166
+ 2 Social Sciences                                      19144
+ 3 Health Sciences                                      11962
+ 4 Medicine                                              9367
+ 5 Life Sciences                                         7845
+ 6 Engineering                                           5632
+ 7 Environmental Science                                 3947
+ 8 Biochemistry, Genetics and Molecular Biology          3740
+ 9 Arts and Humanities                                   2519
+10 Computer Science                                      2375
+11 Earth and Planetary Sciences                          2334
+12 Health Professions                                    2107
+13 Agricultural and Biological Sciences                  2075
+14 Molecular Biology                                     1995
+15 Sociology and Political Science                       1958
+16 Psychology                                            1934
+17 Chemistry                                             1408
+18 General Health Professions                            1395
+19 Materials Science                                     1199
+20 Education                                             1189
+21 Neuroscience                                          1164
+22 Ecology                                               1147
+23 Physics and Astronomy                                 1121
+24 Electrical and Electronic Engineering                  943
+25 Surgery                                                903
+26 Genetics                                               894
+27 Public Health, Environmental and Occupational Health   890
+28 Economics, Econometrics and Finance                    885
+29 Business, Management and Accounting                    830
+30 Global and Planetary Change                            776
+# ℹ 4,255 more rows</code></pre>
+</div>
+</div>
+<p>A few things jump out at me from this list of the top 30 topics. First, publication output in the physical and social sciences at Memorial are neck and neck! If you were to combine Health, Medicine, and Life Sciences, they would top the list. Arts and Humanities is pretty high on this list to, claiming the number 9 rank. Sociology and Political Science are at rank 15.</p>
+<p>Let’s ggplot!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>top_n_fields <span class="ot">&lt;-</span> field_counts <span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">top_n</span>(<span class="dv">100</span>, n)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(top_n_fields, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(display_name, n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Top 30 Fields in Memorial University Publications"</span>,</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Fields"</span>,</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">y =</span> <span class="st">"Count"</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lecture-15-notes_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We’ll stop there for today. Tomorrow we’ll work on the second Data Stories assignment in class. <strong>It’s due on Monday March 10th.</strong></p>
 
 
+</section>
+</section>
 
 <script async="" defer="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

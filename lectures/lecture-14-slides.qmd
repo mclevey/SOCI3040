@@ -19,7 +19,7 @@ number-sections: true
 top-level-heading: 2
 ---
 
-Coming soon...
+No slides for this class. Notebook-based class.
 
 <!-- {{< include lecture-14-content.qmd >}} -->
 

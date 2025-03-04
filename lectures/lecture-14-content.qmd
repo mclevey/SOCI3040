@@ -1,0 +1,1 @@
+In class activities focused on introducing basic knowledge of the web as a foundation for understanding APIs and scraping-based approaches to data collection. Used OpenAlex and *The Guardian* as example for APIs.

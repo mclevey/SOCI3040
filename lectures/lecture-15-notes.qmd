@@ -1,5 +1,5 @@
 ---
-title: "Experiments and Surveys" # Data Cleaning and Preparation"
+title: "APIs, Scraping, and Parsing" # Data Cleaning and Preparation"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author: 
   - name: "15"
@@ -24,10 +24,10 @@ number-sections: true
 - Required: {{< meta assigned_reading >}}
 - Recommended: {{< meta recommended_reading >}}
 
-## {{< bi file-slides-fill >}}&nbsp;&nbsp;Lecture Slides {.unnumbered}
+<!-- ## {{< bi file-slides-fill >}}&nbsp;&nbsp;Lecture Slides {.unnumbered} -->
 
 
-{{< revealjs "lecture-15-slides.html" >}}
+<!-- {{< revealjs "lecture-15-slides.html" >}} -->
 
 ## {{< bi file-code >}}&nbsp;&nbsp;Class / Lab Notes {.unnumbered}
 :::

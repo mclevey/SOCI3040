@@ -1,5 +1,5 @@
 ---
-title: "Experiments and Surveys" #Exploratory Data Analysis (EDA)"
+title: "APIs, Scraping, and Parsing" #Exploratory Data Analysis (EDA)"
 subtitle: "SOCI 3040 -- Quantitative Research Methods"
 author: 
   - name: "16"

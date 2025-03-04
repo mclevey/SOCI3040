@@ -188,7 +188,7 @@ toronto_shelters_clean <-
         show_col_types = FALSE
     )
 
-#| label: tbl-homelessoccupancyd
+#| label: tbl-homelessoccupancyd-2
 #| tbl-cap: "Shelter usage in Toronto in 2021"
 
 toronto_shelters_clean |>

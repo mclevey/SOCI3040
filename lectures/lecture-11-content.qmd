@@ -1,0 +1,7 @@
+In class activities focused on understanding the theory behind, and practical realities of, 
+
+- census data
+- simple random sampling
+- stratified random sampling
+- cluster-based sampling
+- multi-stage cluster sampling

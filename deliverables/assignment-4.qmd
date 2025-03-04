@@ -30,4 +30,4 @@ bibliography: ../references.bib
 
 ## Assignment Instructions
 
-Assignment information will be finalized by the end of the week.
+Assignment information will be provided in class on March 27th. We will work on the assignment in class and then you will finish and submit the assignment by end of day on  Monday April 8th.

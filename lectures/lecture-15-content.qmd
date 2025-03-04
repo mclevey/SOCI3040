@@ -1,0 +1,288 @@
+# API Example: `OpenAlexR`
+
+> Use the "Polite Pool" if you have an API Key!
+
+Our goal will be to retrieve publications by researchers at Memorial University who have authored more than 10 publications (indexed in OpenAlex) using the OpenAlex API, and to begin working with the data objects returned from the API.
+
+> Note that some of the code in this notebook will take some time to run, especially when downloading data. Be patient, and change the query parameters if you must.
+
+We'll load the `openalexR` and `tidyverse` packages. Don't forget to install `openalexR` in your PostCloud if you haven't already done so!
+
+```{r}
+library(openalexR)
+library(tidyverse)
+library(ggplot2)
+```
+
+## Finding Memorial's OpenAlex Institutional ID
+
+To start, we need to find Memorial's "**Institutional ID**". We can do this by using the [OpenAlex website](https://openalex.org/).
+
+![OpenAlex search](../media/open-alex/Screenshot%202025-03-04%20at%208.05.28%E2%80%AFAM.png)
+
+Click on the **Institution** button and start typing "Memorial University" into the OpenAlex search.
+
+![Search for Memorial University under "Institution"](../media/open-alex/Screenshot%202025-03-04%20at%208.05.52%E2%80%AFAM.png)
+
+Take a moment to review the results page -- it's the same page we saw when searching authors and topics in previous classes, only this time it's for all of Memorial University. As of March 2025, there are almost 50,000 indexed publications.
+
+![The results page](../media/open-alex/Screenshot%202025-03-04%20at%208.06.01%E2%80%AFAM.png)
+
+Click on "Memorial University" in the search field. 
+
+![Finding an Institutional ID](../media/open-alex/Screenshot%202025-03-04%20at%208.06.15%E2%80%AFAM.png)
+
+You should see an **Institution ID** under "Memorial University of Newfoundland." I've highlighted it below to make it easier to see. **This is the number we want to use when we query the OpenAlexAPI!** 
+
+![Copying the Institutional ID for an API query](../media/open-alex/Screenshot%202025-03-04%20at%208.06.21%E2%80%AFAM.png)
+
+You can click to view MUN's "Institutional Profile" on Open Alex.
+
+![An OpenAlex institution profile page](../media/open-alex/Screenshot%202025-03-04%20at%208.06.36%E2%80%AFAM.png)
+
+## Query the OpenAlex API
+
+Now we know that Memorial's Institutional ID is `i130438778`. We can use this to setup an API query. Let's start by creating a list with our query parameters.
+
+Recall that a list in R is like a container that holds several pieces of information. In this case, our list will contain three key-value pairs:
+
+- `entity = "authors"` tells the API that we are interested in data about authors.
+- `last_known_institutions.id = "i130438778"` specifies that we want authors who are or were affiliated with a particular institution (identified by "i130438778").
+- `works_count = ">10"` means we want authors who have more than 10 published works.
+
+Let's set it up!
+
+```{r}
+my_arguments <- list(
+    entity = "authors",
+    last_known_institutions.id = "i130438778",
+    works_count = ">10"
+)
+```
+
+Now let's we'll make an API call!
+
+```{r}
+do.call(oa_fetch, c(my_arguments, list(count_only = TRUE)))
+```
+
+`do.call()` is a function that calls another function -- in this case `oa_fetch` -- using a list of arguments.
+
+Here, we combine our `my_arguments` list with an extra argument list`(count_only = TRUE)`. This tells the function `oa_fetch` to *only return a count* (the number of matching records) instead of all the detailed information OpenAlex has about our search results. Essentially, we're asking the API: "*How many authors match these criteria?*"
+
+So now we've defined the search criteria for authors in a list, and we've checked if there are any authors matching the criteria by asking for just a count. If there are results (i.e., there is 1 or more authors in the OpenAlex database), then we can make another request to collect detailed information for those authors.
+
+Run the code block below.
+
+```{r}
+if (do.call(oa_fetch, c(my_arguments, list(count_only = TRUE)))[1] > 0) {
+    do.call(oa_fetch, my_arguments) |>
+        show_authors() |>
+        knitr::kable()
+}
+```
+
+In the code above, we check if the count returned by the previous call is greater than zero by using an `if` statement. Then `do.call(oa_fetch, c(my_arguments, list(count_only = TRUE)))[1]` retrieves the first element of the result, which is the number of matching authors. If that number is greater than 0 (meaning there is at least one author that meets the criteria), then the code inside the `if` block (`{ ... }`) block will run.
+
+Inside the `if` block, `do.call(oa_fetch, my_arguments)` calls the `oa_fetch` function again with our original arguments, only this time we don't use `count_only = TRUE`. This tells to API to fetch all the details of the matching authors. We then use the pipe operator `|>` to pass the results of that function on to the next function, `show_authors()`. The `show_authors()` function formats or selects relevant author information. Finally, we pass the formatted data to `knitr::kable()`, which converts it into a nicely formatted table.
+
+## Store the Data!
+
+So far our code fetches data and processes it for display, but it doesn't retain the data in memory or write it to disk. If we want to keep it in memory and *analyze* that data in some way, we need to assign the result to a variable. Recall from previous classes that we want to minimize our APIs calls to be considerate of the servers providing our data.
+
+Let's do that now, making yet another API call.
+
+```{r}
+authors_data <- do.call(oa_fetch, my_arguments)
+```
+
+Now our data in stored in `authors_data`. Let's take a look at the column names.
+
+```{r}
+names(authors_data)
+```
+
+There are 17 variables for us to work with here! We'll focus on a few today, including `display_name`, `cited_by_count`, `works_count`, `counts_by_year`, and `topics`.
+
+We can print a preview of the `tibble` like any other. Let's print 30 rows:
+
+```{r}
+print(authors_data, n = 30)
+```
+
+Let's take a look at the `topics` data first. We'll get a sense of what is in here and think about how to filter it to a smaller set of results that interest us.
+
+One way to proceed is to use the `pull()` function from the `tidyverse`. If you run the code below, you'll see a LOT of text populate your screen -- R is printing 2307 dataframes! I won't print the results here, but you can!
+
+```r
+authors_data %>% pull(topics)
+```
+
+When we we pipe `authors_data` into `pull(topics)`, we get the contents of the `topics` column as a `vector`. Vectors are useful for lots of things, including quick computations, plotting, or applying vectorized functions. Since it's a simple vector, there's no extra metadata like column names or row indices.
+
+That's not always what we want. Instead, we could use the `select()` function from the `tidyverse` to get back a `tibble` containing the column we want. Because it's a `tibble`, *it preserves additional information such as column names, types, and row names* (implicitly). The `tibble` still has the structure of a table, so we can see the column name and work with it in the context of other columns! And keeping our data in a `tibble` format makes it easier to perform further data manipulations, or join with other `tibbles`, since many tidyverse functions expect data to be in a `tibble` format.
+
+```r
+authors_data %>% select(topics)
+```
+
+This is a complex data structure! Each publication in our dataset has a `tibble` stored in the `topics` column! Nested dataframes! Oh my.
+
+```{r}
+authors_data %>%
+    select(topics) %>%
+    .[[1]] %>%
+    head(10) %>%
+    print()
+```
+
+If we print some rows from the topics `tibble`, we can see that it contains information on `topic`, `subfield`, `field`, and `domain`. We'll focus on topics for now and will come back to fields later.
+
+```{r}
+authors_data %>%
+    select(topics) %>%
+    unnest(topics) %>%
+    distinct(display_name) %>%
+    print(n = 30)
+```
+
+Let's filter the `tibble` to find authors (rows in `authors_data`) who have worked on the topic of "migration."
+
+Let's unpack the code below.
+
+First, we create a variable called `search_topic` and assign it the string "migration". We will use this value later to filter the data. Then we pipe the `authors_data` into the `select()` function, where we select the `display_name` column (containing author names) and the `topics` column, which contained nested tibbles with information about the topics on which a specific author has published. 
+
+We then pipe the author names and topics into the `unnest()` function, which *unnests* the `topics` column. In other words, we will pull the `topics` `tibble` out of the row from the `dataframe` and expand it so that it is it's own `tibble` with separate rows. The `names_sep = "_"` parameter specifies that* when unnesting, any new column names coming from the nested structure should be concatenated with the original column name using an underscore.* For example, if the nested `tibble` has a column named `display_name`, it might become `topics_display_name`. Why does that matter? Because the nested `tibble` has columns with the same names as the `tibble` it's embedded in, which can cause... chaos.
+
+Next, we pipe the unnested data into the `filter()` function. We use it to filter the rows in `author_data` based on whether the `topics_display_name` column contains the text stored in `search_topic` (which is "migration"). To make that happen, we use the `str_detect()` function to check if a string contains a specific pattern. We use a "regular expression" that ignores case differences by using the argument `ignore_case = TRUE` (so "Migration" or "migration" both match).
+
+Now we can display a list of unique authors who meet our search and filter criteria by piping the results into `distinct()` and then printing the first `n` results (in this case, 80).
+
+```{r}
+search_topic <- "migration"
+
+authors_data %>%
+    select(display_name, topics) %>%
+    unnest(topics, names_sep = "_") %>%
+    filter(str_detect(topics_display_name, regex(search_topic, ignore_case = TRUE))) %>%
+    distinct(display_name) %>%
+    print(n = 80)
+```
+
+What are we looking at here? These are authors affiliated with Memorial University who have published *at least one* paper on the topic of "migration." It also prints the author's number of publications and citations (as indexed by OpenAlex). We got that data by developing a small pipeline that: 
+
+1. Starts with our original dataset.
+2. Focuses on just the author names and their topics.
+3. Expands nested topic information into individual rows.
+4. Filters rows where the topic matches "migration".
+5. Removes duplicate author names.
+6. Prints the results, showing up to 80 rows.
+
+Now... change the `search_topic` above to search for other topics. Try "climate change" (or whatever)!
+
+## More than Names
+
+<!-- This is great, but maybe we also want to see some other information. We'll modify our pipeline to also include information about the number of works published and the number of citations those works have received.  -->
+
+OK, cool! But, once again, maybe we want to see some other information, like maybe the name of the author, the title of the publication, and the number of topics assigned to that publication. Let's do that below and print the top 200 results.
+
+```{r}
+search_topic <- "migration"
+
+authors_data %>%
+    select(display_name, topics, works_count, cited_by_count) %>%
+    unnest(topics, names_sep = "_") %>%
+    filter(str_detect(topics_display_name, regex(search_topic, ignore_case = TRUE))) %>%
+    select(display_name, topics_display_name, topics_count, topics_display_name) %>%
+    print(n = 200)
+```
+
+Let's store this subset of data for later.
+
+```{r}
+migration_authors <- authors_data %>%
+    select(display_name, topics, works_count, cited_by_count) %>%
+    unnest(topics, names_sep = "_") %>%
+    filter(str_detect(topics_display_name, regex(search_topic, ignore_case = TRUE))) %>%
+    select(display_name, topics_display_name, topics_count, topics_display_name)
+```
+
+## Key Concepts and Common Words
+
+What are some of the key concepts that show up in research on migration conducted by Memorial researchers? One simple way to get at this idea is to simply take every unique word that appears across titles and count the number of times it appears. It's crude, but a useful first pass to get a sense of what we have.
+
+To do this, we'll use another package: `tidytext` for "natural language processing". We'll load the library and then start our pipeline by piping the `migration_authors` data into the `tidytext`'s `unnest_tokens()` function. `unnest_tokens()` splits the `topics_display_name` column into individual words (tokens). Each word becomes a separate row in the dataset, and the new column is named word. Then we pipe that output into `count(word, sort = TRUE)` to counts the occurrences of each unique word in the word column. The `sort = TRUE` argument sorts the results in descending order of frequency.
+
+```{r}
+library(tidytext)
+
+word_counts <- migration_authors %>%
+    unnest_tokens(word, topics_display_name) %>%
+    count(word, sort = TRUE)
+
+print(word_counts, n = 50)
+```
+
+## Visualizing Word Frequencies
+
+Let's make a **horizontal bar graph** (where the words are on the y-axis and word frequency is on the x-axis) to visualize this distribution of words. We'll also remove "stop words" like "and," "of," etc.
+
+```{r}
+data("stop_words")
+filtered_word_counts <- word_counts %>%
+    anti_join(stop_words, by = "word")
+```
+
+And now for the bar graph!
+
+```{r}
+ggplot(filtered_word_counts, aes(x = reorder(word, n), y = n)) +
+    geom_bar(stat = "identity") +
+    coord_flip() +
+    labs(
+        title = "Word Frequency in Migration Research",
+        x = "Words",
+        y = "Frequency"
+    ) +
+    theme_minimal()
+```
+
+Remember you can save your plot with the `ggsave` function!
+
+```r
+ggsave("migration_word_frequency.png", width = 10, height = 8)
+```
+
+## Fields
+
+The `topics` data also include "field" classifications. These are *multi-level* labels attached to publications. By multi-level I mean that some labels are very high-level (e.g., social sciences, sociology) while others are most focused (e.g., sociology of gender, racial inequality). Let's make a table counting the number of fields in the Memorial Data.
+
+```{r}
+field_counts <- authors_data %>%
+    select(topics) %>%
+    unnest(topics) %>%
+    count(display_name, sort = TRUE)
+
+print(field_counts, n = 30)
+```
+
+A few things jump out at me from this list of the top 30 topics. First, publication output in the physical and social sciences at Memorial are neck and neck! If you were to combine Health, Medicine, and Life Sciences, they would top the list. Arts and Humanities is pretty high on this list to, claiming the number 9 rank. Sociology and Political Science are at rank 15.
+
+Let's ggplot!
+
+```{r}
+top_n_fields <- field_counts %>%
+    top_n(100, n)
+
+ggplot(top_n_fields, aes(x = reorder(display_name, n), y = n)) +
+    geom_bar(stat = "identity") +
+    coord_flip() +
+    labs(
+        title = "Top 30 Fields in Memorial University Publications",
+        x = "Fields",
+        y = "Count"
+    ) +
+    theme_minimal()
+```
+
+We'll stop there for today. Tomorrow we'll work on the second Data Stories assignment in class. **It's due on Monday March 10th.**

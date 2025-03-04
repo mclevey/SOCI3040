@@ -1,6 +1,6 @@
 [
   {
-    "listing": "/lectures/list-lectures.html",
+    "listing": "/syllabus/schedule.html",
     "items": [
       "/lectures/lecture-01-notes.html",
       "/lectures/lecture-02-notes.html",
@@ -30,7 +30,7 @@
     ]
   },
   {
-    "listing": "/syllabus/schedule.html",
+    "listing": "/lectures/list-lectures.html",
     "items": [
       "/lectures/lecture-01-notes.html",
       "/lectures/lecture-02-notes.html",

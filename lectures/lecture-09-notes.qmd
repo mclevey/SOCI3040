@@ -23,13 +23,15 @@ number-sections: true
 - Required: {{< meta assigned_reading >}}
 - Recommended: {{< meta recommended_reading >}}
 
+<!-- 
 ## {{< bi file-slides-fill >}}&nbsp;&nbsp;Lecture Slides {.unnumbered}
 
 
 {{< revealjs "lecture-09-slides.html" >}}
+ -->
 
 ## {{< bi file-code >}}&nbsp;&nbsp;Class / Lab Notes {.unnumbered}
 :::
 
 
-<!-- {{< include lecture-09-content.qmd >}} -->
+{{< include lecture-09-content.qmd >}}

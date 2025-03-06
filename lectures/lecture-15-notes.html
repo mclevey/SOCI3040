@@ -994,7 +994,7 @@ To suppress this message, add `openalexR.message = suppressed` to your .Renviron
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(authors_data, <span class="at">n =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2,307 × 17
+<pre><code># A tibble: 2,312 × 17
    id                display_name display_name_alterna…¹ ids   orcid works_count
    &lt;chr&gt;             &lt;chr&gt;        &lt;list&gt;                 &lt;lis&gt; &lt;chr&gt;       &lt;int&gt;
  1 https://openalex… Fereidoon S… &lt;chr [3]&gt;              &lt;chr&gt; http…        1113
@@ -1027,7 +1027,7 @@ To suppress this message, add `openalexR.message = suppressed` to your .Renviron
 28 https://openalex… Michael Lei… &lt;chr [3]&gt;              &lt;chr&gt; http…         308
 29 https://openalex… Abir U. Iga… &lt;chr [6]&gt;              &lt;chr&gt; http…         300
 30 https://openalex… Rachel Berk… &lt;chr [5]&gt;              &lt;chr&gt; http…         299
-# ℹ 2,277 more rows
+# ℹ 2,282 more rows
 # ℹ abbreviated name: ¹​display_name_alternatives
 # ℹ 11 more variables: cited_by_count &lt;int&gt;, counts_by_year &lt;list&gt;,
 #   affiliation_display_name &lt;chr&gt;, affiliation_id &lt;chr&gt;,
@@ -1219,7 +1219,7 @@ To suppress this message, add `openalexR.message = suppressed` to your .Renviron
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">distinct</span>(display_name) <span class="sc">%&gt;%</span></span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="at">n =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4,285 × 1
+<pre><code># A tibble: 4,286 × 1
    display_name                                
    &lt;chr&gt;                                       
  1 Phytochemicals and Antioxidant Activities   
@@ -1252,7 +1252,7 @@ To suppress this message, add `openalexR.message = suppressed` to your .Renviron
 28 Nuts composition and effects                
 29 Phytoestrogen effects and research          
 30 Food Chemistry and Fat Analysis             
-# ℹ 4,255 more rows</code></pre>
+# ℹ 4,256 more rows</code></pre>
 </div>
 </div>
 <p>Let’s filter the <code>tibble</code> to find authors (rows in <code>authors_data</code>) who have worked on the topic of “migration.”</p>
@@ -1554,8 +1554,8 @@ To suppress this message, add `openalexR.message = suppressed` to your .Renviron
 167 A. K. M. Shahidullah        Climate Change, Adaptation, Migrat…            1
 168 Rebecca J. Franklin         Migration, Ethnicity, and Economy              2
 169 Beth Leavenworth DuFault    Migration, Ethnicity, and Economy              1
-170 Raquel Ruiz‐Díaz            Climate Change, Adaptation, Migrat…            3
-171 Leanna Butters              Migration, Aging, and Tourism Stud…            5
+170 Leanna Butters              Migration, Aging, and Tourism Stud…            5
+171 Raquel Ruiz‐Díaz            Climate Change, Adaptation, Migrat…            3
 172 Jacqueline Hesson           Migration, Health and Trauma                   1
 173 Jennifer Thorburn           Diaspora, migration, transnational…            7
 174 Jennifer Thorburn           Migration and Labor Dynamics                   7
@@ -1705,40 +1705,40 @@ To suppress this message, add `openalexR.message = suppressed` to your .Renviron
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(field_counts, <span class="at">n =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4,285 × 2
+<pre><code># A tibble: 4,286 × 2
    display_name                                             n
    &lt;chr&gt;                                                &lt;int&gt;
  1 Physical Sciences                                    19166
- 2 Social Sciences                                      19144
- 3 Health Sciences                                      11962
- 4 Medicine                                              9367
- 5 Life Sciences                                         7845
- 6 Engineering                                           5632
- 7 Environmental Science                                 3947
- 8 Biochemistry, Genetics and Molecular Biology          3740
- 9 Arts and Humanities                                   2519
-10 Computer Science                                      2375
+ 2 Social Sciences                                      19166
+ 3 Health Sciences                                      11998
+ 4 Medicine                                              9391
+ 5 Life Sciences                                         7869
+ 6 Engineering                                           5640
+ 7 Environmental Science                                 3950
+ 8 Biochemistry, Genetics and Molecular Biology          3752
+ 9 Arts and Humanities                                   2521
+10 Computer Science                                      2376
 11 Earth and Planetary Sciences                          2334
-12 Health Professions                                    2107
-13 Agricultural and Biological Sciences                  2075
-14 Molecular Biology                                     1995
-15 Sociology and Political Science                       1958
-16 Psychology                                            1934
-17 Chemistry                                             1408
-18 General Health Professions                            1395
-19 Materials Science                                     1199
-20 Education                                             1189
-21 Neuroscience                                          1164
-22 Ecology                                               1147
+12 Health Professions                                    2119
+13 Agricultural and Biological Sciences                  2083
+14 Molecular Biology                                     2002
+15 Sociology and Political Science                       1961
+16 Psychology                                            1939
+17 Chemistry                                             1401
+18 General Health Professions                            1401
+19 Materials Science                                     1192
+20 Education                                             1188
+21 Neuroscience                                          1166
+22 Ecology                                               1149
 23 Physics and Astronomy                                 1121
 24 Electrical and Electronic Engineering                  943
-25 Surgery                                                903
-26 Genetics                                               894
-27 Public Health, Environmental and Occupational Health   890
-28 Economics, Econometrics and Finance                    885
-29 Business, Management and Accounting                    830
+25 Surgery                                                905
+26 Genetics                                               895
+27 Public Health, Environmental and Occupational Health   894
+28 Economics, Econometrics and Finance                    886
+29 Business, Management and Accounting                    832
 30 Global and Planetary Change                            776
-# ℹ 4,255 more rows</code></pre>
+# ℹ 4,256 more rows</code></pre>
 </div>
 </div>
 <p>A few things jump out at me from this list of the top 30 topics. First, publication output in the physical and social sciences at Memorial are neck and neck! If you were to combine Health, Medicine, and Life Sciences, they would top the list. Arts and Humanities is pretty high on this list to, claiming the number 9 rank. Sociology and Political Science are at rank 15.</p>
